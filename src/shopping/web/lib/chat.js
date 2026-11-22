@@ -1,61 +1,48 @@
-// Chat with the assistant: threads, a task picker, streamed replies, tool activity, confirmation cards.
-import { changed, del, get, post, stream } from "./api.js";
+// Chat with the assistant: conversations, a task picker, live replies, tool activity, confirmation cards.
+// Replies run on the server: leaving the page or losing the connection doesn't stop them, and reopening a
+// conversation that's still working picks the reply up again.
+import { changed, del, get, post, reply } from "./api.js";
 import { toolLabel } from "./tools.js";
 import { busy, clear, h, richText, toast } from "./ui.js";
 
 // Each task gives the assistant focused instructions and only the tools for that job (more reliable, cheaper).
-const TASKS = [
-  { mode: "quick", icon: "⚡", title: "Quick Shop", hint: "Say what you need; it goes straight into the cart (no review)",
+export const TASKS = [
+  { mode: "quick", icon: "⚡", title: "Quick Shop", hint: "Say what you need; it goes straight into the cart",
     placeholder: "e.g. “2 L 2% milk, a dozen eggs and stuff for tacos”" },
-  { mode: "shop", icon: "🛒", title: "Plan a shop to review", hint: "A run from your list, regulars and this week's deals, for you to approve",
+  { mode: "shop", icon: "🛒", title: "Plan a shop to review", hint: "From your list, regulars and this week's deals",
     placeholder: "Anything specific? e.g. “we also need bread and soda”" },
-  { mode: "meals", icon: "🍽️", title: "Plan meals", hint: "Meals around the deals and what needs using up",
+  { mode: "meals", icon: "🍽️", title: "Plan meals", hint: "Around the deals and what needs using up",
     placeholder: "e.g. “plan this week's dinners” or “4 dinners, one vegetarian”" },
-  { mode: "pantry", icon: "🥫", title: "Update the pantry or list", hint: "Paste a receipt, used something up, add to the grocery list",
+  { mode: "pantry", icon: "🥫", title: "Pantry & grocery list", hint: "Paste a receipt, used something up, add to the list",
     placeholder: "e.g. “we used up the eggs” or paste a receipt" },
-  { mode: "recipes", icon: "📖", title: "Find, cook or save a recipe", hint: "What can I make with…, look up or save to Cooking",
+  { mode: "recipes", icon: "📖", title: "Recipes", hint: "What can I make with…, or save one to Cooking",
     placeholder: "e.g. “what can I make with leeks and potatoes?”" },
-  { mode: "ask", icon: "❓", title: "Ask a question", hint: "Prices, deals, past orders, what's in the pantry",
+  { mode: "ask", icon: "❓", title: "Ask a question", hint: "Prices, deals, past orders, the pantry",
     placeholder: "e.g. “is $4.99 good for 18 eggs?”" },
 ];
-const AUTO = { mode: "auto", icon: "✨", title: "Chosen automatically", placeholder: "Ask, shop, plan meals, or paste a receipt…" };
+const AUTO = { mode: "auto", icon: "✨", title: "Any", placeholder: "Ask, shop, plan meals, or paste a receipt…" };
 const taskFor = (mode) => TASKS.find((t) => t.mode === mode) || AUTO;
+const KEYS_HINT = matchMedia("(pointer: fine)").matches ? "  (Enter to send, Shift+Enter for a new line)" : "";
+
 export function mountChat(root, { threadId = null, onThread = () => {}, mode: startMode = "auto" } = {}) {
-  let thread = threadId, mode = startMode, controller = null, picking = false;
-  const log = h("div", { class: "log" });
-  const input = h("textarea", { rows: 2, placeholder: "Ask, shop, plan meals, or paste a receipt…  (Enter to send, Shift+Enter for a new line)" });
+  let thread = threadId, mode = startMode, controller = null;
+  const log = h("div", { class: "log", "aria-live": "polite" });
+  const input = h("textarea", { rows: 2 });
   const sendBtn = h("button", { class: "primary" }, "Send");
-  const stopBtn = h("button", { hidden: true, onclick: () => controller?.abort() }, "Stop");
-  const taskBar = h("div", { class: "row small" });
-  const threadSelect = h("select", { style: { maxWidth: "60%" } });
+  const stopBtn = h("button", { hidden: true, onclick: () => thread && post(`/api/chat/threads/${thread}/stop`).catch(() => {}) }, "Stop");
+  const taskSelect = h("select", { "aria-label": "Task" },
+    h("option", { value: "auto" }, "✨ Any task"), ...TASKS.map((t) => h("option", { value: t.mode }, `${t.icon} ${t.title}`)));
+  const threadSelect = h("select", { "aria-label": "Conversation", class: "grow" });
 
-  function choose(m) {
-    mode = m;
-    picking = false;
-    drawTask();
-    const empty = log.querySelector(".task-picker");
-    if (empty) empty.remove();
-    input.focus();
-  }
+  const setMode = (m) => { mode = m; taskSelect.value = m; input.placeholder = taskFor(m).placeholder + KEYS_HINT; };
+  taskSelect.addEventListener("change", () => setMode(taskSelect.value));
 
-  function picker(compact = false) {
-    return h("div", { class: `task-picker ${compact ? "compact" : ""}` },
+  function picker() {
+    return h("div", { class: "task-picker" },
       h("h3", { class: "picker-title" }, "What would you like to do?"),
-      h("div", { class: "task-grid" }, ...TASKS.map((t) => h("button", { class: `task ${t.mode === mode ? "on" : ""}`, onclick: () => choose(t.mode) },
+      h("div", { class: "task-grid" }, ...TASKS.map((t) => h("button", { class: "task", onclick: () => { setMode(t.mode); log.querySelector(".task-picker")?.remove(); input.focus(); } },
         h("span", { class: "task-icon" }, t.icon), h("span", {}, h("strong", {}, t.title), h("span", { class: "small muted block" }, t.hint))))),
-      h("p", { class: "small muted" }, "Or just type below and the assistant will work out the task."));
-  }
-
-  function drawTask() {
-    const t = taskFor(mode);
-    input.placeholder = t.placeholder + "  (Enter to send, Shift+Enter for a new line)";
-    clear(taskBar).append(h("span", { class: "muted" }, "Task:"), h("strong", {}, `${t.icon} ${t.title}`),
-      h("button", { class: "link", onclick: () => {
-        picking = !picking;
-        const existing = taskBar.parentElement.querySelector(".task-picker");
-        if (existing) existing.remove();
-        if (picking) taskBar.after(picker(true));
-      } }, picking ? "Close" : "Change"));
+      h("p", { class: "small muted" }, "Or just type below, and the assistant works out the task."));
   }
 
   async function loadThreads() {
@@ -65,117 +52,115 @@ export function mountChat(root, { threadId = null, onThread = () => {}, mode: st
   }
 
   async function open(id) {
+    controller?.abort(); // stop watching the previous reply (it carries on on the server)
     thread = id || null;
     onThread(thread);
     clear(log);
-    if (!thread) { mode = startMode; drawTask(); if (mode === "auto") log.append(picker()); else input.focus(); return; }
+    if (!thread) { setMode(startMode); if (startMode === "auto") log.append(picker()); input.focus(); return; }
     const t = await get(`/api/chat/threads/${thread}`);
-    mode = t.mode || "auto";
-    drawTask();
+    setMode(t.mode || "auto");
     for (const m of t.messages) renderStored(m);
     log.scrollTop = log.scrollHeight;
+    if (t.working) follow(); // a reply still in progress: show it live
   }
 
   function renderStored(m) {
     if (m.role === "user") log.append(h("div", { class: "msg user" }, h("div", { class: "bubble" }, m.content)));
     else if (m.role === "assistant") {
-      if (m.content) log.append(h("div", { class: "msg assistant" }, h("div", { class: "bubble" }, richText(m.content)),
-        m.model ? h("div", { class: "meta" }, `${m.provider} · ${m.model}${m.cost_usd ? ` · $${m.cost_usd.toFixed(4)}` : ""}`) : null));
-      for (const c of m.tool_calls || []) log.append(h("div", { class: "toolline" }, "⚙ ", toolLabel(c.name)));
+      for (const c of m.tool_calls || []) log.append(h("div", { class: "toolline" }, "✓ ", toolLabel(c.name)));
+      if (m.content) log.append(h("div", { class: "msg assistant" }, h("div", { class: "bubble" }, richText(m.content))));
     } else if (m.role === "tool" && m.status === "pending_confirmation") log.append(confirmCard({ message_id: m.id, name: m.tool_name, preview: m.preview }));
     else if (m.role === "tool" && m.status === "declined") log.append(h("div", { class: "toolline error" }, "✕ ", m.content));
   }
 
   function confirmCard(ev) {
-    const note = h("input", { placeholder: "Note if declining (optional)", style: { flex: 1 } });
-    const card = h("div", { class: "confirm" }, h("strong", {}, "Confirm this change?"), h("pre", {}, ev.preview || ev.name),
+    const note = h("input", { placeholder: "Why not? (optional)", class: "grow" });
+    const card = h("div", { class: "confirm lock" }, h("strong", {}, "OK to make this change?"), h("pre", {}, ev.preview || ev.name),
       h("div", { class: "row" }, note,
-        h("button", { onclick: (e) => busy(e.target, () => resolve(card, ev.message_id, false, note.value)) }, "Decline"),
-        h("button", { class: "primary", onclick: (e) => busy(e.target, () => resolve(card, ev.message_id, true, null)) }, "Approve")));
+        h("button", { onclick: (e) => busy(e.target, () => resolve(card, ev.message_id, false, note.value)) }, "No"),
+        h("button", { class: "primary", onclick: (e) => busy(e.target, () => resolve(card, ev.message_id, true, null)) }, "Yes, do it")));
     return card;
   }
 
   async function resolve(card, messageId, approve, note) {
-    card.querySelectorAll("button").forEach((b) => (b.disabled = true));
-    card.append(h("div", { class: "small muted" }, approve ? "Approved." : "Declined."));
-    await run(`/api/chat/threads/${thread}/confirm/${messageId}`, { approve, note: note || null });
+    card.replaceChildren(h("div", { class: "small muted" }, approve ? "Approved." : "Declined."));
+    await follow({ path: `/api/chat/threads/${thread}/confirm/${messageId}`, body: { approve, note: note || null } });
   }
 
-  async function run(path, body) {
-    controller = new AbortController();
+  // Show a reply as it happens. With `start`, this begins the reply; without, it follows one in progress.
+  async function follow(start = null) {
+    controller?.abort();
+    const mine = controller = new AbortController();
     sendBtn.disabled = true; stopBtn.hidden = false;
-    let bubble = null, text = "", meta = null;
-    const status = h("div", { class: "toolline" }, "Thinking…");
+    let bubble = null, text = "";
+    const status = h("div", { class: "toolline working-line" }, "Thinking…");
     log.append(status);
     const scroll = () => { log.scrollTop = log.scrollHeight; };
+    const finish = () => { if (bubble) bubble.replaceWith(richText(text)); bubble = null; text = ""; };
     try {
-      for await (const ev of stream(path, body, controller.signal)) {
-        if (ev.type === "mode") status.textContent = `${ev.title} mode…`;
+      for await (const ev of reply(thread, { start, signal: mine.signal })) {
+        if (ev.type === "mode") status.textContent = `${ev.title}…`;
+        else if (ev.type === "reconnecting") status.textContent = "Reconnecting…";
         else if (ev.type === "text") {
-          if (!bubble) { bubble = h("div", { class: "bubble" }); log.append(h("div", { class: "msg assistant" }, bubble)); }
+          if (!bubble) { bubble = h("div", { class: "bubble" }); log.insertBefore(h("div", { class: "msg assistant" }, bubble), status); }
           text += ev.text;
           bubble.textContent = text;
         } else if (ev.type === "tool") {
-          if (ev.status === "running") log.append(h("div", { class: "toolline" }, "⚙ ", toolLabel(ev.name), "…"));
-          else if (ev.status === "error" || ev.status === "declined") log.append(h("div", { class: "toolline error" }, "✕ ", toolLabel(ev.name), ": ", (ev.summary || "").slice(0, 200)));
           finish();
-        } else if (ev.type === "confirm") { finish(); log.append(confirmCard(ev)); }
-        else if (ev.type === "notice") log.append(h("div", { class: "toolline error" }, ev.text));
-        else if (ev.type === "usage") meta = `${ev.provider} · ${ev.model}${ev.cost_usd ? ` · $${ev.cost_usd.toFixed(4)}` : ""}`;
-        else if (ev.type === "error") log.append(h("div", { class: "flash err" }, ev.message));
+          if (ev.status === "running") status.textContent = `${toolLabel(ev.name)}…`;
+          else log.insertBefore(h("div", { class: `toolline ${ev.status === "error" ? "error" : ""}` }, ev.status === "error" ? "✕ " : "✓ ",
+            toolLabel(ev.name), ev.status === "error" && ev.summary ? `: ${ev.summary.slice(0, 160)}` : ""), status);
+        } else if (ev.type === "confirm") { finish(); log.insertBefore(confirmCard(ev), status); }
+        else if (ev.type === "notice") log.insertBefore(h("div", { class: "toolline error" }, ev.text), status);
+        else if (ev.type === "error") log.insertBefore(h("div", { class: "flash err" }, ev.message), status);
         scroll();
       }
     } catch (e) {
-      if (e.name !== "AbortError") log.append(h("div", { class: "flash err" }, e.message));
+      if (e.name !== "AbortError") log.insertBefore(h("div", { class: "flash err" }, e.message), status);
     } finally {
       finish();
       status.remove();
-      sendBtn.disabled = false; stopBtn.hidden = true; controller = null;
+      if (controller === mine) { sendBtn.disabled = false; stopBtn.hidden = true; controller = null; }
       changed();
       scroll();
-    }
-    function finish() {
-      if (bubble) { const done = richText(text); bubble.replaceWith(done); if (meta) done.after(h("div", { class: "meta" }, meta)); }
-      bubble = null; text = ""; meta = null;
     }
   }
 
   async function send() {
     const textValue = input.value.trim();
     if (!textValue || controller) return;
-    if (!thread) {
-      const t = await post("/api/chat/threads", { mode });
-      thread = t.thread_id;
-      onThread(thread);
-      clear(log);
-    }
+    sendBtn.disabled = true;
+    try {
+      if (!thread) {
+        const t = await post("/api/chat/threads", { mode });
+        thread = t.thread_id;
+        onThread(thread);
+        clear(log);
+      }
+    } catch (e) { toast(e.message, "err"); sendBtn.disabled = false; return; }
     input.value = "";
     log.querySelector(".task-picker")?.remove();
-    root.querySelector(".composer .task-picker")?.remove();
-    picking = false;
-    drawTask();
     log.append(h("div", { class: "msg user" }, h("div", { class: "bubble" }, textValue)));
-    await run(`/api/chat/threads/${thread}/messages`, { text: textValue, mode });
-    loadThreads();
+    await follow({ path: `/api/chat/threads/${thread}/messages`, body: { text: textValue, mode } });
+    loadThreads().catch(() => {});
   }
 
   sendBtn.addEventListener("click", send);
-  input.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } });
-  threadSelect.addEventListener("change", () => open(threadSelect.value));
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey && matchMedia("(pointer: fine)").matches) { e.preventDefault(); send(); } });
+  threadSelect.addEventListener("change", () => open(threadSelect.value).catch((e) => toast(e.message, "err")));
 
   root.append(h("div", { class: "chat" },
-    h("div", { class: "row", style: { padding: "8px 10px", borderBottom: "1px solid var(--line)" } }, threadSelect,
+    h("div", { class: "chat-head row" }, threadSelect,
       h("button", { class: "link", onclick: () => { threadSelect.value = ""; open(null); } }, "New"),
-      h("span", { class: "spacer" }),
-      h("button", { class: "link", title: "Delete this conversation", onclick: async () => {
+      h("button", { class: "link", title: "Delete this conversation", "aria-label": "Delete this conversation", onclick: async () => {
         if (!thread || !confirm("Delete this conversation?")) return;
         await del(`/api/chat/threads/${thread}`); toast("Deleted."); await loadThreads(); open(null);
       } }, "🗑")),
     log,
-    h("div", { class: "composer" }, taskBar, h("div", { style: { marginTop: "6px" } }, input),
-      h("div", { class: "row", style: { marginTop: "6px" } }, h("span", { class: "small muted" }, "Changes to Notion ask first. Only Quick Shop adds to the cart directly."),
-        h("span", { class: "spacer" }), stopBtn, sendBtn))));
-  drawTask();
+    h("div", { class: "composer" }, input,
+      h("div", { class: "row", style: { marginTop: "6px" } }, taskSelect, h("span", { class: "spacer" }), stopBtn, sendBtn),
+      h("p", { class: "small muted", style: { margin: "6px 0 0" } }, "Notion changes ask first. Only Quick Shop adds to the cart directly."))));
+  setMode(mode);
   loadThreads().then(() => open(thread)).catch((e) => log.append(h("div", { class: "flash err" }, e.message)));
-  return { open };
+  return { cleanup: () => controller?.abort() };
 }

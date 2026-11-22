@@ -1,6 +1,6 @@
 // This week's suggested meals (Notion): keep, reject, cooked (+ rating, leftovers, note), skip, promote.
 import { get, post } from "../lib/api.js";
-import { badge, busy, day, empty, extLink, h, link, toast } from "../lib/ui.js";
+import { badge, busy, day, empty, extLink, h, link, more, toast } from "../lib/ui.js";
 
 export async function render(el, _params, query) {
   const data = await get(`/api/meals${query.all ? "?all_weeks=true" : ""}`);
@@ -31,18 +31,18 @@ function mealCard(m) {
     ...[].concat(m.Cuisine || []).map((c) => badge(c))));
   if (m.Feedback) box.append(h("p", { class: "small", style: { whiteSpace: "pre-wrap" } }, "✎ ", m.Feedback));
 
-  const note = h("input", { placeholder: "Note (optional): how it went, what to change, why not…", style: { flex: 1, minWidth: "220px" } });
+  const note = h("input", { placeholder: "Note (optional): how it went, what to change, why not…", class: "grow" });
   const act = (action) => (e) => busy(e.target, async () => {
     await post(`/api/meals/${m.id}/decision`, { action, feedback: note.value || null });
-    toast(`${m.Name}: ${{ keep: "planned", reject: "rejected", cooked: "cooked", skip: "skipped" }[action]}.`);
-    location.reload();
+    box.replaceWith(h("div", { class: "card small muted" }, `${m.Name}: ${{ keep: "planned", reject: "rejected", cooked: "marked cooked", skip: "skipped" }[action]}. `,
+      h("a", { href: "#/meals", onclick: () => location.reload() }, "Refresh")));
   });
   if (status === "Suggested") {
-    box.append(h("div", { class: "row", style: { marginTop: "8px" } }, note,
-      h("button", { class: "danger", onclick: act("reject") }, "Reject"), h("button", { class: "primary", onclick: act("keep") }, "Keep")));
+    box.append(h("div", { class: "row", style: { marginTop: "8px" } }, h("span", { class: "spacer" }),
+      h("button", { class: "danger", onclick: act("reject") }, "Not this week"), h("button", { class: "primary", onclick: act("keep") }, "Keep")), more("Add a note", note));
   } else if (status === "Planned") {
-    box.append(h("div", { class: "row", style: { marginTop: "8px" } }, note,
-      h("button", { onclick: act("skip") }, "Didn't get to it"), h("button", { class: "primary", onclick: act("cooked") }, "Cooked")));
+    box.append(h("div", { class: "row", style: { marginTop: "8px" } }, h("span", { class: "spacer" }),
+      h("button", { onclick: act("skip") }, "Didn't get to it"), h("button", { class: "primary", onclick: act("cooked") }, "Cooked")), more("Add a note", note));
   } else if (status === "Cooked") {
     box.append(h("div", { class: "row", style: { marginTop: "8px" } }, h("span", { class: "small muted" }, "A keeper?"),
       h("button", { onclick: (e) => busy(e.target, async () => {

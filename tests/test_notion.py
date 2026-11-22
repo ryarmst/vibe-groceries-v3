@@ -23,7 +23,7 @@ def notion():
 
 def test_ids_and_names():
     assert clean_id("collection://0a1b2c3d-1111-4222-8333-444455556666") == "0a1b2c3d-1111-4222-8333-444455556666"
-    assert clean_id("https://app.notion.com/p/Cooking-40c2d1e0e40080a1a990dfbacef23669") == "40c2d1e0-e400-80a1-a990-dfbacef23669"
+    assert clean_id("https://app.notion.com/p/Cooking-1a2b3c4d5e6f40718293a4b5c6d7e8f9") == "1a2b3c4d-5e6f-4071-8293-a4b5c6d7e8f9"
     assert norm("<p>Chicken Thighs</p>") == norm("chicken thigh") and norm("Glass") == "glass"
 
 
@@ -91,7 +91,7 @@ async def test_unconfigured_meals_database(notion):
 
 async def test_database_id_resolves_to_its_data_source(notion):
     fake, k = notion
-    database_id = "41f2d1e0-e400-80cb-929e-df6ba145a2c4"
+    database_id = "9f8e7d6c-5b4a-4392-8170-6f5e4d3c2b1a"
     fake.databases[database_id] = MEALS
     k.ids["meals"] = database_id  # what "Copy link" gives
     created = await k.meal_create({"Name": "Dal", "Status": "Suggested", "Cuisine": ["Indian", "Nepali"]}, "📌 x")

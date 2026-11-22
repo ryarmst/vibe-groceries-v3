@@ -1,6 +1,7 @@
-// Settings: No Frills (PC ID) sign-in, LLM providers and keys (write-only), Notion, budget, schedule.
+// Settings: each section folds to one line with its status, and opens when you need it.
+// No Frills (PC id) sign-in, API keys (write-only), AI models and budget, Notion, schedule.
 import { changed, del, get, post, put } from "../lib/api.js";
-import { ago, busy, clear, h, money, toast, when } from "../lib/ui.js";
+import { ago, busy, clear, h, money, more, toast, when } from "../lib/ui.js";
 
 const PROVIDER_LABELS = { gemini: "Google Gemini", openai: "OpenAI", anthropic: "Anthropic (Claude)", groq: "Groq",
   openrouter: "OpenRouter", mistral: "Mistral", custom: "Custom (OpenAI-compatible)" };
@@ -10,14 +11,32 @@ export async function render(el) {
   el.append(h("h1", {}, "Settings"));
   const [all, secrets, usage, me] = await Promise.all([get("/api/settings"), get("/api/settings/secrets"),
     get("/api/llm/usage"), get("/api/me")]);
-  el.append(await nofrillsCard(), budgetCard(all.budget, usage.summary, usage.models_today || []), llmCard(all.llm, all.providers),
-    keysCard(secrets.secrets), notionCard(all.notion), jobsCard(all.jobs),
-    section("Prompts", h("p", {}, "The assistant's instructions are editable: describe your household, change house rules, or tune a task. ",
-      h("a", { href: "#/prompts" }, "Open Prompts →"))),
-    section("You", h("p", {}, "Signed in as ", h("strong", {}, me.name), ` (${me.email}) through Cloudflare Access.`)));
+  const keysSet = secrets.secrets.filter((x) => x.set).length;
+  const aiKey = secrets.secrets.some((x) => x.set && x.name.startsWith("llm:"));
+  const notionOn = secrets.secrets.some((x) => x.set && x.name === "notion") && Object.values(all.notion).some(Boolean);
+  const j = all.jobs;
+  el.append(
+    await nofrillsCard(),
+    note(keysCard(secrets.secrets), aiKey ? `${keysSet} saved` : "Add an AI key to use the assistant", !aiKey),
+    note(llmCard(all.llm, all.providers), `${all.llm.tiers.fast.model} · ${all.llm.tiers.smart.model}`),
+    note(budgetCard(all.budget, usage.summary, usage.models_today || []), `${money(usage.summary.month_spent_usd)} of ${money(usage.summary.monthly_cap_usd)} this month`),
+    note(notionCard(all.notion), notionOn ? "Connected" : "Not set up (optional)"),
+    note(jobsCard(j), [`deals at ${j.deals_hour}:00`, j.weekly_plan_enabled ? "weekly plan on" : null].filter(Boolean).join(" · ")),
+    h("div", { class: "card" }, h("p", { style: { margin: 0 } }, "The assistant's instructions are on the ", h("a", { href: "#/prompts" }, "Prompts"),
+      " page: describe your household, change house rules, or tune a task.")),
+    h("p", { class: "small muted" }, "Signed in as ", h("strong", {}, me.name), ` (${me.email}) through Cloudflare Access.`));
 }
 
-function section(title, ...body) { return h("section", { class: "card" }, h("h2", { style: { marginTop: 0 } }, title), ...body); }
+// A section that folds to its title and a one-line status.
+function section(title, ...body) {
+  return h("details", { class: "card fold" }, h("summary", {}, h("h2", {}, title), h("span", { class: "small muted fold-note" })), ...body);
+}
+
+function note(card, text, open = false) {
+  card.querySelector(".fold-note").textContent = text;
+  if (open) card.open = true;
+  return card;
+}
 
 function field(label, input, hint) {
   return h("label", {}, label, input, hint ? h("span", { class: "small muted" }, hint) : null);
@@ -77,7 +96,7 @@ async function nofrillsCard() {
     address.focus();
   };
   draw(s);
-  return card;
+  return note(card, s.state === "connected" ? `Signed in${s.signed_in_by ? ` by ${s.signed_in_by}` : ""}` : "Not signed in", s.state !== "connected");
 }
 
 function budgetCard(b, s, models) {
@@ -111,11 +130,13 @@ function llmCard(llm, providers) {
       h("div", { class: "row", style: { marginTop: "6px" } },
         h("button", { onclick: async (e) => {
           const r = await busy(e.target, () => get(`/api/llm/models/${provider.value}`));
+          if (!r) return; // already reported
           clear(list).append(...(r.models || []).map((m) => h("option", { value: m })));
           toast(r.error || `${(r.models || []).length} models available; start typing in the Model box.`, r.error ? "err" : "ok");
         } }, "Load models"),
         h("button", { onclick: async (e) => {
           const r = await busy(e.target, () => post("/api/llm/test", { provider: provider.value, model: model.value }));
+          if (!r) return;
           toast(r.ok ? `Works: “${r.reply}”` : r.error, r.ok ? "ok" : "err");
         } }, "Test"))) };
   };
@@ -133,12 +154,13 @@ function llmCard(llm, providers) {
   const parseLines = (text, fn) => text.value.split("\n").map((l) => l.trim()).filter(Boolean).map(fn);
   return section("AI models",
     fast.row, smart.row,
-    h("div", { class: "form-grid" },
-      field("Backup models (provider: model, one per line)", fallback, "Tried in order if both models above fail."),
-      field("Custom endpoint base URL", custom, "For the Custom provider, e.g. a local Ollama."),
-      field("Prices for paid models (model: input, output, in $ per million tokens)", prices, "Used for the budget."),
-      field("Free-tier limits (model: per minute, per day)", limits, "The app stays under these and switches models when one runs out for the day. Find yours in AI Studio → Rate limits."),
-      field("Temperature (0 = predictable, higher = more varied)", temp), field("Most steps per reply", steps)),
+    field("Free-tier limits (model: per minute, per day)", limits, "The app stays under these and switches models when one runs out for the day. Find yours in AI Studio → Rate limits."),
+    more("Advanced: backup models, prices, custom endpoint",
+      h("div", { class: "form-grid" },
+        field("Backup models (provider: model, one per line)", fallback, "Tried in order if both models above fail."),
+        field("Custom endpoint base URL", custom, "For the Custom provider, e.g. a local Ollama."),
+        field("Prices for paid models (model: input, output, in $ per million tokens)", prices, "Used for the budget."),
+        field("Temperature (0 = predictable, higher = more varied)", temp), field("Most steps per reply", steps))),
     h("div", { class: "row", style: { marginTop: "8px" } }, h("button", { class: "primary", onclick: (e) => busy(e.target, async () => {
       await put("/api/settings/llm", {
         tiers: { fast: { provider: fast.provider.value, model: fast.model.value.trim() }, smart: { provider: smart.provider.value, model: smart.model.value.trim() } },
@@ -214,6 +236,7 @@ function jobsCard(j) {
     h("label", { class: "row" }, alerts, "Send a phone alert for stock-up deals (needs an ntfy topic under API keys)",
       h("button", { class: "link", onclick: async (e) => {
         const r = await busy(e.target, () => post("/api/settings/notify/test"));
+        if (!r) return;
         toast(r.ok ? "Test alert sent." : r.error, r.ok ? "ok" : "err");
       } }, "Send test alert")),
     h("p", { class: "small muted" }, "To get alerts, install the ntfy app, subscribe to a long random topic name (e.g. vibe-groceries-k3j9x…), and save ",

@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import json
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy import select
 
 from shopping import appsettings, context
-from shopping.agent import budget, loop, playbooks
+from shopping.agent import budget, loop, playbooks, runs
 from shopping.agent.providers import registry as providers
 from shopping.agent.providers.base import ProviderError
 from shopping.agent.setup import ensure_tools
@@ -23,13 +23,8 @@ router = APIRouter(prefix="/api", dependencies=[Depends(require_user)])
 
 def _sse(events):
     async def gen():
-        try:
-            async for ev in events:
-                yield f"data: {json.dumps(ev, default=str)}\n\n"
-        except Exception as exc:  # noqa: BLE001 - surface to the client instead of a broken stream
-            yield f"data: {json.dumps({'type': 'error', 'message': f'Internal error: {type(exc).__name__}'})}\n\n"
-            yield f"data: {json.dumps({'type': 'done', 'awaiting_confirmation': False})}\n\n"
-            raise
+        async for ev in events:
+            yield f"data: {json.dumps(ev, default=str)}\n\n"
     return StreamingResponse(gen(), media_type="text/event-stream", headers={"x-accel-buffering": "no", "cache-control": "no-store"})
 
 
@@ -80,12 +75,13 @@ def thread(thread_id: str):
         t = session.get(ChatThread, thread_id)
         if t is None:
             return {"error": "not found"}
-        return {"thread_id": t.id, "title": t.title, "mode": t.mode, "system": t.system,
+        return {"thread_id": t.id, "title": t.title, "mode": t.mode, "system": t.system, "working": runs.running(t.id),
                 "messages": [_message_dict(m) for m in t.messages]}
 
 
 @router.delete("/chat/threads/{thread_id}")
 def delete_thread(thread_id: str):
+    runs.stop(thread_id)
     with session_scope() as session:
         t = session.get(ChatThread, thread_id)
         if t is not None:
@@ -98,10 +94,30 @@ class SendBody(BaseModel):
     mode: str | None = Field(default=None, pattern="^(auto|ask|shop|quick|meals|pantry|recipes)$")
 
 
+def _start(thread_id: str, events):
+    try:
+        runs.start(thread_id, events)
+    except runs.Busy as exc:
+        raise HTTPException(409, str(exc)) from exc
+    return _sse(runs.follow(thread_id))
+
+
 @router.post("/chat/threads/{thread_id}/messages")
 async def send(thread_id: str, body: SendBody, caller: Caller = Depends(require_user)):
+    """Start a reply on the server and stream its progress. The reply finishes even if the page goes away."""
     ensure_tools()
-    return _sse(loop.run(thread_id, user_text=body.text, device_id=caller.id, person=caller.name, mode=body.mode))
+    return _start(thread_id, loop.run(thread_id, user_text=body.text, device_id=caller.id, person=caller.name, mode=body.mode))
+
+
+@router.get("/chat/threads/{thread_id}/events")
+async def events(thread_id: str, after: int = 0):
+    """Reconnect to a reply in progress (or just finished), from event number `after`."""
+    return _sse(runs.follow(thread_id, after))
+
+
+@router.post("/chat/threads/{thread_id}/stop")
+def stop(thread_id: str):
+    return {"stopped": runs.stop(thread_id)}
 
 
 class ConfirmBody(BaseModel):
@@ -112,8 +128,8 @@ class ConfirmBody(BaseModel):
 @router.post("/chat/threads/{thread_id}/confirm/{message_id}")
 async def confirm(thread_id: str, message_id: int, body: ConfirmBody, caller: Caller = Depends(require_user)):
     ensure_tools()
-    return _sse(loop.resolve_confirmation(thread_id, message_id, approve=body.approve, note=body.note,
-                                          device_id=caller.id, person=caller.name))
+    return _start(thread_id, loop.resolve_confirmation(thread_id, message_id, approve=body.approve, note=body.note,
+                                                       device_id=caller.id, person=caller.name))
 
 
 # -- LLM helpers -------------------------------------------------------------------------------

@@ -101,7 +101,7 @@ Open your address, enter your email and the code you receive. Then, in the app:
 5. Optional: Notion ([docs/notion.md](docs/notion.md)) and the daily schedule (Settings → Schedule).
 6. Try **Quick Shop** on Home: "2 L of 2% milk and bananas". Then check the **Cart** page.
 
-The deal scan runs each morning (about 3 minutes); **Deals → Assess deals** runs it now.
+The deal scan runs each morning (about 3 minutes); **Deals → Check deals now** runs it straight away.
 
 ## Day to day
 

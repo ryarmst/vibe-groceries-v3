@@ -365,7 +365,7 @@ def shopping_context(session: Session, *, focus: str = "overview", aisles: list[
     return {
         "deal_data": {
             "last_scan": scan_dict(scan), "scan_running": running, "deals_known_now": total_deals,
-            "note": None if scan else "No deal scan yet: the daily scan (or Deals → Assess deals) fills this in.",
+            "note": None if scan else "No deal scan yet: the daily scan (or Deals → Check deals now) fills this in.",
         },
         "your_items_on_sale": [brief(p, bought.get(p.id), with_history=session) for p in yours],
         ("meal_deals" if meals else "top_deals_by_aisle"): {

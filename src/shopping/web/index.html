@@ -9,11 +9,13 @@
   <script type="module" src="/static/app.js"></script>
 </head>
 <body>
+  <a class="skip" href="#view">Skip to content</a>
   <header class="top"><div class="inner">
-    <a class="brand" href="#/">🛒 Vibe Groceries</a>
-    <nav id="nav"></nav>
+    <a class="brand" href="#/">🛒 <span>Vibe Groceries</span></a>
+    <nav id="nav" aria-label="Main"></nav>
     <a id="session" class="pill" href="#/settings">…</a>
+    <button id="menu" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav">☰</button>
   </div></header>
-  <main id="view"></main>
+  <main id="view" tabindex="-1"></main>
 </body>
 </html>

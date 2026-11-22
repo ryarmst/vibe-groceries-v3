@@ -1,16 +1,18 @@
 // One shopping run: review cards. Approving puts items in the cart in the background.
 import { get, post } from "../lib/api.js";
-import { badge, busy, clear, empty, h, link, money, pct, toast, unit, when } from "../lib/ui.js";
+import { badge, busy, empty, h, link, money, more, pct, poll, toast, unit, when } from "../lib/ui.js";
 
 const STATUS = { pending: "Pending", approved: "Approved · not in cart", applied: "In cart", rejected: "Removed", failed: "Cart error", adding: "Adding to cart…" };
 const REASONS = { grocery_list: "List", pantry_low: "Low", regular_staple: "Regular", good_deal: "Deal", preferred_product: "Preferred",
   preferred_brand: "Brand", user_requested: "Asked for", alternative: "Alternative" };
 
 export async function render(el, [runId]) {
-  let poll = null;
+  let stopWatching = null;
+  // Redraw from the server without losing your place on the page.
   async function draw() {
     const run = await get(`/api/runs/${runId}`);
-    clear(el);
+    const y = window.scrollY;
+    el.replaceChildren();
     el.append(h("p", { class: "small" }, link("#/runs", "← All runs")),
       h("div", { class: "between" }, h("h1", {}, run.summary), h("span", { class: `status ${run.status}` }, run.status.replace("_", " "))),
       run.notes ? h("p", { class: "muted small" }, run.notes) : null);
@@ -25,31 +27,35 @@ export async function render(el, [runId]) {
     if (!run.cards.length) el.append(empty("This run is empty."));
     const pending = run.pending_snapshot;
     el.append(h("div", { class: "bottom-bar" }, h("div", { class: "inner" },
-      h("strong", {}, money(run.estimated_total), h("span", { class: "small muted" }, " estimated before tax")),
+      h("strong", { class: "total" }, money(run.estimated_total), h("span", { class: "small muted" }, " before tax")),
       h("span", { class: "spacer" }),
       run.editable && pending.length ? h("button", { class: "danger", onclick: (e) => busy(e.target, async () => {
-        if (!confirm(`Remove all ${pending.length} pending item(s)?`)) return;
-        await post(`/api/runs/${runId}/reject-remaining`, { snapshot: pending }); draw();
-      }) }, "Remove pending") : null,
+        if (!confirm(`Remove all ${pending.length} items still waiting for a decision?`)) return;
+        await post(`/api/runs/${runId}/reject-remaining`, { snapshot: pending }); await draw();
+      }, e.target.parentElement) }, "Remove the rest") : null,
       run.editable && pending.length ? h("button", { class: "primary", onclick: (e) => busy(e.target, async () => {
         const r = await post(`/api/runs/${runId}/approve-all`, { snapshot: pending });
-        toast([`Approved ${r.approved}.`, r.message].filter(Boolean).join(" ")); draw(); watch();
-      }) }, `Approve all ${pending.length}`) : null,
+        toast([`Approved ${r.approved}.`, r.message].filter(Boolean).join(" ")); await draw(); watch();
+      }, e.target.parentElement) }, `Approve all ${pending.length}`) : null,
       (counts.approved || counts.failed) ? h("button", { onclick: (e) => busy(e.target, async () => {
-        const r = await post(`/api/runs/${runId}/apply`); toast(r.message); draw(); watch();
-      }) }, "Add approved to cart") : null)));
+        const r = await post(`/api/runs/${runId}/apply`); toast(r.message); await draw(); watch();
+      }, e.target.parentElement) }, "Add approved to cart") : null)));
+    window.scrollTo(0, y);
     return run;
   }
 
+  // Approved items go into the cart in the background; follow along until they're all in.
   let lastEvent = 0;
   function watch() {
-    if (poll) return;
-    poll = setInterval(async () => {
-      const inbox = await get(`/api/inbox?after_event=${lastEvent}`).catch(() => null);
-      if (!inbox) return;
+    if (stopWatching) return;
+    stopWatching = poll(async () => {
+      const inbox = await get(`/api/inbox?after_event=${lastEvent}`);
       for (const ev of inbox.cart.events.filter((e) => e.run_id === runId)) toast(ev.message, ev.ok ? "ok" : "err");
       lastEvent = inbox.cart.last_event_id;
-      if (!inbox.cart.pending) { clearInterval(poll); poll = null; draw(); }
+      if (inbox.cart.pending) return false;
+      stopWatching = null;
+      await draw();
+      return true;
     }, 1500);
   }
 
@@ -57,7 +63,7 @@ export async function render(el, [runId]) {
   lastEvent = inbox.cart.last_event_id;
   const run = await draw();
   if (inbox.cart.pending || run.counts.adding) watch();
-  return { cleanup: () => poll && clearInterval(poll) };
+  return { cleanup: () => stopWatching?.() };
 }
 
 function priceBlock(p) {
@@ -78,7 +84,7 @@ function historyLine(sel) {
   if (req?.last_purchased) bits.push(`last bought ${req.last_purchased.days_ago} days ago`);
   else if (req?.last_added) bits.push(`last added ${req.last_added.days_ago} days ago`);
   if (req?.last_removed?.note) bits.push(`last removed: “${req.last_removed.note}”`);
-  return bits.length ? h("div", { class: "small muted" }, bits.join(" · ")) : null;
+  return bits.length ? h("div", { class: "small muted" }, bits.slice(0, 3).join(" · ")) : null;
 }
 
 function product(sel) {
@@ -106,7 +112,7 @@ function card(run, c, redraw) {
   if (run.editable && sel.status === "pending") {
     let option = sel.selection_id;
     if (c.kind === "group" && c.options.length > 1) {
-      const opts = h("div", { class: "options" }, h("div", { class: "small muted" }, "Options — pick one, then Approve"));
+      const opts = h("div", { class: "options" }, h("div", { class: "small muted" }, "Choose one, then Approve"));
       for (const o of c.options) {
         const radio = h("input", { type: "radio", name: `opt-${c.id}`, value: o.selection_id, checked: o.selection_id === sel.selection_id,
           onchange: () => { option = o.selection_id; } });
@@ -119,23 +125,26 @@ function card(run, c, redraw) {
       box.append(opts);
     }
     const subOk = h("input", { type: "checkbox", checked: sel.substitution_allowed });
-    const subNote = h("input", { value: sel.substitution_note || "", placeholder: "OK substitute? e.g. any brand, same size", maxLength: 250, style: { flex: 1, minWidth: "200px" } });
-    const note = h("textarea", { rows: 2, placeholder: "Note for the assistant (optional), e.g. “still have two jars” or “prefer the sourdough”" });
+    const subNote = h("input", { value: sel.substitution_note || "", placeholder: "Which substitutes are OK? e.g. any brand, same size", maxLength: 250, class: "grow" });
+    const note = h("textarea", { rows: 2, placeholder: "Note for the assistant, e.g. “still have two jars” or “prefer the sourdough”" });
     const weight = sel.product.sold_by === "weight";
-    const qty = h("input", { type: "number", value: sel.quantity, min: weight ? 0.1 : 1, step: weight ? "any" : 1, style: { width: "5em" } });
-    const decide = (decision) => async (e) => busy(e.target, async () => {
+    const qty = h("input", { type: "number", value: sel.quantity, min: weight ? 0.1 : 1, step: weight ? "any" : 1, style: { width: "4.5em" }, "aria-label": "Quantity" });
+    const decide = (decision) => (e) => busy(e.target, async () => {
       const r = await post(`/api/runs/${run.run_id}/selections/${sel.selection_id}/triage`, {
         decision, option: option !== sel.selection_id ? option : null, note: note.value || null, quantity: Number(qty.value) || null,
         sub_allowed: subOk.checked, sub_note: subNote.value || null });
       if (r.message) toast(r.message, r.needs_session ? "err" : "ok");
       await redraw();
     });
-    box.append(h("div", { class: "row small", style: { marginTop: "10px" } }, h("label", { class: "row" }, subOk, "Substitutes OK"), subNote),
-      h("div", { style: { marginTop: "8px" } }, note),
-      h("div", { class: "row", style: { marginTop: "8px" } }, h("label", { class: "row" }, "Qty", qty),
-        h("span", { class: "spacer" }), link(`#/product/${sel.product.product_id}?sel=${sel.selection_id}`, "Swap / details"),
+    box.append(
+      h("div", { class: "row", style: { marginTop: "10px" } }, h("label", { class: "row" }, "Qty", qty),
+        h("span", { class: "spacer" }),
         h("button", { class: "danger", onclick: decide("remove") }, "Remove"),
-        h("button", { class: "primary", onclick: decide("keep") }, "Approve")));
+        h("button", { class: "primary", onclick: decide("keep") }, "Approve")),
+      more(sel.substitution_allowed || sel.substitution_note ? "Note, substitutes or swap (substitutes on)" : "Note, substitutes or swap",
+        note,
+        h("div", { class: "row small" }, h("label", { class: "row" }, subOk, "Substitutes OK"), subNote),
+        link(`#/product/${sel.product.product_id}?sel=${sel.selection_id}`, "Swap for a different product…")));
   } else {
     box.append(h("div", { class: "row small muted", style: { marginTop: "8px" } }, `Qty ${sel.quantity}`,
       sel.suggested_quantity && sel.suggested_quantity !== sel.quantity ? ` (suggested ${sel.suggested_quantity})` : "",

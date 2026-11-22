@@ -65,13 +65,42 @@ export function toast(message, kind = "ok") {
   setTimeout(() => t.remove(), kind === "err" ? 10000 : 5000);
 }
 
-// Run an async action from a button: disables it while running and reports errors.
-export async function busy(button, fn) {
-  const label = button?.textContent;
-  if (button) { button.disabled = true; button.dataset.busy = "1"; }
+// Run an async action from a button: shows it's working, blocks repeat clicks, and reports errors.
+// The button's card (or `scope`) is locked too, so e.g. Approve and Remove can't both be clicked at once.
+export async function busy(button, fn, scope = button?.closest(".card, .lock")) {
+  if (button?.dataset.busy) return undefined;
+  const controls = scope ? [...scope.querySelectorAll("button, input, select, textarea")].filter((c) => !c.disabled) : [];
+  if (button && !controls.includes(button)) controls.push(button);
+  controls.forEach((c) => { c.disabled = true; });
+  if (button) button.dataset.busy = "1";
+  scope?.classList.add("working");
   try { return await fn(); }
-  catch (e) { toast(e.message || String(e), "err"); throw e; }
-  finally { if (button) { button.disabled = false; delete button.dataset.busy; if (label) button.textContent = label; } }
+  catch (e) { if (e.name !== "AbortError") toast(e.message || String(e), "err"); return undefined; }
+  finally {
+    controls.forEach((c) => { c.disabled = false; });
+    if (button) delete button.dataset.busy;
+    scope?.classList.remove("working");
+  }
+}
+
+// Repeat `fn` every `ms` until it returns true or stop() is called. One call at a time (a slow server never
+// piles up requests), and it waits while the tab is hidden.
+export function poll(fn, ms) {
+  let stopped = false, timer = null;
+  const tick = async () => {
+    if (stopped) return;
+    if (document.hidden) { timer = setTimeout(tick, ms); return; }
+    let done = false;
+    try { done = await fn(); } catch { /* try again next time */ }
+    if (!done && !stopped) timer = setTimeout(tick, ms);
+  };
+  timer = setTimeout(tick, ms);
+  return () => { stopped = true; clearTimeout(timer); };
+}
+
+// A section that's closed until someone wants it: keeps rarely needed controls out of the way.
+export function more(label, ...children) {
+  return h("details", { class: "more" }, h("summary", {}, label), h("div", { class: "more-body" }, ...children));
 }
 
 // Internal links: "#/runs/abc".
@@ -110,11 +139,15 @@ export function richText(text) {
 
 function inline(text) {
   const out = [];
-  const re = /\*\*(.+?)\*\*|(#\/[\w\-/?=&.]+)/g;
+  // **bold**, *italic*, [label](#/route), and bare #/route links. Anything else stays plain text.
+  const re = /\*\*(.+?)\*\*|\[([^\]]+)\]\((#\/[\w\-/?=&.]+)\)|(#\/[\w\-/?=&.]+)|\*([^*\s][^*]*)\*/g;
   let last = 0, m;
   while ((m = re.exec(text))) {
     if (m.index > last) out.push(text.slice(last, m.index));
-    out.push(m[1] ? h("strong", {}, m[1]) : link(m[2], m[2].startsWith("#/runs/") ? "review run" : m[2].slice(2)));
+    if (m[1]) out.push(h("strong", {}, m[1]));
+    else if (m[2]) out.push(link(m[3], m[2]));
+    else if (m[4]) out.push(link(m[4], m[4].startsWith("#/runs/") ? "review the run" : m[4].slice(2)));
+    else out.push(h("em", {}, m[5]));
     last = re.lastIndex;
   }
   if (last < text.length) out.push(text.slice(last));
