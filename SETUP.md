@@ -96,8 +96,10 @@ Open your address, enter your email and the code you receive. Then, in the app:
 3. **Settings → LLM**: the defaults use Gemini Flash-Lite for quick jobs and Gemini Flash for planning. Press
    **Test** on each. Free-tier limits differ per key: check AI Studio → Rate limits and enter them under
    "Free-tier limits" so the app paces itself.
-4. Optional: Notion ([docs/notion.md](docs/notion.md)) and the daily schedule (Settings → Schedule).
-5. Try **Quick Shop** on Home: "2 L of 2% milk and bananas". Then check the **Cart** page.
+4. **Prompts → About your household**: a few lines about who's eating, tastes, diets and kitchen gear. The
+   assistant reads it before every task. Everything else it's told is on the same page if you want to tweak it.
+5. Optional: Notion ([docs/notion.md](docs/notion.md)) and the daily schedule (Settings → Schedule).
+6. Try **Quick Shop** on Home: "2 L of 2% milk and bananas". Then check the **Cart** page.
 
 The deal scan runs each morning (about 3 minutes); **Deals → Assess deals** runs it now.
 

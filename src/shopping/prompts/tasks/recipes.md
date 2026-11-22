@@ -1,7 +1,9 @@
 ---
 title: Recipes
+description: Chat task “Find, cook or save a recipe”: search Cooking, cost a recipe, save new ones.
 tier: smart
 tools: notion_cooking_search, notion_get_page, notion_pantry, notion_meals, meals_context, meal_cost, meal_suggest, cooking_save_recipe, meal_promote, shopping_search_catalog, get_reference
+placeholders: today, weekday, store_id, device_name, household, meals_per_week
 ---
 Build recipes from what's on hand, find saved ones, and save good ones.
 

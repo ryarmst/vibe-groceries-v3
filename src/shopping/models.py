@@ -544,3 +544,31 @@ class InboxEvent(Base):
     link: Mapped[str | None] = mapped_column(String(256))  # app route, e.g. "#/runs/abc"
     dedupe_key: Mapped[str | None] = mapped_column(String(128), index=True)
     dismissed_at: Mapped[datetime | None] = mapped_column(UTCDateTime)
+
+
+# =====================================================================================
+# Prompts edited in the app (defaults are the files in shopping/prompts/)
+# =====================================================================================
+
+class PromptOverride(Base):
+    __tablename__ = "prompt_overrides"
+
+    prompt_id: Mapped[str] = mapped_column(String(64), primary_key=True)  # e.g. "tasks/shop"
+    body: Mapped[str] = mapped_column(Text)
+    tier: Mapped[str | None] = mapped_column(String(8))  # fast / smart when changed from the default
+    updated_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow)
+    updated_by: Mapped[str | None] = mapped_column(String(64))
+
+
+class PromptRevision(Base):
+    """Earlier versions, so an edit can be undone (the last 20 per prompt)."""
+
+    __tablename__ = "prompt_revisions"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    prompt_id: Mapped[str] = mapped_column(String(64), index=True)
+    body: Mapped[str] = mapped_column(Text)
+    tier: Mapped[str | None] = mapped_column(String(8))
+    saved_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow)
+    saved_by: Mapped[str | None] = mapped_column(String(64))
+    note: Mapped[str | None] = mapped_column(String(32))

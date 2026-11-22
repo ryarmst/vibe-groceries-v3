@@ -18,7 +18,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 from starlette.responses import JSONResponse
 
 from shopping import context
-from shopping.api import chat_routes, inbox_routes, meals_routes, retailer_routes, settings_routes, shop_routes
+from shopping.api import chat_routes, inbox_routes, meals_routes, prompts_routes, retailer_routes, settings_routes, shop_routes
 from shopping.api.deps import install_error_handlers
 from shopping.config import settings
 from shopping.core.cart_queue import queue as cart_queue
@@ -113,7 +113,7 @@ async def lifespan(_: FastAPI):
 
 app = FastAPI(title="vibe-groceries", lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
 install_error_handlers(app)
-for r in (settings_routes, retailer_routes, inbox_routes, shop_routes, chat_routes, meals_routes):
+for r in (settings_routes, retailer_routes, inbox_routes, shop_routes, chat_routes, meals_routes, prompts_routes):
     app.include_router(r.router)
 if mcp:
     app.mount("/mcp", MCPBearerAuth(mcp_app, settings.mcp_token))

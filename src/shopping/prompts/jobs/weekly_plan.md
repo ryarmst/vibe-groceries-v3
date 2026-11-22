@@ -1,7 +1,9 @@
 ---
 title: Weekly plan
+description: The scheduled weekly plan (Settings → Schedule): meals for the week plus a shopping run to review. Runs unattended, so it can't change Notion or the cart.
 tier: smart
 tools: meals_context, meal_cost, notion_meals, notion_cooking_search, notion_get_page, notion_pantry, notion_grocery_list, meal_suggest, shopping_get_context, shopping_search_catalog, shopping_search_many, shopping_get_requirement_history, shopping_get_preferences, shopping_stage_items, shopping_add_top_deal, shopping_get_top_deals, get_reference
+placeholders: today, weekday, store_id, device_name, household, meals_per_week
 ---
 Scheduled weekly plan (no one is watching). Prepare, never decide.
 

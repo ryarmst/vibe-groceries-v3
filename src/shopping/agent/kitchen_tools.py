@@ -6,16 +6,14 @@ that changes the pantry, the grocery list or Cooking needs a person's confirmati
 
 from __future__ import annotations
 
-from pathlib import Path
 
-from shopping import appsettings
+from shopping import appsettings, prompts
 from shopping.agent.tools import CONFIRM, READ, SAFE, Tool, ToolContext, registry
 from shopping.core import catalog
 from shopping.database import session_scope
 from shopping.meals import planner
 from shopping.notion.kitchen import open_kitchen
 
-REFERENCES = Path(__file__).parent / "references"
 
 # Fields the agent may set on a Suggested Meal. Feedback and Promote are people's.
 MEAL_AGENT_FIELDS = {"Name", "Status", "Week", "Cook By", "Course", "Cuisine", "Main Ingredient", "Tags", "Effort", "Servings",
@@ -111,11 +109,12 @@ async def _meal_cost(args: dict, ctx: ToolContext):
 
 
 async def _reference(args: dict, ctx: ToolContext):
+    names = [pid.removeprefix("references/") for pid in prompts.catalog() if pid.startswith("references/")]
     name = args.get("name")
-    files = {p.stem: p for p in REFERENCES.glob("*.md")}
-    if name not in files:
-        return {"available": sorted(files)}
-    return files[name].read_text()
+    if name not in names:
+        return {"available": names}
+    with session_scope() as session:
+        return prompts.current(session, f"references/{name}")[0]
 
 
 # -- safe writes: the agent's own suggestions ---------------------------------------------------

@@ -1,13 +1,14 @@
-"""Playbooks: one short system prompt + a fixed tool list per job (the skills, ported for any LLM)."""
+"""Playbooks: one system prompt + a fixed tool list per task. The text lives in shopping/prompts/ (editable in
+the app); the tool list always comes from the file, so editing a prompt can't change what a task may do."""
 
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from functools import lru_cache
-from pathlib import Path
 
-DIR = Path(__file__).parent / "playbooks"
+from shopping import prompts
+from shopping.database import session_scope
+
 MODES = ("ask", "shop", "quick", "meals", "pantry", "recipes")  # chosen in the app; plan_week is for the scheduler
 # Never picked by "auto": Quick Shop changes the cart directly, so a person has to choose it.
 
@@ -21,21 +22,29 @@ class Playbook:
     body: str
 
 
-@lru_cache(maxsize=None)
+def prompt_id(name: str) -> str:
+    return "jobs/weekly_plan" if name == "plan_week" else f"tasks/{name}"
+
+
 def load(name: str) -> Playbook:
-    text = (DIR / f"{name}.md").read_text()
-    m = re.match(r"^---\n(.*?)\n---\n(.*)$", text, re.S)
-    if not m:
-        raise ValueError(f"playbook {name} has no header")
-    meta = dict(line.split(":", 1) for line in m.group(1).splitlines() if ":" in line)
-    meta = {k.strip(): v.strip() for k, v in meta.items()}
-    tools = tuple(t.strip() for t in meta.get("tools", "").split(",") if t.strip())
-    return Playbook(name, meta.get("title", name), meta.get("tier", "fast"), tools, m.group(2).strip())
+    p = prompts.get(prompt_id(name))
+    with session_scope() as session:
+        body, tier, _ = prompts.current(session, p.id)
+    return Playbook(name, p.title, tier or "fast", p.tools, body)
 
 
-@lru_cache(maxsize=None)
+def about() -> str:
+    """The household's own notes ("About your household"), as a section, or "" if they left it empty."""
+    with session_scope() as session:
+        body, _, _ = prompts.current(session, "about")
+    return f"## About this household\n{body}" if body.strip() else ""
+
+
 def common() -> str:
-    return (DIR / "_common.md").read_text().strip()
+    """Shared instructions for every chat task and the weekly plan, plus the household's notes."""
+    with session_scope() as session:
+        body, _, _ = prompts.current(session, "household")
+    return "\n\n".join(x for x in (body, about()) if x)
 
 
 _RULES = [

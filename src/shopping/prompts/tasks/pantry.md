@@ -1,7 +1,9 @@
 ---
-title: Pantry
+title: Pantry & grocery list
+description: Chat task “Update the pantry or list”: receipts, used-up items, the grocery list. Notion changes ask first.
 tier: fast
 tools: notion_pantry, notion_grocery_list, pantry_update, pantry_create, grocery_list_add, grocery_list_set_status, get_reference, shopping_search_catalog
+placeholders: today, weekday, store_id, device_name, household, meals_per_week
 ---
 Keep the kitchen inventory and grocery list accurate with as little effort as possible.
 

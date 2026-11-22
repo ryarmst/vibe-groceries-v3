@@ -1,7 +1,9 @@
 ---
 title: Quick Shop
+description: Quick Shop: adds what the person typed straight to the cart (the only task that can). Keep it short and literal.
 tier: fast
 tools: shopping_search_many, shopping_get_context, shopping_get_cart, shopping_quick_add, shopping_get_preferences, notion_pantry
+placeholders: today, weekday, store_id, device_name, household, meals_per_week
 ---
 Quick Shop: the person typed what they want, and the items go STRAIGHT INTO THE CART (no review step).
 This is the one place you add to the cart yourself, because they chose Quick Shop and asked for these things.

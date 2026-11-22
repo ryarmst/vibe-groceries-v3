@@ -10,6 +10,8 @@ on your own server:
   stock-up alerts), plus the assistant's picks of great deals on things you haven't tried.
 - **Meals** (with Notion): suggestions built around the deals and what's about to expire, with recipes.
 - **Chat**: ask about prices, past orders, the pantry; paste a receipt; save recipes.
+- **Prompts you can edit**: every instruction the assistant gets is plain text on the **Prompts** page
+  (describe your household, change house rules, tune a task), with history and one-click reset.
 
 It **can't check out, pay or book a pickup time**: you do that on nofrills.ca.
 
@@ -19,8 +21,9 @@ It **can't check out, pay or book a pickup time**: you do that on nofrills.ca.
 
 - One Docker container (FastAPI + SQLite) plus a Cloudflare Tunnel; Cloudflare Access decides who can open it.
 - The assistant works with Gemini (free tier is enough), OpenAI, Claude, Groq, OpenRouter, Mistral or a local
-  model. Each task (shop, Quick Shop, meals, pantry, recipes, ask) has its own short prompt and tool list in
-  `src/shopping/agent/playbooks/`.
+  model. Each task (Quick Shop, plan a shop, meals, pantry, recipes, ask) has its own short prompt and tool
+  list. All prompts are Markdown files in [`src/shopping/prompts/`](src/shopping/prompts/README.md), editable
+  in the app.
 - No Frills sign-in happens once in your browser; the server keeps the session alive. See [docs/auth.md](docs/auth.md).
 - Optional Notion integration for the pantry, grocery list, recipes and suggested meals: [docs/notion.md](docs/notion.md).
 

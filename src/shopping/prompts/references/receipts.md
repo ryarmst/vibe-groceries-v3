@@ -1,3 +1,7 @@
+---
+title: Reading grocery receipts
+description: Looked up by the assistant (get_reference) when decoding a pasted grocery receipt.
+---
 # Reading grocery receipts
 
 The household shops mostly at Canadian grocers (Loblaw banners such as No Frills, Zehrs, and Real Canadian Superstore; also Costco, Metro, and Food Basics). Receipts are terse; decode carefully and prefer "Unclear" over a confident wrong guess.

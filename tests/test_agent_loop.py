@@ -74,7 +74,7 @@ async def test_read_tool_then_answer(monkeypatch, tools):
     use(monkeypatch, fake)
     tid = new_thread()
     evs = await collect(loop.run(tid, user_text="do we have eggs in the fridge?", device_name="Sam"))
-    assert evs[0] == {"type": "mode", "mode": "pantry", "title": "Pantry"}
+    assert evs[0] == {"type": "mode", "mode": "pantry", "title": "Pantry & grocery list"}
     assert tools["pantry"] == [{"query": "eggs"}]
     assert "".join(e["text"] for e in evs if e["type"] == "text") == "You have eggs until Nov 22."
     assert evs[-1] == {"type": "done", "awaiting_confirmation": False}

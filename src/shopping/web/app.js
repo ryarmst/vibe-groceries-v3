@@ -16,6 +16,8 @@ const ROUTES = [
   [/^#\/history$/, "history", "History"],
   [/^#\/chat\/([\w-]+)$/, "chat"],
   [/^#\/chat$/, "chat", "Chat"],
+  [/^#\/prompts\/(.+)$/, "prompts"],
+  [/^#\/prompts$/, "prompts", "Prompts"],
   [/^#\/settings$/, "settings", "Settings"],
 ];
 
@@ -23,6 +25,7 @@ const NAV = ROUTES.filter((r) => r[2]);
 const view = document.getElementById("view");
 const nav = document.getElementById("nav");
 let current = null;
+let shownHash = location.hash;
 
 function renderNav(name) {
   clear(nav);
@@ -34,6 +37,12 @@ function renderNav(name) {
 }
 
 async function route() {
+  // A view with unsaved edits (the prompt editor) can ask before it's replaced.
+  if (location.hash !== shownHash && current?.dirty?.() && !confirm("Leave without saving your changes?")) {
+    history.replaceState(null, "", shownHash || "#/");
+    return;
+  }
+  shownHash = location.hash;
   const [path, qs] = (location.hash || "#/").split("?");
   const query = Object.fromEntries(new URLSearchParams(qs || ""));
   const match = ROUTES.map(([re, mod]) => [re.exec(path), mod]).find(([m]) => m);

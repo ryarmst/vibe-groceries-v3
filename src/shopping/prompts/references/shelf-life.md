@@ -1,3 +1,7 @@
+---
+title: Shelf-life estimates
+description: Looked up by the assistant (get_reference) to estimate expiry dates by food and storage.
+---
 # Shelf-life estimates
 
 Estimated use-by, in days from the purchase date, for items stored as indicated. Values are deliberately conservative: they feed reminders, so an early nudge is better than spoiled food. They assume a fridge at or below 4 °C (40 °F) and unopened packaging where relevant. A date someone states (printed best-before, "it's still fine") overrides the estimate.

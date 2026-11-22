@@ -28,7 +28,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-shopping = ["migrations/*.py", "migrations/*.mako", "migrations/versions/*.py", "agent/playbooks/*.md", "agent/references/*.md",
+shopping = ["migrations/*.py", "migrations/*.mako", "migrations/versions/*.py", "prompts/*.md", "prompts/*/*.md",
             "web/*.html", "web/*.js", "web/*.css", "web/lib/*.js", "web/views/*.js"]
 
 [tool.pytest.ini_options]

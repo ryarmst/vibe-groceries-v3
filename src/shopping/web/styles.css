@@ -93,3 +93,11 @@ main { max-width: 1040px; margin: 0 auto; padding: 12px 16px 90px; }
 .task.on { border-color: var(--accent); background: var(--chip); }
 .task-icon { font-size: 22px; }
 .block { display: block; }
+
+/* prompts */
+textarea.mono, .mono-pre { font: 13px/1.5 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+textarea.mono { min-height: 50vh; tab-size: 2; }
+.mono-pre { white-space: pre-wrap; word-break: break-word; background: var(--chip); padding: 10px 12px; border-radius: 8px; max-height: 60vh; overflow: auto; margin: 8px 0 0; }
+a.prompt-row { display: block; text-decoration: none; color: inherit; }
+a.prompt-row:hover { border-color: var(--accent); }
+details.card summary { cursor: pointer; font-weight: 600; }

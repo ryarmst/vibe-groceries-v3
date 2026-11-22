@@ -22,7 +22,7 @@ from zoneinfo import ZoneInfo
 
 from sqlalchemy import select
 
-from shopping import appsettings, context
+from shopping import appsettings, context, prompts
 from shopping.agent import budget, playbooks, quota
 from shopping.agent.providers import registry as providers
 from shopping.agent.providers.base import Done, ProviderError, TextDelta, ToolCall, Usage
@@ -57,13 +57,7 @@ def _system(pb: playbooks.Playbook, device_name: str, jobs: dict) -> str:
     now = datetime.now(ZoneInfo(settings.timezone))
     fill = {"today": now.strftime("%Y-%m-%d"), "weekday": now.strftime("%A"), "store_id": settings.store_id,
             "device_name": device_name or "a household member", "household": settings.household, "meals_per_week": jobs.get("meals_per_week", 5)}
-    body = pb.body
-    for k, v in fill.items():
-        body = body.replace("{" + k + "}", str(v))
-    common = playbooks.common()
-    for k, v in fill.items():
-        common = common.replace("{" + k + "}", str(v))
-    return f"{common}\n\n## Mode: {pb.title}\n{body}"
+    return f"{prompts.render(playbooks.common(), fill)}\n\n## Mode: {pb.title}\n{prompts.render(pb.body, fill)}"
 
 
 def _candidates(llm: dict, tier: str) -> list[tuple[str, str]]:

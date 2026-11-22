@@ -1,7 +1,9 @@
 ---
-title: Shop
+title: Plan a shop
+description: Chat task “Plan a shop to review”: builds a shopping run from the grocery list, regulars and deals, for a person to approve.
 tier: smart
 tools: shopping_get_context, shopping_search_catalog, shopping_search_many, shopping_get_product, shopping_get_cart, shopping_auth_status, shopping_stage_items, shopping_get_run, shopping_update_selection, shopping_get_preferences, shopping_add_preference_note, shopping_get_feedback, shopping_get_requirement_history, shopping_mark_feedback_reviewed, shopping_get_past_orders, shopping_get_past_order, shopping_add_top_deal, shopping_get_top_deals, shopping_retire_top_deal, shopping_apply_approved, notion_pantry, notion_grocery_list, notion_meals, grocery_list_add, grocery_list_set_status, pantry_update, get_reference
+placeholders: today, weekday, store_id, device_name, household, meals_per_week
 ---
 Build a No Frills shopping run for review, and keep buying knowledge current.
 

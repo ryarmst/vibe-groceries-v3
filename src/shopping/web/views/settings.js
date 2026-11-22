@@ -12,6 +12,8 @@ export async function render(el) {
     get("/api/llm/usage"), get("/api/me")]);
   el.append(await nofrillsCard(), budgetCard(all.budget, usage.summary, usage.models_today || []), llmCard(all.llm, all.providers),
     keysCard(secrets.secrets), notionCard(all.notion), jobsCard(all.jobs),
+    section("Prompts", h("p", {}, "The assistant's instructions are editable: describe your household, change house rules, or tune a task. ",
+      h("a", { href: "#/prompts" }, "Open Prompts →"))),
     section("You", h("p", {}, "Signed in as ", h("strong", {}, me.name), ` (${me.email}) through Cloudflare Access.`)));
 }
 
