@@ -1,0 +1,38 @@
+[project]
+name = "vibe-groceries"
+version = "3.0.0"
+description = "Household grocery and meal assistant for No Frills: web app, LLM agent, Notion. Cannot check out."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "cryptography>=42",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "httpx>=0.27",
+    "mcp>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+vibe-groceries = "shopping.app:main"
+vibe = "shopping.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+shopping = ["migrations/*.py", "migrations/*.mako", "migrations/versions/*.py", "agent/playbooks/*.md", "agent/references/*.md",
+            "web/*.html", "web/*.js", "web/*.css", "web/lib/*.js", "web/views/*.js"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"

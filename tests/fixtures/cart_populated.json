@@ -1,0 +1,342 @@
+{
+ "id": "00000000-0000-4000-8000-000000000001",
+ "modifiedTime": "2026-11-03T17:02:21.510Z",
+ "status": "OPEN",
+ "bannerId": "nofrills",
+ "customer": {
+  "pcid": "",
+  "name": "Test Customer",
+  "email": "customer@example.invalid"
+ },
+ "orders": [
+  {
+   "internalOrderId": "00000000-0000-4000-8000-000000000002",
+   "orderId": "00000000-0000-4000-8000-000000000002",
+   "status": "OPEN",
+   "vendorId": "nofrills",
+   "entries": [
+    {
+     "quantity": 2.0,
+     "offer": {
+      "id": "20039581001_EA",
+      "status": "Active",
+      "product": {
+       "id": "20039581001_EA",
+       "name": "Smooth Peanut Butter",
+       "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Smooth Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty flavour and irresistible, creamy texture, Kraft Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on toast, PB&J sandwiches and fruits or vegetables. Our smooth peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Signature delicious, nutty taste and creamy texture</li><li>Made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's Favourite Peanut Butter</li><li>Proudly prepared in Canada</li></ul>",
+       "baseUnit": "each",
+       "brand": "Kraft",
+       "subBrand": "CRUNCHY",
+       "primaryImage": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_120.png",
+       "weighted": false,
+       "price": null,
+       "sizeLabel": "KG",
+       "aisleCategoryCode": "27985",
+       "aisleName": "Food",
+       "isVariant": false,
+       "variantGroupId": null,
+       "variantTheme": null,
+       "offerType": "OG",
+       "memberOnlyPrice": null,
+       "mop": false
+      },
+      "regularPrice": 12.58,
+      "wasPrice": 6.29,
+      "sellingIncrement": 1,
+      "sellingUnit": "EA",
+      "sellingType": "SOLD_BY_EACH",
+      "fulfillmentMethods": [
+       "pickup"
+      ],
+      "webLink": "/smooth-peanut-butter/p/20039581001_EA",
+      "promotionLabel": "SALE",
+      "promotions": [],
+      "vendor": {
+       "id": "1234"
+      },
+      "minOrderQuantity": 1.0,
+      "maxOrderQuantity": 24.0,
+      "availabilityStatus": "OK",
+      "badges": {
+       "dealBadge": null,
+       "loyaltyBadge": null,
+       "textBadge": null,
+       "newItemBadge": null,
+       "hotmBadge": null,
+       "promotionalBadge": null,
+       "recyclingFeeBadge": null,
+       "mustTryBadge": null,
+       "preparedInCanadaBadge": {
+        "expiryDate": null,
+        "promoType": null,
+        "text": "Prepared in Canada",
+        "type": "PREPARED_IN_CANADA"
+       },
+       "madeInCanadaBadge": null,
+       "productOfCanadaBadge": null,
+       "tariffAppliedBadge": null,
+       "preparedInQuebecBadge": null
+      },
+      "liam": "20039581001_EA",
+      "itemType": "REGULAR"
+     },
+     "prices": {
+      "totalRegularPrice": 12.58,
+      "totalSalePrice": 11.94,
+      "salePrice": 5.97,
+      "memberOnlyPrice": 0.0,
+      "comparisonPrices": [
+       {
+        "price": 0.6,
+        "unit": "g",
+        "quantity": 100
+       }
+      ],
+      "ehfTotal": null,
+      "deposit": null,
+      "environmentalHandlingFee": null,
+      "taxInfo": ""
+     },
+     "substitutionPreference": {
+      "substitutionAllowed": true,
+      "comment": ""
+     },
+     "shippingTracking": null,
+     "selectedSubstitutionDetails": null,
+     "modifiedTime": "2026-11-03T17:02:21.510Z",
+     "creationTime": "2026-11-03T17:02:21.510Z",
+     "selectedSubstitution": null,
+     "numberOfItems": 2.0,
+     "subscriptionQuantity": null,
+     "subscriptionAvailableCadences": [],
+     "subscriptionCadenceInterval": null,
+     "subscriptionCadence": null
+    },
+    {
+     "quantity": 1.0,
+     "offer": {
+      "id": "20296401_EA",
+      "status": "Active",
+      "product": {
+       "id": "20296401_EA",
+       "name": "Peaches and Cream Corn",
+       "description": "<p>Peaches and Cream Corn brings naturally sweet flavour and crisp texture to everyday meals. Made with whole kernel corn and vacuum packed to help maintain its freshness, it's delicious served as a simple side dish or added to salads, soups, casseroles, and pasta dishes. It's a versatile kitchen staple that's perfect for everything from quick weeknight dinners to family favourites.</p><br><br><p>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck</p>",
+       "baseUnit": "each",
+       "brand": "No Name",
+       "subBrand": null,
+       "primaryImage": "https://digital.loblaws.ca/PCX/20296401_EA/en/1/20296401_en_front_v2_120.png",
+       "weighted": false,
+       "price": null,
+       "sizeLabel": "ML",
+       "aisleCategoryCode": "27985",
+       "aisleName": "Food",
+       "isVariant": false,
+       "variantGroupId": null,
+       "variantTheme": null,
+       "offerType": "OG",
+       "memberOnlyPrice": null,
+       "mop": false
+      },
+      "regularPrice": 1.25,
+      "wasPrice": 1.25,
+      "sellingIncrement": 1,
+      "sellingUnit": "EA",
+      "sellingType": "SOLD_BY_EACH",
+      "fulfillmentMethods": [
+       "pickup"
+      ],
+      "webLink": "/peaches-and-cream-corn/p/20296401_EA",
+      "promotionLabel": "SALE",
+      "promotions": [],
+      "vendor": {
+       "id": "1234"
+      },
+      "minOrderQuantity": 1.0,
+      "maxOrderQuantity": 24.0,
+      "availabilityStatus": "OK",
+      "badges": {
+       "dealBadge": null,
+       "loyaltyBadge": null,
+       "textBadge": null,
+       "newItemBadge": null,
+       "hotmBadge": null,
+       "promotionalBadge": null,
+       "recyclingFeeBadge": null,
+       "mustTryBadge": null,
+       "preparedInCanadaBadge": null,
+       "madeInCanadaBadge": null,
+       "productOfCanadaBadge": null,
+       "tariffAppliedBadge": null,
+       "preparedInQuebecBadge": null
+      },
+      "liam": "20296401_EA",
+      "itemType": "REGULAR"
+     },
+     "prices": {
+      "totalRegularPrice": 1.25,
+      "totalSalePrice": 1.0,
+      "salePrice": 1.0,
+      "memberOnlyPrice": 0.0,
+      "comparisonPrices": [
+       {
+        "price": 0.29,
+        "unit": "ml",
+        "quantity": 100
+       }
+      ],
+      "ehfTotal": null,
+      "deposit": null,
+      "environmentalHandlingFee": null,
+      "taxInfo": ""
+     },
+     "substitutionPreference": {
+      "substitutionAllowed": true,
+      "comment": ""
+     },
+     "shippingTracking": null,
+     "selectedSubstitutionDetails": null,
+     "modifiedTime": "2026-11-03T17:02:21.510Z",
+     "creationTime": "2026-11-03T17:02:21.510Z",
+     "selectedSubstitution": null,
+     "numberOfItems": 1.0,
+     "subscriptionQuantity": null,
+     "subscriptionAvailableCadences": [],
+     "subscriptionCadenceInterval": null,
+     "subscriptionCadence": null
+    }
+   ],
+   "exchangedBins": [],
+   "redeemableOptions": [],
+   "fulfillment": {
+    "type": "pickup",
+    "pickupBooking": {
+     "id": "",
+     "pickupStartTime": null,
+     "pickupEndTime": null,
+     "charge": 0,
+     "pickupLocation": {
+      "id": "1234",
+      "name": "Example NOFRILLS Anytown",
+      "orderContactNumber": "0000000000",
+      "locationType": "STORE",
+      "pickupType": "STORE",
+      "storeId": "1234",
+      "visible": true,
+      "shoppable": true,
+      "geoPoint": {
+       "latitude": 43.000000,
+       "longitude": -80.000000
+      },
+      "address": {
+       "country": "Canada",
+       "city": "Anytown",
+       "postalCode": "A1A 1A1",
+       "addressLabel": "",
+       "region": "Ontario",
+       "streetAddress": "635 Southdale Road E,"
+      },
+      "bufferTimeInHours": 4.0,
+      "orderNotificationTimeRestriction": {
+       "hoursBeforePickupStartTime": 0.5,
+       "hoursAfterPickupStartTime": 0.5
+      },
+      "features": {
+       "scanAndGo": false,
+       "instoreModeAvailableToPublic": null,
+       "arrivalDetectionEnabled": false,
+       "arrivalDetectionAvailableToPublic": false
+      },
+      "timeZone": "EST5EDT",
+      "baggingOptions": []
+     },
+     "slotType": "pickup",
+     "cutOffDate": null,
+     "slotExpiryDateTime": null
+    },
+    "delivery": null,
+    "pickupInstructions": {
+     "allowItemOnTopOrBottomShelf": true,
+     "bringOwnBags": false,
+     "comment": null
+    },
+    "courier": null
+   },
+   "vouchers": [],
+   "modifiedTime": null,
+   "maxAllowedGiftCard": 2,
+   "baggingInfo": null,
+   "customizedPromotions": {
+    "stampCards": {
+     "isRedeemed": null,
+     "balanceAvailable": null,
+     "rewardsAvailable": null,
+     "balanceRequestedToRedeem": null,
+     "eligibleItems": 0
+    },
+    "marvel": {
+     "eligibleToRedeem": false,
+     "isRedeemed": null
+    }
+   },
+   "totals": {
+    "subTotal": 12.94,
+    "totalDiscounts": 0.89,
+    "totalProductDiscounts": 0.0,
+    "totalVoucherDiscounts": 0.0,
+    "totalLoyaltyDiscount": 0.0,
+    "totalMemberOnlySavings": 0.0,
+    "totalPrice": 12.94,
+    "totalDeposit": null,
+    "totalPreauth": null,
+    "totalTax": 0.0,
+    "totalShippingFee": null,
+    "totalRedeemablePrice": 0,
+    "totalPointsToRedeem": null,
+    "totalCourierFee": null,
+    "totalPickupFee": 0,
+    "totalLoyaltyPoints": null,
+    "additionalFees": 0.0,
+    "totalEnvironmentalHandlingFee": null,
+    "estimatedTotal": 12.94,
+    "totalDeliveryTip": null,
+    "totalDeliveryFee": 0,
+    "totalServiceFee": 0,
+    "totalGiftCardAmount": 0
+   }
+  }
+ ],
+ "minCartValue": 30.0,
+ "hasLiquor": false,
+ "minPCXPassCartValue": 30.0,
+ "orderAggregations": {
+  "live": null,
+  "open": {
+   "taxBreakdown": [],
+   "totals": {
+    "subTotal": 12.94,
+    "totalDiscounts": 0.89,
+    "totalProductDiscounts": 0.0,
+    "totalVoucherDiscounts": 0.0,
+    "totalLoyaltyDiscount": 0.0,
+    "totalMemberOnlySavings": 0.0,
+    "totalPrice": 12.94,
+    "totalDeposit": null,
+    "totalPreauth": null,
+    "totalTax": 0.0,
+    "totalShippingFee": null,
+    "totalRedeemablePrice": 0,
+    "totalPointsToRedeem": null,
+    "totalCourierFee": null,
+    "totalPickupFee": 0,
+    "totalLoyaltyPoints": null,
+    "additionalFees": 0.0,
+    "totalEnvironmentalHandlingFee": null,
+    "estimatedTotal": 12.94,
+    "totalDeliveryTip": null,
+    "totalDeliveryFee": 0,
+    "totalServiceFee": 0,
+    "totalGiftCardAmount": 0
+   }
+  }
+ }
+}

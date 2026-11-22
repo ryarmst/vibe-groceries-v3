@@ -1,0 +1,4847 @@
+{
+ "slug": "pcx-srp-common-page",
+ "searchTerm": "",
+ "searchResultsCount": 1807,
+ "typedSearchTerms": "",
+ "searchTermSubmitted": "",
+ "selectedCategory": null,
+ "mlCorrectedTerm": "",
+ "esCorrectedTerm": "",
+ "quCorrectedTerm": "",
+ "searchRequestId": "00000000-0000-4000-8000-000000000001",
+ "modelVersion": "",
+ "searchVariation": "PCX_SEARCH_CIMULATE:SEARCH_CIMULATE_ENABLED|PCX_CIMULATE_RETRIEVAL_MODEL:CIMULATE_RETRIEVAL_MODEL_LATEST",
+ "headline": "Search Results Page",
+ "layout": {
+  "typeId": "productsPageLayout",
+  "sections": {
+   "categoryNavigationSection": null,
+   "filtersSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "filtersComponent",
+      "contentId": "5cwrHMaINpD0u7IR8pNKSM",
+      "variantId": null,
+      "id": "5cwrHMaINpD0u7IR8pNKSM",
+      "position": 0,
+      "data": {
+       "filtersLabel": "Filters",
+       "applyButtonText": "Filters",
+       "filterGroups": [
+        {
+         "code": "category",
+         "name": "Aisle",
+         "multiSelect": false,
+         "values": [
+          {
+           "code": "27985",
+           "name": "Food",
+           "count": 1413,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "27986",
+           "name": "Home & Kitchen",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "27987",
+           "name": "Baby",
+           "count": 15,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "27988",
+           "name": "Pet Food & Supplies",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "27994",
+           "name": "Personal Care & Beauty",
+           "count": 201,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "28011",
+           "name": "Household Supplies",
+           "count": 155,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "59630",
+           "name": "Health & Wellness",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "productBrand",
+         "name": "Brand",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "7UP",
+           "name": "7Up",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ANW",
+           "name": "A&W",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ALLN",
+           "name": "Allen's",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ARMS",
+           "name": "Armstrong",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "AUSS",
+           "name": "Aussie",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BABY",
+           "name": "Babybel",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BRNM",
+           "name": "Barnum's",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BLKD",
+           "name": "Black Diamond",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BNCE",
+           "name": "Bounce",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BNTY",
+           "name": "Bounty",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BRAR",
+           "name": "Brar's",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BRSK",
+           "name": "Brisk",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BRNI",
+           "name": "Britannia",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BRSD",
+           "name": "Brookside",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BURN",
+           "name": "Burnbrae Farms",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BC",
+           "name": "Butcher's Choice",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CADB",
+           "name": "Cadbury",
+           "count": 27,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CAMS",
+           "name": "Campbell's",
+           "count": 51,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CDRY",
+           "name": "Canada Dry",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CAPN",
+           "name": "Cap'n Crunch",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CARN",
+           "name": "Carnation",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CASC",
+           "name": "Cascade",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CATE",
+           "name": "Catelli",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CVFM",
+           "name": "CAVENDISH FARMS",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CDVY",
+           "name": "Cedar Valley",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHRM",
+           "name": "Charmin",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHTS",
+           "name": "Cheetos",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHIT",
+           "name": "Cheez-It",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CBAD",
+           "name": "Chef Boyardee",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHOL",
+           "name": "Cholula",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHRE",
+           "name": "Christie",
+           "count": 71,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CLRX",
+           "name": "Clorox",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CLVL",
+           "name": "Clover Leaf",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "COCA",
+           "name": "Coca-Cola",
+           "count": 15,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "COOK",
+           "name": "Cooks",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CRVE",
+           "name": "Crave",
+           "count": 24,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CRST",
+           "name": "Crest",
+           "count": 25,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CRPY",
+           "name": "Crispy",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CMIN",
+           "name": "Crispy Minis",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CRUS",
+           "name": "Crush",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DITA",
+           "name": "D'Italiano",
+           "count": 13,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DARE",
+           "name": "Dare",
+           "count": 44,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DAWN",
+           "name": "Dawn",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DELM",
+           "name": "Del Monte",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DOLE",
+           "name": "Dole",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DOM0",
+           "name": "DOM",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DNHS",
+           "name": "Donut House",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DORI",
+           "name": "Doritos",
+           "count": 13,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DOWN",
+           "name": "Downy",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DOET",
+           "name": "Dr Oetker",
+           "count": 19,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "DRPR",
+           "name": "Dr Pepper",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ESMT",
+           "name": "Eat Smart",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ESS",
+           "name": "Everyday Essentials",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FAN",
+           "name": "FANTA",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FANT",
+           "name": "Fantastik",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FM",
+           "name": "Farmer's Market",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FEBR",
+           "name": "Febreze",
+           "count": 10,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FIB1",
+           "name": "Fibre 1",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FNSH",
+           "name": "Finish",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FLCY",
+           "name": "Fleecy",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FRNK",
+           "name": "Frank's",
+           "count": 9,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FREN",
+           "name": "Frenchs",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FRSA",
+           "name": "Fresca",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FUZE",
+           "name": "Fuze",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "GAIN",
+           "name": "Gain",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "GTRD",
+           "name": "Gatorade",
+           "count": 17,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "GENM",
+           "name": "General Mills",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "GILT",
+           "name": "Gillette",
+           "count": 24,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "GROC",
+           "name": "Green Ocean",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HAGD",
+           "name": "Haagen Dazs",
+           "count": 27,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HABI",
+           "name": "Habitant",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HALD",
+           "name": "Haldiram",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HANS",
+           "name": "Hans",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HEAD",
+           "name": "Head & Shoulders",
+           "count": 13,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HCHC",
+           "name": "Healthy Choice",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HLMN",
+           "name": "Hellmann's",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HLVA",
+           "name": "Heluva",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HERB",
+           "name": "Herbal Essences",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HRSY",
+           "name": "Hershey's",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HLDY",
+           "name": "Holiday",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "IDAH",
+           "name": "Idahoan",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "IMPL",
+           "name": "Imperial",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "IOGO",
+           "name": "IOGO",
+           "count": 19,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "IVRY",
+           "name": "Ivory",
+           "count": 12,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "JELL",
+           "name": "Jell-O",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KEEB",
+           "name": "Keebler",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KLGS",
+           "name": "Kelloggs",
+           "count": 48,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KRFT",
+           "name": "Kraft",
+           "count": 22,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KRKM",
+           "name": "Krispy Kreme",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KURK",
+           "name": "Kurkure",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LBGT",
+           "name": "La Baguetterie",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LCTN",
+           "name": "Lactantia",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LCLR",
+           "name": "Leclerc",
+           "count": 28,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LBRT",
+           "name": "Liberte",
+           "count": 9,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LIND",
+           "name": "Lindt",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LOTU",
+           "name": "Lotus",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LYSL",
+           "name": "Lysol",
+           "count": 19,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MALE",
+           "name": "Maple Leaf",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MLFL",
+           "name": "Maple Lodge Farms LT",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MRNA",
+           "name": "Marina",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MXWL",
+           "name": "Maxwell House",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MYND",
+           "name": "Maynards",
+           "count": 12,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MCCA",
+           "name": "McCain",
+           "count": 29,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "META",
+           "name": "Metamucil",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MVIC",
+           "name": "Miss Vickies",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MLSN",
+           "name": "Molisana",
+           "count": 10,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MONR",
+           "name": "Monster",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MONS",
+           "name": "Monster Energy",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MRMG",
+           "name": "Mother's Magic",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MRGD",
+           "name": "Mr Goudas",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MRNO",
+           "name": "Mr Noodles",
+           "count": 9,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MCLN",
+           "name": "Mr. Clean",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MUG",
+           "name": "Mug",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MUSH",
+           "name": "MUSH",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NANA",
+           "name": "Nanak",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NATV",
+           "name": "Native",
+           "count": 16,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NAVA",
+           "name": "Nature Valley",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NLSN",
+           "name": "Neilson",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NRDS",
+           "name": "Nerds",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NSCF",
+           "name": "Nescafe",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NTEA",
+           "name": "Nestea",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NSTL",
+           "name": "Nestlé",
+           "count": 24,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "N",
+           "name": "No Name",
+           "count": 84,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NUTE",
+           "name": "Nutella",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "OFRA",
+           "name": "O'Frais",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "OHRY",
+           "name": "Oh Henry!",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "OLAY",
+           "name": "Olay",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "OEP",
+           "name": "Old El Paso",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "OSPI",
+           "name": "Old Spice",
+           "count": 35,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ORLB",
+           "name": "Oral B",
+           "count": 24,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PMPR",
+           "name": "Pampers",
+           "count": 15,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PNTN",
+           "name": "Pantene",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PCBL",
+           "name": "PC Black Label",
+           "count": 17,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PCB",
+           "name": "PC Blue Menu",
+           "count": 18,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SP",
+           "name": "PC Splendido",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PTEA",
+           "name": "Peace Tea",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PEPS",
+           "name": "Pepsi",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PERS",
+           "name": "Persil",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PCCB",
+           "name": "Philadelphia",
+           "count": 20,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PLRS",
+           "name": "Pillers",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PBRY",
+           "name": "Pillsbury",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PISO",
+           "name": "Pine Sol",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PLTR",
+           "name": "Planters",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "POGO",
+           "name": "Pogo",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "POST",
+           "name": "Post",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "0PRN",
+           "name": "PRAN",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "P",
+           "name": "President's Choice",
+           "count": 144,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PRGL",
+           "name": "Pringles",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PREX",
+           "name": "Purex",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PURI",
+           "name": "Purina",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "QUKR",
+           "name": "Quaker",
+           "count": 53,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "QLTY",
+           "name": "Quality",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "0REA",
+           "name": "Rea",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "REES",
+           "name": "Reese's",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "REGN",
+           "name": "Reign",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ROO",
+           "name": "Rooster",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ROSE",
+           "name": "Rose",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "RYLE",
+           "name": "Royale",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SATH",
+           "name": "Santosh",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SCHN",
+           "name": "Schneiders",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SBUB",
+           "name": "Scrubbing Bubbles",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SQ",
+           "name": "Seaquest",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SECR",
+           "name": "Secret",
+           "count": 19,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SHBM",
+           "name": "Sherbon",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SGGS",
+           "name": "siggi's",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SNYD",
+           "name": "Snyders",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SPKD",
+           "name": "Sour Patch Kids",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SPIT",
+           "name": "Sprite",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "STHU",
+           "name": "St Hubert",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "STBU",
+           "name": "Starbucks",
+           "count": 16,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SUNL",
+           "name": "Sunlight",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SU",
+           "name": "Suraj",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SWCH",
+           "name": "Swiss Chalet",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TBEL",
+           "name": "Taco Bell",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TASS",
+           "name": "Tassimo",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TAFA",
+           "name": "Taylor Farms",
+           "count": 11,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TPTN",
+           "name": "Temptations",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TEND",
+           "name": "Tenderflake",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TTLY",
+           "name": "Tetley",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TIDE",
+           "name": "Tide",
+           "count": 14,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TIMO",
+           "name": "Timothy's",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TOST",
+           "name": "Tostitos",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TRIS",
+           "name": "Triscuit",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TWIZ",
+           "name": "Twizzler",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "UNIC",
+           "name": "Unico",
+           "count": 22,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "WNDX",
+           "name": "Windex",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "YOPL",
+           "name": "Yoplait",
+           "count": 9,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "YORK",
+           "name": "York",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ZAHA",
+           "name": "Zabiha Halal",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ZVIA",
+           "name": "Zevia",
+           "count": 9,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ZPLC",
+           "name": "Ziploc",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "promotions",
+         "name": "Deals",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "Price Reduction",
+           "name": "Price Reduction",
+           "count": 900,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$1,$2,$3,$4,$5",
+           "name": "$1,$2,$3,$4,$5",
+           "count": 689,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PC Points",
+           "name": "PC Optimum Points",
+           "count": 66,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "Member Only Price",
+           "name": "Member Only Price",
+           "count": 33,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "Multi-Buy",
+           "name": "Multi-Buy",
+           "count": 25,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "price ranges",
+         "name": "Price",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "$1 and under",
+           "name": "$1 and under",
+           "count": 42,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$2 and under",
+           "name": "$2 and under",
+           "count": 206,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$3 and under",
+           "name": "$3 and under",
+           "count": 627,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$4 and under",
+           "name": "$4 and under",
+           "count": 1023,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$5 and under",
+           "name": "$5 and under",
+           "count": 1265,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$5-$10",
+           "name": "$5-$10",
+           "count": 405,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$10-$15",
+           "name": "$10-$15",
+           "count": 96,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$15-$20",
+           "name": "$15-$20",
+           "count": 41,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$20-$30",
+           "name": "$20-$30",
+           "count": 21,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$30-$50",
+           "name": "$30-$50",
+           "count": 21,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "sellers",
+         "name": "Sellers",
+         "multiSelect": true,
+         "values": []
+        },
+        {
+         "code": "shopCanadian",
+         "name": "Shop Canadian",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "prepared_in_canada",
+           "name": "Prepared in Canada",
+           "count": 770,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "flyers",
+         "name": "Flyers",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "FLYER_ITEM",
+           "name": "Flyer Item",
+           "count": 1807,
+           "disabled": null,
+           "selected": true
+          }
+         ]
+        },
+        {
+         "code": "dietaryCallouts",
+         "name": "Dietary & Lifestyle",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "low_in_sodium",
+           "name": "Low in Sodium or Salt",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "egg_free",
+           "name": "Egg Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "fat_free",
+           "name": "Fat-Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "no_added_sodium",
+           "name": "No Added Sodium or Salt",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "lactose_free",
+           "name": "Lactose Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "source_of_protein",
+           "name": "Source of Protein",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "sustainable_msc",
+           "name": "Sourced From Certified Fisheries",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "kosher",
+           "name": "Kosher",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "whole_grain",
+           "name": "Whole Grain",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "gmo_free",
+           "name": "GMO Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "sugar_free",
+           "name": "Sugar Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "vegetarian",
+           "name": "Vegetarian",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "halal",
+           "name": "Halal",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "source_of_calcium",
+           "name": "Source of Calcium",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "organic",
+           "name": "Organic",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "low_in_fat",
+           "name": "Low in Fat",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "plant_based",
+           "name": "Plant Based",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "calorie_free",
+           "name": "Calorie-Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "high_fibre",
+           "name": "High Fibre",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "hormone_free",
+           "name": "No Added Hormones",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "peanut_free",
+           "name": "Peanut Free Facility",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "omega3",
+           "name": "Source of Omega 3",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "vegan",
+           "name": "Vegan",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "peanut_free_allergen",
+           "name": "Peanut Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "no_added_sugar",
+           "name": "No Added Sugar",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "source_of_iron",
+           "name": "Source of Iron",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "low_in_sugar",
+           "name": "Low in Sugar",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "antibiotic_free",
+           "name": "Raised Without Antibiotics",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "sodium_free",
+           "name": "Free of Sodium or Salt",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "dairy_free",
+           "name": "Dairy Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "gluten_free",
+           "name": "Gluten Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "source_of_fibre",
+           "name": "Source of Fibre",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        }
+       ],
+       "quickFilters": [
+        {
+         "name": "Our Brands",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "productBrand",
+          "name": "Brand",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "ESS",
+            "name": "Everyday Essentials",
+            "count": 5,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "FM",
+            "name": "Farmer's Market",
+            "count": 14,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "N",
+            "name": "No Name",
+            "count": 84,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCBL",
+            "name": "PC Black Label",
+            "count": 17,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCB",
+            "name": "PC Blue Menu",
+            "count": 18,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "P",
+            "name": "President's Choice",
+            "count": 144,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Deals",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "promotions",
+          "name": "Deals",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "Price Reduction",
+            "name": "Price Reduction",
+            "count": 900,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "$1,$2,$3,$4,$5",
+            "name": "$1,$2,$3,$4,$5",
+            "count": 689,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PC Points",
+            "name": "PC Optimum Points",
+            "count": 66,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "Member Only Price",
+            "name": "Member Only Price",
+            "count": 33,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "Multi-Buy",
+            "name": "Multi-Buy",
+            "count": 25,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Shop Canadian",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "shopCanadian",
+          "name": "Shop Canadian",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "prepared_in_canada",
+            "name": "Prepared in Canada",
+            "count": 770,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Flyer Item",
+         "selected": true,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "flyers",
+          "name": "Flyers",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "FLYER_ITEM",
+            "name": "Flyer Item",
+            "count": 1807,
+            "disabled": null,
+            "selected": true
+           }
+          ]
+         }
+        },
+        {
+         "name": "Dietary",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "dietaryCallouts",
+          "name": "Dietary & Lifestyle",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "organic",
+            "name": "Organic",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "vegan",
+            "name": "Vegan",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "gluten_free",
+            "name": "Gluten Free",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        }
+       ],
+       "totalResults": 1807
+      }
+     }
+    ]
+   },
+   "bottomLeftAdSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "mediaIABComponent",
+      "contentId": "2IpZjHfMKo8nXYkZI3W6V5",
+      "variantId": null,
+      "id": "2IpZjHfMKo8nXYkZI3W6V5",
+      "position": 1,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "IAB_FLEXI",
+        "adSizesMobile": [
+         "flexi_halfpage",
+         "flexi_medium_rectangle"
+        ],
+        "adSizesTablet": [
+         "flexi_halfpage",
+         "flexi_medium_rectangle"
+        ],
+        "adSizesDesktop": [
+         "flexi_halfpage",
+         "flexi_medium_rectangle"
+        ],
+        "refreshTimer": 5000,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 50,
+        "position": "spt1",
+        "searchTerm": null,
+        "customData": {
+         "rmp.category_path": "",
+         "isDesktopOnly": true
+        },
+        "pageType": null,
+        "excludedProductIds": null
+       }
+      }
+     }
+    ]
+   },
+   "bannerSection": null,
+   "headlineSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "mediaIABComponent",
+      "contentId": "9q8jZPCt3XJwPlzy59aU2",
+      "variantId": null,
+      "id": "9q8jZPCt3XJwPlzy59aU2",
+      "position": 2,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "IAB_FLEXI",
+        "adSizesMobile": [
+         "flexi_mbanner"
+        ],
+        "adSizesTablet": [
+         "flexi_leaderboard"
+        ],
+        "adSizesDesktop": [
+         "flexi_leaderboard"
+        ],
+        "refreshTimer": 0,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 50,
+        "position": "1",
+        "searchTerm": null,
+        "customData": {
+         "isLegacyPage": true,
+         "rmp.category_path": ""
+        },
+        "pageType": "SRP",
+        "excludedProductIds": null
+       }
+      }
+     },
+     {
+      "componentId": "headerGroupComponent",
+      "contentId": "7CVoaDkLKONWqiCtFLLb77",
+      "variantId": null,
+      "id": "7CVoaDkLKONWqiCtFLLb77",
+      "position": 3,
+      "data": {
+       "paragraph": null,
+       "callToAction": null,
+       "headline": {
+        "text": "Results for ",
+        "alignment": "LEFT",
+        "variantId": "LARGE_02",
+        "headerType": "H2",
+        "callToAction": null
+       },
+       "desktopImage": null,
+       "mobileImage": null,
+       "tabletImage": null
+      }
+     }
+    ]
+   },
+   "quickFiltersSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "quickFiltersComponent",
+      "contentId": "7hq1BLg8QP3vp1UveZvKDK",
+      "variantId": null,
+      "id": "7hq1BLg8QP3vp1UveZvKDK",
+      "position": 4,
+      "data": {
+       "quickFilters": [
+        {
+         "name": "Our Brands",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "productBrand",
+          "name": "Brand",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "ESS",
+            "name": "Everyday Essentials",
+            "count": 5,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "FM",
+            "name": "Farmer's Market",
+            "count": 14,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "N",
+            "name": "No Name",
+            "count": 84,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCBL",
+            "name": "PC Black Label",
+            "count": 17,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCB",
+            "name": "PC Blue Menu",
+            "count": 18,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "P",
+            "name": "President's Choice",
+            "count": 144,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Deals",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "promotions",
+          "name": "Deals",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "Price Reduction",
+            "name": "Price Reduction",
+            "count": 900,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "$1,$2,$3,$4,$5",
+            "name": "$1,$2,$3,$4,$5",
+            "count": 689,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PC Points",
+            "name": "PC Optimum Points",
+            "count": 66,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "Member Only Price",
+            "name": "Member Only Price",
+            "count": 33,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "Multi-Buy",
+            "name": "Multi-Buy",
+            "count": 25,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Shop Canadian",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "shopCanadian",
+          "name": "Shop Canadian",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "prepared_in_canada",
+            "name": "Prepared in Canada",
+            "count": 770,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Flyer Item",
+         "selected": true,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "flyers",
+          "name": "Flyers",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "FLYER_ITEM",
+            "name": "Flyer Item",
+            "count": 1807,
+            "disabled": null,
+            "selected": true
+           }
+          ]
+         }
+        },
+        {
+         "name": "Dietary",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "dietaryCallouts",
+          "name": "Dietary & Lifestyle",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "organic",
+            "name": "Organic",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "vegan",
+            "name": "Vegan",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "gluten_free",
+            "name": "Gluten Free",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "sortsSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "sortsComponent",
+      "contentId": "2itjH0C7kCOzDHBYvRoPFu",
+      "variantId": null,
+      "id": "2itjH0C7kCOzDHBYvRoPFu",
+      "position": 5,
+      "data": {
+       "sortsLabel": "Sort",
+       "applyButtonText": "Sort",
+       "sorts": [
+        {
+         "code": "recommended",
+         "name": "Relevance",
+         "selected": true
+        },
+        {
+         "code": "price-asc",
+         "name": "Price (Low to High)",
+         "selected": false
+        },
+        {
+         "code": "price-desc",
+         "name": "Price (High to Low)",
+         "selected": false
+        },
+        {
+         "code": "name-asc",
+         "name": "A-Z (alphabetical)",
+         "selected": false
+        },
+        {
+         "code": "newest-desc",
+         "name": "Newest to Oldest Products",
+         "selected": false
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "mainContentCollection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "productGridComponent",
+      "contentId": "6atKIMngFtGlCRtqtvjrXq",
+      "variantId": null,
+      "id": "6atKIMngFtGlCRtqtvjrXq-1-1",
+      "position": 6,
+      "data": {
+       "pagination": {
+        "pageNumber": 1,
+        "pageSize": 48,
+        "hasMore": false,
+        "isLast": false,
+        "totalResults": 1807
+       },
+       "productTiles": [
+        {
+         "index": 1,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20070132001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "English Cucumber",
+         "description": "<p>English (or hothouse) cucumbers are cylindrical green-skinned vegetable with a crisp white flesh and edible seeds. English cucumbers are typically enjoyed raw and can be peeled or eaten with the skin on. Add sliced cucumber to your next vegetable platter or toss with mint and lemon juice for a refreshing salad.</p>",
+         "packageSizing": "1 ea, $1.49/1ea",
+         "pricing": {
+          "price": "1.49",
+          "wasPrice": null,
+          "displayPrice": "$1.49",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/english-cucumber/p/20070132001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20070132001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 2,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20128938001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Raspberries Half Pint",
+         "description": "Raspberries are delicate fruit with bright red drupelets that connect to each other around a hollow central core. Their flavour is sweet but can also be tart if they aren’t quite ripe. Add them to your morning cereal, smoothie, or yogurt, or indulge with raspberries topped with cream and chocolate shavings.",
+         "packageSizing": "170 g, $0.99/100g",
+         "pricing": {
+          "price": "1.68",
+          "wasPrice": "$2.88",
+          "displayPrice": "$1.68",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $1.20",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/raspberries-half-pint/p/20128938001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20128938001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 3,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20812144001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Large Size Eggs 12 Pack",
+         "description": "<p>Large Size Eggs 12 Pack makes everyday cooking and baking easy with a must-have kitchen staple you’ll always reach for. With a rich, satisfying flavour, they’re perfect for fluffy omelettes, baked goods like cakes and muffins, egg sandwiches, or simply fried or poached. This 12 pack keeps you stocked and ready for everything from quick breakfasts to family meals.</p>",
+         "packageSizing": "12 ea, $0.28/1ea",
+         "pricing": {
+          "price": "3.33",
+          "wasPrice": "$3.93",
+          "displayPrice": "$3.33",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.60",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/large-size-eggs-12-pack/p/20812144001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20812144001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 4,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21644936001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_800.png"
+          }
+         ],
+         "brand": "Farmer's Market",
+         "title": "Avocado Bag",
+         "description": null,
+         "packageSizing": "1 ea, $3.99/1ea",
+         "pricing": {
+          "price": "3.99",
+          "wasPrice": null,
+          "displayPrice": "$3.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/avocado-bag/p/21644936001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21644936001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 5,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20425775001_KG",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Green Seedless Grapes",
+         "description": "<p>Bright, juicy, and refreshingly crisp, Autumn Crisp® Green Seedless Grapes are a go-to for easy, everyday snacking. Each bite has a yummy, sweet flavour with a satisfying crunch that makes them hard to put down. Seedless and fuss-free, they’re perfect for tossing into lunchboxes or adding to fruit salads. They're also great for serving on a charcuterie board with cheeses, meats, and crackers when you're hosting, or eating straight from the bag.</p>",
+         "packageSizing": "$8.80/1kg $3.99/1lb",
+         "pricing": {
+          "price": "8.98",
+          "wasPrice": null,
+          "displayPrice": "about $8.98",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH_PRICED_BY_WEIGHT",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/green-seedless-grapes/p/20425775001_KG",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20425775001",
+         "uom": "KG",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 6,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20026703001_KG",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Tomato On The Vine Red (1 Bunch)",
+         "description": "*Average Vine has 3-5 Tomatoes  Vine tomatoes are typically sold in clusters attached to a fresh green vine. Because they are a little softer and juicier than other varieties, vine tomatoes are excellent when used fresh in salads, but they can also be roasted or used in many tomato-based recipes.",
+         "packageSizing": "$4.39/1kg $1.99/1lb",
+         "pricing": {
+          "price": "3.12",
+          "wasPrice": "$3.88",
+          "displayPrice": "about $3.12",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH_PRICED_BY_WEIGHT",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.76",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/tomato-on-the-vine-red-1-bunch/p/20026703001_KG",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20026703001",
+         "uom": "KG",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 7,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21121560001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Broccoli Crown",
+         "description": "Broccoli crowns are a versatile and delicious addition to any meal. With their vibrant green colour and unique texture, they can add a refreshing crunch to salads, stir-fries, or roasted vegetable medleys. Broccoli crowns are known for their mild, earthy flavour that pairs well with a variety of seasonings and sauces. Whether you're a seasoned chef or a beginner in the kitchen, incorporating broccoli crowns into your dishes can bring a delightful burst of freshness and contribute to a visually appealing presentation. ",
+         "packageSizing": "1 ea, $2.49/1ea",
+         "pricing": {
+          "price": "2.49",
+          "wasPrice": null,
+          "displayPrice": "$2.49",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/broccoli-crown/p/21121560001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21121560001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 8,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20159199001_KG",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Red Seedless Grapes",
+         "description": "<p>A product of South Africa, Sweet Celebration Red Seedless Grapes are temptingly sweet and distinctly crisp. Each bite delivers a juicy burst of flavour with a firm texture that makes them satisfying to snack on. Seedless and easy to enjoy, they’re perfect for adding to your lunchboxes, fruit platters, salads, and more. Serve them on a charcuterie board with cheeses, meats, and crackers when you're hosting.</p>",
+         "packageSizing": "$8.80/1kg $3.99/1lb",
+         "pricing": {
+          "price": "8.71",
+          "wasPrice": null,
+          "displayPrice": "about $8.71",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH_PRICED_BY_WEIGHT",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/red-seedless-grapes/p/20159199001_KG",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20159199001",
+         "uom": "KG",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 9,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20811994001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_800.png"
+          }
+         ],
+         "brand": "Farmer's Market",
+         "title": "Yellow Onions, 3 lb Bag",
+         "description": null,
+         "packageSizing": "1.36 kg, $0.11/100g",
+         "pricing": {
+          "price": "1.49",
+          "wasPrice": "$2.99",
+          "displayPrice": "$1.49",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $1.50",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/yellow-onions-3-lb-bag/p/20811994001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20811994001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 10,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20163119001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Celery Stalks",
+         "description": "Celery has a cluster of pale green leaved ribs surrounding a heart (inner ribs). Trimmed celery leaves can be used as a garnish or added to a mixed greens salad. Enjoy celery on its own or with dip as a snack, or chop for soups, stews, or a sandwich.",
+         "packageSizing": "1 ea, $1.99/1ea",
+         "pricing": {
+          "price": "1.99",
+          "wasPrice": "$2.49",
+          "displayPrice": "$1.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.50",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/celery-stalks/p/20163119001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20163119001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 11,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20091825001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Cilantro",
+         "description": "<p>Cilantro is the bunched leafy green from the coriander plant. Both the leaves and stems can be used raw or cooked in a variety of dishes. Cilantro works especially well with spicy food. Try it with curry chicken or add some to salsa with a little lime.</p>",
+         "packageSizing": "1 ea, $1.29/1ea",
+         "pricing": {
+          "price": "1.29",
+          "wasPrice": null,
+          "displayPrice": "$1.29",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/cilantro/p/20091825001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20091825001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 12,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20127708001_KG",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Sweet Potato",
+         "description": "Sweet potatoes have a thick dark orange skin and sweet orange flesh. Yams are similar in size and shape but are not related to the sweet potato at all. Use sweet potatoes instead of regular potatoes for fries and chips or make a classic sweet potato pie.",
+         "packageSizing": "$3.28/1kg $1.49/1lb",
+         "pricing": {
+          "price": "2.07",
+          "wasPrice": "$2.49",
+          "displayPrice": "about $2.07",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH_PRICED_BY_WEIGHT",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.42",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/sweet-potato/p/20127708001_KG",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20127708001",
+         "uom": "KG",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        }
+       ],
+       "button1": null,
+       "headerGroup": null,
+       "productTileType": null
+      }
+     },
+     {
+      "componentId": "mediaShoppableDisplayComponent",
+      "contentId": "2pJjosOkQBNfIzj03B3dyC",
+      "variantId": null,
+      "id": "2pJjosOkQBNfIzj03B3dyC",
+      "position": 7,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "SHOPPABLE_DISPLAY",
+        "adSizesMobile": [
+         "default"
+        ],
+        "adSizesTablet": [
+         "default"
+        ],
+        "adSizesDesktop": [
+         "default"
+        ],
+        "refreshTimer": 0,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 50,
+        "position": "2",
+        "searchTerm": "",
+        "customData": {
+         "rmp.category_path": "",
+         "reservedPlacementId": "{platform}:PCX:SRP:SHOPPABLE_DISPLAY:2"
+        },
+        "pageType": "SRP",
+        "excludedProductIds": null
+       }
+      }
+     },
+     {
+      "componentId": "productGridComponent",
+      "contentId": "6atKIMngFtGlCRtqtvjrXq",
+      "variantId": null,
+      "id": "6atKIMngFtGlCRtqtvjrXq-1-2",
+      "position": 8,
+      "data": {
+       "pagination": {
+        "pageNumber": 1,
+        "pageSize": 48,
+        "hasMore": false,
+        "isLast": false,
+        "totalResults": 1807
+       },
+       "productTiles": [
+        {
+         "index": 19,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20117550001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20117550001_EA/en/1/20117550001_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Farmer's Market",
+         "title": "Sweet Baby Peppers (4-Pack)",
+         "description": "Bell peppers have green, orange, red, or yellow skin and a sweet flavour. They are crisp and juicy, perfect for enjoying raw with dips or hummus and to add some colour to your stir-fries.",
+         "packageSizing": "1 ea, $0.75/1ea",
+         "pricing": {
+          "price": "2.99",
+          "wasPrice": null,
+          "displayPrice": "$2.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/sweet-baby-peppers-4-pack/p/20117550001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20117550001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 20,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20162945001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20162945001_EA/en/1/20162945001_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Farmer's Market",
+         "title": "Oranges, 3 lb Bag",
+         "description": "<p><br></p>",
+         "packageSizing": "1.36 kg, $0.22/100g",
+         "pricing": {
+          "price": "2.99",
+          "wasPrice": null,
+          "displayPrice": "$2.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/oranges-3-lb-bag/p/20162945001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20162945001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 21,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20793034001_KG",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20793034001_KG/en/1/20793034001_enfr_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Cabbage, Green",
+         "description": "Cabbages are cruciferous vegetables that range in size, shape, and colour. Green cabbage heads have tightly wrapped leaves with a mild, spicy flavour that can be eaten raw or cooked. Shred cabbage for salad or slaw, or cut into wedges and roast with olive oil and lemon.",
+         "packageSizing": "$2.18/1kg $0.99/1lb",
+         "pricing": {
+          "price": "3.66",
+          "wasPrice": null,
+          "displayPrice": "about $3.66",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH_PRICED_BY_WEIGHT",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/cabbage-green/p/20793034001_KG",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20793034001",
+         "uom": "KG",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 22,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20601017001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20601017001_EA/en/1/20601017001_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Farmer's Market",
+         "title": "Yellow Potato, 10 lb Bag",
+         "description": "Yellow (or Yukon Gold) potatoes are a waxy potato with golden yellow skin and flesh with a creamy texture that works especially well for mashed potatoes. Thinly slice for scalloped potatoes or chop with carrots and celery for a classic beef stew.",
+         "packageSizing": "4.54 kg, $0.09/100g",
+         "pricing": {
+          "price": "3.99",
+          "wasPrice": "$5.99",
+          "displayPrice": "$3.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $2.00",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/yellow-potato-10-lb-bag/p/20601017001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20601017001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 23,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20172240001_KG",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20172240001_KG/en/1/20172240001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Bartlett Pears",
+         "description": "Bartlett pears are bell shaped with smooth yellowish-green skin, often with a hint of red. They are sweet and juicy, the perfect choice for eating fresh as a snack. If you decide to add pears to your next cheese tray, a little lemon juice will keep them from browning once cut.",
+         "packageSizing": "$5.49/1kg $2.49/1lb",
+         "pricing": {
+          "price": "1.15",
+          "wasPrice": null,
+          "displayPrice": "about $1.15",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH_PRICED_BY_WEIGHT",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/bartlett-pears/p/20172240001_KG",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20172240001",
+         "uom": "KG",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 24,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20054025001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20054025001_EA/en/1/20054025001_en_front_800.png"
+          }
+         ],
+         "brand": "Farmer's Market",
+         "title": "Mandarin, 4 lb",
+         "description": null,
+         "packageSizing": "1.8 kg, $0.39/100g",
+         "pricing": {
+          "price": "6.99",
+          "wasPrice": null,
+          "displayPrice": "$6.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/mandarin-4-lb/p/20054025001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20054025001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 25,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20795315001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20795315001_EA/en/1/20795315001_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Farmer's Market",
+         "title": "Lemons, 2 lb Bag",
+         "description": "Lemons have a bright yellow peel and can vary in size depending on the variety. This citrus fruit produces a tart, acidic juice that will add flavour to your salad dressings, beverages, and marinades. Lemon juice and rinds are also versatile ingredients for baking everything from cookies and cakes to a classic lemon meringue pie.",
+         "packageSizing": "907 g, $0.33/100g",
+         "pricing": {
+          "price": "2.99",
+          "wasPrice": "$4.99",
+          "displayPrice": "$2.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $2.00",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/lemons-2-lb-bag/p/20795315001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20795315001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 26,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20051015001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20051015001_EA/en/1/20051015001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Blackberries Half Pint",
+         "description": "Blackberries range in colour from dark purple to black, and generally the more intense the colour, the sweeter the taste. Blackberries are great in smoothies and salads and can easily be made into jam, or use yours for a blackberry apple pie and enjoy with ice cream.",
+         "packageSizing": "170 g, $2.35/100g",
+         "pricing": {
+          "price": "3.99",
+          "wasPrice": null,
+          "displayPrice": "$3.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/blackberries-half-pint/p/20051015001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20051015001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 27,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20167017001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20167017001_EA/en/1/20167017001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Cantaloupe",
+         "description": "Average weight is 3 lb.<br>Cantaloupes have a greyish-beige skin with a raised netting overtop. The flesh is pale orange, juicy, and sweet. When ripe, cantaloupes are fragrant and yield to pressure at the blossom end. Remove the seeds and cube for a fruit salad or slice and wrap with prosciutto and mint for a refreshing summer salad.",
+         "packageSizing": "1 ea, $3.99/1ea",
+         "pricing": {
+          "price": "3.99",
+          "wasPrice": null,
+          "displayPrice": "$3.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/cantaloupe/p/20167017001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20167017001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 28,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21693042_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21693042_EA/en/1/21693042_en_1_800.png"
+          }
+         ],
+         "brand": "Doritos",
+         "title": "Nacho Cheese Flavoured Tortilla Chips",
+         "description": "<p>Bite into the cheesy goodness of Doritos Nacho Cheese flavoured tortilla chips for a tastebud-shattering crunch. With Doritos Nacho Cheese flavoured tortilla chips every crunchy bite is packed with a burst of bold, cheesy flavour. Turn any event into a bold snacking experience! And they’re gluten-free!When it comes to bold flavoured tortilla chips and snacks, nothing comes close to the undeniably delicious taste of Doritos. Not only are our tortilla chips packed with serious crunch and extreme flavours, the Doritos brand is all about intense experiences in snacking.Everyone has their favourite flavour — and you really can’t go wrong with any of our Doritos tortilla chips. Doritos Nacho Cheese flavoured tortilla chips are no exception!Want in on a secret? Doritos tortilla chips aren’t just an awesome snack — they’re also an incredibly versatile, flavour-loaded cooking ingredient that can take all kinds of recipes to the next level.Are you ready? If so, crunch on.</p><ul><li>Bold Doritos Taste — The iconic and intense flavour of Doritos Nacho Cheese flavoured tortilla chips is guaranteed to satisfy with every bite.</li><li>Seriously Crunchy — Our tortilla chips are packed with serious crunch that’s oh-so-satisfying.</li><li>Gluten-Free — Doritos Nacho Cheese flavoured tortilla chips are a great option for celiac-friendly diets.</li><li>An Awesome Snack — When it comes to snacks, nothing comes close to the undeniably delicious taste of Doritos.</li><li>Amazing Flavour — Any flavour of Doritos is sure to satisfy your taste buds  and Doritos Nacho Cheese flavoured tortilla chips are no exception!</li></ul>",
+         "packageSizing": "235 g, $1.28/100g",
+         "pricing": {
+          "price": "3.00",
+          "wasPrice": "$4.50",
+          "displayPrice": "$3.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $1.50",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/nacho-cheese-flavoured-tortilla-chips/p/21693042_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21693042",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 29,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20130242001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20130242001_EA/en/1/20130242001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Kiwis",
+         "description": "\r\n  Green\r\n  kiwis are egg-shaped with fuzzy brown skin. Inside, their green flesh is\r\n  speckled with tiny black edible seeds and their flavour is sweet and\r\n  sometimes tart. You can peel and slice your kiwi or just cut it in half and\r\n  scoop out the flesh. They retain their bright green colour even when exposed\r\n  to air so kiwi is a good choice for fruit salad and fresh fruit tarts.\r\n",
+         "packageSizing": "1 ea, $0.99/1ea",
+         "pricing": {
+          "price": "0.99",
+          "wasPrice": null,
+          "displayPrice": "$0.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/kiwis/p/20130242001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20130242001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 30,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20039581001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Smooth Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Smooth Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty flavour and irresistible, creamy texture, Kraft Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on toast, PB&J sandwiches and fruits or vegetables. Our smooth peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Signature delicious, nutty taste and creamy texture</li><li>Made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's Favourite Peanut Butter</li><li>Proudly prepared in Canada</li></ul>",
+         "packageSizing": "1 kg, $0.60/100g",
+         "pricing": {
+          "price": "5.97",
+          "wasPrice": "$6.29",
+          "displayPrice": "$5.97",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.32",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-peanut-butter/p/20039581001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20039581001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        }
+       ],
+       "button1": null,
+       "headerGroup": null,
+       "productTileType": null
+      }
+     },
+     {
+      "componentId": "mediaShoppableVideoComponent",
+      "contentId": "6syXiUACrJsg5UkyFiRJg8",
+      "variantId": null,
+      "id": "6syXiUACrJsg5UkyFiRJg8",
+      "position": 9,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "SHOPPABLE_VIDEO",
+        "adSizesMobile": [
+         "default"
+        ],
+        "adSizesTablet": [
+         "default"
+        ],
+        "adSizesDesktop": [
+         "default"
+        ],
+        "refreshTimer": 0,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 0,
+        "position": "1",
+        "searchTerm": "",
+        "customData": {
+         "rmp.category_path": "",
+         "rmp.serveAs": "SRP"
+        },
+        "pageType": "SRP",
+        "excludedProductIds": null
+       }
+      }
+     },
+     {
+      "componentId": "productGridComponent",
+      "contentId": "6atKIMngFtGlCRtqtvjrXq",
+      "variantId": null,
+      "id": "6atKIMngFtGlCRtqtvjrXq-1-3",
+      "position": 10,
+      "data": {
+       "pagination": {
+        "pageNumber": 1,
+        "pageSize": 48,
+        "hasMore": true,
+        "isLast": true,
+        "totalResults": 1807
+       },
+       "productTiles": [
+        {
+         "index": 37,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21754823_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21754823_EA/en/1/21754823_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Smoked Steelhead Salmon",
+         "description": "<p><br></p>",
+         "packageSizing": "50 g, $6.58/100g",
+         "pricing": {
+          "price": "3.29",
+          "wasPrice": null,
+          "displayPrice": "$3.29",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": {
+          "indicatorId": "OUT",
+          "text": "Out of Stock"
+         },
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smoked-steelhead-salmon/p/21754823_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "out-of-stock",
+         "variantTheme": null,
+         "articleNumber": "21754823",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "NEW",
+          "badgeClass": null,
+          "text": "New",
+          "icon": null
+         }
+        },
+        {
+         "index": 38,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20325274001_KG",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20325274001_KG/en/1/20325274001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Butternut Squash",
+         "description": "Butternut squash is a pear-shaped winter squash with smooth tan skin and sweet orange flesh. It has a rich, nutty flavour and can generally be used in recipes that call for sweet potatoes. Try butternut squash roasted over a kale salad with goat cheese, or cook and blend for soup.",
+         "packageSizing": "$2.84/1kg $1.29/1lb",
+         "pricing": {
+          "price": "4.57",
+          "wasPrice": "$7.07",
+          "displayPrice": "about $4.57",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH_PRICED_BY_WEIGHT",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $2.50",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/butternut-squash/p/20325274001_KG",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20325274001",
+         "uom": "KG",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 39,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21040510_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21040510_EA/en/1/21040510_en_front_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Evaporated Milk",
+         "description": "<p>Evaporated Milk is a rich, creamy pantry staple that adds smooth texture and depth to both sweet and savoury recipes. Prepared in Canada with 2% milk fat and enriched with vitamins C and D, it brings a balanced, velvety finish to everyday cooking. Stir it into coffee, use it in baked goods, or blend it into soups and sauces for an easy boost of flavour and creaminess.</p><br><br><p>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck</p>",
+         "packageSizing": "354 ml, $0.28/100ml",
+         "pricing": {
+          "price": "1.00",
+          "wasPrice": "$1.75",
+          "displayPrice": "$1.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.75",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/evaporated-milk/p/21040510_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21040510",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 40,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20772671_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20772671_EA/en/1/20772671_en_front_800.png"
+          }
+         ],
+         "brand": "Schneiders",
+         "title": "Hickory Smoked Classic Cut Bacon",
+         "description": "<p>Schneiders® Hickory Smoked Classic Cut Bacon proves that when it comes to great bacon, there are no shortcuts for time and care. Though bacon seems simple, Schneiders® has put decades of practice into perfecting the craft of this beloved breakfast food. It starts with the highest-quality pork belly, the ideal balance of salt and cane sugar in the brine, and a special mix of North American hickory and applewood for smoking. It is gently hung by hand to ensure it smokes evenly, then sliced nice and thick. Since 1890, Schneiders® brand has established a rich heritage of original and authentic recipes, using premium ingredients and taking all the time needed to honour the origin and inspiration of each recipe. Quality never gets old™.</p><ul><li>SLICED BACON: A delicious breakfast treat</li><li>SALTY AND SWEET: Brined in the perfect balance of salt and cane sugar</li><li>HARDWOOD SMOKED: Flavoured with a special mix of hickory and applewood smoke</li><li>WHAT'S IN THE BOX: Includes one 375-gram pack of sliced, uncooked bacon</li><li>QUALITY NEVER GETS OLD™: Uncompromising commitment to quality since 1890</li></ul>",
+         "packageSizing": "375 g, $1.07/100g",
+         "pricing": {
+          "price": "4.00",
+          "wasPrice": "$5.00",
+          "displayPrice": "$4.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $1.00",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/hickory-smoked-classic-cut-bacon/p/20772671_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20772671",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 41,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20316026002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20316026002_EA/en/1/20316026002_en_1_v1_800.png"
+          }
+         ],
+         "brand": "Coca-Cola",
+         "title": "Cola Bottle",
+         "description": "<p>There's nothing quite like the crisp, refreshing taste of an ice-cold Coca-Cola. Carefully crafted since 1886, Coca-Cola's great taste has stood the test of time. It's the perfect companion for both special moments and everyday enjoyment.Each sip of Coca-Cola's signature taste brings a smile to your face. This refreshing soft drink is meant to be enjoyed anytime, anywhere, making life more magical. Coca-Cola's secret formula has been carefully crafted to create a taste experience like no other. The familiar fizz and caffeine give you an instant \"ahh\" moment with every sip.Crack open a Coca-Cola and drink in the moments that make life special. Whether spending time with loved ones or taking a quick break to recharge, Coca-Cola makes the ordinary, extraordinary. Refreshing the world for over 130 years, Coca-Cola continues to bring people together and spread optimism wherever it goes. Find your magic and make life delicious with an ice-cold Coca-Cola.</p><ul><li>Enjoy delicious and refreshing Coca-Cola pop to brighten your day</li><li>Coke, making life magical since 1886</li><li>This sparkling beverage is best enjoyed ice-cold for maximum refreshment</li></ul>",
+         "packageSizing": "2 l, $0.10/100ml",
+         "pricing": {
+          "price": "2.00",
+          "wasPrice": "$2.79",
+          "displayPrice": "$2.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.79",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/cola-bottle/p/20316026002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20316026002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 42,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21297816_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21297816_EA/en/1/21297816_en_front_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Bagel Plain, 6 Pack",
+         "description": "The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck",
+         "packageSizing": "510 g, $0.44/100g",
+         "pricing": {
+          "price": "2.25",
+          "wasPrice": "$2.49",
+          "displayPrice": "$2.25",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.24",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/bagel-plain-6-pack/p/21297816_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21297816",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 43,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21188654_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21188654_EA/en/1/21188654_en_1_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Original Slices",
+         "description": "<p>Kraft Singles slices are the classic cheese slice with an unmistakable taste. Kraft Singles are free of artificial flavours and colours so you can your family can feel good about eating these delicious, creamy slices. Enjoy Kraft Singles on your next grilled cheese, sandwich, or burger. There are so many delicious ways to enjoy the ooey gooey melt of Kraft Singles. Singles are good source of calcium and high in protein. Proudly made in Canada.</p><ul><li>Classic cheese slice with the perfect melt</li><li>Creamy texture and delicious flavour</li><li>Made with No Artificial Flavours or Colours</li><li>Enjoy Kraft Singles on your grilled cheese, sandwich or burger</li></ul>",
+         "packageSizing": "410 g, $0.97/100g",
+         "pricing": {
+          "price": "3.99",
+          "wasPrice": null,
+          "displayPrice": "$3.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/original-slices/p/21188654_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21188654",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 44,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21297831_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21297831_EA/en/1/21297831_en_front_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Everything Bagels",
+         "description": "<p>Chewy and flavourful, top Everything Bagels with plenty of cream cheese or avocado for a delicious breakfast. This package includes six pre-sliced bagels.</p><br><br>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck",
+         "packageSizing": "480 g, $0.47/100g",
+         "pricing": {
+          "price": "2.25",
+          "wasPrice": "$2.49",
+          "displayPrice": "$2.25",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.24",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/everything-bagels/p/21297831_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21297831",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 45,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21247300001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21247300001_EA/en/1/21247300001_en_front_800.png"
+          }
+         ],
+         "brand": "President's Choice",
+         "title": "Yellow Mini Potatoes",
+         "description": null,
+         "packageSizing": "0.68 kg, $0.59/100g",
+         "pricing": {
+          "price": "3.99",
+          "wasPrice": null,
+          "displayPrice": "$3.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/yellow-mini-potatoes/p/21247300001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21247300001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 46,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21693053_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21693053_EA/en/1/6041005442_enfr_front_centre_marketing_A_GS1_Marketing_v4_800.png"
+          }
+         ],
+         "brand": "Doritos",
+         "title": "Sweet Chili Heat! flavoured tortilla chips",
+         "description": "<p><p>Enjoy a bold snacking experience with Doritos Sweet Chili Heat! flavoured tortilla chips. Savour the sweet bold crunch and wait for the heat to kick in. The sweet and savoury spiciness of these tortilla chips will delight your taste buds, making sharing with friends and family a must at your next party, or get-together.</p><p>When it comes to bold flavoured tortilla chips and snacks, nothing comes close to the undeniably delicious taste of Doritos. Not only are our tortilla chips packed with serious crunch and extreme flavours, the Doritos brand is all about intense experiences in snacking.</p><p>Everyone has their favourite flavour — and you really can’t go wrong with any of our Doritos tortilla chips. Doritos Sweet Chili Heat! flavoured tortilla chips are no exception!</p><p>Want in on a secret? Doritos tortilla chips aren’t just an awesome snack — they’re also an incredibly versatile, flavour-loaded cooking ingredient.</p><p>Are you ready? If so, crunch on.</p><ul>    <li>BOLD DORITOS TASTE – The sweet and savoury spiciness of Doritos Sweet Chili Heat! flavoured tortilla chips will delight your taste buds.</li>    <li>SERIOUSLY CRUNCHY – Our tortilla chips are packed with a serious crunch that’s oh-so-satisfying.</li>    <li>FEEL THE HEAT – Savour the sweet bold crunch of Doritos Sweet Chili Heat! flavoured tortilla chips and wait for the heat to kick in.</li>    <li>AN AWESOME SNACK – When it comes to snacks, nothing comes close to the undeniably delicious taste of Doritos.</li>    <li>AMAZING FLAVOUR — Any flavour of Doritos is sure to satisfy your taste buds – and Doritos Sweet Chili Heat! flavoured tortilla chips are no exception!</li></ul></p>",
+         "packageSizing": "235 g, $1.28/100g",
+         "pricing": {
+          "price": "3.00",
+          "wasPrice": "$4.50",
+          "displayPrice": "$3.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $1.50",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/sweet-chili-heat-flavoured-tortilla-chips/p/21693053_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21693053",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 47,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20162840001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20162840001_EA/en/1/20162840001_en_front_800.png"
+          }
+         ],
+         "brand": null,
+         "title": "Spinach, Bunched",
+         "description": "Spinach has dark green leaves that are either flat and smooth or curly and crinkled. Both have crisp, fragrant leaves and a slightly bitter flavour. Spinach can be very gritty and must be rinsed thoroughly. Use raw in salad, combine with feta for spanakopita, or sauté in olive oil and garlic for a simple side dish.",
+         "packageSizing": "1 ea, $2.49/1ea",
+         "pricing": {
+          "price": "2.49",
+          "wasPrice": "$2.79",
+          "displayPrice": "$2.49",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.30",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/spinach-bunched/p/20162840001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20162840001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 48,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20641267_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20641267_EA/en/1/20641267_en_1_800.png"
+          }
+         ],
+         "brand": "Philadelphia",
+         "title": "Original Brick Cream Cheese",
+         "description": "<p>Philadelphia, voted most trusted Cream Cheese brand, based on the 2026 BrandSpark® Canadian Trust Study.* Philadelphia Original Brick Cream Cheese blends the creamy goodness of Philly with real milk and cream for the perfect spread on a bagel in the morning or on a cracker as part of your favourite snack — it is also a great addition to any meal, from appetizers to desserts. Our delicious cream cheese contains no artificial colours or flavours. Make sure you always keep some on hand because everything seems just a little bit better with the creamy taste of Philly. *Philadelphia, voted most trusted Cream Cheese brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>One 250 g Philadelphia Original Brick Cream Cheese</li><li>Adds delicious flavour in all your recipes</li><li>No artificial flavours or colours</li><li>Proudly prepared in Canada</li><li>Ideal for baking</li><li>Kosher - Dairy</li></ul>",
+         "packageSizing": "250 g, $1.60/100g",
+         "pricing": {
+          "price": "3.99",
+          "wasPrice": "$4.29",
+          "displayPrice": "$3.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.30",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/original-brick-cream-cheese/p/20641267_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20641267",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        }
+       ],
+       "button1": null,
+       "headerGroup": null,
+       "productTileType": null
+      }
+     }
+    ]
+   }
+  }
+ },
+ "viewMetaData": {
+  "headline": " - Products for Sale | No Frills",
+  "description": "Browse  products for sale at a store near you. Schedule Delivery or Pickups Online. Subject to Availability.",
+  "addMetaNoRobots": false,
+  "canonicalUrlSlug": "search?search-bar=",
+  "jsonLd": "{\"@context\":\"https://schema.org/\",\"@type\":\"WebPage\",\"name\":\" - Products for Sale | No Frills\",\"url\":\"https://nofrills.ca/search?search-bar\\u003d\",\"description\":\"Browse  products for sale at a store near you. Schedule Delivery or Pickups Online. Subject to Availability.\",\"mainEntity\":{\"@context\":\"https://schema.org/\",\"@type\":\"ProductCollection\",\"offers\":{\"@type\":\"Offer\",\"itemOffered\":[{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"English Cucumber\",\"url\":\"/english-cucumber/p/20070132001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20070132001_EA/en/1/20070132001_en_front_v1_1200.png\",\"sku\":\"20070132001_EA\",\"description\":\"\\u003cp\\u003eEnglish (or hothouse) cucumbers are cylindrical green-skinned vegetable with a crisp white flesh and edible seeds. English cucumbers are typically enjoyed raw and can be peeled or eaten with the skin on. Add sliced cucumber to your next vegetable platter or toss with mint and lemon juice for a refreshing salad.\\u003c/p\\u003e\",\"offers\":{\"@type\":\"Offer\",\"price\":1.49,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/english-cucumber/p/20070132001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Raspberries Half Pint\",\"url\":\"/raspberries-half-pint/p/20128938001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20128938001_EA/en/1/20128938001_enfr_front_1200.png\",\"sku\":\"20128938001_EA\",\"description\":\"Raspberries are delicate fruit with bright red drupelets that connect to each other around a hollow central core. Their flavour is sweet but can also be tart if they aren’t quite ripe. Add them to your morning cereal, smoothie, or yogurt, or indulge with raspberries topped with cream and chocolate shavings.\",\"offers\":{\"@type\":\"Offer\",\"price\":1.68,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/raspberries-half-pint/p/20128938001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Large Size Eggs 12 Pack\",\"url\":\"/large-size-eggs-12-pack/p/20812144001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20812144001_EA/en/1/20812144001_en_front_v1_1200.png\",\"sku\":\"20812144001_EA\",\"description\":\"\\u003cp\\u003eLarge Size Eggs 12 Pack makes everyday cooking and baking easy with a must-have kitchen staple you’ll always reach for. With a rich, satisfying flavour, they’re perfect for fluffy omelettes, baked goods like cakes and muffins, egg sandwiches, or simply fried or poached. This 12 pack keeps you stocked and ready for everything from quick breakfasts to family meals.\\u003c/p\\u003e\",\"brand\":\"No Name\",\"offers\":{\"@type\":\"Offer\",\"price\":3.33,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/large-size-eggs-12-pack/p/20812144001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Avocado Bag\",\"url\":\"/avocado-bag/p/21644936001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/21644936001_EA/en/1/21644936001_en_front_1200.png\",\"sku\":\"21644936001_EA\",\"brand\":\"Farmer\\u0027s Market\",\"offers\":{\"@type\":\"Offer\",\"price\":3.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/avocado-bag/p/21644936001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Green Seedless Grapes\",\"url\":\"/green-seedless-grapes/p/20425775001_KG\",\"image\":\"https://digital.loblaws.ca/PCX/20425775001_KG/en/1/20425775001_en_front_v3_1200.png\",\"sku\":\"20425775001_KG\",\"description\":\"\\u003cp\\u003eBright, juicy, and refreshingly crisp, Autumn Crisp® Green Seedless Grapes are a go-to for easy, everyday snacking. Each bite has a yummy, sweet flavour with a satisfying crunch that makes them hard to put down. Seedless and fuss-free, they’re perfect for tossing into lunchboxes or adding to fruit salads. They\\u0027re also great for serving on a charcuterie board with cheeses, meats, and crackers when you\\u0027re hosting, or eating straight from the bag.\\u003c/p\\u003e\",\"offers\":{\"@type\":\"Offer\",\"price\":8.98,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/green-seedless-grapes/p/20425775001_KG\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Tomato On The Vine Red (1 Bunch)\",\"url\":\"/tomato-on-the-vine-red-1-bunch/p/20026703001_KG\",\"image\":\"https://digital.loblaws.ca/PCX/20026703001_KG/en/1/20026703001_en_front_1200.png\",\"sku\":\"20026703001_KG\",\"description\":\"*Average Vine has 3-5 Tomatoes  Vine tomatoes are typically sold in clusters attached to a fresh green vine. Because they are a little softer and juicier than other varieties, vine tomatoes are excellent when used fresh in salads, but they can also be roasted or used in many tomato-based recipes.\",\"offers\":{\"@type\":\"Offer\",\"price\":3.12,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/tomato-on-the-vine-red-1-bunch/p/20026703001_KG\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Broccoli Crown\",\"url\":\"/broccoli-crown/p/21121560001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/21121560001_EA/en/1/21121560001_enfr_front_1200.png\",\"sku\":\"21121560001_EA\",\"description\":\"Broccoli crowns are a versatile and delicious addition to any meal. With their vibrant green colour and unique texture, they can add a refreshing crunch to salads, stir-fries, or roasted vegetable medleys. Broccoli crowns are known for their mild, earthy flavour that pairs well with a variety of seasonings and sauces. Whether you\\u0027re a seasoned chef or a beginner in the kitchen, incorporating broccoli crowns into your dishes can bring a delightful burst of freshness and contribute to a visually appealing presentation. \",\"offers\":{\"@type\":\"Offer\",\"price\":2.49,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/broccoli-crown/p/21121560001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Red Seedless Grapes\",\"url\":\"/red-seedless-grapes/p/20159199001_KG\",\"image\":\"https://digital.loblaws.ca/PCX/20159199001_KG/en/1/20159199001_en_front_v2_1200.png\",\"sku\":\"20159199001_KG\",\"description\":\"\\u003cp\\u003eA product of South Africa, Sweet Celebration Red Seedless Grapes are temptingly sweet and distinctly crisp. Each bite delivers a juicy burst of flavour with a firm texture that makes them satisfying to snack on. Seedless and easy to enjoy, they’re perfect for adding to your lunchboxes, fruit platters, salads, and more. Serve them on a charcuterie board with cheeses, meats, and crackers when you\\u0027re hosting.\\u003c/p\\u003e\",\"offers\":{\"@type\":\"Offer\",\"price\":8.71,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/red-seedless-grapes/p/20159199001_KG\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Yellow Onions, 3 lb Bag\",\"url\":\"/yellow-onions-3-lb-bag/p/20811994001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20811994001_EA/en/1/20811994001_en_front_1200.png\",\"sku\":\"20811994001_EA\",\"brand\":\"Farmer\\u0027s Market\",\"offers\":{\"@type\":\"Offer\",\"price\":1.49,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/yellow-onions-3-lb-bag/p/20811994001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Celery Stalks\",\"url\":\"/celery-stalks/p/20163119001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20163119001_EA/en/1/20163119001_en_front_1200.png\",\"sku\":\"20163119001_EA\",\"description\":\"Celery has a cluster of pale green leaved ribs surrounding a heart (inner ribs). Trimmed celery leaves can be used as a garnish or added to a mixed greens salad. Enjoy celery on its own or with dip as a snack, or chop for soups, stews, or a sandwich.\",\"offers\":{\"@type\":\"Offer\",\"price\":1.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/celery-stalks/p/20163119001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Cilantro\",\"url\":\"/cilantro/p/20091825001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20091825001_EA/en/1/20091825001_en_front_1200.png\",\"sku\":\"20091825001_EA\",\"description\":\"\\u003cp\\u003eCilantro is the bunched leafy green from the coriander plant. Both the leaves and stems can be used raw or cooked in a variety of dishes. Cilantro works especially well with spicy food. Try it with curry chicken or add some to salsa with a little lime.\\u003c/p\\u003e\",\"offers\":{\"@type\":\"Offer\",\"price\":1.29,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/cilantro/p/20091825001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Sweet Potato\",\"url\":\"/sweet-potato/p/20127708001_KG\",\"image\":\"https://digital.loblaws.ca/PCX/20127708001_KG/en/1/20127708001_en_front_1200.png\",\"sku\":\"20127708001_KG\",\"description\":\"Sweet potatoes have a thick dark orange skin and sweet orange flesh. Yams are similar in size and shape but are not related to the sweet potato at all. Use sweet potatoes instead of regular potatoes for fries and chips or make a classic sweet potato pie.\",\"offers\":{\"@type\":\"Offer\",\"price\":2.07,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/sweet-potato/p/20127708001_KG\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Mini Cucumbers\",\"url\":\"/mini-cucumbers/p/20737570001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20737570001_EA/en/1/20737570001_en_front_1200.png\",\"sku\":\"20737570001_EA\",\"description\":\"Mini cucumbers are small versions of the English variety with a bit more crunch. Mini cucumbers are typically enjoyed raw and can eaten with the skin on. Take them with you as a snack on the go or add diced mini cucumbers to your next vegetable platter or salad.\",\"brand\":\"Farmer\\u0027s Market\",\"offers\":{\"@type\":\"Offer\",\"price\":2.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/mini-cucumbers/p/20737570001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Russet Potatoes, 10 lb Bag\",\"url\":\"/russet-potatoes-10-lb-bag/p/20601020001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20601020001_EA/en/1/20601020001_en_front_v1_1200.png\",\"sku\":\"20601020001_EA\",\"description\":\"Baking (or russet) potatoes have a rough brown skin and a tender white flesh with a mild flavour. They are a popular variety of potato and a good choice for baking, mashing, and frying. Peel and boil russets for mashed potatoes, or bake whole and top with sour cream for a side dish for your steak or pork chops.\",\"brand\":\"Farmer\\u0027s Market\",\"offers\":{\"@type\":\"Offer\",\"price\":3.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/russet-potatoes-10-lb-bag/p/20601020001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Carrots, 3 lb Bag\",\"url\":\"/carrots-3-lb-bag/p/20600927001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20600927001_EA/en/1/20600927001_en_front_v1_1200.png\",\"sku\":\"20600927001_EA\",\"description\":\"Carrots are long and slender and come in a variety of colours in addition to orange. This popular vegetable is available all year and can be eaten raw or cooked in many ways. Try roasting whole carrots, chopping them for soups, stews, and casseroles, or indulge in carrot cake with cream cheese frosting.\",\"brand\":\"Farmer\\u0027s Market\",\"offers\":{\"@type\":\"Offer\",\"price\":1.49,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/carrots-3-lb-bag/p/20600927001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Blueberries Half Pint\",\"url\":\"/blueberries-half-pint/p/20152465001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20152465001_EA/en/1/20152465001_en_front_1200.png\",\"sku\":\"20152465001_EA\",\"description\":\"Blueberries range in colour from a deep purple-blue to a blue-black, both with a silvery sheen called bloom. Sweeten your morning by sprinkling blueberries on your cereal or pancakes, or add blueberries to a spinach salad with pecans and blue cheese.\",\"offers\":{\"@type\":\"Offer\",\"price\":3.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/blueberries-half-pint/p/20152465001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Cauliflower\",\"url\":\"/cauliflower/p/20135377001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20135377001_EA/en/1/20135377001_enfr_front_1200.png\",\"sku\":\"20135377001_EA\",\"description\":\"Cauliflower is a cruciferous vegetable that comes in a tight cluster of florets surrounded by crisp green leaves. It is normally white but also comes in green, purple, and orange. Add raw cauliflower florets to your next vegetable platter or roast and serve as a simple side dish with meat or fish.\",\"offers\":{\"@type\":\"Offer\",\"price\":3.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/cauliflower/p/20135377001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Whole White Mushrooms\",\"url\":\"/whole-white-mushrooms/p/20776239_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20776239_EA/en/1/20776239_en_front_1200.png\",\"sku\":\"20776239_EA\",\"description\":\"\\u003cp\\u003eAdd the mild and delicate flavour of Whole White Mushrooms to a variety of dishes. These versatile mushrooms are great for adding to texture to entrées, including pastas and stir-fries.\\u003c/p\\u003e\",\"brand\":\"President\\u0027s Choice\",\"offers\":{\"@type\":\"Offer\",\"price\":1.49,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/whole-white-mushrooms/p/20776239_EA\"}}]}},\"relatedLink\":[]}"
+ },
+ "viewAnalytics": {
+  "mediaAnalytics": {
+   "target_page_type": "SRP"
+  },
+  "dsModel": null
+ },
+ "theme": {
+  "name": "pcx-web-pcx",
+  "version": "latest",
+  "env": "production",
+  "maxPageWidth": "DEFAULT"
+ }
+}

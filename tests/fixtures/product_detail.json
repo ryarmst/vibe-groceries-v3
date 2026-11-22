@@ -1,0 +1,749 @@
+{
+ "code": "20039581001_EA",
+ "name": "Smooth Peanut Butter",
+ "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Smooth Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty flavour and irresistible, creamy texture, Kraft Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on toast, PB&J sandwiches and fruits or vegetables. Our smooth peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Signature delicious, nutty taste and creamy texture</li><li>Made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's Favourite Peanut Butter</li><li>Proudly prepared in Canada</li></ul>",
+ "brand": "Kraft",
+ "imageAssets": [
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  },
+  {
+   "imageUrl": null,
+   "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_120.png",
+   "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_250.png",
+   "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_400.png",
+   "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_800.png",
+   "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_1200.png",
+   "smallRetinaUrl": null,
+   "mediumRetinaUrl": null,
+   "largeRetinaUrl": null
+  }
+ ],
+ "isPrimaryVariant": false,
+ "packageSize": "1 kg",
+ "mchCode": "M10210105",
+ "offers": [
+  {
+   "price": {
+    "value": 5.97,
+    "unit": "ea",
+    "quantity": 1,
+    "reasonCode": 1,
+    "type": "SPECIAL",
+    "expiryDate": "2026-11-04T00:00"
+   },
+   "wasPrice": {
+    "value": 6.29,
+    "unit": "ea",
+    "quantity": 1,
+    "reasonCode": null,
+    "type": "WAS",
+    "expiryDate": null
+   },
+   "comparisonPrices": [
+    {
+     "value": 0.6,
+     "unit": "g",
+     "quantity": 100,
+     "reasonCode": null,
+     "type": "REGULAR",
+     "expiryDate": null
+    }
+   ],
+   "memberOnlyPrice": null,
+   "memberOnlyComparisonPrices": [],
+   "sellerId": "",
+   "sellerName": null,
+   "promotions": [],
+   "memberOnlyPromotions": null,
+   "stockStatus": "OK",
+   "taxes": {
+    "gst": false,
+    "gstExemptTaxFlag": "",
+    "hst": false,
+    "ppft": false,
+    "preparedFoodTaxType": "N",
+    "pst": false,
+    "spft": false
+   },
+   "fees": null,
+   "shoppable": true,
+   "specifications": null,
+   "offerId": null,
+   "offerType": "OG",
+   "status": null,
+   "badges": {
+    "textBadge": null,
+    "loyaltyBadge": null,
+    "dealBadge": {
+     "type": "SALE",
+     "text": "SAVE $0.32",
+     "mopDealText": null,
+     "points": null,
+     "name": "SALE",
+     "expiryDate": "2026-11-04T00:00:00Z",
+     "promoType": null
+    },
+    "newItemBadge": null,
+    "hotmBadge": null,
+    "promotionalBadge": null,
+    "recyclingFeeBadge": null,
+    "subscribeEarnBadge": null,
+    "mustTryBadge": null,
+    "preparedInCanadaBadge": {
+     "type": "PREPARED_IN_CANADA",
+     "text": "Prepared in Canada",
+     "mopDealText": null,
+     "points": null,
+     "name": "PREPARED_IN_CANADA",
+     "expiryDate": null,
+     "promoType": null
+    },
+    "madeInCanadaBadge": null,
+    "productOfCanadaBadge": null,
+    "tariffAppliedBadge": null,
+    "preparedInQuebecBadge": null
+   },
+   "dealPrice": null,
+   "mopDealPrice": null,
+   "ehfTotal": null,
+   "deposit": null,
+   "environmentalHandlingFee": null,
+   "taxInfo": ""
+  }
+ ],
+ "pricingUnits": {
+  "type": "SOLD_BY_EACH",
+  "unit": "ea",
+  "interval": 1,
+  "minOrderQuantity": 1,
+  "maxOrderQuantity": 24,
+  "weighted": false
+ },
+ "breadcrumbs": [
+  {
+   "categoryCode": "27985",
+   "name": "Food",
+   "url": "/food/c/27985"
+  },
+  {
+   "categoryCode": "28006",
+   "name": "Pantry",
+   "url": "/food/pantry/c/28006"
+  },
+  {
+   "categoryCode": "28184",
+   "name": "Honey, Syrups & Spreads",
+   "url": "/food/pantry/honey-syrups-spreads/c/28184"
+  },
+  {
+   "categoryCode": "29890",
+   "name": "Nut & Seed Butters",
+   "url": "/food/pantry/honey-syrups-spreads/nut-seed-butters/c/29890"
+  }
+ ],
+ "articleNumber": "20039581001",
+ "ingredients": "Select Roasted Peanuts, Soybean Oil, Sugars (corn Maltodextrin, Sugar), Hydrogenated Vegetable Oil (cottonseed And Rapeseed Oil), Salt, Mono- And Diglycerides.",
+ "nutritionFacts": [
+  {
+   "topNutrition": [
+    {
+     "code": "servingSizeEN",
+     "valueInGram": "15 g",
+     "valuePercent": null,
+     "subNutrients": null
+    },
+    {
+     "code": "houseHoldServingSize",
+     "valueInGram": "1.0 tbsp",
+     "valuePercent": null,
+     "subNutrients": null
+    }
+   ],
+   "calories": {
+    "code": "calories",
+    "valueInGram": "90 cal",
+    "valuePercent": null,
+    "subNutrients": null
+   },
+   "totalFat": {
+    "code": "totalFat",
+    "valueInGram": "8 g",
+    "valuePercent": "12 %",
+    "subNutrients": [
+     {
+      "code": "saturatedFat",
+      "valueInGram": "1.5 g",
+      "valuePercent": null,
+      "subNutrients": null
+     },
+     {
+      "code": "transFat",
+      "valueInGram": "0.0 g",
+      "valuePercent": "12 %",
+      "subNutrients": null
+     },
+     {
+      "code": "saturatedTransFat",
+      "valueInGram": null,
+      "valuePercent": "7 %",
+      "subNutrients": null
+     }
+    ]
+   },
+   "totalCarbohydrate": {
+    "code": "totalCarbohydrate",
+    "valueInGram": "3 g",
+    "valuePercent": "1 %",
+    "subNutrients": [
+     {
+      "code": "sugar",
+      "valueInGram": "1 g",
+      "valuePercent": null,
+      "subNutrients": null
+     },
+     {
+      "code": "dietaryFiber",
+      "valueInGram": "1 g",
+      "valuePercent": "4 %",
+      "subNutrients": null
+     }
+    ]
+   },
+   "protein": {
+    "code": "protein",
+    "valueInGram": "3 g",
+    "valuePercent": null,
+    "subNutrients": null
+   },
+   "potassium": {
+    "code": "potassium",
+    "valueInGram": "0 mg",
+    "valuePercent": "0 %",
+    "subNutrients": null
+   },
+   "microNutrition": [
+    {
+     "code": "vitaminA",
+     "valueInGram": "0 re",
+     "valuePercent": "0 %",
+     "subNutrients": null
+    },
+    {
+     "code": "vitaminC",
+     "valueInGram": "0 mg",
+     "valuePercent": "0 %",
+     "subNutrients": null
+    },
+    {
+     "code": "calcium",
+     "valueInGram": "10 mg",
+     "valuePercent": "2 %",
+     "subNutrients": null
+    },
+    {
+     "code": "iron",
+     "valueInGram": "0.5 mg",
+     "valuePercent": "4 %",
+     "subNutrients": null
+    }
+   ],
+   "disclaimer": "KRAFT PNUT BTR SMOOTH",
+   "ingredients": "Select Roasted Peanuts, Soybean Oil, Sugars (corn Maltodextrin, Sugar), Hydrogenated Vegetable Oil (cottonseed And Rapeseed Oil), Salt, Mono- And Diglycerides.",
+   "cholesterol": {
+    "code": "cholesterol",
+    "valueInGram": "0 mg",
+    "valuePercent": "0 %",
+    "subNutrients": null
+   },
+   "sodium": {
+    "code": "sodium",
+    "valueInGram": "65 mg",
+    "valuePercent": "3 %",
+    "subNutrients": null
+   }
+  }
+ ],
+ "isVariant": false,
+ "variantTheme": null,
+ "variantGroupId": null,
+ "uom": "EA",
+ "variants": [
+  {
+   "code": "20039581001_EA",
+   "name": "Smooth Peanut Butter",
+   "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Smooth Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty flavour and irresistible, creamy texture, Kraft Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on toast, PB&J sandwiches and fruits or vegetables. Our smooth peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Signature delicious, nutty taste and creamy texture</li><li>Made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's Favourite Peanut Butter</li><li>Proudly prepared in Canada</li></ul>",
+   "brand": "Kraft",
+   "imageAssets": [
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/2/20039581001_en_2_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/3/20039581001_en_3_v1_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/4/20039581001_en_4_v1_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/5/20039581001_en_5_v1_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/6/20039581001_en_6_v1_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/7/20039581001_en_7_v1_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/8/20039581001_en_8_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/9/20039581001_en_9_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    },
+    {
+     "imageUrl": null,
+     "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_120.png",
+     "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_250.png",
+     "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_400.png",
+     "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_800.png",
+     "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/10/20039581001_en_10_v1_1200.png",
+     "smallRetinaUrl": null,
+     "mediumRetinaUrl": null,
+     "largeRetinaUrl": null
+    }
+   ],
+   "isPrimaryVariant": false,
+   "packageSize": "1 kg",
+   "mchCode": "M10210105",
+   "offers": [
+    {
+     "price": {
+      "value": 5.97,
+      "unit": "ea",
+      "quantity": 1,
+      "reasonCode": 1,
+      "type": "SPECIAL",
+      "expiryDate": "2026-11-04T00:00"
+     },
+     "wasPrice": {
+      "value": 6.29,
+      "unit": "ea",
+      "quantity": 1,
+      "reasonCode": null,
+      "type": "WAS",
+      "expiryDate": null
+     },
+     "comparisonPrices": [
+      {
+       "value": 0.6,
+       "unit": "g",
+       "quantity": 100,
+       "reasonCode": null,
+       "type": "REGULAR",
+       "expiryDate": null
+      }
+     ],
+     "memberOnlyPrice": null,
+     "memberOnlyComparisonPrices": [],
+     "sellerId": "",
+     "sellerName": null,
+     "promotions": [],
+     "memberOnlyPromotions": null,
+     "stockStatus": "OK",
+     "taxes": {
+      "gst": false,
+      "gstExemptTaxFlag": "",
+      "hst": false,
+      "ppft": false,
+      "preparedFoodTaxType": "N",
+      "pst": false,
+      "spft": false
+     },
+     "fees": null,
+     "shoppable": true,
+     "specifications": null,
+     "offerId": null,
+     "offerType": "OG",
+     "status": null,
+     "badges": {
+      "textBadge": null,
+      "loyaltyBadge": null,
+      "dealBadge": {
+       "type": "SALE",
+       "text": "SAVE $0.32",
+       "mopDealText": null,
+       "points": null,
+       "name": "SALE",
+       "expiryDate": "2026-11-04T00:00:00Z",
+       "promoType": null
+      },
+      "newItemBadge": null,
+      "hotmBadge": null,
+      "promotionalBadge": null,
+      "recyclingFeeBadge": null,
+      "subscribeEarnBadge": null,
+      "mustTryBadge": null,
+      "preparedInCanadaBadge": {
+       "type": "PREPARED_IN_CANADA",
+       "text": "Prepared in Canada",
+       "mopDealText": null,
+       "points": null,
+       "name": "PREPARED_IN_CANADA",
+       "expiryDate": null,
+       "promoType": null
+      },
+      "madeInCanadaBadge": null,
+      "productOfCanadaBadge": null,
+      "tariffAppliedBadge": null,
+      "preparedInQuebecBadge": null
+     },
+     "dealPrice": null,
+     "mopDealPrice": null,
+     "ehfTotal": null,
+     "deposit": null,
+     "environmentalHandlingFee": null,
+     "taxInfo": ""
+    }
+   ],
+   "pricingUnits": {
+    "type": "SOLD_BY_EACH",
+    "unit": "ea",
+    "interval": 1,
+    "minOrderQuantity": 1,
+    "maxOrderQuantity": 24,
+    "weighted": false
+   },
+   "breadcrumbs": [
+    {
+     "categoryCode": "27985",
+     "name": "Food",
+     "url": "/food/c/27985"
+    },
+    {
+     "categoryCode": "28006",
+     "name": "Pantry",
+     "url": "/food/pantry/c/28006"
+    },
+    {
+     "categoryCode": "28184",
+     "name": "Honey, Syrups & Spreads",
+     "url": "/food/pantry/honey-syrups-spreads/c/28184"
+    },
+    {
+     "categoryCode": "29890",
+     "name": "Nut & Seed Butters",
+     "url": "/food/pantry/honey-syrups-spreads/nut-seed-butters/c/29890"
+    }
+   ],
+   "articleNumber": "20039581001",
+   "ingredients": "Select Roasted Peanuts, Soybean Oil, Sugars (corn Maltodextrin, Sugar), Hydrogenated Vegetable Oil (cottonseed And Rapeseed Oil), Salt, Mono- And Diglycerides.",
+   "nutritionFacts": [
+    {
+     "topNutrition": [
+      {
+       "code": "servingSizeEN",
+       "valueInGram": "15 g",
+       "valuePercent": null,
+       "subNutrients": null
+      },
+      {
+       "code": "houseHoldServingSize",
+       "valueInGram": "1.0 tbsp",
+       "valuePercent": null,
+       "subNutrients": null
+      }
+     ],
+     "calories": {
+      "code": "calories",
+      "valueInGram": "90 cal",
+      "valuePercent": null,
+      "subNutrients": null
+     },
+     "totalFat": {
+      "code": "totalFat",
+      "valueInGram": "8 g",
+      "valuePercent": "12 %",
+      "subNutrients": [
+       {
+        "code": "saturatedFat",
+        "valueInGram": "1.5 g",
+        "valuePercent": null,
+        "subNutrients": null
+       },
+       {
+        "code": "transFat",
+        "valueInGram": "0.0 g",
+        "valuePercent": "12 %",
+        "subNutrients": null
+       },
+       {
+        "code": "saturatedTransFat",
+        "valueInGram": null,
+        "valuePercent": "7 %",
+        "subNutrients": null
+       }
+      ]
+     },
+     "totalCarbohydrate": {
+      "code": "totalCarbohydrate",
+      "valueInGram": "3 g",
+      "valuePercent": "1 %",
+      "subNutrients": [
+       {
+        "code": "sugar",
+        "valueInGram": "1 g",
+        "valuePercent": null,
+        "subNutrients": null
+       },
+       {
+        "code": "dietaryFiber",
+        "valueInGram": "1 g",
+        "valuePercent": "4 %",
+        "subNutrients": null
+       }
+      ]
+     },
+     "protein": {
+      "code": "protein",
+      "valueInGram": "3 g",
+      "valuePercent": null,
+      "subNutrients": null
+     },
+     "potassium": {
+      "code": "potassium",
+      "valueInGram": "0 mg",
+      "valuePercent": "0 %",
+      "subNutrients": null
+     },
+     "microNutrition": [
+      {
+       "code": "vitaminA",
+       "valueInGram": "0 re",
+       "valuePercent": "0 %",
+       "subNutrients": null
+      },
+      {
+       "code": "vitaminC",
+       "valueInGram": "0 mg",
+       "valuePercent": "0 %",
+       "subNutrients": null
+      },
+      {
+       "code": "calcium",
+       "valueInGram": "10 mg",
+       "valuePercent": "2 %",
+       "subNutrients": null
+      },
+      {
+       "code": "iron",
+       "valueInGram": "0.5 mg",
+       "valuePercent": "4 %",
+       "subNutrients": null
+      }
+     ],
+     "disclaimer": "KRAFT PNUT BTR SMOOTH",
+     "ingredients": "Select Roasted Peanuts, Soybean Oil, Sugars (corn Maltodextrin, Sugar), Hydrogenated Vegetable Oil (cottonseed And Rapeseed Oil), Salt, Mono- And Diglycerides.",
+     "cholesterol": {
+      "code": "cholesterol",
+      "valueInGram": "0 mg",
+      "valuePercent": "0 %",
+      "subNutrients": null
+     },
+     "sodium": {
+      "code": "sodium",
+      "valueInGram": "65 mg",
+      "valuePercent": "3 %",
+      "subNutrients": null
+     }
+    }
+   ],
+   "isVariant": false,
+   "variantTheme": null,
+   "variantGroupId": null,
+   "uom": "EA",
+   "variants": null,
+   "link": "/smooth-peanut-butter/p/20039581001_EA",
+   "averageWeight": null,
+   "upcomingSubscriptionDate": null,
+   "subscriptionPoints": null,
+   "subscriptionAvailableCadences": [],
+   "gtin": "00068100084245"
+  }
+ ],
+ "link": "/smooth-peanut-butter/p/20039581001_EA",
+ "averageWeight": null,
+ "upcomingSubscriptionDate": null,
+ "subscriptionPoints": null,
+ "subscriptionAvailableCadences": [],
+ "gtin": "00068100084245"
+}

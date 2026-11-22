@@ -1,0 +1,11 @@
+Name,Status,Week,Cook By,Course,Cuisine,Main Ingredient,Tags,Effort,Servings,Shopping Ingredients,Grocery Run,Source,Feedback,Promote
+EXAMPLE Pork Carnitas (delete me),Suggested,2026-11-26,2026-11-28,Main,Mexican,Pork Shoulder,"Bulk, Braise, Freezer-Friendly",Easy,6,"Serves: 6
+Pork Shoulder | 3 lb (1.4 kg)",,Weekly Plan,,No
+EXAMPLE Sheet-Pan Chicken (delete me),Planned,2026-11-26,2026-11-27,Main,Mediterranean,Chicken Thighs,"Sheet Pan, Quick",Easy,4,,,Chat,,No
+EXAMPLE Lentil Soup (delete me),Cooked,2026-11-26,2026-11-29,Soup,Indian,Red Lentils,"One Pot, Pressure Cooker",Moderate,6,,,Human,Great; a bit more lemon,No
+EXAMPLE Beef Wellington (delete me),Promoted,2026-11-26,2026-11-30,Main,British,Beef Tenderloin,New,Gourmet,6,,,Weekly Plan,,Yes
+EXAMPLE Fish Tacos (delete me),Rejected,2026-11-26,2026-11-27,Main,Mexican,Cod,Quick,Easy,4,,,Weekly Plan,Not keen on the frozen cod,No
+EXAMPLE Mushroom Risotto (delete me),Skipped,2026-11-26,2026-12-01,Main,Italian,Arborio Rice,New,Moderate,4,,,Chat,,No
+EXAMPLE Granola (delete me),Suggested,2026-11-26,2026-12-02,Breakfast,,Oats,Bulk,Easy,8,,,Weekly Plan,,No
+EXAMPLE Roasted Squash (delete me),Suggested,2026-11-26,2026-12-02,Side,,Squash,Sheet Pan,Easy,4,,,Weekly Plan,,No
+EXAMPLE Kale Salad (delete me),Suggested,2026-11-26,2026-12-02,Salad,,Kale,Quick,Easy,4,,,Weekly Plan,,No

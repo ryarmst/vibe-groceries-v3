@@ -1,0 +1,52 @@
+# vibe-groceries behind a Cloudflare Tunnel. Nothing is published on the host: cloudflared makes an outbound
+# connection to Cloudflare, which handles HTTPS and the Cloudflare Access sign-in. See SETUP.md.
+#   cp .env.example .env   # fill it in
+#   docker compose up -d --build
+name: vibe-groceries
+
+services:
+  app:
+    build: ..
+    image: vibe-groceries:latest
+    container_name: vibe-groceries
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATA_DIR: /data
+      HOST: 0.0.0.0
+      PORT: "8000"
+      FORWARDED_ALLOW_IPS: "*"           # only cloudflared can reach the app
+      CLIENT_IP_HEADER: cf-connecting-ip
+    volumes:
+      - app-data:/data                    # database, encrypted secrets and PC ID tokens, backups: back this up
+    expose: ["8000"]
+    networks: [tunnel]
+    read_only: true
+    tmpfs: ["/tmp:size=32m"]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 128
+    logging: { driver: json-file, options: { max-size: 10m, max-file: "3" } }
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.11.1
+    container_name: vibe-groceries-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN}       # only the tunnel token; never the app's secrets
+    networks: [tunnel]
+    depends_on: [app]
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    mem_limit: 128m
+    logging: { driver: json-file, options: { max-size: 10m, max-file: "3" } }
+
+networks:
+  tunnel:
+
+volumes:
+  app-data:

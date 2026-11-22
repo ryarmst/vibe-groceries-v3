@@ -1,0 +1,3878 @@
+{
+ "slug": "pcx-srp-common-page",
+ "searchTerm": "peanut butter",
+ "searchResultsCount": 197,
+ "typedSearchTerms": "peanut butter",
+ "searchTermSubmitted": "peanut butter",
+ "selectedCategory": null,
+ "mlCorrectedTerm": "",
+ "esCorrectedTerm": "",
+ "quCorrectedTerm": "",
+ "searchRequestId": "00000000-0000-4000-8000-000000000001",
+ "modelVersion": "cim-retriever-loblawspcx-v20261023",
+ "searchVariation": "PCX_SEARCH_CIMULATE:SEARCH_CIMULATE_ENABLED|PCX_CIMULATE_RETRIEVAL_MODEL:CIMULATE_RETRIEVAL_MODEL_LATEST|PCX_SEARCH_PERSONALIZATION:P13N_DISABLED",
+ "headline": "Search Results Page",
+ "layout": {
+  "typeId": "productsPageLayout",
+  "sections": {
+   "categoryNavigationSection": null,
+   "filtersSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "filtersComponent",
+      "contentId": "5cwrHMaINpD0u7IR8pNKSM",
+      "variantId": null,
+      "id": "5cwrHMaINpD0u7IR8pNKSM",
+      "position": 0,
+      "data": {
+       "filtersLabel": "Filters",
+       "applyButtonText": "Filters",
+       "filterGroups": [
+        {
+         "code": "category",
+         "name": "Aisle",
+         "multiSelect": false,
+         "values": [
+          {
+           "code": "27985",
+           "name": "Food",
+           "count": 197,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "27988",
+           "name": "Pet Food & Supplies",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "productBrand",
+         "name": "Brand",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "BSSE",
+           "name": "Basse",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "BTYC",
+           "name": "Betty Crocker",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHPS",
+           "name": "Chapmans",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHTM",
+           "name": "Chatman's",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHEX",
+           "name": "Chex",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHXO",
+           "name": "ChocXO",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CHRE",
+           "name": "Christie",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "CLIF",
+           "name": "CLIF",
+           "count": 10,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FM",
+           "name": "Farmer's Market",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "FTSO",
+           "name": "Fatso",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "GENM",
+           "name": "General Mills",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "GRCE",
+           "name": "Grace",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HAGD",
+           "name": "Haagen Dazs",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "HLTP",
+           "name": "Halo Top",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KASH",
+           "name": "Kashi",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KAWR",
+           "name": "Kawartha",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KLGS",
+           "name": "Kelloggs",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "0KND",
+           "name": "Kind",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KBAR",
+           "name": "Kind bar",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "KRFT",
+           "name": "Kraft",
+           "count": 13,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LRBR",
+           "name": "Larabar",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LOTU",
+           "name": "Lotus",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "LGOD",
+           "name": "LOVE GOOD",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MM00",
+           "name": "M&M's",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "MARS",
+           "name": "Mars",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NATU",
+           "name": "Natur",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NAVA",
+           "name": "Nature Valley",
+           "count": 12,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NAPA",
+           "name": "Nature's Path",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "N",
+           "name": "No Name",
+           "count": 16,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NUTE",
+           "name": "Nutella",
+           "count": 7,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "NT2U",
+           "name": "Nuts to You",
+           "count": 10,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "OHRY",
+           "name": "Oh Henry!",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PBME",
+           "name": "PB&Me",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PCBL",
+           "name": "PC Black Label",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PCB",
+           "name": "PC Blue Menu",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PO",
+           "name": "PC Organics",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PFRE",
+           "name": "Peek Freans",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PBRY",
+           "name": "Pillsbury",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "PLTR",
+           "name": "Planters",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "P",
+           "name": "President's Choice",
+           "count": 10,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "QUKR",
+           "name": "Quaker",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "REES",
+           "name": "Reese's",
+           "count": 19,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "RXBR",
+           "name": "RXBar",
+           "count": 6,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SIPR",
+           "name": "Simply Protein",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SMCK",
+           "name": "Smuckers",
+           "count": 4,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SNCK",
+           "name": "Snickers",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "SUNB",
+           "name": "Sunbutter",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "TRFU",
+           "name": "trufru",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "WOWB",
+           "name": "Wowbutter",
+           "count": 3,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "ZUKE",
+           "name": "ZUKES",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "promotions",
+         "name": "Deals",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "Price Reduction",
+           "name": "Price Reduction",
+           "count": 48,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$1,$2,$3,$4,$5",
+           "name": "$1,$2,$3,$4,$5",
+           "count": 28,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "price ranges",
+         "name": "Price",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "$1 and under",
+           "name": "$1 and under",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$2 and under",
+           "name": "$2 and under",
+           "count": 8,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$3 and under",
+           "name": "$3 and under",
+           "count": 38,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$4 and under",
+           "name": "$4 and under",
+           "count": 58,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$5 and under",
+           "name": "$5 and under",
+           "count": 84,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$5-$10",
+           "name": "$5-$10",
+           "count": 86,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$10-$15",
+           "name": "$10-$15",
+           "count": 25,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$15-$20",
+           "name": "$15-$20",
+           "count": 9,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$20-$30",
+           "name": "$20-$30",
+           "count": 5,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "$30-$50",
+           "name": "$30-$50",
+           "count": 2,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "sellers",
+         "name": "Sellers",
+         "multiSelect": true,
+         "values": []
+        },
+        {
+         "code": "shopCanadian",
+         "name": "Shop Canadian",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "prepared_in_canada",
+           "name": "Prepared in Canada",
+           "count": 66,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "flyers",
+         "name": "Flyers",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "FLYER_ITEM",
+           "name": "Flyer Item",
+           "count": 34,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        },
+        {
+         "code": "dietaryCallouts",
+         "name": "Dietary & Lifestyle",
+         "multiSelect": true,
+         "values": [
+          {
+           "code": "low_in_sodium",
+           "name": "Low in Sodium or Salt",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "egg_free",
+           "name": "Egg Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "plant_based",
+           "name": "Plant Based",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "source_of_protein",
+           "name": "Source of Protein",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "high_fibre",
+           "name": "High Fibre",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "nut_free",
+           "name": "Nut Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "vegan",
+           "name": "Vegan",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "peanut_free_allergen",
+           "name": "Peanut Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "soy_free",
+           "name": "Soy Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "kosher",
+           "name": "Kosher",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "no_added_sugar",
+           "name": "No Added Sugar",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "whole_grain",
+           "name": "Whole Grain",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "low_in_sugar",
+           "name": "Low in Sugar",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "gmo_free",
+           "name": "GMO Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "tree_nut_free_facility",
+           "name": "Tree Nut Free Facility",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "sugar_free",
+           "name": "Sugar Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "vegetarian",
+           "name": "Vegetarian",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "dairy_free",
+           "name": "Dairy Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "gluten_free",
+           "name": "Gluten Free",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "organic",
+           "name": "Organic",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          },
+          {
+           "code": "source_of_fibre",
+           "name": "Source of Fibre",
+           "count": 1,
+           "disabled": null,
+           "selected": false
+          }
+         ]
+        }
+       ],
+       "quickFilters": [
+        {
+         "name": "Our Brands",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "productBrand",
+          "name": "Brand",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "FM",
+            "name": "Farmer's Market",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "N",
+            "name": "No Name",
+            "count": 16,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCBL",
+            "name": "PC Black Label",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCB",
+            "name": "PC Blue Menu",
+            "count": 3,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PO",
+            "name": "PC Organics",
+            "count": 3,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "P",
+            "name": "President's Choice",
+            "count": 10,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Deals",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "promotions",
+          "name": "Deals",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "Price Reduction",
+            "name": "Price Reduction",
+            "count": 48,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "$1,$2,$3,$4,$5",
+            "name": "$1,$2,$3,$4,$5",
+            "count": 28,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Shop Canadian",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "shopCanadian",
+          "name": "Shop Canadian",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "prepared_in_canada",
+            "name": "Prepared in Canada",
+            "count": 66,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Flyer Item",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "flyers",
+          "name": "Flyers",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "FLYER_ITEM",
+            "name": "Flyer Item",
+            "count": 34,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Dietary",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "dietaryCallouts",
+          "name": "Dietary & Lifestyle",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "vegan",
+            "name": "Vegan",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "gluten_free",
+            "name": "Gluten Free",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "organic",
+            "name": "Organic",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        }
+       ],
+       "totalResults": 197
+      }
+     }
+    ]
+   },
+   "bottomLeftAdSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "mediaIABComponent",
+      "contentId": "2IpZjHfMKo8nXYkZI3W6V5",
+      "variantId": null,
+      "id": "2IpZjHfMKo8nXYkZI3W6V5",
+      "position": 1,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "IAB_FLEXI",
+        "adSizesMobile": [
+         "flexi_halfpage",
+         "flexi_medium_rectangle"
+        ],
+        "adSizesTablet": [
+         "flexi_halfpage",
+         "flexi_medium_rectangle"
+        ],
+        "adSizesDesktop": [
+         "flexi_halfpage",
+         "flexi_medium_rectangle"
+        ],
+        "refreshTimer": 5000,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 50,
+        "position": "spt1",
+        "searchTerm": null,
+        "customData": {
+         "rmp.category_path": "",
+         "isDesktopOnly": true
+        },
+        "pageType": null,
+        "excludedProductIds": null
+       }
+      }
+     }
+    ]
+   },
+   "bannerSection": null,
+   "headlineSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "mediaIABComponent",
+      "contentId": "9q8jZPCt3XJwPlzy59aU2",
+      "variantId": null,
+      "id": "9q8jZPCt3XJwPlzy59aU2",
+      "position": 2,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "IAB_FLEXI",
+        "adSizesMobile": [
+         "flexi_mbanner"
+        ],
+        "adSizesTablet": [
+         "flexi_leaderboard"
+        ],
+        "adSizesDesktop": [
+         "flexi_leaderboard"
+        ],
+        "refreshTimer": 0,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 50,
+        "position": "1",
+        "searchTerm": null,
+        "customData": {
+         "isLegacyPage": true,
+         "rmp.category_path": ""
+        },
+        "pageType": "SRP",
+        "excludedProductIds": null
+       }
+      }
+     },
+     {
+      "componentId": "headerGroupComponent",
+      "contentId": "7CVoaDkLKONWqiCtFLLb77",
+      "variantId": null,
+      "id": "7CVoaDkLKONWqiCtFLLb77",
+      "position": 3,
+      "data": {
+       "paragraph": null,
+       "callToAction": null,
+       "headline": {
+        "text": "Results for peanut butter",
+        "alignment": "LEFT",
+        "variantId": "LARGE_02",
+        "headerType": "H2",
+        "callToAction": null
+       },
+       "desktopImage": null,
+       "mobileImage": null,
+       "tabletImage": null
+      }
+     }
+    ]
+   },
+   "quickFiltersSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "quickFiltersComponent",
+      "contentId": "7hq1BLg8QP3vp1UveZvKDK",
+      "variantId": null,
+      "id": "7hq1BLg8QP3vp1UveZvKDK",
+      "position": 4,
+      "data": {
+       "quickFilters": [
+        {
+         "name": "Our Brands",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "productBrand",
+          "name": "Brand",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "FM",
+            "name": "Farmer's Market",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "N",
+            "name": "No Name",
+            "count": 16,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCBL",
+            "name": "PC Black Label",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PCB",
+            "name": "PC Blue Menu",
+            "count": 3,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "PO",
+            "name": "PC Organics",
+            "count": 3,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "P",
+            "name": "President's Choice",
+            "count": 10,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Deals",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "promotions",
+          "name": "Deals",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "Price Reduction",
+            "name": "Price Reduction",
+            "count": 48,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "$1,$2,$3,$4,$5",
+            "name": "$1,$2,$3,$4,$5",
+            "count": 28,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Shop Canadian",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "shopCanadian",
+          "name": "Shop Canadian",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "prepared_in_canada",
+            "name": "Prepared in Canada",
+            "count": 66,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Flyer Item",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "flyers",
+          "name": "Flyers",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "FLYER_ITEM",
+            "name": "Flyer Item",
+            "count": 34,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        },
+        {
+         "name": "Dietary",
+         "selected": false,
+         "iconUrl": null,
+         "filterGroup": {
+          "code": "dietaryCallouts",
+          "name": "Dietary & Lifestyle",
+          "multiSelect": true,
+          "values": [
+           {
+            "code": "vegan",
+            "name": "Vegan",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "gluten_free",
+            "name": "Gluten Free",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           },
+           {
+            "code": "organic",
+            "name": "Organic",
+            "count": 1,
+            "disabled": null,
+            "selected": false
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "sortsSection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "sortsComponent",
+      "contentId": "2itjH0C7kCOzDHBYvRoPFu",
+      "variantId": null,
+      "id": "2itjH0C7kCOzDHBYvRoPFu",
+      "position": 5,
+      "data": {
+       "sortsLabel": "Sort",
+       "applyButtonText": "Sort",
+       "sorts": [
+        {
+         "code": "recommended",
+         "name": "Relevance",
+         "selected": true
+        },
+        {
+         "code": "price-asc",
+         "name": "Price (Low to High)",
+         "selected": false
+        },
+        {
+         "code": "price-desc",
+         "name": "Price (High to Low)",
+         "selected": false
+        },
+        {
+         "code": "name-asc",
+         "name": "A-Z (alphabetical)",
+         "selected": false
+        },
+        {
+         "code": "newest-desc",
+         "name": "Newest to Oldest Products",
+         "selected": false
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "mainContentCollection": {
+    "alignment": "NONE",
+    "components": [
+     {
+      "componentId": "productGridComponent",
+      "contentId": "6atKIMngFtGlCRtqtvjrXq",
+      "variantId": null,
+      "id": "6atKIMngFtGlCRtqtvjrXq-1-1",
+      "position": 6,
+      "data": {
+       "pagination": {
+        "pageNumber": 1,
+        "pageSize": 48,
+        "hasMore": false,
+        "isLast": false,
+        "totalResults": 197
+       },
+       "productTiles": [
+        {
+         "index": 1,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20425817_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_800.png"
+          }
+         ],
+         "brand": "Reese's",
+         "title": "Peanut Butter Cups Half Pound Cup",
+         "description": "<p>A REESE'S peanut butter cup candy weighing half a pound! The perfect combination of milk chocolate and peanut butter.</p>",
+         "packageSizing": "226 g, $3.54/100g",
+         "pricing": {
+          "price": "7.99",
+          "wasPrice": null,
+          "displayPrice": "$7.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-butter-cups-half-pound-cup/p/20425817_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20425817",
+         "uom": "EA",
+         "isSponsored": true,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SPONSORED",
+          "badgeClass": null,
+          "text": "Sponsored",
+          "icon": null
+         }
+        },
+        {
+         "index": 2,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20039581001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Smooth Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Smooth Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty flavour and irresistible, creamy texture, Kraft Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on toast, PB&J sandwiches and fruits or vegetables. Our smooth peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Signature delicious, nutty taste and creamy texture</li><li>Made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's Favourite Peanut Butter</li><li>Proudly prepared in Canada</li></ul>",
+         "packageSizing": "1 kg, $0.60/100g",
+         "pricing": {
+          "price": "5.97",
+          "wasPrice": "$6.29",
+          "displayPrice": "$5.97",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.32",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-peanut-butter/p/20039581001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20039581001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 3,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21460078_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_800.png"
+          }
+         ],
+         "brand": "Reese's",
+         "title": "Peanut Butter & Milk Chocolate Candy Advent Calendar Christmas Holiday",
+         "description": "<p>A REESE'S candy Advent calendar is a delicious and festive way to enjoy the countdown to Christmas this holiday season.</p>",
+         "packageSizing": "212 g, $7.54/100g",
+         "pricing": {
+          "price": "15.99",
+          "wasPrice": null,
+          "displayPrice": "$15.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-butter-milk-chocolate-candy-advent-calendar/p/21460078_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21460078",
+         "uom": "EA",
+         "isSponsored": true,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SPONSORED",
+          "badgeClass": null,
+          "text": "Sponsored",
+          "icon": null
+         }
+        },
+        {
+         "index": 4,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21720910_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Nutella",
+         "title": "Peanut Spread With Cocoa, Smooth and Creamy Peanut with Cocoa Spread",
+         "description": "<p>Bring a smile to your snacking with NUTELLA Peanut Spread with Cocoa, a smooth and creamy spread made with roasted peanuts and cocoa for a unique cocoa-peanut taste experience. Crafted with high-quality ingredients, NUTELLA Peanut Spread with Cocoa features the same smooth cocoa creaminess of original NUTELLA, offering a delicious experience that brings together creamy cocoa and roasted peanuts for homes and families. NUTELLA Peanut Spread with Cocoa is a one-of-a-kind combination of cocoa and roasted peanuts; perfect for adding something special to everyday moments such as afternoon and work snacks. Whether you're making a sandwich, pairing it with fruit, using it with pretzels, or enjoying it as a topping with toast - this spread works as a delicious addition to your snacks. Beloved around the world for over 60 years, NUTELLA has become a staple in homes for its smooth texture and delicious taste experience, and the iconic NUTELLA jar suits couples and sharing as fun snacks, yummy snacks, and treats. It can be a gift for couples or hostess gifts for couples; it also adds a cocoa touch to your holiday gift basket, and can be used for baking.</p><ul><li>PEANUT COCOA DELIGHT: Enjoy a 725 gram jar of NUTELLA Peanut Spread with Cocoa, a unique and delicious taste experience that brings together creamy cocoa and roasted peanuts.</li><li>SMOOTH & CREAMY: Discover the new NUTELLA Peanut Spread with Cocoa, roasted peanut taste and creamy texture in a uniquely delicious spread for snack foods.</li><li>AFTERNOON SNACKING MADE EASY: Great as a sandwich spread for afternoon snacks; it is a perfect match for fruit or as a spread on bread.</li><li>MADE FOR PEANUT LOVERS: NUTELLA Peanut Spread with Cocoa combines roasted peanuts with cocoa, for a one-of-a-kind gourmet snacks taste experience to use as gifts for family members.</li><li>FESTIVE & VERSATILE: A festive addition to holiday gift baskets, snacking and baking.</li></ul>",
+         "packageSizing": "725 g, $1.03/100g",
+         "pricing": {
+          "price": "7.50",
+          "wasPrice": "$8.50",
+          "displayPrice": "$7.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $1.00",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-spread-with-cocoa-smooth-and-creamy-peanut/p/21720910_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21720910",
+         "uom": "EA",
+         "isSponsored": true,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SPONSORED",
+          "badgeClass": null,
+          "text": "Sponsored",
+          "icon": null
+         }
+        },
+        {
+         "index": 5,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20311582001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Only Peanuts All Natural Smooth Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Only Peanuts All Natural Smooth Peanut Butter is a family favourite and made with only roasted peanuts. With our signature delicious, nutty taste and irresistible, creamy texture, Kraft Only Peanuts All Natural Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on your toast, PB&J sandwiches and fruits or vegetables. Our all natural peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 750 g jar of peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite peanut butter, proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Kraft Only Peanuts All Natural Peanut Butter is made with only high quality dry-roasted peanuts</li><li>Signature delicious, nutty taste and creamy texture</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's favourite peanut butter</li><li>Proudly prepared in Canada</li></ul>",
+         "packageSizing": "750 g, $0.80/100g",
+         "pricing": {
+          "price": "5.97",
+          "wasPrice": "$6.29",
+          "displayPrice": "$5.97",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.32",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/only-peanuts-all-natural-smooth-peanut-butter/p/20311582001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20311582001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 6,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21721261_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Nutella",
+         "title": "Peanut Spread With Cocoa",
+         "description": "<p>Bring a smile to your snacking with NUTELLA Peanut Spread with Cocoa, a smooth and creamy spread made with roasted peanuts and cocoa for a unique cocoa-peanut taste experience. Crafted with high-quality ingredients, NUTELLA Peanut Spread with Cocoa features the same smooth cocoa creaminess of original NUTELLA, offering a delicious experience that brings together creamy cocoa and roasted peanuts for homes and families. NUTELLA Peanut Spread with Cocoa is a one-of-a-kind combination of cocoa and roasted peanuts; perfect for adding something special to everyday moments such as afternoon and work snacks. Whether you're making a sandwich, pairing it with fruit, using it with pretzels, or enjoying it as a topping with toast - this spread works as a delicious addition to your snacks. Beloved around the world for over 60 years, NUTELLA has become a staple in homes for its smooth texture and delicious taste experience, and the iconic NUTELLA jar suits couples and sharing as fun snacks, yummy snacks, and treats. It can be a gift for couples or hostess gifts for couples; it also adds a cocoa touch to your holiday gift basket, and can be used for baking.</p><ul><li>PEANUT COCOA DELIGHT: Enjoy a 375 gram jar of NUTELLA Peanut Spread with Cocoa, a unique and delicious taste experience that brings together creamy cocoa and roasted peanuts.</li><li>SMOOTH & CREAMY: Discover the new NUTELLA Peanut Spread with Cocoa, roasted peanut taste and creamy texture in a uniquely delicious spread for snack foods.</li><li>AFTERNOON SNACKING MADE EASY: Great as a sandwich spread for afternoon snacks; it is a perfect match for fruit or as a spread on bread.</li><li>MADE FOR PEANUT LOVERS: NUTELLA Peanut Spread with Cocoa combines roasted peanuts with cocoa, for a one-of-a-kind gourmet snacks taste experience to use as gifts for family members.</li><li>FESTIVE & VERSATILE: A festive addition to holiday gift baskets, snacking and baking.</li></ul>",
+         "packageSizing": "375 g, $1.47/100g",
+         "pricing": {
+          "price": "5.50",
+          "wasPrice": null,
+          "displayPrice": "$5.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-spread-with-cocoa/p/21721261_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21721261",
+         "uom": "EA",
+         "isSponsored": true,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SPONSORED",
+          "badgeClass": null,
+          "text": "Sponsored",
+          "icon": null
+         }
+        },
+        {
+         "index": 7,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20064825001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Smooth Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Smooth Peanut Butter is perfect for the whole family. Made with high-quality dry roasted peanuts, Kraft Peanut Butter has a delicious creamy and nutty taste. Try our peanut butter in your favourite PB&J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 2 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada's #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>One 2KG Jar of Kraft Smooth Peanut Butter</li><li>Our smooth peanut butter is made with dry-roasted peanuts</li><li>Smooth peanut butter has a nutty flavour with a creamy texture the whole family will enjoy</li><li>Perfect to spread on toast, add to a pb&j or use in sauces and marinades</li><li>Kraft Peanut Butter is Canada's #1 peanut butter</li><li>Add a spoonful of peanut butter to your favourite smoothie for an extra creamy taste</li><li>Smooth peanut butter comes in a recloseable jar so you can keep peanut butter fresh</li><li>Serving size is 1 tbsp of our nut butter</li></ul>",
+         "packageSizing": "2 kg, $0.55/100g",
+         "pricing": {
+          "price": "11.00",
+          "wasPrice": null,
+          "displayPrice": "$11.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-peanut-butter/p/20064825001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20064825001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 8,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20573405_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_800.png"
+          }
+         ],
+         "brand": "Reese's",
+         "title": "Peanut Butter Cup Candy",
+         "description": "<p>Eating a REESE'S PEANUT BUTTER CUPS candy is a one-of-a-kind multi-sensory experience. First you taste the smooth milk chocolate ridges. Next, the creamy peanut butter melts in your mouth. Finally, the milk chocolate and peanut butter meld together in the perfect balance salty and sweet, crunchy and smooth. Whether you keep it for yourself or share it with others, REESE'S PEANUT BUTTER CUPS candy are the special taste experience that’s so much more than the sum of its delicious parts! Nothing else is REESE'S.</p>",
+         "packageSizing": "184 g, $2.71/100g",
+         "pricing": {
+          "price": "4.99",
+          "wasPrice": null,
+          "displayPrice": "$4.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-butter-cup-candy/p/20573405_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20573405",
+         "uom": "EA",
+         "isSponsored": true,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SPONSORED",
+          "badgeClass": null,
+          "text": "Sponsored",
+          "icon": null
+         }
+        },
+        {
+         "index": 9,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20296985001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Smooth Peanut Butter",
+         "description": "<p>Deliciously smooth and creamy, Smooth Peanut Butter is made with dry-roasted peanuts for a rich, nutty taste. It's perfect for spreading on bread and adding to your favourite baked goods recipes.</p><br><br><p>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck</p>",
+         "packageSizing": "1 kg, $0.45/100g",
+         "pricing": {
+          "price": "4.50",
+          "wasPrice": null,
+          "displayPrice": "$4.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-peanut-butter/p/20296985001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20296985001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 10,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20582012_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_800.png"
+          }
+         ],
+         "brand": "Reese's",
+         "title": "Peanut Butter Cups Candy",
+         "description": "<p>Eating a REESE'S PEANUT BUTTER CUPS candy is a one-of-a-kind multi-sensory experience. First you taste the smooth milk chocolate ridges. Next, the creamy peanut butter melts in your mouth. Finally, the milk chocolate and peanut butter meld together in the perfect balance salty and sweet, crunchy and smooth. Whether you keep it for yourself or share it with others, REESE'S PEANUT BUTTER CUPS candy are the special taste experience that’s so much more than the sum of its delicious parts! Nothing else is REESE'S.</p>",
+         "packageSizing": "46 g, $2.17/100g",
+         "pricing": {
+          "price": "1.00",
+          "wasPrice": "$1.25",
+          "displayPrice": "$1.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.25",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-butter-cups-candy/p/20582012_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20582012",
+         "uom": "EA",
+         "isSponsored": true,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SPONSORED",
+          "badgeClass": null,
+          "text": "Sponsored",
+          "icon": null
+         }
+        },
+        {
+         "index": 11,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20039581003_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Smooth Light Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Smooth Light Peanut Butter is perfect for the whole family. Made with high-quality dry roasted peanuts, Kraft Peanut Butter has a delicious creamy and nutty taste. Light peanut butter contains 25% less fat than original Kraft Peanut Butter but still has the same delicious flavour. Try our peanut butter in your favourite PB&J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 1 kg jar of smooth and light peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada's #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>25% less fat than regular Smooth Kraft Peanut Butter</li><li>Kraft Peanut Butter is made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's favourite Peanut Butter</li><li>Proudly prepared in Canada</li></ul>",
+         "packageSizing": "1 kg, $0.60/100g",
+         "pricing": {
+          "price": "5.97",
+          "wasPrice": "$6.29",
+          "displayPrice": "$5.97",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.32",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-light-peanut-butter/p/20039581003_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20039581003",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 12,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21286208_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Armstrong",
+         "title": "Pizza Mozzarella Shredded Cheese",
+         "description": "A semi-soft ivory coloured cheese with a milky and slightly salty flavour. Perfect atop your favourite pizzas or in pasta dishes.CANADIANS CRAVE ARMSTRONG CHEESESTRONG ON HERITAGESince 1902, our master cheesemakers have passed along their knowledge and expertise to bring you Cheddar cheese at its best.STRONG ON CHEDDAROur natural cheeses are made from fresh milk and will taste delicious in your recipes.STRONG ON VALUESWe believe the best dairy products begin with milk from healthy, well cared for animals. We pledge to continue to promote best practices in dairy animal care.",
+         "packageSizing": "320 g, $1.56/100g",
+         "pricing": {
+          "price": "4.99",
+          "wasPrice": "$6.00",
+          "displayPrice": "$4.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $1.01",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/pizza-mozzarella-shredded-cheese/p/21286208_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21286208",
+         "uom": "EA",
+         "isSponsored": true,
+         "isComplementarySponsored": true,
+         "complementarySponsoredBadgeText": "You might like",
+         "productBadge": {
+          "badgeId": "SPONSORED",
+          "badgeClass": null,
+          "text": "Sponsored",
+          "icon": null
+         }
+        }
+       ],
+       "button1": null,
+       "headerGroup": null,
+       "productTileType": null
+      }
+     },
+     {
+      "componentId": "mediaShoppableDisplayComponent",
+      "contentId": "2pJjosOkQBNfIzj03B3dyC",
+      "variantId": null,
+      "id": "2pJjosOkQBNfIzj03B3dyC",
+      "position": 7,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "SHOPPABLE_DISPLAY",
+        "adSizesMobile": [
+         "default"
+        ],
+        "adSizesTablet": [
+         "default"
+        ],
+        "adSizesDesktop": [
+         "default"
+        ],
+        "refreshTimer": 0,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 50,
+        "position": "2",
+        "searchTerm": "peanut butter",
+        "customData": {
+         "rmp.category_path": "",
+         "reservedPlacementId": "{platform}:PCX:SRP:SHOPPABLE_DISPLAY:2"
+        },
+        "pageType": "SRP",
+        "excludedProductIds": null
+       }
+      }
+     },
+     {
+      "componentId": "productGridComponent",
+      "contentId": "6atKIMngFtGlCRtqtvjrXq",
+      "variantId": null,
+      "id": "6atKIMngFtGlCRtqtvjrXq-1-2",
+      "position": 8,
+      "data": {
+       "pagination": {
+        "pageNumber": 1,
+        "pageSize": 48,
+        "hasMore": false,
+        "isLast": false,
+        "totalResults": 197
+       },
+       "productTiles": [
+        {
+         "index": 19,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20298178_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20298178_EA/en/1/20298178_en_front_v1_800.png"
+          }
+         ],
+         "brand": "PC Organics",
+         "title": "Organic Smooth Peanut Butter",
+         "description": "<p>Organics Smooth Peanut Butter is deliciously smooth and creamy. Made with 100% roasted peanuts, it's perfect for spreading on bread and adding to baked goods recipes.</p>",
+         "packageSizing": "500 g, $1.00/100g",
+         "pricing": {
+          "price": "5.00",
+          "wasPrice": null,
+          "displayPrice": "$5.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/organic-smooth-peanut-butter/p/20298178_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20298178",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SUBSCRIBE_EARN",
+          "badgeClass": "badge06",
+          "text": "Subscribe & Earn",
+          "icon": null
+         }
+        },
+        {
+         "index": 20,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20323398002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20323398002_EA/en/1/20323398002_en_front_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Smooth Peanut Butter, Club Size",
+         "description": "Ground roasted peanuts.<br><br>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck",
+         "packageSizing": "2 kg, $0.45/100g",
+         "pricing": {
+          "price": "9.00",
+          "wasPrice": null,
+          "displayPrice": "$9.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-peanut-butter-club-size/p/20323398002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20323398002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 21,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20064825002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20064825002_EA/en/1/20064825002_en_1_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Smooth Light Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Smooth Light Peanut Butter is perfect for the whole family. Made with high-quality dry roasted peanuts, Kraft Peanut Butter has a delicious creamy and nutty taste. Light peanut butter contains 25% less fat than regular Smooth Kraft Peanut Butter but still has the same delicious flavour. Try our peanut butter in your favourite PB&J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 2 kg jar of smooth and light peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada's #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>One 2KG Jar of Kraft Smooth Light Peanut Butter</li><li>Our smooth peanut butter is made with dry-roasted peanuts</li><li>Kraft Light peanut butter contains 25% less fat than regular Smooth Kraft peanut butter</li><li>Perfect to spread on toast, add to a pb&j or use in sauces and marinades</li><li>Kraft Peanut Butter is Canada's #1 peanut butter</li><li>Add a spoonful of peanut butter to your favourite smoothie for an extra creamy taste</li><li>Smooth and light peanut butter comes in a recloseable jar so you can keep peanut butter fresh</li><li>Serving size is 1 tbsp of our nut butter</li></ul>",
+         "packageSizing": "2 kg, $0.55/100g",
+         "pricing": {
+          "price": "11.00",
+          "wasPrice": null,
+          "displayPrice": "$11.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-light-peanut-butter/p/20064825002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20064825002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 22,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20296985003_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20296985003_EA/en/1/20296985003_en_front_v1_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Smooth Light Peanut Butter",
+         "description": "Ground roasted peanuts.<br><br>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck",
+         "packageSizing": "1 kg, $0.45/100g",
+         "pricing": {
+          "price": "4.50",
+          "wasPrice": null,
+          "displayPrice": "$4.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-light-peanut-butter/p/20296985003_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20296985003",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 23,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20316212001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20316212001_EA/en/1/6038364071_enfr_front_centre_marketing_GS1_Ecommerce_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Smooth Peanut Butter",
+         "description": "<p>Smooth Peanut Butter features a rich taste and a silky texture that spreads easily on toast or crackers. Made with peanuts, it's perfect for peanut butter and jelly sandwiches, smoothies, baking, or simply enjoying by the spoonful.</p><br><br>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck",
+         "packageSizing": "500 g, $0.60/100g",
+         "pricing": {
+          "price": "2.99",
+          "wasPrice": null,
+          "displayPrice": "$2.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-peanut-butter/p/20316212001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20316212001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 24,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20039581002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20039581002_EA/en/1/20039581002_en_1_v1_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Extra Creamy Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Extra Creamy Peanut Butter is the family favourite and Canadian classic in an extra creamy variety! With our signature delicious, nutty taste and irresistible, extra creamy texture, Kraft Extra Creamy Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Extra Creamy Peanut Butter on your toast, PB&J sandwiches and fruits or vegetables. Our extra creamy peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can enjoy our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Signature delicious, nutty taste with an extra creamy texture</li><li>Made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's Favourite Peanut Butter</li><li>Proudly prepared in Canada</li></ul>",
+         "packageSizing": "1 kg, $0.60/100g",
+         "pricing": {
+          "price": "5.97",
+          "wasPrice": "$6.29",
+          "displayPrice": "$5.97",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.32",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/extra-creamy-peanut-butter/p/20039581002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20039581002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 25,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20795946001_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20795946001_EA/en/1/20795946001_en_1_800.png"
+          }
+         ],
+         "brand": "Nuts to You",
+         "title": "Organic Peanut Butter Smooth",
+         "description": "<p>A delicious, organic peanut butter without additives  and all those extra ingredients.  Say goodbye to added sugars and salt, say hello to what really matters. Great as a spread or use in dips, sauces, baking, desserts or smoothies.</p><ul><li>Certified organic</li><li>Non-GMO</li><li>Dairy Free</li><li>Wheat Free</li><li>Soy Free</li><li>Gluten Free</li><li>Kosher</li><li>No added salt, sugar or hydrogenated oil.</li><li>Made in Canada of imported ingredients.</li></ul>",
+         "packageSizing": "500 g, $1.50/100g",
+         "pricing": {
+          "price": "7.50",
+          "wasPrice": null,
+          "displayPrice": "$7.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/organic-peanut-butter-smooth/p/20795946001_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20795946001",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 26,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21047266_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21047266_EA/en/1/21047266_enfr_front_800.png"
+          }
+         ],
+         "brand": "PC Organics",
+         "title": "Organic Smooth Peanut Butter Club Size",
+         "description": "<p><p>Deliciously smooth and creamy, Organics Smooth Peanut Butter Club Size is a pantry essential. Made with 100% roasted peanuts, it's perfect for spreading on bread or adding to baked goods recipes.</p></p>",
+         "packageSizing": "1 kg, $0.95/100g",
+         "pricing": {
+          "price": "9.50",
+          "wasPrice": null,
+          "displayPrice": "$9.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/organic-smooth-peanut-butter-club-size/p/21047266_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21047266",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SUBSCRIBE_EARN",
+          "badgeClass": "badge06",
+          "text": "Subscribe & Earn",
+          "icon": null
+         }
+        },
+        {
+         "index": 27,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20296985002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20296985002_EA/en/1/20296985002_en_front_v1_800.png"
+          }
+         ],
+         "brand": "No Name",
+         "title": "Crunchy Peanut Butter",
+         "description": "<p><p>Enjoy a satisfying crunch in every bite with Crunchy Peanut Butter. It’s made with dry-roasted peanuts for a rich, nutty taste. Spread it on bread or add it to your favourite baked goods recipes.</p></p><br><p>The †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck</p>",
+         "packageSizing": "1 kg, $0.45/100g",
+         "pricing": {
+          "price": "4.50",
+          "wasPrice": null,
+          "displayPrice": "$4.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/crunchy-peanut-butter/p/20296985002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20296985002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 28,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21217854_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21217854_EA/en/1/21217854_en_1_v1_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Extra Roasted Flavour Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Extra Roasted Flavour Peanut Butter is a family favourite and a Canadian classic with a bold, extra roasted nutty flavour. With our signature delicious, nutty taste and irresistible, creamy texture, Kraft Extra Roasted Flavour Peanut Butter is made with high-quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Extra Roasted Flavour Peanut Butter on your toast, PB&J sandwiches and fruits or vegetables. Our peanut butter is also great for sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite peanut butter, proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>Enjoy your favourite peanut butter with extra roasted nutty flavour</li><li>Made with high quality dry-roasted peanuts</li><li>Great for sauces, marinades, smoothies, cookies and other pastries</li><li>Canada's favourite peanut butter</li><li>Proudly prepared in Canada</li></ul>",
+         "packageSizing": "1 kg, $0.60/100g",
+         "pricing": {
+          "price": "5.97",
+          "wasPrice": "$6.29",
+          "displayPrice": "$5.97",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.32",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/extra-roasted-flavour-peanut-butter/p/21217854_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21217854",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 29,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20132369003_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20132369003_EA/en/1/20132369003_en_front_v3_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Smooth Light Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Smooth Light Peanut Butter is perfect for the whole family. Made with high-quality dry roasted peanuts, Kraft Peanut Butter has a delicious creamy and nutty taste. Light peanut butter contains 25% less fat than original Kraft Peanut Butter but still has the same delicious flavour. Try our peanut butter in your favourite PB&J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 500 g jar of smooth and light peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada's #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>25% less fat than regular Smooth Kraft Peanut Butter</li><li>Kraft Peanut Butter is made with high quality dry-roasted peanuts</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Use in sauces, marinades, smoothies or baked treats</li><li>Proudly prepared in Canada</li></ul>",
+         "packageSizing": "500 g, $0.75/100g",
+         "pricing": {
+          "price": "3.75",
+          "wasPrice": "$4.49",
+          "displayPrice": "$3.75",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.74",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/smooth-light-peanut-butter/p/20132369003_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20132369003",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 30,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20132369005_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20132369005_EA/en/1/20132369005_en_front_v3_800.png"
+          }
+         ],
+         "brand": "Kraft",
+         "title": "Crunchy Peanut Butter",
+         "description": "<p>Kraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Crunchy Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty taste and irresistible, chunky texture, Kraft Crunchy Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Crunchy Peanut Butter on toast, PB&J sandwiches and fruits or vegetables. Our crunchy peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 500 g jar of peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada's favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.</p><ul><li>One 500 g jar of Kraft Crunchy Peanut Butter</li><li>Made with high quality dry-roasted peanuts</li><li>Signature delicious, nutty taste and chunky texture</li><li>Great for using in sauces, marinades, smoothies, cookies and other pastries</li><li>Kraft Peanut Butter is Canada's #1 peanut butter</li><li>Proudly prepared in Canada</li><li>Crunchy peanut butter comes in a recloseable jar so you can keep peanut butter fresh</li></ul>",
+         "packageSizing": "500 g, $0.75/100g",
+         "pricing": {
+          "price": "3.75",
+          "wasPrice": "$4.49",
+          "displayPrice": "$3.75",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.74",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/crunchy-peanut-butter/p/20132369005_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20132369005",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        }
+       ],
+       "button1": null,
+       "headerGroup": null,
+       "productTileType": null
+      }
+     },
+     {
+      "componentId": "mediaShoppableVideoComponent",
+      "contentId": "6syXiUACrJsg5UkyFiRJg8",
+      "variantId": null,
+      "id": "6syXiUACrJsg5UkyFiRJg8",
+      "position": 9,
+      "data": {
+       "mediaConfiguration": {
+        "title": null,
+        "adUnitType": "SHOPPABLE_VIDEO",
+        "adSizesMobile": [
+         "default"
+        ],
+        "adSizesTablet": [
+         "default"
+        ],
+        "adSizesDesktop": [
+         "default"
+        ],
+        "refreshTimer": 0,
+        "lazyLoad": true,
+        "lazyLoadingTriggerThreshold": 0,
+        "position": "1",
+        "searchTerm": "peanut butter",
+        "customData": {
+         "rmp.category_path": "",
+         "rmp.serveAs": "SRP"
+        },
+        "pageType": "SRP",
+        "excludedProductIds": null
+       }
+      }
+     },
+     {
+      "componentId": "productGridComponent",
+      "contentId": "6atKIMngFtGlCRtqtvjrXq",
+      "variantId": null,
+      "id": "6atKIMngFtGlCRtqtvjrXq-1-3",
+      "position": 10,
+      "data": {
+       "pagination": {
+        "pageNumber": 1,
+        "pageSize": 48,
+        "hasMore": true,
+        "isLast": true,
+        "totalResults": 197
+       },
+       "productTiles": [
+        {
+         "index": 37,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20055833_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20055833_EA/en/1/20055833_en_front_800.png"
+          }
+         ],
+         "brand": "PC Organics",
+         "title": "Organic Crunchy Peanut Butter ",
+         "description": "<p>Get the crunch you crave with Organics Crunchy Peanut Butter. Made with 100% roasted peanuts, it's perfect for spreading on bread or adding to baked goods recipes.</p>",
+         "packageSizing": "500 g, $1.00/100g",
+         "pricing": {
+          "price": "5.00",
+          "wasPrice": null,
+          "displayPrice": "$5.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/organic-crunchy-peanut-butter/p/20055833_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20055833",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SUBSCRIBE_EARN",
+          "badgeClass": "badge06",
+          "text": "Subscribe & Earn",
+          "icon": null
+         }
+        },
+        {
+         "index": 38,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20686988002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20686988002_EA/en/1/20686988002_en_1_v1_800.png"
+          }
+         ],
+         "brand": "Nature Valley",
+         "title": "Protein Granola Bars, Peanut Butter Dark Chocolate, 4 ct",
+         "description": "<p>Protein that packs a punch. Nature Valley Chewy Protein Granola Bars are packed with nine grams of protein, making them the perfect snack to keep you going. These Protein Granola Bars are made with roasted peanuts, chocolate, and luscious peanut butter to blast through your next craving. Convenient bars for snack time or an on-the-go treat. Perfect for the pantry, snack box, and hiking trail. Made with no artificial flavours or artificial colours. At Nature Valley, we believe that what you put in is what you get out. So when you need to be great out there, you can rely on us for real energy, wherever and whenever you need it. Energy you can depend on. Contains four bars in total. Nature Valley, Canada’s most trusted Granola Bar brand.* *Voted most trusted Granola Bar brand (in a tie) by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study. Per 1 bar</p><ul><li>CHEWY GRANOLA BARS: Protein Granola Bars made with roasted peanuts, chocolate, and luscious peanut butter to blast through your next craving; A must-have for an on-the-go snack</li><li>PROTEIN PACKED: An excellent source of protein with nine grams per serving, for a quick energy boost; The perfect snack to keep you going</li><li>PERFECTLY PORTABLE: Convenient bars for snack time or an on-the-go invigorating treat; Perfect for the pantry, snack box, and hiking trail</li><li>REAL INGREDIENTS: No artificial flavours or artificial colours</li><li>CONTAINS: 37 g, four ct</li></ul>",
+         "packageSizing": "148 g, $2.03/100g",
+         "pricing": {
+          "price": "3.00",
+          "wasPrice": "$3.50",
+          "displayPrice": "$3.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.50",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/protein-granola-bars-peanut-butter-dark-chocolate/p/20686988002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20686988002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 39,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20795946002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20795946002_EA/en/1/20795946002_en_1_800.png"
+          }
+         ],
+         "brand": "Nuts to You",
+         "title": "Organic Peanut Butter Crunchy",
+         "description": "<p>A delicious, organic peanut butter without additives  and all those extra ingredients.  Say goodbye to added sugars and salt, say hello to what really matters. Great as a spread or use in dips, sauces, baking, desserts or smoothies.</p><ul><li>Certified organic</li><li>Non-GMO</li><li>Dairy Free</li><li>Wheat Free</li><li>Soy Free</li><li>Gluten Free</li><li>Kosher</li><li>No added salt, sugar or hydrogenated oil.</li><li>Made in Canada of imported ingredients.</li></ul>",
+         "packageSizing": "500 g, $1.50/100g",
+         "pricing": {
+          "price": "7.50",
+          "wasPrice": null,
+          "displayPrice": "$7.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/organic-peanut-butter-crunchy/p/20795946002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20795946002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 40,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20322266002_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20322266002_EA/en/1/20322266002_en_front_800.png"
+          }
+         ],
+         "brand": "Natur",
+         "title": "Peanut Butter, Crunchy",
+         "description": "<p>Natur 100% natural peanut butter is made with highest quality dry roasted peanuts. Discover the delicious Natur Natural Peanut Butter!</p><p>As there is no artificial stabilizer, it is normal that oil appears on the surface. Will not separate if refrigerated.</p><ul><li>Source of vitamin E</li><li>As there is no artificial stabilizer, it is normal that oil appears on the surface. Will not separate if refrigerated.</li><li>Natural Highest quality dry roasted peanuts.</li><li>No oil, sugar or salt added</li><li>Cholesterol, trans fat and gluten free.</li></ul>",
+         "packageSizing": "500 g, $1.20/100g",
+         "pricing": {
+          "price": "6.00",
+          "wasPrice": "$6.50",
+          "displayPrice": "$6.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": {
+          "type": "SALE",
+          "text": "SAVE $0.50",
+          "points": 0,
+          "name": "SALE",
+          "expiryDate": "2026-11-04T00:00:00Z",
+          "dealPrice": null
+         },
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-butter-crunchy/p/20322266002_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20322266002",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 41,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21184285_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21184285_EA/en/1/21184285_en_front_800.png"
+          }
+         ],
+         "brand": "PB&Me",
+         "title": "Powdered Peanut Butter    ",
+         "description": "No sugar added.  All natural.  Gluten free.  6g protein.  Just add water!.  Natural: 100% peanuts.  90% less calories from fat than traditional peanut butter",
+         "packageSizing": "453 g, $2.87/100g",
+         "pricing": {
+          "price": "12.99",
+          "wasPrice": null,
+          "displayPrice": "$12.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/powdered-peanut-butter/p/21184285_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21184285",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "SUBSCRIBE_EARN",
+          "badgeClass": "badge06",
+          "text": "Subscribe & Earn",
+          "icon": null
+         }
+        },
+        {
+         "index": 42,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21715186_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21715186_EA/en/1/21715186_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Christie",
+         "title": "Ritz Bits Sandwich Crackers Peanut Butter",
+         "description": "<p>RITZ is loved by Canadians and can be shared amongst family and friends. RITZ BITS Cracker Sandwiches are bite-size snacks that sandwich a variety of delicious fillings between two tiny RITZ BITS crackers. A taste of welcome.</p><ul><li>One 162 g box of CHRISTIE RITZ BITS Sandwiches Peanut Butter filled crackers</li><li>RITZ BITS Sandwich crackers are a tiny, bite size version of RITZ crackers with a variety of different fillings</li><li>Filling made with real peanut butter</li><li>No artificial flavour or colour</li><li>Delicious snack anytime</li></ul>",
+         "packageSizing": "162 g, $1.54/100g",
+         "pricing": {
+          "price": "2.50",
+          "wasPrice": null,
+          "displayPrice": "$2.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/ritz-bits-sandwich-crackers-peanut-butter/p/21715186_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21715186",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 43,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21314277_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21314277_EA/en/1/21314277_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Fatso",
+         "title": "Peanut Butter Crunchy Salted Caramel  ",
+         "description": "Crunchy peanut butter gets a sweet and salty update with the flavour of salted caramel. This spread brings a decadent combination of tastes to your morning toast, apple slices, or smoothies. Enjoy the satisfying crunch and rich flavour combination in every spoonful.",
+         "packageSizing": "500 g, $1.60/100g",
+         "pricing": {
+          "price": "7.99",
+          "wasPrice": null,
+          "displayPrice": "$7.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-butter-crunchy-salted-caramel/p/21314277_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21314277",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 44,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21402980_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21402980_EA/en/1/21402980_en_front_800.png"
+          }
+         ],
+         "brand": "Fatso",
+         "title": "Peanut Butter With Plant-Based Fats Maple",
+         "description": "Enjoy the familiar taste of peanut butter enhanced with a touch of sweet maple flavour. This spread brings a delicious twist to your morning toast, oatmeal, or smoothies. Its smooth texture makes it easy to spread or to blend into your favourite recipes for a hint of sweetness.",
+         "packageSizing": "500 g, $1.60/100g",
+         "pricing": {
+          "price": "7.99",
+          "wasPrice": null,
+          "displayPrice": "$7.99",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": ""
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/peanut-butter-with-plant-based-fats-maple/p/21402980_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21402980",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 45,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21676314_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21676314_EA/en/1/21676314_en_1_v1_800.png"
+          }
+         ],
+         "brand": "Chex",
+         "title": "Mix Bars, Chocolatey Peanut Butter, 5 bars",
+         "description": "<p>Your taste buds are wanting something sweet. Your mind is bored with ordinary snack bars. Your hand reaches for Chex Mix Chocolatey Peanut Butter Bars, and voila - snack craving solved. This chewy medley features a delicious combination of Chex pieces, pretzels, peanut butter, and a chocolatey coating. Perfect for the lunch box, after school, or any time. Take a bar on the go for a crunchy snack.</p><ul><li>PEANUT BUTTERY BLISS: Enjoy the delicious taste of Chex pieces blended with peanut butter, pretzels, and a chocolatey coating</li><li>PERFECTLY PORTABLE: These individually wrapped bars are the perfect on the go snack your whole family will love</li><li>SNACK BARS: Add a box to your pantry and satisfy your sweet-salty cravings any time, from lunch time to break time; Slip a bar into a backpack for a sweet surprise</li><li>NO MESS: Unwrap the delicious taste of Chex Mix as a convenient bar</li><li>CONTAINS: One 160 g box of Chex Mix Chocolatey Peanut Butter Bars, 5 Bars</li></ul>",
+         "packageSizing": "160 g, $2.19/100g",
+         "pricing": {
+          "price": "3.50",
+          "wasPrice": null,
+          "displayPrice": "$3.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/mix-bars-chocolatey-peanut-butter-5-bars/p/21676314_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21676314",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 46,
+         "promotions": [],
+         "ratings": null,
+         "productId": "20847584_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/20847584_EA/en/1/20847584_en_front_v1_800.png"
+          }
+         ],
+         "brand": "Quaker",
+         "title": "Dipps Granola Bars – Peanut Butter",
+         "description": "Brace yourself for a chocolatey peanut-buttery collision! It's going to be delicious. We've taken the classic granola bars you know and love, covered them in a delicious layer of peanut butter and dipped them in rich chocolatey coating for a snack we know you'll love.<p>Made with 100% Canadian oats, Quaker Dipps granola bars are a perfect indulgence. These aren’t your run-of-the-mill granola bars — we’ve injected all kinds of delightful ingredients to create a deliciously indulgent snack. </p><p>Perfect as lunch time snacks, after-dinner treats, or for a quick on-the-go bite during super busy days, our Quaker Dipps granola bars are available in many flavours like Rainbow Chip, Peanut Butter, Chocolate Fudge Flavour, and Caramel Nut. In other words, you’ve got some tough decisions to make!</p><ul><li>MADE WITH 100% CANADIAN OATS — These granola bars are proudly made with oats, so you can feel good about every bite!</li><li>ON-THE-GO SNACK — Our individually wrapped snacks are perfect for travel. Buy in bulk so you always have one ready for your next adventure!</li><li>AMAZING FLAVOURS — What do you feel like today? Quaker Dipps granola bars are available in a delicious range of flavours including Chocolatey Chip, Caramel Nut, Chocolate Fudge Flavour, Peanut Butter, and Rainbow Chip.</li></ul>",
+         "packageSizing": "156 g, $1.79/100g",
+         "pricing": {
+          "price": "2.79",
+          "wasPrice": null,
+          "displayPrice": "$2.79",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 24,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/dipps-granola-bars-peanut-butter/p/20847584_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "20847584",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": {
+          "badgeId": "PREPARED_IN_CANADA",
+          "badgeClass": "badge11",
+          "text": "Prepared in Canada",
+          "icon": {
+           "url": "https://dis-prod.assetful.loblaw.ca/content/dam/loblaw-companies-limited/creative-assets/pc-optimum/global-list/maple-leaf-red.png",
+           "altText": "",
+           "placement": "LEFT"
+          }
+         }
+        },
+        {
+         "index": 47,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21664766_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21664766_EA/en/1/21664766_en_1_800.png"
+          }
+         ],
+         "brand": "CLIF",
+         "title": "Energy BarsCrunchy Peanut Butter, Granola Bar",
+         "description": "<p>CLIF BAR Energy Bars are a source of energy and protein. The delicious blend of ingredients is purposefully crafted to help keep you riding, hiking, climbing, skating, and skiing. No matter the occasion, CLIF BAR Energy Bars are the perfect snack to enjoy anytime, anywhere. Protein bars are designed to fit into a busy lifestyle, whether enjoyed as a mid-day treat or a quick snack on-the-go, CLIF BAR Energy Bars are a convenient source of energy. From school snacks to a quick bite, CLIF BAR Energy Bars are perfect for everyone in the family and made with 70% organic ingredients. CLIF BAR Energy Bars, Crunchy Peanut Butter combines texture and taste to create the perfect snack for any peanut-lover in the family!</p><ul><li>CLIF BAR Energy Bars are high in protein, kosher, and a source of energy. CLIF BAR Energy Bars are the perfect snack and contains 70% organic ingredients.</li><li>CLIF BAR Energy Bars are thoughtfully crafted with wholesome ingredients to help support your nutrition needs and active lifestyle.</li><li>CLIF BAR Energy Bars are designed to be a source of energy before, during, or after any activity. An convenient source of protein when needed.</li><li>CLIF BAR Energy Bars time-tested recipe has been enjoyed by athletes and families for decades. A tasty snack to enjoy on any adventure. Never made with high fructose corn syrup.</li><li>High in protein, source of energy, and contains 70% organic ingredients. This package contains CLIF BAR Energy Bars, Crunchy Peanut Butter 340 g</li></ul>",
+         "packageSizing": "5x68.0 g, $2.35/100g",
+         "pricing": {
+          "price": "8.00",
+          "wasPrice": null,
+          "displayPrice": "$8.00",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/energy-barscrunchy-peanut-butter-granola-bar/p/21664766_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21664766",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        },
+        {
+         "index": 48,
+         "promotions": [],
+         "ratings": null,
+         "productId": "21729418_EA",
+         "productImage": [
+          {
+           "imageUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_1200.png",
+           "thumbnailUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_120.png",
+           "smallUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_250.png",
+           "mediumUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_400.png",
+           "largeUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_800.png",
+           "extraLargeUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_1200.png",
+           "smallRetinaUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_250.png",
+           "mediumRetinaUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_400.png",
+           "largeRetinaUrl": "https://digital.loblaws.ca/PCX/21729418_EA/en/1/21729418_en_front_800.png"
+          }
+         ],
+         "brand": "CLIF",
+         "title": "BAR Minis, Snack-Size Energy Bars Crunchy Peanut Butter Pack of 5",
+         "description": "<p>CLIF Mini Energy Bars are available in three flavours: Chocolate Chip, White Chocolate Flavoured Macadamia Nut and Crunchy Peanut Butter. CLIF Mini Energy Bars are soft baked, chewy and delicious. CLIF Mini Energy Bars are the perfect snack for after school, during a hike or a boost of energy before the game. CLIF Mini Energy Bars are a source of energy, source of fibre, contain 70% organic ingredients and no artificial sweeteners. Snack-size energy bars in 3 flavours</p><ul><li>Pack of 5 CLIF BAR Mini Energy Bars with a tasty crunchy peanut butter flavour, source of energy, source of fibre, no artificial sweeteners and 70% organic ingredients</li><li>CLIF Mini Energy Bars are soft baked, chewy and delicious</li><li>CLIF Mini Energy Bars are the perfect snack for after school, during a hike or a boost of energy before the game</li><li>Source of energy, source of fibre, contains 70% organic ingredients, no artificial sweeteners</li><li>Snack-size energy bars in 3 flavours</li></ul>",
+         "packageSizing": "5x28.0 g, $4.64/100g",
+         "pricing": {
+          "price": "6.50",
+          "wasPrice": null,
+          "displayPrice": "$6.50",
+          "memberOnlyPrice": null,
+          "mopDisplayPrice": null,
+          "ehfTotal": null,
+          "environmentalHandlingFee": null,
+          "taxInfo": "Plus tax"
+         },
+         "pricingUnits": {
+          "type": "SOLD_BY_EACH",
+          "unit": "ea",
+          "interval": 1,
+          "minOrderQuantity": 1,
+          "maxOrderQuantity": 25,
+          "weighted": false
+         },
+         "deal": null,
+         "mopDeal": null,
+         "pcoDeal": null,
+         "inventoryIndicator": null,
+         "offerType": "OG",
+         "offerId": "OG",
+         "action": null,
+         "isVariant": false,
+         "link": "/en/bar-minis-snack-size-energy-bars-crunchy-peanut-bu/p/21729418_EA",
+         "productVendor": null,
+         "productVariant": null,
+         "textBadge": "",
+         "variantTheme": null,
+         "articleNumber": "21729418",
+         "uom": "EA",
+         "isSponsored": false,
+         "isComplementarySponsored": false,
+         "complementarySponsoredBadgeText": null,
+         "productBadge": null
+        }
+       ],
+       "button1": null,
+       "headerGroup": null,
+       "productTileType": null
+      }
+     },
+     {
+      "componentId": "relatedSearchComponent",
+      "contentId": "1T4QnUmEKqmMlciKuKl6U0",
+      "variantId": null,
+      "id": "1T4QnUmEKqmMlciKuKl6U0",
+      "position": 11,
+      "data": {
+       "headerGroup": {
+        "paragraph": null,
+        "callToAction": null,
+        "headline": {
+         "text": "Related Searches",
+         "alignment": "LEFT",
+         "variantId": "SMALL_04",
+         "headerType": "H4",
+         "callToAction": null
+        },
+        "desktopImage": null,
+        "mobileImage": null,
+        "tabletImage": null
+       },
+       "suggestions": [
+        {
+         "text": "jam",
+         "url": "search?search-bar=jam"
+        },
+        {
+         "text": "wow butter",
+         "url": "search?search-bar=wow%20butter"
+        },
+        {
+         "text": "crunchy peanut butter",
+         "url": "search?search-bar=crunchy%20peanut%20butter"
+        },
+        {
+         "text": "strawberry jam",
+         "url": "search?search-bar=strawberry%20jam"
+        },
+        {
+         "text": "honey",
+         "url": "search?search-bar=honey"
+        },
+        {
+         "text": "maple syrup",
+         "url": "search?search-bar=maple%20syrup"
+        },
+        {
+         "text": "nutella",
+         "url": "search?search-bar=nutella"
+        },
+        {
+         "text": "natural peanut butter",
+         "url": "search?search-bar=natural%20peanut%20butter"
+        },
+        {
+         "text": "blueberry jam",
+         "url": "search?search-bar=blueberry%20jam"
+        },
+        {
+         "text": "margarine",
+         "url": "search?search-bar=margarine"
+        },
+        {
+         "text": "oatmeal",
+         "url": "search?search-bar=oatmeal"
+        },
+        {
+         "text": "100% natural creamy peanut butter",
+         "url": "search?search-bar=100%%20natural%20creamy%20peanut%20butter"
+        },
+        {
+         "text": "no sugar jam",
+         "url": "search?search-bar=no%20sugar%20jam"
+        },
+        {
+         "text": "only peanuts",
+         "url": "search?search-bar=only%20peanuts"
+        },
+        {
+         "text": "oats",
+         "url": "search?search-bar=oats"
+        },
+        {
+         "text": "nut butter",
+         "url": "search?search-bar=nut%20butter"
+        },
+        {
+         "text": "ketchup",
+         "url": "search?search-bar=ketchup"
+        },
+        {
+         "text": "jif",
+         "url": "search?search-bar=jif"
+        },
+        {
+         "text": "sunbutter",
+         "url": "search?search-bar=sunbutter"
+        },
+        {
+         "text": "quick oats",
+         "url": "search?search-bar=quick%20oats"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ },
+ "viewMetaData": {
+  "headline": "Peanut Butter - Products for Sale | No Frills",
+  "description": "Browse Peanut Butter products for sale at a store near you. Schedule Delivery or Pickups Online. Subject to Availability.",
+  "addMetaNoRobots": false,
+  "canonicalUrlSlug": "search?search-bar=peanut%20butter",
+  "jsonLd": "{\"@context\":\"https://schema.org/\",\"@type\":\"WebPage\",\"name\":\"Peanut Butter - Products for Sale | No Frills\",\"url\":\"https://nofrills.ca/search?search-bar\\u003dpeanut-butter\",\"description\":\"Browse Peanut Butter products for sale at a store near you. Schedule Delivery or Pickups Online. Subject to Availability.\",\"mainEntity\":{\"@context\":\"https://schema.org/\",\"@type\":\"ProductCollection\",\"offers\":{\"@type\":\"Offer\",\"itemOffered\":[{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Peanut Butter Cups Half Pound Cup\",\"url\":\"/peanut-butter-cups-half-pound-cup/p/20425817_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20425817_EA/en/1/20425817_en_1_1200.png\",\"sku\":\"20425817_EA\",\"description\":\"\\u003cp\\u003eA REESE\\u0027S peanut butter cup candy weighing half a pound! The perfect combination of milk chocolate and peanut butter.\\u003c/p\\u003e\",\"brand\":\"Reese\\u0027s\",\"offers\":{\"@type\":\"Offer\",\"price\":7.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/peanut-butter-cups-half-pound-cup/p/20425817_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Smooth Peanut Butter\",\"url\":\"/smooth-peanut-butter/p/20039581001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20039581001_EA/en/1/20039581001_en_1_1200.png\",\"sku\":\"20039581001_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Smooth Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty flavour and irresistible, creamy texture, Kraft Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on toast, PB\\u0026J sandwiches and fruits or vegetables. Our smooth peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada\\u0027s favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003eSignature delicious, nutty taste and creamy texture\\u003c/li\\u003e\\u003cli\\u003eMade with high quality dry-roasted peanuts\\u003c/li\\u003e\\u003cli\\u003eGreat for using in sauces, marinades, smoothies, cookies and other pastries\\u003c/li\\u003e\\u003cli\\u003eCanada\\u0027s Favourite Peanut Butter\\u003c/li\\u003e\\u003cli\\u003eProudly prepared in Canada\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":5.97,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/smooth-peanut-butter/p/20039581001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Peanut Butter \\u0026 Milk Chocolate Candy Advent Calendar Christmas Holiday\",\"url\":\"/peanut-butter-milk-chocolate-candy-advent-calendar/p/21460078_EA\",\"image\":\"https://digital.loblaws.ca/PCX/21460078_EA/en/1/21460078_en_1_1200.png\",\"sku\":\"21460078_EA\",\"description\":\"\\u003cp\\u003eA REESE\\u0027S candy Advent calendar is a delicious and festive way to enjoy the countdown to Christmas this holiday season.\\u003c/p\\u003e\",\"brand\":\"Reese\\u0027s\",\"offers\":{\"@type\":\"Offer\",\"price\":15.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/peanut-butter-milk-chocolate-candy-advent-calendar/p/21460078_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Peanut Spread With Cocoa, Smooth and Creamy Peanut with Cocoa Spread\",\"url\":\"/peanut-spread-with-cocoa-smooth-and-creamy-peanut/p/21720910_EA\",\"image\":\"https://digital.loblaws.ca/PCX/21720910_EA/en/1/21720910_en_front_v1_1200.png\",\"sku\":\"21720910_EA\",\"description\":\"\\u003cp\\u003eBring a smile to your snacking with NUTELLA Peanut Spread with Cocoa, a smooth and creamy spread made with roasted peanuts and cocoa for a unique cocoa-peanut taste experience. Crafted with high-quality ingredients, NUTELLA Peanut Spread with Cocoa features the same smooth cocoa creaminess of original NUTELLA, offering a delicious experience that brings together creamy cocoa and roasted peanuts for homes and families. NUTELLA Peanut Spread with Cocoa is a one-of-a-kind combination of cocoa and roasted peanuts; perfect for adding something special to everyday moments such as afternoon and work snacks. Whether you\\u0027re making a sandwich, pairing it with fruit, using it with pretzels, or enjoying it as a topping with toast - this spread works as a delicious addition to your snacks. Beloved around the world for over 60 years, NUTELLA has become a staple in homes for its smooth texture and delicious taste experience, and the iconic NUTELLA jar suits couples and sharing as fun snacks, yummy snacks, and treats. It can be a gift for couples or hostess gifts for couples; it also adds a cocoa touch to your holiday gift basket, and can be used for baking.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003ePEANUT COCOA DELIGHT: Enjoy a 725 gram jar of NUTELLA Peanut Spread with Cocoa, a unique and delicious taste experience that brings together creamy cocoa and roasted peanuts.\\u003c/li\\u003e\\u003cli\\u003eSMOOTH \\u0026 CREAMY: Discover the new NUTELLA Peanut Spread with Cocoa, roasted peanut taste and creamy texture in a uniquely delicious spread for snack foods.\\u003c/li\\u003e\\u003cli\\u003eAFTERNOON SNACKING MADE EASY: Great as a sandwich spread for afternoon snacks; it is a perfect match for fruit or as a spread on bread.\\u003c/li\\u003e\\u003cli\\u003eMADE FOR PEANUT LOVERS: NUTELLA Peanut Spread with Cocoa combines roasted peanuts with cocoa, for a one-of-a-kind gourmet snacks taste experience to use as gifts for family members.\\u003c/li\\u003e\\u003cli\\u003eFESTIVE \\u0026 VERSATILE: A festive addition to holiday gift baskets, snacking and baking.\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Nutella\",\"offers\":{\"@type\":\"Offer\",\"price\":7.50,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/peanut-spread-with-cocoa-smooth-and-creamy-peanut/p/21720910_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Only Peanuts All Natural Smooth Peanut Butter\",\"url\":\"/only-peanuts-all-natural-smooth-peanut-butter/p/20311582001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20311582001_EA/en/1/20311582001_en_front_v3_1200.png\",\"sku\":\"20311582001_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Only Peanuts All Natural Smooth Peanut Butter is a family favourite and made with only roasted peanuts. With our signature delicious, nutty taste and irresistible, creamy texture, Kraft Only Peanuts All Natural Smooth Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Peanut Butter on your toast, PB\\u0026J sandwiches and fruits or vegetables. Our all natural peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 750 g jar of peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada\\u0027s favourite peanut butter, proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003eKraft Only Peanuts All Natural Peanut Butter is made with only high quality dry-roasted peanuts\\u003c/li\\u003e\\u003cli\\u003eSignature delicious, nutty taste and creamy texture\\u003c/li\\u003e\\u003cli\\u003eGreat for using in sauces, marinades, smoothies, cookies and other pastries\\u003c/li\\u003e\\u003cli\\u003eCanada\\u0027s favourite peanut butter\\u003c/li\\u003e\\u003cli\\u003eProudly prepared in Canada\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":5.97,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/only-peanuts-all-natural-smooth-peanut-butter/p/20311582001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Peanut Spread With Cocoa\",\"url\":\"/peanut-spread-with-cocoa/p/21721261_EA\",\"image\":\"https://digital.loblaws.ca/PCX/21721261_EA/en/1/21721261_en_front_v1_1200.png\",\"sku\":\"21721261_EA\",\"description\":\"\\u003cp\\u003eBring a smile to your snacking with NUTELLA Peanut Spread with Cocoa, a smooth and creamy spread made with roasted peanuts and cocoa for a unique cocoa-peanut taste experience. Crafted with high-quality ingredients, NUTELLA Peanut Spread with Cocoa features the same smooth cocoa creaminess of original NUTELLA, offering a delicious experience that brings together creamy cocoa and roasted peanuts for homes and families. NUTELLA Peanut Spread with Cocoa is a one-of-a-kind combination of cocoa and roasted peanuts; perfect for adding something special to everyday moments such as afternoon and work snacks. Whether you\\u0027re making a sandwich, pairing it with fruit, using it with pretzels, or enjoying it as a topping with toast - this spread works as a delicious addition to your snacks. Beloved around the world for over 60 years, NUTELLA has become a staple in homes for its smooth texture and delicious taste experience, and the iconic NUTELLA jar suits couples and sharing as fun snacks, yummy snacks, and treats. It can be a gift for couples or hostess gifts for couples; it also adds a cocoa touch to your holiday gift basket, and can be used for baking.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003ePEANUT COCOA DELIGHT: Enjoy a 375 gram jar of NUTELLA Peanut Spread with Cocoa, a unique and delicious taste experience that brings together creamy cocoa and roasted peanuts.\\u003c/li\\u003e\\u003cli\\u003eSMOOTH \\u0026 CREAMY: Discover the new NUTELLA Peanut Spread with Cocoa, roasted peanut taste and creamy texture in a uniquely delicious spread for snack foods.\\u003c/li\\u003e\\u003cli\\u003eAFTERNOON SNACKING MADE EASY: Great as a sandwich spread for afternoon snacks; it is a perfect match for fruit or as a spread on bread.\\u003c/li\\u003e\\u003cli\\u003eMADE FOR PEANUT LOVERS: NUTELLA Peanut Spread with Cocoa combines roasted peanuts with cocoa, for a one-of-a-kind gourmet snacks taste experience to use as gifts for family members.\\u003c/li\\u003e\\u003cli\\u003eFESTIVE \\u0026 VERSATILE: A festive addition to holiday gift baskets, snacking and baking.\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Nutella\",\"offers\":{\"@type\":\"Offer\",\"price\":5.50,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/peanut-spread-with-cocoa/p/21721261_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Smooth Peanut Butter\",\"url\":\"/smooth-peanut-butter/p/20064825001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20064825001_EA/en/1/20064825001_en_front_v10_1200.png\",\"sku\":\"20064825001_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Smooth Peanut Butter is perfect for the whole family. Made with high-quality dry roasted peanuts, Kraft Peanut Butter has a delicious creamy and nutty taste. Try our peanut butter in your favourite PB\\u0026J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 2 kg jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada\\u0027s #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003eOne 2KG Jar of Kraft Smooth Peanut Butter\\u003c/li\\u003e\\u003cli\\u003eOur smooth peanut butter is made with dry-roasted peanuts\\u003c/li\\u003e\\u003cli\\u003eSmooth peanut butter has a nutty flavour with a creamy texture the whole family will enjoy\\u003c/li\\u003e\\u003cli\\u003ePerfect to spread on toast, add to a pb\\u0026j or use in sauces and marinades\\u003c/li\\u003e\\u003cli\\u003eKraft Peanut Butter is Canada\\u0027s #1 peanut butter\\u003c/li\\u003e\\u003cli\\u003eAdd a spoonful of peanut butter to your favourite smoothie for an extra creamy taste\\u003c/li\\u003e\\u003cli\\u003eSmooth peanut butter comes in a recloseable jar so you can keep peanut butter fresh\\u003c/li\\u003e\\u003cli\\u003eServing size is 1 tbsp of our nut butter\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":11.00,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/smooth-peanut-butter/p/20064825001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Peanut Butter Cup Candy\",\"url\":\"/peanut-butter-cup-candy/p/20573405_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20573405_EA/en/1/20573405_en_1_v1_1200.png\",\"sku\":\"20573405_EA\",\"description\":\"\\u003cp\\u003eEating a REESE\\u0027S PEANUT BUTTER CUPS candy is a one-of-a-kind multi-sensory experience. First you taste the smooth milk chocolate ridges. Next, the creamy peanut butter melts in your mouth. Finally, the milk chocolate and peanut butter meld together in the perfect balance salty and sweet, crunchy and smooth. Whether you keep it for yourself or share it with others, REESE\\u0027S PEANUT BUTTER CUPS candy are the special taste experience that’s so much more than the sum of its delicious parts! Nothing else is REESE\\u0027S.\\u003c/p\\u003e\",\"brand\":\"Reese\\u0027s\",\"offers\":{\"@type\":\"Offer\",\"price\":4.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/peanut-butter-cup-candy/p/20573405_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Smooth Peanut Butter\",\"url\":\"/smooth-peanut-butter/p/20296985001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20296985001_EA/en/1/20296985001_en_front_1200.png\",\"sku\":\"20296985001_EA\",\"description\":\"\\u003cp\\u003eDeliciously smooth and creamy, Smooth Peanut Butter is made with dry-roasted peanuts for a rich, nutty taste. It\\u0027s perfect for spreading on bread and adding to your favourite baked goods recipes.\\u003c/p\\u003e\\u003cbr\\u003e\\u003cbr\\u003e\\u003cp\\u003eThe †Simple Check™ symbol appears on no name® products made without 10 ingredients such as synthetic colours*, artificial flavours and artificial sweeteners. *As defined in Canadian regulations. To learn more visit noname.ca/simplecheck\\u003c/p\\u003e\",\"brand\":\"No Name\",\"offers\":{\"@type\":\"Offer\",\"price\":4.50,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/smooth-peanut-butter/p/20296985001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Peanut Butter Cups Candy\",\"url\":\"/peanut-butter-cups-candy/p/20582012_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20582012_EA/en/1/20582012_en_1_1200.png\",\"sku\":\"20582012_EA\",\"description\":\"\\u003cp\\u003eEating a REESE\\u0027S PEANUT BUTTER CUPS candy is a one-of-a-kind multi-sensory experience. First you taste the smooth milk chocolate ridges. Next, the creamy peanut butter melts in your mouth. Finally, the milk chocolate and peanut butter meld together in the perfect balance salty and sweet, crunchy and smooth. Whether you keep it for yourself or share it with others, REESE\\u0027S PEANUT BUTTER CUPS candy are the special taste experience that’s so much more than the sum of its delicious parts! Nothing else is REESE\\u0027S.\\u003c/p\\u003e\",\"brand\":\"Reese\\u0027s\",\"offers\":{\"@type\":\"Offer\",\"price\":1.00,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/peanut-butter-cups-candy/p/20582012_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Smooth Light Peanut Butter\",\"url\":\"/smooth-light-peanut-butter/p/20039581003_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20039581003_EA/en/1/20039581003_en_1_1200.png\",\"sku\":\"20039581003_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Smooth Light Peanut Butter is perfect for the whole family. Made with high-quality dry roasted peanuts, Kraft Peanut Butter has a delicious creamy and nutty taste. Light peanut butter contains 25% less fat than original Kraft Peanut Butter but still has the same delicious flavour. Try our peanut butter in your favourite PB\\u0026J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 1 kg jar of smooth and light peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada\\u0027s #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003e25% less fat than regular Smooth Kraft Peanut Butter\\u003c/li\\u003e\\u003cli\\u003eKraft Peanut Butter is made with high quality dry-roasted peanuts\\u003c/li\\u003e\\u003cli\\u003eGreat for using in sauces, marinades, smoothies, cookies and other pastries\\u003c/li\\u003e\\u003cli\\u003eCanada\\u0027s favourite Peanut Butter\\u003c/li\\u003e\\u003cli\\u003eProudly prepared in Canada\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":5.97,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/smooth-light-peanut-butter/p/20039581003_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Pizza Mozzarella Shredded Cheese\",\"url\":\"/pizza-mozzarella-shredded-cheese/p/21286208_EA\",\"image\":\"https://digital.loblaws.ca/PCX/21286208_EA/en/1/21286208_en_front_v1_1200.png\",\"sku\":\"21286208_EA\",\"description\":\"A semi-soft ivory coloured cheese with a milky and slightly salty flavour. Perfect atop your favourite pizzas or in pasta dishes.CANADIANS CRAVE ARMSTRONG CHEESESTRONG ON HERITAGESince 1902, our master cheesemakers have passed along their knowledge and expertise to bring you Cheddar cheese at its best.STRONG ON CHEDDAROur natural cheeses are made from fresh milk and will taste delicious in your recipes.STRONG ON VALUESWe believe the best dairy products begin with milk from healthy, well cared for animals. We pledge to continue to promote best practices in dairy animal care.\",\"brand\":\"Armstrong\",\"offers\":{\"@type\":\"Offer\",\"price\":4.99,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/pizza-mozzarella-shredded-cheese/p/21286208_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Smooth Peanut Butter\",\"url\":\"/smooth-peanut-butter/p/20132369001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20132369001_EA/en/1/20132369001_en_1_1200.png\",\"sku\":\"20132369001_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Smooth Peanut Butter is perfect for the whole family. Made with high-quality dry roasted peanuts, Kraft Peanut Butter has a delicious creamy and nutty taste. Try our peanut butter in your favourite PB\\u0026J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 500 g jar of smooth peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada\\u0027s #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003eOne 500 g jar of smooth peanut butter\\u003c/li\\u003e\\u003cli\\u003eOur smooth peanut butter is made with dry-roasted peanuts\\u003c/li\\u003e\\u003cli\\u003eSmooth peanut butter has a nutty flavour with a creamy texture the whole family will enjoy\\u003c/li\\u003e\\u003cli\\u003ePerfect to spread on toast, add to a pb\\u0026j or use in sauces and marinades\\u003c/li\\u003e\\u003cli\\u003eKraft Peanut Butter is Canada\\u0027s #1 peanut butter\\u003c/li\\u003e\\u003cli\\u003eAdd a spoonful of peanut butter to your favourite smoothie for an extra creamy taste\\u003c/li\\u003e\\u003cli\\u003eSmooth peanut butter comes in a recloseable jar so you can keep peanut butter fresh\\u003c/li\\u003e\\u003cli\\u003eServing size is 1 tbsp of our nut butter\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":3.75,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/smooth-peanut-butter/p/20132369001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Light Feta Cheese\",\"url\":\"/light-feta-cheese/p/20573976_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20573976_EA/en/1/20573976_en_front_1200.png\",\"sku\":\"20573976_EA\",\"description\":\"A lighter take on a classic Greek cheese. Enjoy the same delicious fresh yet tangy taste with 30% less fat. Ideal for salads or cooking in pasta, dips or wraps. A must in every fridge for the summer and throughout the year to add in your favourite recipes. We offer a variety of Feta cheese using different types of milk. It’s soft, crumbly texture and tangy taste makes it the perfect addition to any dish in need of a little zest.Discover recipes, inspirational content and more by visiting our website: www.saputo.ca\",\"brand\":\"Saputo\",\"offers\":{\"@type\":\"Offer\",\"price\":5.00,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/light-feta-cheese/p/20573976_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Crunchy Peanut Butter\",\"url\":\"/crunchy-peanut-butter/p/20039581005_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20039581005_EA/en/1/20039581005_en_front_v3_1200.png\",\"sku\":\"20039581005_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Crunchy Peanut Butter is a family favourite and a Canadian classic. With our signature delicious, nutty taste and irresistible, chunky texture, Kraft Crunchy Peanut Butter is made with high quality dry-roasted peanuts to bring out the best flavour and aroma. Try Kraft Crunchy Peanut Butter on toast, PB\\u0026J sandwiches and fruits or vegetables. Our crunchy peanut butter is also great for using in sauces, marinades, smoothies, cookies and other pastries. Or, you can eat our tasty peanut butter by the spoonful as a quick snack! Each 1 kg jar of crunchy peanut butter comes in a recloseable jar to preserve freshness. Kraft Peanut Butter is Canada\\u0027s favourite Peanut Butter, and is proudly prepared in Canada. Make Together, Stick Together. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003eSignature delicious, nutty taste and chunky texture\\u003c/li\\u003e\\u003cli\\u003eMade with high quality dry-roasted peanuts\\u003c/li\\u003e\\u003cli\\u003eGreat for using in sauces, marinades, smoothies, cookies and other pastries\\u003c/li\\u003e\\u003cli\\u003eCanada\\u0027s Favourite Peanut Butter\\u003c/li\\u003e\\u003cli\\u003eProudly prepared in Canada\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":5.97,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/crunchy-peanut-butter/p/20039581005_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Just Peanuts Smooth Peanut Butter\",\"url\":\"/just-peanuts-smooth-peanut-butter/p/20057669001_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20057669001_EA/en/1/20057669001_en_front_1200.png\",\"sku\":\"20057669001_EA\",\"description\":\"\\u003cp\\u003eCreamy and delicious, Blue Menu Just Peanuts Smooth Peanut Butter is made with dry roasted peanuts. With no sugar, salt, artificial flavours, or synthetic colours added, enjoy the smooth texture of this peanut butter on a slice of toast.\\u003c/p\\u003e\",\"brand\":\"PC Blue Menu\",\"offers\":{\"@type\":\"Offer\",\"price\":6.29,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/just-peanuts-smooth-peanut-butter/p/20057669001_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Only Peanuts All Natural Crunchy Peanut Butter\",\"url\":\"/only-peanuts-all-natural-crunchy-peanut-butter/p/20311582003_EA\",\"image\":\"https://digital.loblaws.ca/PCX/20311582003_EA/en/1/20311582003_en_front_v3_1200.png\",\"sku\":\"20311582003_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* A family favourite and a Canadian classic, Kraft Only Peanuts All Natural Crunchy Peanut Butter is perfect for the whole family. Made with only high-quality dry-roasted peanuts, Kraft All Natural Peanut Butter has a delicious creamy and nutty taste. Try our peanut butter in your favourite PB\\u0026J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 750 g jar of crunchy peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada\\u0027s #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003eOne 750 g jar of Only Peanuts All Natural crunchy peanut butter\\u003c/li\\u003e\\u003cli\\u003eOur all natural peanut butter is made with dry-roasted peanuts\\u003c/li\\u003e\\u003cli\\u003eOnly Peanuts All natural crunchy peanut butter has a nutty flavour with a creamy and crunchy texture the whole family will enjoy\\u003c/li\\u003e\\u003cli\\u003eGreat for using in sauces, marinades, smoothies, cookies and other pastries\\u003c/li\\u003e\\u003cli\\u003eKraft Peanut Butter is Canada\\u0027s #1 peanut butter\\u003c/li\\u003e\\u003cli\\u003eAdd a spoonful of peanut butter to your favourite smoothie for an extra creamy taste\\u003c/li\\u003e\\u003cli\\u003eAll natural crunchy peanut butter comes in a recloseable jar so you can keep peanut butter fresh\\u003c/li\\u003e\\u003cli\\u003eServing size is 1 tbsp of our nut butter\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":5.97,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/only-peanuts-all-natural-crunchy-peanut-butter/p/20311582003_EA\"}},{\"@context\":\"https://schema.org/\",\"@type\":\"Product\",\"name\":\"Only Peanuts All Natural Peanut Butter with Sea Salt\",\"url\":\"/only-peanuts-all-natural-peanut-butter-with-sea-sa/p/21024115_EA\",\"image\":\"https://digital.loblaws.ca/PCX/21024115_EA/en/1/21024115_en_1_v1_1200.png\",\"sku\":\"21024115_EA\",\"description\":\"\\u003cp\\u003eKraft, voted most trusted Peanut Butter brand, based on the 2026 BrandSpark® Canadian Trust Study.* Kraft Only Peanuts All Natural Peanut Butter with Sea Salt is perfect for the whole family. Made with only high-quality dry-roasted peanuts and sea salt, Kraft All Natural Peanut Butter has a delicious creamy and nutty taste. Try our peanut butter in your favourite PB\\u0026J sandwich or spread on crunchy toast. You can even dip vegetables in our peanut butter. Each 750 g jar of peanut butter comes in a recloseable jar to preserve freshness. Add some flavour to your recipes with Canada\\u0027s #1 peanut butter. *Kraft, voted most trusted Peanut Butter brand by Canadian shoppers based on the 2026 BrandSpark® Canadian Trust Study.\\u003c/p\\u003e\\u003cul\\u003e\\u003cli\\u003eOne 750 g jar of only peanuts all natural peanut butter with sea salt\\u003c/li\\u003e\\u003cli\\u003eOur all natural peanut butter is made with only dry-roasted peanuts and sea salt\\u003c/li\\u003e\\u003cli\\u003eAll natural peanut butter has a nutty flavour with a creamy texture the whole family will enjoy\\u003c/li\\u003e\\u003cli\\u003ePerfect to spread on toast, add to a PB\\u0026J or use in sauces and marinades\\u003c/li\\u003e\\u003cli\\u003eKraft Peanut Butter is Canada\\u0027s #1 peanut butter\\u003c/li\\u003e\\u003cli\\u003eAdd a spoonful of peanut butter to your favourite smoothie for an extra creamy taste\\u003c/li\\u003e\\u003cli\\u003eAll natural peanut butter comes in a recloseable jar so you can keep peanut butter fresh\\u003c/li\\u003e\\u003cli\\u003eServing size is 1 tbsp of our nut butter\\u003c/li\\u003e\\u003c/ul\\u003e\",\"brand\":\"Kraft\",\"offers\":{\"@type\":\"Offer\",\"price\":5.97,\"priceCurrency\":\"CAD\",\"itemCondition\":\"https://schema.org/NewCondition\",\"url\":\"/only-peanuts-all-natural-peanut-butter-with-sea-sa/p/21024115_EA\"}}]}},\"relatedLink\":[\"search?search-bar\\u003djam\",\"search?search-bar\\u003dwow%20butter\",\"search?search-bar\\u003dcrunchy%20peanut%20butter\",\"search?search-bar\\u003dstrawberry%20jam\",\"search?search-bar\\u003dhoney\",\"search?search-bar\\u003dmaple%20syrup\",\"search?search-bar\\u003dnutella\",\"search?search-bar\\u003dnatural%20peanut%20butter\",\"search?search-bar\\u003dblueberry%20jam\",\"search?search-bar\\u003dmargarine\",\"search?search-bar\\u003doatmeal\",\"search?search-bar\\u003d100%%20natural%20creamy%20peanut%20butter\",\"search?search-bar\\u003dno%20sugar%20jam\",\"search?search-bar\\u003donly%20peanuts\",\"search?search-bar\\u003doats\",\"search?search-bar\\u003dnut%20butter\",\"search?search-bar\\u003dketchup\",\"search?search-bar\\u003djif\",\"search?search-bar\\u003dsunbutter\",\"search?search-bar\\u003dquick%20oats\"]}"
+ },
+ "viewAnalytics": {
+  "mediaAnalytics": {
+   "target_page_type": "SRP"
+  },
+  "dsModel": null
+ },
+ "theme": {
+  "name": "pcx-web-pcx",
+  "version": "latest",
+  "env": "production",
+  "maxPageWidth": "DEFAULT"
+ }
+}

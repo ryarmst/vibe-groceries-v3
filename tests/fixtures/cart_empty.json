@@ -1,0 +1,152 @@
+{
+ "id": "00000000-0000-4000-8000-000000000001",
+ "modifiedTime": "2026-11-03T16:54:24.438Z",
+ "status": "OPEN",
+ "bannerId": "nofrills",
+ "customer": {
+  "pcid": "",
+  "name": "Test Customer",
+  "email": "customer@example.invalid"
+ },
+ "orders": [
+  {
+   "internalOrderId": "00000000-0000-4000-8000-000000000002",
+   "orderId": "00000000-0000-4000-8000-000000000002",
+   "status": "OPEN",
+   "vendorId": "nofrills",
+   "entries": [],
+   "exchangedBins": [],
+   "redeemableOptions": [],
+   "fulfillment": {
+    "type": "pickup",
+    "pickupBooking": {
+     "id": "",
+     "pickupStartTime": null,
+     "pickupEndTime": null,
+     "charge": 0,
+     "pickupLocation": {
+      "id": "3640",
+      "name": "Sample NOFRILLS Othertown",
+      "orderContactNumber": "0000000000",
+      "locationType": "STORE",
+      "pickupType": "SELF_SERVE_FULL",
+      "storeId": "3640",
+      "visible": true,
+      "shoppable": true,
+      "geoPoint": {
+       "latitude": 44.000000,
+       "longitude": -79.000000
+      },
+      "address": {
+       "country": "Canada",
+       "city": "Othertown",
+       "postalCode": "B2B 2B2",
+       "addressLabel": "",
+       "region": "Ontario",
+       "streetAddress": "243 Alberta Ave"
+      },
+      "bufferTimeInHours": 6.0,
+      "orderNotificationTimeRestriction": {
+       "hoursBeforePickupStartTime": 0.5,
+       "hoursAfterPickupStartTime": 0.5
+      },
+      "features": {
+       "scanAndGo": false,
+       "instoreModeAvailableToPublic": null,
+       "arrivalDetectionEnabled": false,
+       "arrivalDetectionAvailableToPublic": false
+      },
+      "timeZone": "EST5EDT",
+      "baggingOptions": []
+     },
+     "slotType": "pickup",
+     "cutOffDate": null,
+     "slotExpiryDateTime": null
+    },
+    "delivery": null,
+    "pickupInstructions": {
+     "allowItemOnTopOrBottomShelf": true,
+     "bringOwnBags": false,
+     "comment": null
+    },
+    "courier": null
+   },
+   "vouchers": [],
+   "modifiedTime": null,
+   "maxAllowedGiftCard": 2,
+   "baggingInfo": null,
+   "customizedPromotions": {
+    "stampCards": {
+     "isRedeemed": null,
+     "balanceAvailable": null,
+     "rewardsAvailable": null,
+     "balanceRequestedToRedeem": null,
+     "eligibleItems": 0
+    },
+    "marvel": {
+     "eligibleToRedeem": false,
+     "isRedeemed": null
+    }
+   },
+   "totals": {
+    "subTotal": 0.0,
+    "totalDiscounts": 0.0,
+    "totalProductDiscounts": 0.0,
+    "totalVoucherDiscounts": 0.0,
+    "totalLoyaltyDiscount": 0.0,
+    "totalMemberOnlySavings": 0.0,
+    "totalPrice": 0.0,
+    "totalDeposit": null,
+    "totalPreauth": null,
+    "totalTax": null,
+    "totalShippingFee": null,
+    "totalRedeemablePrice": 0,
+    "totalPointsToRedeem": null,
+    "totalCourierFee": null,
+    "totalPickupFee": 0,
+    "totalLoyaltyPoints": null,
+    "additionalFees": 0.0,
+    "totalEnvironmentalHandlingFee": null,
+    "estimatedTotal": 0.0,
+    "totalDeliveryTip": null,
+    "totalDeliveryFee": 0,
+    "totalServiceFee": 0,
+    "totalGiftCardAmount": 0
+   }
+  }
+ ],
+ "minCartValue": 30.0,
+ "hasLiquor": false,
+ "minPCXPassCartValue": 30.0,
+ "orderAggregations": {
+  "live": null,
+  "open": {
+   "taxBreakdown": [],
+   "totals": {
+    "subTotal": 0.0,
+    "totalDiscounts": 0.0,
+    "totalProductDiscounts": 0.0,
+    "totalVoucherDiscounts": 0.0,
+    "totalLoyaltyDiscount": 0.0,
+    "totalMemberOnlySavings": 0.0,
+    "totalPrice": 0.0,
+    "totalDeposit": null,
+    "totalPreauth": null,
+    "totalTax": null,
+    "totalShippingFee": null,
+    "totalRedeemablePrice": 0,
+    "totalPointsToRedeem": null,
+    "totalCourierFee": null,
+    "totalPickupFee": 0,
+    "totalLoyaltyPoints": null,
+    "additionalFees": 0.0,
+    "totalEnvironmentalHandlingFee": null,
+    "estimatedTotal": 0.0,
+    "totalDeliveryTip": null,
+    "totalDeliveryFee": 0,
+    "totalServiceFee": 0,
+    "totalGiftCardAmount": 0
+   }
+  }
+ }
+}

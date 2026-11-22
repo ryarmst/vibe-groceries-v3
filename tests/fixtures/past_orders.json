@@ -1,0 +1,150 @@
+{
+ "offlineOrdersCount": 0,
+ "onlineOrdersCount": 12,
+ "orderHistory": [
+  {
+   "id": "100000000000012",
+   "total": 176.26,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-11-08T19:11:33.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Example NOFRILLS Anytown",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000011",
+   "total": 250.22,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-10-28T09:50:12.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Example NOFRILLS Anytown",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000010",
+   "total": 184.57,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-10-08T09:10:26.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Example NOFRILLS Anytown",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000009",
+   "total": 349.71,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-09-20T17:09:57.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Loblaws Wonderland Road",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000008",
+   "total": 255.05,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-08-06T19:06:00.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Example NOFRILLS Anytown",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000007",
+   "total": 287.78,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-07-19T15:24:20.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Loblaws Wonderland Road",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000006",
+   "total": 279.74,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-06-18T14:18:08.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Example NOFRILLS Anytown",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000005",
+   "total": 200.16,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-06-12T16:22:59.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Real Canadian Superstore Oxford Street - Gammage",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000004",
+   "total": 150.97,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-06-06T08:58:45.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Real Canadian Superstore Oxford Street - Gammage",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000003",
+   "total": 209.76,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-05-22T10:17:12.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Real Canadian Superstore Oxford Street - Gammage",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000002",
+   "total": 439.61,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-05-13T09:40:15.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Real Canadian Superstore Oxford Street - Gammage",
+   "fulfillmentType": "DELIVERY"
+  },
+  {
+   "id": "100000000000001",
+   "total": 219.06,
+   "serviceFee": null,
+   "deliveryFee": null,
+   "placed": "2026-03-27T16:35:59.000Z",
+   "bannerImageUrl": null,
+   "orderType": "Online",
+   "bannerName": "nofrills",
+   "store": "Example NOFRILLS Anytown",
+   "fulfillmentType": "DELIVERY"
+  }
+ ]
+}
