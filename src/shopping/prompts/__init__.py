@@ -22,7 +22,7 @@ GROUPS = {"about": "Your household", "household": "Shared instructions", "tasks"
 PLACEHOLDERS = {
     "household": "Names and region, from ALLOWED_USERS and HOUSEHOLD_REGION",
     "today": "Today's date (YYYY-MM-DD)", "weekday": "Today's weekday", "store_id": "Your store number",
-    "device_name": "The person chatting", "meals_per_week": "Meals per week (Settings → Schedule)",
+    "person": "The person chatting", "meals_per_week": "Meals per week (Settings → Schedule)",
     "max_picks": "How many deals the daily picks may choose",
 }
 MAX_CHARS = 40_000

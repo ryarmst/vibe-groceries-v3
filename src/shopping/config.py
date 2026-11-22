@@ -30,7 +30,6 @@ class Settings:
     host: str
     port: int
     log_level: str
-    mcp_token: str
     public_url: str
     deal_scan_hours: float = 24.0  # refresh the deal catalogue this often; 0 disables the background scan
     allowed_hosts: list[str] = field(default_factory=list)
@@ -44,8 +43,6 @@ class Settings:
     allowed_users: dict[str, str] = field(default_factory=dict)
     region: str = "Canada"  # HOUSEHOLD_REGION: where you live, for the assistant (units, seasons, shops)
     dev_user: str = ""  # DEV_USER: local development only; skips Access (refused unless HOST is loopback)
-    client_ip_header: str = ""  # header with the real client IP set by the proxy (Cloudflare: cf-connecting-ip)
-    mcp_enabled: bool = False  # optional MCP endpoint at /mcp (for Claude Desktop/Code); bearer-token protected
     timezone: str = "America/Toronto"
     monthly_budget_usd: float = 10.0  # default LLM spend cap; adjustable at runtime from the app
     jobs_enabled: bool = True
@@ -108,7 +105,6 @@ def load_settings() -> Settings:
         host=os.environ.get("HOST", "127.0.0.1"),
         port=port,
         log_level=os.environ.get("LOG_LEVEL", "INFO").upper(),
-        mcp_token=os.environ.get("MCP_TOKEN", ""),
         public_url=public_url,
         deal_scan_hours=float(os.environ.get("DEAL_SCAN_HOURS", "24")),
         allowed_hosts=list(dict.fromkeys(h.strip() for h in hosts.split(",") if h.strip())),
@@ -119,8 +115,6 @@ def load_settings() -> Settings:
         allowed_users=_users(os.environ.get("ALLOWED_USERS", "")),
         region=os.environ.get("HOUSEHOLD_REGION", "Canada").strip() or "Canada",
         dev_user=os.environ.get("DEV_USER", "").strip(),
-        client_ip_header=os.environ.get("CLIENT_IP_HEADER", "").strip().lower(),
-        mcp_enabled=_bool("MCP_ENABLED", False),
         timezone=os.environ.get("TZ", "America/Toronto"),
         monthly_budget_usd=float(os.environ.get("MONTHLY_BUDGET_USD", "10")),
         jobs_enabled=_bool("JOBS_ENABLED", True),

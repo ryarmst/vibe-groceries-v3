@@ -4,7 +4,7 @@ import pytest
 
 from shopping.core import feedback as fbk
 from shopping.core import service
-from shopping.models import Feedback, Preference
+from shopping.models import Feedback
 from test_service import FakeClient, build_run
 
 
@@ -13,24 +13,19 @@ def client():
     return FakeClient()
 
 
-async def test_remove_with_reason_and_rule(session, client):
+async def test_remove_with_a_note(session, client):
     run, group, single, ids = await build_run(session, client)
-    fb = fbk.triage(session, single.id, decision="remove", tags=["have_enough"], note="still two jars", rule="blacklist_product")
+    fb = fbk.triage(session, single.id, decision="remove", note="still two jars")
     assert single.status == "rejected"
-    assert fb.action == "removed" and fb.tags == ["have_enough"] and fb.note == "still two jars"
-    pref = session.get(Preference, fb.preference_id)
-    assert pref.kind == "blacklist_product" and pref.target == single.product.retailer_product_id and pref.scope is None
-    assert fb.requirement == single.requirement
+    assert fb.action == "removed" and fb.note == "still two jars" and fb.requirement == single.requirement
 
 
 async def test_choose_alternative_records_both_products(session, client):
     run, group, single, ids = await build_run(session, client)
     rec, alt = group.selections
-    fb = fbk.triage(session, rec.id, decision="choose", chosen_selection_id=alt.id, tags=["better_size"], rule="prefer_for_type")
+    fb = fbk.triage(session, rec.id, decision="choose", chosen_selection_id=alt.id, note="bigger jar")
     assert group.selected_selection_id == alt.id and alt.status == "approved" and rec.status == "rejected"
     assert fb.action == "chose_alternative" and fb.product_id == rec.product_id and fb.chosen_product_id == alt.product_id
-    pref = session.get(Preference, fb.preference_id)
-    assert pref.kind == "prefer_for_type" and pref.scope == "Peanut butter" and pref.target == alt.product.retailer_product_id
 
 
 async def test_keep_without_reason_records_nothing(session, client):
@@ -41,12 +36,6 @@ async def test_keep_without_reason_records_nothing(session, client):
     assert fb.action == "quantity_changed" and group.selections[0].quantity == 3
 
 
-async def test_bad_tags_rejected(session, client):
-    run, group, single, ids = await build_run(session, client)
-    with pytest.raises(service.ShoppingError):
-        fbk.triage(session, single.id, decision="remove", tags=["cheaper"])  # a choose-reason, not a remove-reason
-
-
 async def test_patterns_and_requirement_history(session, client):
     ids = list(client.products)
     # Two runs where the user removes the same product as disliked and picks the same alternative.
@@ -54,14 +43,11 @@ async def test_patterns_and_requirement_history(session, client):
         run = service.create_run(session, summary="w", store_id="1234")
         group = await service.add_choice_group(session, client, run.id, label="Peanut butter", options=[
             {"product_id": ids[0], "reasons": ["grocery_list"]}, {"product_id": ids[1], "reasons": ["grocery_list"]}])
-        fbk.triage(session, group.selections[0].id, decision="choose", chosen_selection_id=group.selections[1].id, tags=["cheaper"])
+        fbk.triage(session, group.selections[0].id, decision="choose", chosen_selection_id=group.selections[1].id)
         milk = await service.add_selection(session, client, run.id, product_id=ids[2], reasons=["regular_staple"], requirement="Milk")
-        fbk.triage(session, milk.id, decision="remove", tags=["have_enough", "dislike_product"])
+        fbk.triage(session, milk.id, decision="remove", note="still have some")
     summary = fbk.feedback_summary(session)
-    kinds = {(p["kind"], p["target"]) for p in summary["patterns"]}
-    assert ("prefer_for_type", ids[1]) in kinds
-    assert ("blacklist_product", ids[2]) in kinds
-    assert any(p["kind"] == "cadence" and not p["actionable"] for p in summary["patterns"])
+    assert [(p["kind"], p["requirement"], p["evidence"]) for p in summary["patterns"]] == [("prefer", "Peanut butter", 2)]
     assert summary["by_action"] == {"chose_alternative": 2, "removed": 2}
 
     hist = {h["requirement"]: h for h in fbk.requirement_history(session, ["Milk", "Bread"])}
@@ -87,7 +73,7 @@ async def test_requirement_due_from_cart_history(session, client):
 
 async def test_mark_reviewed(session, client):
     run, group, single, ids = await build_run(session, client)
-    fb = fbk.triage(session, single.id, decision="remove", tags=["too_expensive"])
+    fb = fbk.triage(session, single.id, decision="remove", note="too pricey")
     assert fbk.mark_reviewed(session, [fb.id], "added to skill") == 1
     assert session.get(Feedback, fb.id).resolution == "added to skill"
     assert fbk.list_feedback(session, unreviewed_only=True) == []

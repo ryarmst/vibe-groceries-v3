@@ -1,6 +1,6 @@
 """Encrypted credential vault.
 
-Secrets (LLM provider keys, the Notion token, the No Frills session token) are encrypted with AES-256-GCM
+Secrets (AI provider keys, the Notion token, the ntfy topic) are encrypted with AES-256-GCM
 under a master key that lives in the environment (MASTER_KEY), never in the database or its backups. The
 secret's name is bound in as associated data, so a ciphertext can't be moved to another name.
 

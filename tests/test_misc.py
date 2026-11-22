@@ -30,22 +30,22 @@ def test_migration_matches_models(tmp_path):
         assert cols == {c.name for c in table.columns}, table.name
 
 
-def test_mcp_surface_has_no_purchase_tools():
-    from shopping.mcp_server.server import tool_names
+def test_no_purchase_tools():
+    from shopping.agent.shopping_tools import tool_names
 
     names = tool_names()
-    assert "shopping_search_products" in names and "shopping_apply_approved" in names
+    assert "shopping_search_many" in names and "shopping_apply_approved" in names
     for banned in ("checkout", "payment", "purchase", "timeslot", "http", "request", "place", "submit_order", "create_order"):
         assert not any(banned in n for n in names), banned
     # The only order-related tools are read-only views of past orders.
     assert {n for n in names if "order" in n} == {"shopping_get_past_orders", "shopping_get_past_order"}
 
 
-async def test_mcp_errors_reach_the_agent():
+async def test_tool_errors_reach_the_agent():
     from mcp.server.mcpserver.exceptions import ToolError
 
     from shopping.database import run_migrations
-    from shopping.mcp_server.server import shopping_get_run
+    from shopping.agent.shopping_tools import shopping_get_run
 
     run_migrations()  # the tool uses the app engine (a temp DB under tests)
     with pytest.raises(ToolError, match="No shopping run"):

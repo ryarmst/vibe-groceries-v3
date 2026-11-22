@@ -109,17 +109,6 @@ async def test_choose_alternative_carries_approval(session, client):
     assert alt.status == "approved" and rec.status == "rejected"
 
 
-async def test_blacklist_is_enforced(session, client):
-    ids = list(client.products)
-    p = client.products[ids[0]]
-    service.add_preference(session, kind="blacklist_product", target=p.retailer_product_id)
-    run = service.create_run(session, summary="x", store_id="1234")
-    with pytest.raises(service.ShoppingError, match="blacklisted"):
-        await service.add_selection(session, client, run.id, product_id=ids[0], reasons=["grocery_list"])
-    sel = await service.add_selection(session, client, run.id, product_id=ids[0], reasons=["user_requested"])
-    assert sel.status == "pending"
-
-
 async def test_agent_cannot_edit_decided_or_use_unknown_reasons(session, client):
     run, group, single, ids = await build_run(session, client)
     with pytest.raises(service.ShoppingError, match="Unknown reason"):

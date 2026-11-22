@@ -174,7 +174,7 @@ async def test_session_adapter(env, fake):
     auth = make(env, fake)
     session = AuthSession(auth)
     assert session.status().state == "required"
-    with pytest.raises(AuthRequired, match="sign in"):
+    with pytest.raises(AuthRequired, match="Sign in under Settings"):
         await session.get_headers()
     await sign_in(auth, fake, by="Sam")
     st = session.status()

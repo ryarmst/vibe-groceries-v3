@@ -14,9 +14,9 @@ you and the people you live with. Allow about an hour.
 - Optional: **Notion**, if you want pantry, grocery list, recipes and meal plans (see [docs/notion.md](docs/notion.md)).
 
 **Please read first.** The app talks to No Frills the way the PC Express phone app does. That isn't an
-official API, so it can break without notice, and using it is at your own risk with respect to the
-retailer's terms. It can fill your cart but can never check out, pay or book a pickup time: you do that on
-nofrills.ca. Cloudflare terminates HTTPS, so it can see the traffic.
+official API: it can stop working without notice, and you use it at your own risk under the store's terms.
+The app can fill your cart but can never check out, pay or book a pickup time; you do that on nofrills.ca.
+Cloudflare handles the secure connection, so it can see the traffic.
 
 ## 1. Collect three values
 
@@ -93,11 +93,11 @@ Open your address, enter your email and the code you receive. Then, in the app:
    expected. Copy that tab's full address, paste it into the box in Settings, and choose **Finish signing in**.
    The server keeps the session alive from then on; the app never sees your password.
 2. **Settings → API keys**: paste the Gemini key. Keys are stored encrypted on your server and never shown again.
-3. **Settings → LLM**: the defaults use Gemini Flash-Lite for quick jobs and Gemini Flash for planning. Press
-   **Test** on each. Free-tier limits differ per key: check AI Studio → Rate limits and enter them under
-   "Free-tier limits" so the app paces itself.
+3. **Settings → AI models**: the defaults use Gemini Flash-Lite for quick jobs and Gemini Flash for planning.
+   Press **Test** on each. Free-tier limits differ per key: look them up in AI Studio → Rate limits and enter
+   them under "Free-tier limits" so the app stays under them.
 4. **Prompts → About your household**: a few lines about who's eating, tastes, diets and kitchen gear. The
-   assistant reads it before every task. Everything else it's told is on the same page if you want to tweak it.
+   assistant reads it before every task. Everything else it's told is on the same page, if you want to change it.
 5. Optional: Notion ([docs/notion.md](docs/notion.md)) and the daily schedule (Settings → Schedule).
 6. Try **Quick Shop** on Home: "2 L of 2% milk and bananas". Then check the **Cart** page.
 

@@ -40,7 +40,7 @@ class NotionClient:
 
     def __init__(self, token: str, *, transport: httpx.AsyncBaseTransport | None = None):
         if not token:
-            raise NotionError("No Notion token set. Add the integration token in Settings → Notion.")
+            raise NotionError("Notion isn't connected. Add its token under Settings → API keys.")
         self._http = httpx.AsyncClient(base_url=API, timeout=httpx.Timeout(30, connect=10), transport=transport,
                                        headers={"authorization": f"Bearer {token}", "notion-version": VERSION,
                                                 "content-type": "application/json"})

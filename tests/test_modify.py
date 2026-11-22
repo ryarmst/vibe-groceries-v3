@@ -21,14 +21,14 @@ async def test_swap_cart_item_from_run(session, client):
     run, group, single, ids = await _in_cart(session, client)
     new_pid = ids[5]
     msg = await modify.modify(session, client, action="swap", product_id=single.product.retailer_product_id, new_product_id=new_pid,
-                              tags=["cheaper"], note="half the price", rule="prefer_for_type", in_cart=True)
+                              note="half the price", in_cart=True)
     assert "Swapped" in msg
     assert client.cart[single.product.retailer_product_id] == 0 and client.cart[new_pid] == single.quantity
     assert single.status == "rejected"
     new_sel = next(s for s in run.selections if s.product.retailer_product_id == new_pid)
     assert new_sel.status == "applied" and new_sel.added_by == "user" and new_sel.reason_codes == ["user_requested"]
     fb = session.query(Feedback).filter_by(action="chose_alternative").one()
-    assert fb.tags == ["cheaper"] and fb.note == "half the price" and fb.preference_id
+    assert fb.note == "half the price"
     sources = [a.source for a in session.query(CartAction).order_by(CartAction.id)]
     assert sources[-2:] == ["modify", "modify"]
 
@@ -36,10 +36,10 @@ async def test_swap_cart_item_from_run(session, client):
 async def test_remove_and_restore(session, client):
     run, group, single, ids = await _in_cart(session, client)
     pid = single.product.retailer_product_id
-    await modify.modify(session, client, action="remove", product_id=pid, tags=["have_enough", "cheaper"], note="2 left", in_cart=True)
+    await modify.modify(session, client, action="remove", product_id=pid, note="2 left", in_cart=True)
     assert client.cart[pid] == 0 and single.status == "rejected"
     fb = session.query(Feedback).filter_by(action="removed").one()
-    assert fb.tags == ["have_enough"]  # "cheaper" isn't a removal reason and is dropped
+    assert fb.note == "2 left"
     await modify.modify(session, client, action="restore", product_id=pid, selection_id=single.id)
     assert single.status == "applied" and client.cart[pid] == single.quantity
 
@@ -58,12 +58,12 @@ async def test_quantity_and_note_on_item_added_outside_app(session, client):
 
 async def test_activity_feed(session, client):
     run, group, single, ids = await _in_cart(session, client)
-    await modify.modify(session, client, action="remove", product_id=single.product.retailer_product_id, tags=["too_expensive"], in_cart=True)
+    await modify.modify(session, client, action="remove", product_id=single.product.retailer_product_id, note="too pricey", in_cart=True)
     events = activity.activity(session, days=1)
     kinds = {e["kind"] for e in events}
     assert {"suggested", "approved", "removed", "cart"} <= kinds
     removed = next(e for e in events if e["kind"] == "removed")
-    assert "Too expensive" in removed["detail"]
+    assert removed["note"] == "too pricey"
     assert activity.activity(session, days=1, run_id=run.id)
     assert all(e["product_id"] == ids[0] or e.get("chosen_product_id") == ids[0]
                for e in activity.activity(session, days=1, product_id=ids[0]))

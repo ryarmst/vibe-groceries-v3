@@ -17,13 +17,13 @@ export async function render(el) {
     }) }, status.running ? "Assessing…" : "Assess deals");
     el.append(h("div", { class: "between" }, h("h1", {}, "Deals"),
       h("div", { class: "row" }, h("span", { class: "small muted" },
-        status.running ? "Checking prices, ranking deals and asking the assistant for discoveries…"
+        status.running ? "Checking prices and picking the best deals…"
           : scan.last_scan ? `${scan.deals_known_now} items on sale · checked ${ago(scan.last_scan.finished_at)}` : "Not checked yet"),
         assessBtn)));
 
     el.append(h("h2", {}, "Today's top deals"),
-      h("p", { class: "small muted" }, "Standout prices on things you buy (ranked against your own price history), plus the assistant's picks: ",
-        "great deals on things you haven't tried yet. Updated every morning."));
+      h("p", { class: "small muted" }, "Standout prices on things you buy, compared with what you've paid before, plus the assistant's picks ",
+        "of great deals on things you haven't tried. Updated every morning."));
     if (!top.deals.length) el.append(empty(status.running ? "Working on it…" : "No standout deals right now. Try Assess deals."));
     for (const d of top.deals) el.append(topDeal(d, draw));
 

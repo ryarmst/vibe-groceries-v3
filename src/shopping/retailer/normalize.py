@@ -162,7 +162,7 @@ class NormalizedProduct:
         return round(float(d / self.regular_price * 100), 1)
 
     def summary(self) -> dict:
-        """Compact JSON-safe view for MCP / UI (no raw payload, rounded money)."""
+        """Compact JSON-safe view for the assistant and the app (no raw payload, rounded money)."""
         return {
             "product_id": self.retailer_product_id,
             "name": self.name,
@@ -190,11 +190,6 @@ class NormalizedProduct:
             "max_quantity": self.max_quantity,
             "category": " > ".join(n for _, n in self.categories) or None,
         }
-
-    def to_record(self) -> dict:
-        d = asdict(self)
-        d.pop("raw", None)
-        return d
 
 
 def _sold_by(pricing_type: str | None) -> str:

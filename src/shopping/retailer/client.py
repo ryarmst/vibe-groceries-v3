@@ -117,7 +117,7 @@ class PCExpressClient:
 
     def __init__(self, *, api_base: str, api_key: str, banner: str, store_id: str, auth: AuthSession, raw_dir: Path | None = None):
         if not api_key:
-            raise RetailerError("PCX_API_KEY is not configured (see .env.example).")
+            raise RetailerError("PCX_API_KEY is not set (see SETUP.md).")
         self._base = api_base.rstrip("/")
         self._banner = banner
         self.store_id = store_id

@@ -120,23 +120,20 @@ async def execute(tool: Tool, args: dict, ctx: ToolContext) -> tuple[bool, str]:
     return ok, text
 
 
-# -- shopping tools: the MCP tool functions, reused (same descriptions, schemas and validation) ----
+# -- shopping tools (agent/shopping_tools.py): their permission tiers --------------------------------
 
 SHOPPING_TIERS = {
     # read
-    "shopping_get_context": READ, "shopping_search_catalog": READ, "shopping_list_aisles": READ, "shopping_search_products": READ,
-    "shopping_get_product": READ, "shopping_get_deals": READ, "shopping_get_cart": READ, "shopping_auth_status": READ,
-    "shopping_get_run": READ, "shopping_list_runs": READ, "shopping_get_preferences": READ, "shopping_get_product_history": READ,
-    "shopping_get_selection_history": READ, "shopping_get_recent_price_history": READ, "shopping_get_feedback": READ,
+    "shopping_get_context": READ, "shopping_search_catalog": READ, "shopping_list_aisles": READ, "shopping_search_many": READ,
+    "shopping_get_product": READ, "shopping_get_cart": READ, "shopping_auth_status": READ, "shopping_get_run": READ, "shopping_list_runs": READ,
+    "shopping_get_product_history": READ, "shopping_get_recent_price_history": READ, "shopping_get_feedback": READ,
     "shopping_get_requirement_history": READ, "shopping_get_past_orders": READ, "shopping_get_top_deals": READ,
-    "shopping_search_many": READ, "shopping_stage_items": SAFE,
-    # safe (reversible, reviewed by a person before anything is bought)
-    "shopping_create_run": SAFE, "shopping_add_selection": SAFE, "shopping_add_choice_group": SAFE,
-    "shopping_update_selection": SAFE, "shopping_submit_run_for_review": SAFE, "shopping_add_preference_note": SAFE,
-    "shopping_mark_feedback_reviewed": SAFE, "shopping_add_top_deal": SAFE, "shopping_retire_top_deal": SAFE,
-    "shopping_refresh_deals": SAFE, "shopping_get_past_order": SAFE,  # imports the order into history
+    # safe: reversible, or reviewed by a person before anything is bought
+    "shopping_stage_items": SAFE, "shopping_update_selection": SAFE, "shopping_mark_feedback_reviewed": SAFE,
+    "shopping_add_top_deal": SAFE, "shopping_retire_top_deal": SAFE,
+    "shopping_get_past_order": SAFE,  # imports the order into history
     "shopping_apply_approved": SAFE,  # only items a person already approved
-    "shopping_quick_add": SAFE,  # straight to the cart: Quick Shop only, at a person's request (never proactive)
+    "shopping_quick_add": SAFE,  # straight to the cart: Quick Shop only, at a person's request (never on a schedule)
 }
 
 # Tools that change the real cart without a review step. Only offered in Quick Shop, never on a schedule.
@@ -144,12 +141,12 @@ CART_WRITE = {"shopping_quick_add"}
 
 
 def register_shopping_tools() -> None:
-    from shopping.mcp_server.server import mcp
+    from shopping.agent.shopping_tools import mcp
 
     for t in mcp._tool_manager.list_tools():  # noqa: SLF001
         tier = SHOPPING_TIERS.get(t.name)
         if tier is None:
-            raise RuntimeError(f"MCP tool {t.name} has no agent tier; add it to SHOPPING_TIERS.")
+            raise RuntimeError(f"Tool {t.name} has no permission tier; add it to SHOPPING_TIERS.")
 
         def make_run(tool):
             async def run(args: dict, ctx: ToolContext):

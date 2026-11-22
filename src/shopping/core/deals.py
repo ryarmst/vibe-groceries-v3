@@ -13,10 +13,9 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from shopping.core import service
-from shopping.core.feedback import clean_tags
 from shopping.core.service import ShoppingError, product_label
 from shopping.models import (
-    DEAL_ACTIVE, DEAL_ADDED, DEAL_DISMISSED, DEAL_RETIRED, FEEDBACK_TAG_LABELS, Feedback, Product, TopDeal, utcnow,
+    DEAL_ACTIVE, DEAL_ADDED, DEAL_DISMISSED, DEAL_RETIRED, Feedback, Product, TopDeal, utcnow,
 )
 from shopping.retailer.normalize import NormalizedProduct, round2
 
@@ -137,30 +136,14 @@ def deal_dict(session: Session, deal: TopDeal, *, store_id: str | None = None) -
     }
 
 
-async def add_to_cart(session: Session, client, deal_id: int, quantity: float) -> str:
-    """User action: add the deal's product to the cart (on top of anything already there)."""
-    deal = get_deal(session, deal_id)
-    if deal.status != DEAL_ACTIVE:
-        raise ShoppingError("This deal is no longer active.")
-    quantity = service.whole_quantity(quantity, deal.product.sold_by)
-    cart = await client.get_cart()
-    pid = deal.product.retailer_product_id
-    before = cart.quantity_of(pid)
-    await service.user_set_cart_quantity(session, client, pid, before + quantity, source="deals")
-    deal.status, deal.acted_at = DEAL_ADDED, utcnow()
-    session.flush()
-    return f"Added {quantity:g} × {product_label(deal.product)} to the cart" + (f" (now {before + quantity:g})." if before else ".")
-
-
-def dismiss(session: Session, deal_id: int, *, tags: list[str] | None = None, note: str | None = None) -> TopDeal:
+def dismiss(session: Session, deal_id: int, *, note: str | None = None) -> TopDeal:
     """User action: not interested. Recorded as feedback so the agent flags better deals next time."""
     deal = get_deal(session, deal_id)
-    tags = clean_tags("deal_dismissed", tags)
     note = (note or "").strip() or None
     deal.status, deal.acted_at = DEAL_DISMISSED, utcnow()
-    deal.response_note = "; ".join([FEEDBACK_TAG_LABELS.get(t, t) for t in tags] + ([note] if note else [])) or None
+    deal.response_note = note
     price = deal.observation.effective_price if deal.observation else None
-    session.add(Feedback(action="deal_dismissed", product_id=deal.product_id, requirement=deal.relevant_to, tags=tags, note=note,
+    session.add(Feedback(action="deal_dismissed", product_id=deal.product_id, requirement=deal.relevant_to, note=note,
                          context=json.dumps({"from": {"price": float(price) if price is not None else None, "agent_rationale": deal.why,
                                                       "headline": deal.headline, "deal_id": deal.id}})))
     session.flush()
@@ -172,13 +155,5 @@ def retire(session: Session, deal_id: int, note: str | None = None) -> TopDeal:
     deal = get_deal(session, deal_id)
     if deal.status == DEAL_ACTIVE:
         deal.status, deal.acted_at, deal.response_note = DEAL_RETIRED, utcnow(), (note or "").strip() or "Retired by agent"
-        session.flush()
-    return deal
-
-
-def reopen(session: Session, deal_id: int) -> TopDeal:
-    deal = get_deal(session, deal_id)
-    if deal.status in (DEAL_DISMISSED, DEAL_RETIRED):
-        deal.status, deal.acted_at, deal.response_note = DEAL_ACTIVE, None, None
         session.flush()
     return deal

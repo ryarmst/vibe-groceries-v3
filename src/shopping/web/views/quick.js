@@ -1,13 +1,8 @@
 // Quick Shop: say what you need and the assistant puts it straight into the cart (no review step).
 // Everything it adds is recorded as a run, so any item can be taken out again from the run or the cart page.
 import { changed, post, stream } from "../lib/api.js";
+import { toolLabel } from "../lib/tools.js";
 import { clear, h, link, richText } from "../lib/ui.js";
-
-const LABELS = {
-  shopping_search_many: "Finding the products", shopping_get_cart: "Checking what's already in the cart",
-  shopping_get_context: "Checking deals and your usual picks", shopping_get_preferences: "Checking preferences",
-  notion_pantry: "Checking the pantry", shopping_quick_add: "Adding to the cart",
-};
 
 export function quickBox({ compact = false } = {}) {
   const input = h("textarea", { rows: compact ? 2 : 4, placeholder: "e.g. 2 L of 2% milk, a dozen eggs, bananas and stuff for tacos" });
@@ -30,7 +25,7 @@ export function quickBox({ compact = false } = {}) {
       ({ thread_id: threadId } = await post("/api/chat/threads", { mode: "quick" }));
       for await (const ev of stream(`/api/chat/threads/${threadId}/messages`, { text, mode: "quick" }, controller.signal)) {
         if (ev.type === "tool" && ev.status === "running") {
-          steps.append(h("div", { class: "toolline" }, "⚙ ", LABELS[ev.name] || ev.name, "…"));
+          steps.append(h("div", { class: "toolline" }, "⚙ ", toolLabel(ev.name), "…"));
         } else if (ev.type === "tool" && ev.status === "done" && ev.name === "shopping_quick_add") {
           added = true;
         } else if (ev.type === "tool" && ev.status === "error") {

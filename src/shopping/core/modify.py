@@ -1,6 +1,6 @@
 """Modify one item after the fact — from the cart or from a run: swap it for another product, change
-its quantity, remove it, or just leave a note. Every change records cart history and (when there is
-a reason or note) feedback, and can save a rule at the same time."""
+its quantity, remove it, or just leave a note. Every change records cart history and, when there's a note,
+feedback."""
 
 from __future__ import annotations
 
@@ -40,39 +40,33 @@ def linked_selection(session: Session, product_retailer_id: str) -> Selection | 
 
 
 def _feedback(session: Session, *, action: str, sel: Selection | None, product: Product | None, chosen: Product | None,
-              tags: list[str], note: str | None, rule: str | None, context: dict) -> Feedback | None:
-    tag_action = {"swap": "chose_alternative", "remove": "removed"}.get(action, "approved")
-    tags = fbk.clean_tags(tag_action, [t for t in tags if t in fbk.allowed_tags(tag_action)])
-    if action in ("quantity", "note", "restore") and not (tags or note or rule):
+              note: str | None, context: dict) -> Feedback | None:
+    if action in ("quantity", "note", "restore") and not note:
         return None
     fb = Feedback(
         action={"swap": "chose_alternative", "remove": "removed", "quantity": "quantity_changed", "note": "note",
                 "restore": "approved"}[action],
-        tags=tags, note=note, product_id=product.id if product else None, chosen_product_id=chosen.id if chosen else None,
+        note=note, product_id=product.id if product else None, chosen_product_id=chosen.id if chosen else None,
         shopping_run_id=sel.shopping_run_id if sel else None, selection_id=sel.id if sel else None,
         choice_group_id=sel.choice_group_id if sel else None,
         requirement=(sel.requirement if sel else None) or (product.name if product else None),
         context=json.dumps(context, default=str),
     )
-    if rule:
-        target = chosen if (chosen is not None and not rule.startswith("blacklist")) else product
-        if target is not None:
-            fb.preference_id = fbk.make_rule(session, rule, sel, target).id
     session.add(fb)
     session.flush()
     return fb
 
 
 async def modify(session: Session, client: PCExpressClient, *, action: str, product_id: str, selection_id: str | None = None,
-                 new_product_id: str | None = None, quantity: float | None = None, tags: list[str] | None = None,
-                 note: str | None = None, rule: str | None = None, in_cart: bool = True) -> str:
+                 new_product_id: str | None = None, quantity: float | None = None,
+                 note: str | None = None, in_cart: bool = True) -> str:
     """Apply one modification. Returns a short human-readable result.
 
     `in_cart`: whether the item is (or should be) in the retailer cart. Cart changes need a connected session;
     without one, run-side changes still happen and AuthRequired is raised for the cart part."""
     if action not in ACTIONS:
         raise ShoppingError(f"Unknown action {action!r}")
-    tags, note, rule = tags or [], (note or "").strip() or None, rule or None
+    note = (note or "").strip() or None
     sel = session.get(Selection, selection_id) if selection_id else None
     if sel is None and in_cart:
         sel = linked_selection(session, product_id)
@@ -81,7 +75,7 @@ async def modify(session: Session, client: PCExpressClient, *, action: str, prod
     in_cart = in_cart or (sel is not None and sel.status == SEL_APPLIED)
 
     if action == "note":
-        _feedback(session, action="note", sel=sel, product=product, chosen=None, tags=tags, note=note, rule=rule, context={"from": before})
+        _feedback(session, action="note", sel=sel, product=product, chosen=None, note=note, context={"from": before})
         return "Note saved."
 
     if action == "quantity":
@@ -92,7 +86,7 @@ async def modify(session: Session, client: PCExpressClient, *, action: str, prod
             sel.quantity = quantity
         if in_cart:
             await service.user_set_cart_quantity(session, client, product_id, quantity, source="modify", selection=sel)
-        _feedback(session, action="quantity", sel=sel, product=product, chosen=None, tags=tags, note=note, rule=rule,
+        _feedback(session, action="quantity", sel=sel, product=product, chosen=None, note=note,
                   context={"from": before, "quantity_to": quantity})
         return f"Quantity set to {quantity:g}."
 
@@ -100,7 +94,7 @@ async def modify(session: Session, client: PCExpressClient, *, action: str, prod
         if sel:
             sel.status, sel.rejected_at, sel.approved_at = SEL_REJECTED, utcnow(), None
             service.recompute_run_status(sel.run)
-        _feedback(session, action="remove", sel=sel, product=product, chosen=None, tags=tags, note=note, rule=rule, context={"from": before})
+        _feedback(session, action="remove", sel=sel, product=product, chosen=None, note=note, context={"from": before})
         if in_cart:
             await service.user_set_cart_quantity(session, client, product_id, 0, source="modify", selection=sel)
         return "Removed" + (" from the cart." if in_cart else " from the run.")
@@ -112,7 +106,7 @@ async def modify(session: Session, client: PCExpressClient, *, action: str, prod
         if sel.choice_group:
             sel.choice_group.selected_selection_id = sel.id
         service.recompute_run_status(sel.run)
-        _feedback(session, action="restore", sel=sel, product=product, chosen=None, tags=tags, note=note, rule=rule, context={"from": before})
+        _feedback(session, action="restore", sel=sel, product=product, chosen=None, note=note, context={"from": before})
         await service.apply_approved(session, client, sel.shopping_run_id, only_ids=[sel.id], source="modify")
         return "Added back."
 
@@ -147,7 +141,7 @@ async def modify(session: Session, client: PCExpressClient, *, action: str, prod
         after = {"product_id": new_product_id, "label": service.product_label(chosen),
                  "price": None if np.effective_price is None else float(np.effective_price),
                  "unit_price": None if np.unit_price is None else float(np.unit_price), "unit_price_basis": np.unit_price_basis}
-    _feedback(session, action="swap", sel=sel, product=product, chosen=chosen, tags=tags, note=note, rule=rule,
+    _feedback(session, action="swap", sel=sel, product=product, chosen=chosen, note=note,
               context={"from": before, "to": after})
     if not in_cart:
         return f"Swapped to {service.product_label(chosen)}."

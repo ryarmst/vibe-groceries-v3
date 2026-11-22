@@ -1,11 +1,11 @@
-"""Shopping domain logic shared by the MCP server and the web UI."""
+"""Shopping logic shared by the assistant's tools and the web app: products, prices, runs, the cart."""
 
 from __future__ import annotations
 
 import json
 import logging
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from decimal import Decimal
 from zoneinfo import ZoneInfo
 
@@ -13,7 +13,6 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from shopping.models import (
-    PREFERENCE_KINDS,
     REASON_CODES,
     RUN_APPLIED,
     RUN_APPROVED,
@@ -29,7 +28,6 @@ from shopping.models import (
     SEL_REJECTED,
     CartAction,
     ChoiceGroup,
-    Preference,
     PriceObservation,
     Product,
     Selection,
@@ -277,64 +275,6 @@ def history_brief(session: Session, retailer_ids: list[str], store_id: str | Non
 
 
 # =====================================================================================
-# Preferences
-# =====================================================================================
-
-def active_preferences(session: Session) -> list[Preference]:
-    return list(session.scalars(select(Preference).where(Preference.active.is_(True)).order_by(Preference.created_at)))
-
-
-def preference_dict(p: Preference) -> dict:
-    return {
-        "id": p.id, "kind": p.kind, "description": PREFERENCE_KINDS.get(p.kind, p.kind), "scope": p.scope,
-        "target": p.target, "target_label": p.target_label, "category": p.category, "weight": p.weight,
-        "note": p.note, "created_at": p.created_at.isoformat(), "absolute": p.kind.startswith("blacklist"),
-    }
-
-
-def add_preference(session: Session, *, kind: str, scope: str | None = None, target: str | None = None,
-                   target_label: str | None = None, note: str | None = None, category: str | None = None,
-                   weight: float = 1.0, source_selection_id: str | None = None) -> Preference:
-    if kind not in PREFERENCE_KINDS:
-        raise ShoppingError(f"Unknown preference kind {kind!r}")
-    # Avoid duplicates of the same active rule.
-    existing = session.scalar(
-        select(Preference).where(Preference.active.is_(True), Preference.kind == kind, Preference.scope.is_(scope) if scope is None else Preference.scope == scope,
-                                 Preference.target.is_(target) if target is None else Preference.target == target)
-    )
-    if existing and kind != "preference_note":
-        return existing
-    pref = Preference(kind=kind, scope=scope, target=target, target_label=target_label, note=note, category=category,
-                      weight=weight, source_selection_id=source_selection_id)
-    session.add(pref)
-    session.flush()
-    return pref
-
-
-def preference_flags(prefs: list[Preference], np_or_product) -> list[str]:
-    """Which active preferences mention this product (by id or brand)."""
-    rid = getattr(np_or_product, "retailer_product_id", None)
-    brand = (getattr(np_or_product, "brand", None) or "").lower()
-    flags = []
-    for p in prefs:
-        if p.kind in ("prefer_product", "blacklist_product", "prefer_for_type") and p.target == rid:
-            flags.append(p.kind + (f" ({p.scope})" if p.scope else ""))
-        elif p.kind in ("prefer_brand", "blacklist_brand") and brand and (p.target or "").lower() == brand:
-            flags.append(p.kind + (f" ({p.scope})" if p.scope else ""))
-    return flags
-
-
-def blacklist_hit(prefs: list[Preference], np: NormalizedProduct) -> Preference | None:
-    brand = (np.brand or "").lower()
-    for p in prefs:
-        if p.kind == "blacklist_product" and p.target == np.retailer_product_id:
-            return p
-        if p.kind == "blacklist_brand" and brand and (p.target or "").lower() == brand:
-            return p
-    return None
-
-
-# =====================================================================================
 # Shopping runs
 # =====================================================================================
 
@@ -376,12 +316,6 @@ async def _stage_selection(session: Session, client: PCExpressClient, run: Shopp
     np = await client.get_product(product_id)
     if not np.retailer_product_id:
         raise ShoppingError(f"Product {product_id!r} not found.")
-    hit = blacklist_hit(active_preferences(session), np)
-    if hit and "user_requested" not in reasons:
-        raise ShoppingError(
-            f"{np.brand or ''} {np.name} is blacklisted by preference #{hit.id} ({hit.kind}). "
-            "Choose another product (or include reason 'user_requested' if the user explicitly asked for it)."
-        )
     if (np.availability or "").upper() in ("OUT", "OUT_OF_STOCK"):
         # Search results don't always flag this (weighed meat especially); the product page does.
         raise ShoppingError(f"{np.brand or ''} {np.name} is out of stock at this store; choose another product.".strip())
@@ -536,7 +470,7 @@ def estimated_total(run: ShoppingRun) -> Decimal:
     return total
 
 
-# -- user decisions (web UI) -----------------------------------------------------------
+# -- people's decisions (the app) --------------------------------------------------------
 
 def _decide(sel: Selection, approve: bool) -> None:
     if sel.status not in (SEL_PENDING, SEL_APPROVED, SEL_REJECTED, SEL_FAILED):
@@ -755,7 +689,7 @@ async def set_substitution(session: Session, client: PCExpressClient, *, selecti
     if before is not None and before != after:
         product = sel.product
         session.add(Feedback(action="substitution_changed", shopping_run_id=sel.shopping_run_id, selection_id=sel.id,
-                             product_id=product.id, requirement=sel.requirement, tags=[], note=after["note"],
+                             product_id=product.id, requirement=sel.requirement, note=after["note"],
                              context=json.dumps({"from": before, "to": after})))
         session.flush()
     state = "allowed" if after["allowed"] else "off"
@@ -799,7 +733,7 @@ async def user_set_cart_quantity(session: Session, client: PCExpressClient, prod
 
 
 # =====================================================================================
-# Serialization helpers (MCP + templates)
+# Serialization helpers
 # =====================================================================================
 
 def selection_dict(session: Session, sel: Selection, *, with_history: bool = False) -> dict:

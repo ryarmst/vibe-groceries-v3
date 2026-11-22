@@ -53,10 +53,10 @@ def _history(messages: list[ChatMessage]) -> list[dict]:
     return out
 
 
-def _system(pb: playbooks.Playbook, device_name: str, jobs: dict) -> str:
+def _system(pb: playbooks.Playbook, person: str, jobs: dict) -> str:
     now = datetime.now(ZoneInfo(settings.timezone))
     fill = {"today": now.strftime("%Y-%m-%d"), "weekday": now.strftime("%A"), "store_id": settings.store_id,
-            "device_name": device_name or "a household member", "household": settings.household, "meals_per_week": jobs.get("meals_per_week", 5)}
+            "person": person or "a household member", "household": settings.household, "meals_per_week": jobs.get("meals_per_week", 5)}
     return f"{prompts.render(playbooks.common(), fill)}\n\n## Mode: {pb.title}\n{prompts.render(pb.body, fill)}"
 
 
@@ -90,7 +90,7 @@ def pending_confirmations(thread_id: str) -> list[ChatMessage]:
                                                               ChatMessage.status == "pending_confirmation")))
 
 
-async def run(thread_id: str, *, user_text: str | None = None, device_id: str | None = None, device_name: str = "",
+async def run(thread_id: str, *, user_text: str | None = None, device_id: str | None = None, person: str = "",
               mode: str | None = None, proactive: bool = False, playbook: str | None = None) -> AsyncIterator[dict]:
     ctx = ToolContext(thread_id=thread_id, device_id=device_id, proactive=proactive)
     with session_scope() as session:
@@ -123,7 +123,7 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
 
     pb = playbooks.load(resolved)
     yield {"type": "mode", "mode": resolved, "title": pb.title}
-    system = _system(pb, device_name, jobs)
+    system = _system(pb, person, jobs)
     tools = [t for t in registry.select(list(pb.tools))]
     allowed = {t.name: t for t in tools}
     specs = [t.spec() for t in tools]
@@ -245,7 +245,7 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
 
 
 async def resolve_confirmation(thread_id: str, message_id: int, *, approve: bool, note: str | None, device_id: str | None,
-                               device_name: str = "") -> AsyncIterator[dict]:
+                               person: str = "") -> AsyncIterator[dict]:
     """A person approved or declined a pending change. Run it (or record the refusal), then continue the
     conversation once nothing else is waiting."""
     ctx = ToolContext(thread_id=thread_id, device_id=device_id)
@@ -272,5 +272,5 @@ async def resolve_confirmation(thread_id: str, message_id: int, *, approve: bool
     if pending_confirmations(thread_id):
         yield {"type": "done", "awaiting_confirmation": True}
         return
-    async for ev in run(thread_id, device_id=device_id, device_name=device_name):
+    async for ev in run(thread_id, device_id=device_id, person=person):
         yield ev

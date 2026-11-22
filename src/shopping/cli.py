@@ -42,17 +42,17 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "users":
         from sqlalchemy import select
 
-        from shopping.models import Device
+        from shopping.models import User
 
         with session_scope() as session:
-            for d in session.scalars(select(Device).order_by(Device.created_at)):
+            for d in session.scalars(select(User).order_by(User.created_at)):
                 print(f"{d.id}  last seen {d.last_seen_at or '-'}  {d.name}")
         return 0
 
     def show() -> None:
         st = context.auth.status()
         if st.state != "connected":
-            print("Not signed in to PC ID.")
+            print("No Frills isn't signed in.")
             return
         print(f"Signed in (customer {st.customer_id}) by {st.signed_in_by or '-'} at {st.signed_in_at}; "
               f"last renewed {st.last_updated}.")

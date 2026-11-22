@@ -64,6 +64,6 @@ async def promote(page_id: str):
 @router.post("/plan-week")
 async def plan_week(caller: Caller = Depends(require_user)):
     """Run the weekly plan now (in the background); its conversation shows up in Chat and the inbox."""
-    thread_id = weekly.start_in_background(requested_by=caller.device_id)
+    thread_id = weekly.start_in_background(requested_by=caller.id)
     return {"started": bool(thread_id), "thread_id": thread_id,
             "message": "Planning the week… the meals and run will appear in a few minutes." if thread_id else "A plan is already running."}

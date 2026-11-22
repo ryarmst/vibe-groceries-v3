@@ -1,7 +1,7 @@
 """JSON views for the app: a run as review cards, a product's modify context.
 
 Per item: the product, its observed price and deal, our price history, past feedback on it, when the
-requirement was last bought or removed, and preference flags.
+requirement was last bought or removed.
 """
 
 from __future__ import annotations
@@ -38,7 +38,7 @@ def _stats_brief(st: dict) -> dict | None:
     return {k: st.get(k) for k in keys if st.get(k) is not None}
 
 
-def selection_card(session: Session, sel: Selection, *, fb_hist: dict, req: dict | None, prefs, pending_ids: set[str]) -> dict:
+def selection_card(session: Session, sel: Selection, *, fb_hist: dict, req: dict | None, pending_ids: set[str]) -> dict:
     obs = sel.observation
     return {
         "selection_id": sel.id,
@@ -59,14 +59,12 @@ def selection_card(session: Session, sel: Selection, *, fb_hist: dict, req: dict
         "history": _stats_brief(service.price_stats(session, sel.product, store_id=obs.store_id if obs else None)),
         "past_feedback": fb_hist,
         "requirement_history": req,
-        "preference_flags": service.preference_flags(prefs, sel.product),
     }
 
 
 def run_view(session: Session, run: ShoppingRun, *, pending_ids: set[str] | None = None) -> dict:
     """The run as review cards: one per requirement (a single item, or a choice group with its options)."""
     pending_ids = pending_ids or set()
-    prefs = service.active_preferences(session)
     fb_hist_all = fbk.feedback_by_product(session, [s.product.retailer_product_id for s in run.selections])
     run_feedback: dict[str, list[dict]] = {}
     for f in session.scalars(select(Feedback).where(Feedback.shopping_run_id == run.id).order_by(Feedback.created_at)):
@@ -78,7 +76,7 @@ def run_view(session: Session, run: ShoppingRun, *, pending_ids: set[str] | None
         req = reqs.get((sel.requirement or "").lower())
         if req and req.get("last_added") is None and req.get("last_removed") is None:
             req = None
-        return selection_card(session, sel, fb_hist=hist, req=req, prefs=prefs, pending_ids=pending_ids)
+        return selection_card(session, sel, fb_hist=hist, req=req, pending_ids=pending_ids)
 
     cards = []
     for sel in run.selections:

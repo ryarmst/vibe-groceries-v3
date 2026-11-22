@@ -36,8 +36,8 @@ async function nofrillsCard() {
       body.append(
         h("p", {}, "✓ Signed in", st.signed_in_by ? ` by ${st.signed_in_by}` : "", st.signed_in_at ? ` on ${when(st.signed_in_at)}` : "", ". ",
           h("span", { class: "muted" }, "The session renews itself", st.last_renewed_at ? ` (last ${ago(st.last_renewed_at)})` : "", ".")),
-        h("p", { class: "small muted" }, "Shared by everyone using the app. The app never sees the password; it keeps an encrypted, ",
-          "self-renewing token on the server. If No Frills ever ends the session, sign in again here."),
+        h("p", { class: "small muted" }, "Shared by everyone using the app. The app never sees your password: the server keeps an encrypted sign-in ",
+          "that renews itself. If No Frills ever ends it, sign in again here."),
         h("div", { class: "row" },
           h("button", { onclick: () => startFlow() }, "Sign in again"),
           h("button", { class: "danger", onclick: (e) => busy(e.target, async () => {
@@ -85,10 +85,10 @@ function budgetCard(b, s, models) {
   const warn = h("input", { type: "number", min: 1, max: 100, value: b.warn_at_pct, style: { width: "5em" } });
   const daily = h("input", { type: "number", min: 1, max: 10000, value: b.daily_requests, style: { width: "6em" } });
   const save = (value) => put("/api/settings/budget", value).then(() => { toast("Budget saved."); location.reload(); });
-  return section("LLM budget",
+  return section("AI budget",
     h("p", {}, `This month: ${money(s.month_spent_usd)} of ${money(s.monthly_cap_usd)} (${s.pct}%) · ${s.requests_today} requests today. `,
       s.warn ? h("strong", { class: "warn" }, "Near the cap.") : null),
-    h("p", { class: "small muted" }, "Gemini's free tier counts as $0. Paid models without a price in LLM settings are counted at a deliberately high estimate."),
+    h("p", { class: "small muted" }, "Gemini's free tier counts as $0. Paid models without a price below are counted at a high estimate, to be safe."),
     models.length ? h("table", { class: "table small" }, h("tbody", {}, ...models.map((m) => h("tr", {},
       h("td", {}, `${m.provider} · ${m.model}`),
       h("td", {}, m.rpd ? `${m.used_today} of ${m.rpd} requests today` : `${m.used_today} requests today`, m.rpm ? ` · ${m.rpm}/min` : ""),
@@ -119,7 +119,7 @@ function llmCard(llm, providers) {
           toast(r.ok ? `Works: “${r.reply}”` : r.error, r.ok ? "ok" : "err");
         } }, "Test"))) };
   };
-  const fast = tierRow("fast", "Quick questions, pantry updates");
+  const fast = tierRow("fast", "Quick Shop, questions, the pantry, daily deal picks");
   const smart = tierRow("smart", "Shopping runs and meal plans");
   const fallback = h("textarea", { rows: 2, placeholder: "groq: llama-3.3-70b-versatile" },
     (llm.fallback || []).map((f) => `${f.provider}: ${f.model}`).join("\n"));
@@ -131,14 +131,14 @@ function llmCard(llm, providers) {
   const prices = h("textarea", { rows: 2, placeholder: "claude-sonnet-4-5: 3, 15" },
     Object.entries(llm.prices || {}).map(([m, [i, o]]) => `${m}: ${i}, ${o}`).join("\n"));
   const parseLines = (text, fn) => text.value.split("\n").map((l) => l.trim()).filter(Boolean).map(fn);
-  return section("LLM",
+  return section("AI models",
     fast.row, smart.row,
     h("div", { class: "form-grid" },
-      field("Fallbacks (provider: model per line)", fallback, "Tried in order when the main model fails."),
+      field("Backup models (provider: model, one per line)", fallback, "Tried in order if both models above fail."),
       field("Custom endpoint base URL", custom, "For the Custom provider, e.g. a local Ollama."),
-      field("Prices (model: input, output $/M tokens)", prices, "For budget tracking of paid models."),
-      field("Free-tier limits (model: per minute, per day)", limits, "Calls are paced to these; a model out for the day is skipped. See AI Studio → Rate limits."),
-      field("Temperature", temp), field("Max tool steps per reply", steps)),
+      field("Prices for paid models (model: input, output, in $ per million tokens)", prices, "Used for the budget."),
+      field("Free-tier limits (model: per minute, per day)", limits, "The app stays under these and switches models when one runs out for the day. Find yours in AI Studio → Rate limits."),
+      field("Temperature (0 = predictable, higher = more varied)", temp), field("Most steps per reply", steps)),
     h("div", { class: "row", style: { marginTop: "8px" } }, h("button", { class: "primary", onclick: (e) => busy(e.target, async () => {
       await put("/api/settings/llm", {
         tiers: { fast: { provider: fast.provider.value, model: fast.model.value.trim() }, smart: { provider: smart.provider.value, model: smart.model.value.trim() } },
@@ -150,8 +150,8 @@ function llmCard(llm, providers) {
           return [m.trim(), Object.fromEntries([["rpm", rpm], ["rpd", rpd]].filter(([, v]) => v > 0))];
         })),
       });
-      toast("LLM settings saved.");
-    }) }, "Save LLM settings")));
+      toast("AI settings saved.");
+    }) }, "Save AI settings")));
 }
 
 function keysCard(secrets) {
@@ -176,15 +176,15 @@ function keysCard(secrets) {
         }) }, "Remove") : null)));
   });
   return section("API keys",
-    h("p", { class: "small muted" }, "Keys go straight to the server, which stores them encrypted. They are never stored in this browser or sent back."),
+    h("p", { class: "small muted" }, "Keys are stored encrypted on the server. They're never kept in this browser or shown again."),
     h("div", { class: "table-wrap" }, h("table", { class: "table" }, h("tbody", {}, ...rows))));
 }
 
 function notionCard(n) {
   const inputs = Object.fromEntries(["pantry", "groceries", "cooking", "meals"].map((k) => [k, h("input", { value: n[k] || "", placeholder: "data source id", style: { width: "100%" } })]));
   return section("Notion",
-    h("p", { class: "small muted" }, "Create an internal integration in Notion, share these four databases with it, and save its token under API keys. ",
-      "The data source id is the collection:// value (or the database URL's id)."),
+    h("p", { class: "small muted" }, "Create an internal integration in Notion, share these databases with it, and save its token under API keys. ",
+      "Then paste each database's data source ID (or its link) here. Leave a box empty to skip that feature."),
     h("div", { class: "form-grid" }, field("Kitchen Pantry and Storage", inputs.pantry), field("Groceries", inputs.groceries),
       field("Cooking", inputs.cooking), field("Suggested Meals", inputs.meals)),
     h("div", { class: "row", style: { marginTop: "8px" } }, h("button", { class: "primary", onclick: (e) => busy(e.target, async () => {
@@ -210,15 +210,14 @@ function jobsCard(j) {
     h("label", { class: "row", style: { marginTop: "10px" } }, checkins, "Daily check-in on planned meals at", checkinHour, ":00"),
     h("label", { class: "row" }, orders, "Import new No Frills orders each evening"),
     h("label", { class: "row", style: { marginTop: "10px" } }, "Check deals every day at", dealsHour, ":00 (no No Frills login needed)"),
-    h("label", { class: "row" }, review, "Also ask the assistant for discoveries (great deals on things you haven't bought; one LLM call a day)"),
+    h("label", { class: "row" }, review, "Also ask the assistant to pick great deals on things you haven't bought (one AI request a day)"),
     h("label", { class: "row" }, alerts, "Send a phone alert for stock-up deals (needs an ntfy topic under API keys)",
       h("button", { class: "link", onclick: async (e) => {
         const r = await busy(e.target, () => post("/api/settings/notify/test"));
         toast(r.ok ? "Test alert sent." : r.error, r.ok ? "ok" : "err");
       } }, "Send test alert")),
-    h("p", { class: "small muted" }, "ntfy: install the ntfy app and subscribe to a long random topic name (e.g. vibe-groceries-k3j9x…), ",
-      "then save that name under API keys → ntfy topic (just the name is fine; a full https:// URL works too, e.g. for your own ntfy server). ",
-      "Anyone who knows the name can read the alerts, so keep it random."),
+    h("p", { class: "small muted" }, "To get alerts, install the ntfy app, subscribe to a long random topic name (e.g. vibe-groceries-k3j9x…), and save ",
+      "that name under API keys → ntfy topic. Anyone who knows the name can read the alerts, so make it hard to guess."),
     h("div", { class: "row", style: { marginTop: "8px" } }, h("button", { class: "primary", onclick: (e) => busy(e.target, async () => {
       await put("/api/settings/jobs", { weekly_plan_enabled: enabled.checked, weekly_plan_weekday: Number(dayIn.value),
         weekly_plan_hour: Number(hour.value), meals_per_week: Number(meals.value), checkins_enabled: checkins.checked,

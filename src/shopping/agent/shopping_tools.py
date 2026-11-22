@@ -1,8 +1,8 @@
-"""MCP interface for the shopping agent.
+"""The shopping tools the assistant can call: search, deals, runs, the cart (Quick Shop only), orders, history.
 
-A deliberately small, semantic tool surface. There are no tools for checkout, orders,
-payment, timeslots or arbitrary HTTP. The only cart-changing tool applies items the
-*user* has approved in the web UI.
+There are no tools for checkout, orders, payment, timeslots or arbitrary web requests. Tools are declared
+with the MCP library's decorator, which turns each function's signature into a JSON schema; agent/tools.py
+gives each one a permission tier, and each prompt in shopping/prompts/ lists the tools that task may use.
 """
 
 from __future__ import annotations
@@ -27,39 +27,12 @@ from shopping.core import feedback as fbk
 from shopping.core import orders as ords
 from shopping.core import service
 from shopping.database import session_scope
-from shopping.models import REASON_CODES, PastOrder, ShoppingRun
+from shopping.models import PastOrder, ShoppingRun
 from shopping.retailer.client import RetailerError
 
-log = logging.getLogger("shopping.mcp")
+log = logging.getLogger("shopping.tools")
 
-INSTRUCTIONS = f"""\
-Grocery shopping assistant for No Frills (store {settings.store_id}). Workflow:
-1. Start with shopping_get_context: what's on sale now (from a daily scan of every aisle), the household's own
-   items on sale, the best deals per aisle ranked toward what they buy, and recent review notes. For meal
-   planning use focus="meals". shopping_search_catalog searches everything we've seen (fast, no retailer call);
-   shopping_search_products gets live prices. Then shopping_get_preferences.
-2. shopping_create_run, then stage items with shopping_add_selection (one product) or
-   shopping_add_choice_group (several candidate products for one requirement, with a recommendation).
-   Always give reason codes and a short rationale. Reason codes: {", ".join(REASON_CODES)}.
-   Use the exact item name from the user's list/pantry as `requirement` so history lines up across runs.
-   For regular purchases, check shopping_get_requirement_history first and only stage items that are due.
-3. shopping_submit_run_for_review and give the user the review URL. The user triages items in the web UI,
-   often recording why they removed or swapped something; read shopping_get_feedback to learn from it,
-   and after distilling it elsewhere (e.g. into notes), call shopping_mark_feedback_reviewed.
-4. Approving an item in the web UI adds it to the cart immediately. shopping_apply_approved only retries
-   approved items that couldn't be added (e.g. the session had expired); never use it on unapproved items.
-Top deals: when you spot a standout price (lowest we've seen, a big % off on something the user buys, a
-stock-up price on a staple), flag it with shopping_add_top_deal. It appears on the Deals page where the user can
-add it to the cart in one tap; it is not a run item. Check shopping_get_top_deals first: don't re-flag dismissed
-deals, and learn from dismissal reasons.
-Substitutions are per item and OFF by default. Allow them only where a swap is no big deal (commodity
-produce, same-% milk, canned staples, a generic brand); never for items chosen because of a special deal,
-a preferred brand/product/variety, or anything with an "Avoid" or "Subs: never" preference.
-This service cannot check out or place orders, and never edits an order that has been submitted.
-Blacklist preferences are absolute; other preferences are guidance.
-"""
-
-mcp = MCPServer(name="shopping-assistant", instructions=INSTRUCTIONS, version="0.1.0")
+mcp = MCPServer(name="shopping-tools")  # used only as a tool registry
 
 
 def logged(fn):
@@ -71,11 +44,11 @@ def logged(fn):
         ids = {k: v for k, v in kwargs.items() if k in ("run_id", "product_id", "selection_id", "query") and v}
         try:
             result = await fn(*args, **kwargs)
-            log.info("mcp tool=%s ok duration_ms=%.0f %s", fn.__name__, (time.monotonic() - started) * 1000, ids)
+            log.info("tool=%s ok duration_ms=%.0f %s", fn.__name__, (time.monotonic() - started) * 1000, ids)
             return result
         except Exception as exc:
-            log.warning("mcp tool=%s failed duration_ms=%.0f %s error=%s", fn.__name__, (time.monotonic() - started) * 1000, ids, exc)
-            # MCP only shows the agent messages from ToolError; our own errors are written for it to read.
+            log.warning("tool=%s failed duration_ms=%.0f %s error=%s", fn.__name__, (time.monotonic() - started) * 1000, ids, exc)
+            # Our own errors are written for the assistant to read; others stay internal.
             if isinstance(exc, (service.ShoppingError, RetailerError, AuthRequired)):
                 raise ToolError(str(exc)) from exc
             raise
@@ -88,8 +61,7 @@ def _review_url(run_id: str) -> str:
 
 
 def _annotate(session, products, source: str) -> list[dict]:
-    """Record observations, then add preference flags and our own price history."""
-    prefs = service.active_preferences(session)
+    """Record observations, then add our own price history and past feedback."""
     for p in products:
         service.record_observation(session, p, source=source, store_id=settings.store_id)
     ids = [p.retailer_product_id for p in products]
@@ -98,9 +70,6 @@ def _annotate(session, products, source: str) -> list[dict]:
     out = []
     for p in products:
         d = p.summary()
-        flags = service.preference_flags(prefs, p)
-        if flags:
-            d["preferences"] = flags
         if p.retailer_product_id in history:
             d["history"] = history[p.retailer_product_id]
         if p.retailer_product_id in past_feedback:
@@ -115,31 +84,6 @@ def _annotate(session, products, source: str) -> list[dict]:
 
 @mcp.tool()
 @logged
-async def shopping_search_products(
-    query: Annotated[str, Field(description="Search text, e.g. 'peanut butter'")],
-    page: Annotated[int, Field(ge=1, le=20, description="Result page (48 per page)")] = 1,
-    limit: Annotated[int, Field(ge=1, le=48, description="Max products to return")] = 24,
-    brand: Annotated[str | None, Field(description="Only products whose brand contains this text")] = None,
-    comparison_family: Annotated[str | None, Field(description="weight | volume | count")] = None,
-    sort_by_unit_price: Annotated[bool, Field(description="Sort cheapest per 100 g / 100 ml / item first")] = False,
-) -> dict:
-    """Search current No Frills products. Returns normalized prices, unit prices, deals,
-    preference flags and our own price history where we have it. Sponsored results are excluded."""
-    res = await context.client().search_products(query, page=page)
-    products = res["products"]
-    if brand:
-        products = [p for p in products if brand.lower() in (p.brand or "").lower()]
-    if comparison_family:
-        products = [p for p in products if p.comparison_family == comparison_family]
-    if sort_by_unit_price:
-        products.sort(key=lambda p: (p.comparison_family, p.unit_price is None, p.unit_price or 0))
-    with session_scope() as session:
-        results = _annotate(session, products[:limit], "search")
-    return {"query": query, "page": page, "total_results": res["total_results"], "returned": len(results), "results": results}
-
-
-@mcp.tool()
-@logged
 async def shopping_get_product(product_id: Annotated[str, Field(description="Retailer product id, e.g. 20039581001_EA")]) -> dict:
     """Current details for one product plus our observed price history statistics."""
     p = await context.client().get_product(product_id)
@@ -149,27 +93,7 @@ async def shopping_get_product(product_id: Annotated[str, Field(description="Ret
         d = p.summary()
         d["gtin"] = p.gtin
         d["history"] = service.price_stats(session, product, store_id=settings.store_id)
-        flags = service.preference_flags(service.active_preferences(session), p)
-        if flags:
-            d["preferences"] = flags
     return {k: v for k, v in d.items() if v is not None}
-
-
-@mcp.tool()
-@logged
-async def shopping_get_deals(
-    kind: Annotated[str, Field(description="'flyer' (weekly flyer items) or 'price_reduction' (all items with a reduced price)")] = "flyer",
-    query: Annotated[str, Field(description="Optional search text to narrow deals")] = "",
-    category_code: Annotated[str | None, Field(description="Optional aisle category code from search filter groups")] = None,
-    min_discount_pct: Annotated[float | None, Field(description="Only items at least this % below regular price")] = None,
-    limit: Annotated[int, Field(ge=1, le=100)] = 30,
-) -> dict:
-    """Current deals. Includes retailer deal text (SALE / LIMIT / PC Optimum points) and, where we have
-    history, how the price compares with what we've observed before."""
-    products = await context.client().get_deals(query=query, kind=kind, category_code=category_code, min_discount_pct=min_discount_pct, limit=limit)
-    with session_scope() as session:
-        results = _annotate(session, products, "deals")
-    return {"kind": kind, "query": query, "returned": len(results), "results": results}
 
 
 # -------------------------------------------------------------------------------------
@@ -198,7 +122,7 @@ async def shopping_apply_approved(run_id: str) -> dict:
 @mcp.tool()
 @logged
 async def shopping_auth_status() -> dict:
-    """Whether the retailer session is connected (needed for cart operations). Contains no secrets."""
+    """Whether No Frills is signed in (needed for the cart). Contains no secrets."""
     st = context.auth.status()
     return {"state": st.state, "label": st.label, "seconds_remaining": st.seconds_remaining,
             "reconnect": "Someone signs in under Settings → No Frills account in the app."}
@@ -207,15 +131,6 @@ async def shopping_auth_status() -> dict:
 # -------------------------------------------------------------------------------------
 # Runs and selections
 # -------------------------------------------------------------------------------------
-
-@mcp.tool()
-@logged
-async def shopping_create_run(summary: Annotated[str, Field(description="e.g. 'Weekly groceries'")], notes: str | None = None) -> dict:
-    """Start a new shopping run to stage selections in."""
-    with session_scope() as session:
-        run = service.create_run(session, summary=summary, store_id=settings.store_id, notes=notes)
-        return {"run_id": run.id, "status": run.status, "review_url": _review_url(run.id)}
-
 
 @mcp.tool()
 @logged
@@ -240,28 +155,6 @@ async def shopping_list_runs(limit: Annotated[int, Field(ge=1, le=50)] = 10, act
                           "items": len(service.chosen_selections(r)), "estimated_total": float(round(service.estimated_total(r), 2))} for r in runs]}
 
 
-@mcp.tool()
-@logged
-async def shopping_add_selection(
-    run_id: str,
-    product_id: Annotated[str, Field(description="Retailer product id from search results")],
-    quantity: Annotated[float, Field(gt=0)] = 1,
-    reasons: Annotated[list[str], Field(description=f"One or more of: {', '.join(REASON_CODES)}")] = [],  # noqa: B006
-    rationale: Annotated[str | None, Field(description="One or two sentences explaining why")] = None,
-    requirement: Annotated[str | None, Field(description="The need this fills, e.g. 'milk'")] = None,
-    substitution_allowed: Annotated[bool, Field(description="Let the shopper substitute if it's unavailable. Only for items where a swap is no big deal (see instructions); never for items chosen as a special deal or a specific brand/variety.")] = False,
-    substitution_note: Annotated[str | None, Field(description="Short instruction for the shopper, e.g. 'any brand, same size'")] = None,
-    substitute_product_id: Annotated[str | None, Field(description="Optional specific replacement product id (implies substitutions allowed)")] = None,
-) -> dict:
-    """Stage one product in a run for the user to review. Fetches the current price and records it."""
-    with session_scope() as session:
-        sel = await service.add_selection(session, context.client(), run_id, product_id=product_id, quantity=quantity,
-                                          reasons=reasons, rationale=rationale, requirement=requirement,
-                                          substitution_allowed=substitution_allowed, substitution_note=substitution_note,
-                                          substitute_product_id=substitute_product_id)
-        return service.selection_dict(session, sel)
-
-
 class ChoiceOption(BaseModel):
     product_id: str
     quantity: float = Field(1, gt=0)
@@ -273,7 +166,7 @@ class ChoiceOption(BaseModel):
 
 
 COMPACT_KEYS = ("product_id", "name", "brand", "package_size", "sold_by", "price", "regular_price", "discount_pct", "unit_price",
-                "unit_price_basis", "deal", "deal_expiry", "pc_optimum", "availability", "max_quantity", "preferences", "history",
+                "unit_price_basis", "deal", "deal_expiry", "pc_optimum", "availability", "max_quantity", "history",
                 "user_feedback")
 COMPACT_HISTORY = ("min_price", "avg_90d", "is_lowest_observed", "vs_avg_90d_pct", "package_size_changed")
 
@@ -304,7 +197,7 @@ async def shopping_search_many(
     sort_by_unit_price: Annotated[bool, Field(description="Cheapest per 100 g / 100 ml / item first (within the most common size family)")] = True,
 ) -> dict:
     """Search for many needs in ONE call (preferred over repeated shopping_search_products). Compact live results per
-    query, with deals, unit prices, preference flags and our price history. Sponsored and out-of-stock items are left out."""
+    query, with deals, unit prices and our price history. Sponsored and out-of-stock items are left out."""
     out = {}
     client = context.client()
     for q in dict.fromkeys(x.strip() for x in queries if x.strip()):
@@ -356,8 +249,7 @@ async def shopping_stage_items(
     notes: str | None = None,
     submit: Annotated[bool, Field(description="Also submit the run for review (do this on your last batch)")] = False,
 ) -> dict:
-    """Stage MANY items in one call (preferred over repeated shopping_add_selection / shopping_add_choice_group):
-    creates the run if needed, adds each single product or choice group, and optionally submits for review.
+    """Stage many items in one call: creates the run if needed, adds each single product or choice group, and optionally submits for review.
     Failures (e.g. out of stock) are reported per item; the rest still go in."""
     client = context.client()
     with session_scope() as session:
@@ -448,23 +340,6 @@ async def shopping_quick_add(
 
 @mcp.tool()
 @logged
-async def shopping_add_choice_group(
-    run_id: str,
-    label: Annotated[str, Field(description="The requirement, e.g. 'Peanut butter'")],
-    options: Annotated[list[ChoiceOption], Field(min_length=1, max_length=8)],
-    recommended_index: Annotated[int, Field(ge=0, description="Index in options of your recommendation")] = 0,
-) -> dict:
-    """Stage several candidate products for one requirement. The user picks one; yours is preselected.
-    Non-recommended options automatically get the 'alternative' reason."""
-    with session_scope() as session:
-        group = await service.add_choice_group(session, context.client(), run_id, label=label,
-                                               options=[o.model_dump() for o in options], recommended_index=recommended_index)
-        return {"choice_group_id": group.id, "label": group.label, "recommended_selection_id": group.recommended_selection_id,
-                "options": [service.selection_dict(session, s) for s in group.selections]}
-
-
-@mcp.tool()
-@logged
 async def shopping_update_selection(
     selection_id: str,
     quantity: Annotated[float | None, Field(gt=0)] = None,
@@ -483,39 +358,9 @@ async def shopping_update_selection(
         return service.selection_dict(session, sel)
 
 
-@mcp.tool()
-@logged
-async def shopping_submit_run_for_review(run_id: str) -> dict:
-    """Mark the run ready for the user's review. Returns the URL to give the user."""
-    with session_scope() as session:
-        run = service.submit_run_for_review(session, run_id)
-        return {"run_id": run.id, "status": run.status, "estimated_total": float(round(service.estimated_total(run), 2)),
-                "review_url": _review_url(run.id)}
-
-
 # -------------------------------------------------------------------------------------
 # Preferences and history
 # -------------------------------------------------------------------------------------
-
-@mcp.tool()
-@logged
-async def shopping_get_preferences() -> dict:
-    """Active shopping preferences. Blacklists (absolute=true) must be respected; others are guidance."""
-    with session_scope() as session:
-        return {"preferences": [service.preference_dict(p) for p in service.active_preferences(session)]}
-
-
-@mcp.tool()
-@logged
-async def shopping_add_preference_note(
-    note: Annotated[str, Field(description="The user's stated preference, in their words")],
-    scope: Annotated[str | None, Field(description="Item type it applies to, e.g. 'coffee'")] = None,
-) -> dict:
-    """Record a free-form preference the user stated in conversation (e.g. 'whole bean coffee unless a big sale')."""
-    with session_scope() as session:
-        pref = service.add_preference(session, kind="preference_note", scope=scope, note=note)
-        return service.preference_dict(pref)
-
 
 @mcp.tool()
 @logged
@@ -523,18 +368,6 @@ async def shopping_get_product_history(product_id: str, limit: Annotated[int, Fi
     """Observed prices, package sizes and unit prices for a product over time, plus past selections."""
     with session_scope() as session:
         return service.product_history(session, product_id, limit=limit)
-
-
-@mcp.tool()
-@logged
-async def shopping_get_selection_history(
-    product_id: str | None = None,
-    query: Annotated[str | None, Field(description="Match product name, brand or requirement, e.g. 'milk'")] = None,
-    limit: Annotated[int, Field(ge=1, le=200)] = 30,
-) -> dict:
-    """Past suggestions: when, how often, typical quantity, approved vs rejected, price each time."""
-    with session_scope() as session:
-        return service.selection_history(session, product_id=product_id, query=query, limit=limit)
 
 
 @mcp.tool()
@@ -559,13 +392,12 @@ async def shopping_get_feedback(
     unreviewed_only: bool = False,
     limit: Annotated[int, Field(ge=1, le=500)] = 100,
 ) -> dict:
-    """What the user removed or swapped during review and why (reason tags + their own words), plus
-    summary counts and detected patterns. Use it to avoid repeating suggestions the user rejected."""
+    """What the user removed or swapped during review and why (in their own words), plus summary counts and
+    detected patterns. Use it to avoid repeating suggestions the user rejected."""
     with session_scope() as session:
         rows = fbk.list_feedback(session, days=days, action=action, requirement=requirement,
                                  product_retailer_id=product_id, unreviewed_only=unreviewed_only, limit=limit)
         summary = fbk.feedback_summary(session, days=days)
-        summary.pop("by_tag_code", None)
         return {"summary": summary, "records": [fbk.feedback_dict(r) for r in rows]}
 
 
@@ -603,7 +435,7 @@ async def shopping_mark_feedback_reviewed(
 @logged
 async def shopping_get_past_orders(limit: Annotated[int, Field(ge=1, le=50)] = 10) -> dict:
     """Recent placed orders from the user's No Frills account (newest first), and whether each has been
-    imported. Needs the retailer session."""
+    imported. Needs the No Frills sign-in."""
     summaries = await context.client().list_past_orders()
     with session_scope() as session:
         imported = set(session.scalars(select(PastOrder.id)))
@@ -706,7 +538,7 @@ async def shopping_search_catalog(
 ) -> dict:
     """Search every product we've seen at this store, with its latest known price/deal, category and the
     household's purchase count. Instant (no retailer call), but prices are as of `price_seen`: confirm live
-    with shopping_get_product or shopping_search_products before staging."""
+    with shopping_search_many or shopping_get_product before staging."""
     with session_scope() as session:
         rows = cat.search_catalog(session, query=query, aisle=aisle, on_sale_only=on_sale_only, bought_only=bought_before_only, limit=limit)
     return {"returned": len(rows), "results": rows}
@@ -718,18 +550,6 @@ async def shopping_list_aisles() -> dict:
     """The store's aisle tree (department > aisle > sub-aisle) with how many products we know and how many are on sale."""
     with session_scope() as session:
         return {"aisles": cat.aisle_tree(session), "last_scan": cat.scan_dict(cat.last_scan(session))}
-
-
-@mcp.tool()
-@logged
-async def shopping_refresh_deals() -> dict:
-    """Start a fresh scan of every aisle's deals (about 3 minutes, runs in the background; it also runs daily on
-    its own). Check progress with shopping_get_context's deal_data."""
-    with session_scope() as session:
-        last = cat.scan_dict(cat.last_scan(session, done_only=False))
-    if not cat.start_scan(context.client(), session_scope, store_id=settings.store_id):
-        return {"started": False, "message": "A scan is already running.", "last_scan": last}
-    return {"started": True, "message": "Scanning deals; ready in about 3 minutes.", "previous_scan": last}
 
 
 def tool_names() -> list[str]:

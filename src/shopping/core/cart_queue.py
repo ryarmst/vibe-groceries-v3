@@ -1,6 +1,6 @@
 """Background cart updates.
 
-Adding approved items to the No Frills cart can take several seconds per item. Approving in the web UI
+Adding approved items to the No Frills cart can take several seconds per item. Approving in the app
 records the decision and returns at once; this single worker then adds the items one job at a time
 (which also keeps cart writes from racing each other) and reports what happened as events the page polls.
 """

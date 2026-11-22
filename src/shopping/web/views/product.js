@@ -49,7 +49,7 @@ export async function render(el, [productId], query) {
   for (const a of d.alternatives) {
     list.append(h("div", { class: "between", style: { padding: "6px 0", borderBottom: "1px solid var(--line)" } },
       h("div", {}, h("strong", {}, `${a.brand ? a.brand + " " : ""}${a.name}`), " ", h("span", { class: "small muted" }, a.package_size || ""),
-        a.past_feedback?.removed ? badge("removed before", "warn") : null, ...(a.flags || []).map((f) => badge(f.replaceAll("_", " "), "ok")),
+        a.past_feedback?.removed ? badge("removed before", "warn") : null,
         h("div", { class: "small muted" }, [a.deal, a.availability && a.availability !== "OK" ? a.availability : null].filter(Boolean).join(" · "))),
       h("div", { class: "row" }, h("span", { class: "num" }, money(a.price), h("br"), h("span", { class: "small muted" }, unit(a.unit_price, a.unit_price_basis))),
         h("button", { class: "primary", onclick: (e) => busy(e.target, async () => {

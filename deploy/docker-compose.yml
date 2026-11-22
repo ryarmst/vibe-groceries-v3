@@ -16,7 +16,6 @@ services:
       HOST: 0.0.0.0
       PORT: "8000"
       FORWARDED_ALLOW_IPS: "*"           # only cloudflared can reach the app
-      CLIENT_IP_HEADER: cf-connecting-ip
     volumes:
       - app-data:/data                    # database, encrypted secrets and PC ID tokens, backups: back this up
     expose: ["8000"]

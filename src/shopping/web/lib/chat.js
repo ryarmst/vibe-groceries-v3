@@ -1,5 +1,6 @@
 // Chat with the assistant: threads, a task picker, streamed replies, tool activity, confirmation cards.
 import { changed, del, get, post, stream } from "./api.js";
+import { toolLabel } from "./tools.js";
 import { busy, clear, h, richText, toast } from "./ui.js";
 
 // Each task gives the assistant focused instructions and only the tools for that job (more reliable, cheaper).
@@ -19,16 +20,6 @@ const TASKS = [
 ];
 const AUTO = { mode: "auto", icon: "✨", title: "Chosen automatically", placeholder: "Ask, shop, plan meals, or paste a receipt…" };
 const taskFor = (mode) => TASKS.find((t) => t.mode === mode) || AUTO;
-const TOOL_LABELS = {
-  shopping_get_context: "Checking this week's deals", shopping_search_products: "Searching the store", shopping_search_catalog: "Searching the catalogue",
-  shopping_create_run: "Starting a shopping run", shopping_add_selection: "Adding an item", shopping_add_choice_group: "Adding options",
-  shopping_submit_run_for_review: "Sending the run for review", shopping_get_requirement_history: "Checking what's due",
-  notion_pantry: "Reading the pantry", notion_grocery_list: "Reading the grocery list", notion_cooking_search: "Searching recipes",
-  meals_context: "Gathering deals, pantry and recipes", meal_cost: "Pricing a recipe", meal_suggest: "Saving a suggested meal",
-  shopping_search_many: "Searching the store", shopping_stage_items: "Staging items for review", shopping_get_cart: "Checking the cart",
-  shopping_quick_add: "Adding to the cart",
-};
-
 export function mountChat(root, { threadId = null, onThread = () => {}, mode: startMode = "auto" } = {}) {
   let thread = threadId, mode = startMode, controller = null, picking = false;
   const log = h("div", { class: "log" });
@@ -90,7 +81,7 @@ export function mountChat(root, { threadId = null, onThread = () => {}, mode: st
     else if (m.role === "assistant") {
       if (m.content) log.append(h("div", { class: "msg assistant" }, h("div", { class: "bubble" }, richText(m.content)),
         m.model ? h("div", { class: "meta" }, `${m.provider} · ${m.model}${m.cost_usd ? ` · $${m.cost_usd.toFixed(4)}` : ""}`) : null));
-      for (const c of m.tool_calls || []) log.append(h("div", { class: "toolline" }, "⚙ ", TOOL_LABELS[c.name] || c.name));
+      for (const c of m.tool_calls || []) log.append(h("div", { class: "toolline" }, "⚙ ", toolLabel(c.name)));
     } else if (m.role === "tool" && m.status === "pending_confirmation") log.append(confirmCard({ message_id: m.id, name: m.tool_name, preview: m.preview }));
     else if (m.role === "tool" && m.status === "declined") log.append(h("div", { class: "toolline error" }, "✕ ", m.content));
   }
@@ -125,8 +116,8 @@ export function mountChat(root, { threadId = null, onThread = () => {}, mode: st
           text += ev.text;
           bubble.textContent = text;
         } else if (ev.type === "tool") {
-          if (ev.status === "running") log.append(h("div", { class: "toolline" }, "⚙ ", TOOL_LABELS[ev.name] || ev.name, "…"));
-          else if (ev.status === "error" || ev.status === "declined") log.append(h("div", { class: "toolline error" }, "✕ ", ev.name, ": ", (ev.summary || "").slice(0, 200)));
+          if (ev.status === "running") log.append(h("div", { class: "toolline" }, "⚙ ", toolLabel(ev.name), "…"));
+          else if (ev.status === "error" || ev.status === "declined") log.append(h("div", { class: "toolline error" }, "✕ ", toolLabel(ev.name), ": ", (ev.summary || "").slice(0, 200)));
           finish();
         } else if (ev.type === "confirm") { finish(); log.append(confirmCard(ev)); }
         else if (ev.type === "notice") log.append(h("div", { class: "toolline error" }, ev.text));

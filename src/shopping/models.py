@@ -80,19 +80,6 @@ REASON_CODES = {
     "alternative": "Alternative",
 }
 
-PREFERENCE_KINDS = {
-    "prefer_product": "Prefer this exact product",
-    "prefer_brand": "Prefer this brand",
-    "prefer_for_type": "Prefer this option for this type of item",
-    "blacklist_product": "Don't suggest this product",
-    "blacklist_brand": "Don't suggest this brand",
-    "prefer_cheaper_equivalent": "Prefer the cheaper equivalent",
-    "prefer_larger_packages": "Prefer larger packages",
-    "prefer_smaller_packages": "Prefer smaller packages",
-    "preference_note": "Free-form note",
-}
-
-
 class Product(Base):
     __tablename__ = "products"
 
@@ -225,22 +212,6 @@ class Selection(Base):
     observation: Mapped[PriceObservation | None] = relationship()
 
 
-class Preference(Base):
-    __tablename__ = "preferences"
-
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow)
-    kind: Mapped[str] = mapped_column(String(32), index=True)
-    scope: Mapped[str | None] = mapped_column(String(128))  # item type, e.g. "peanut butter"
-    target: Mapped[str | None] = mapped_column(String(128))  # retailer product id or brand
-    target_label: Mapped[str | None] = mapped_column(String(256))  # human-readable target
-    category: Mapped[str | None] = mapped_column(String(64))
-    weight: Mapped[float] = mapped_column(Float, default=1.0)
-    note: Mapped[str | None] = mapped_column(Text)
-    source_selection_id: Mapped[str | None] = mapped_column(String(16))
-    active: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
-
-
 class CartAction(Base):
     __tablename__ = "cart_actions"
 
@@ -252,51 +223,13 @@ class CartAction(Base):
     product_label: Mapped[str | None] = mapped_column(String(256))  # brand + name + size at the time
     timestamp: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow, index=True)
     action: Mapped[str] = mapped_column(String(32))  # set_quantity | remove
-    source: Mapped[str | None] = mapped_column(String(32))  # approve | apply | cart_page | modify | mcp
+    source: Mapped[str | None] = mapped_column(String(32))  # approve | apply | cart_page | modify | quick_shop | deals
     quantity_before: Mapped[float | None] = mapped_column(Float)
     quantity_after: Mapped[float | None] = mapped_column(Float)
     price_at_action: Mapped[Decimal | None] = mapped_column(DecimalText)
     success: Mapped[bool] = mapped_column(Boolean, default=False)
     error: Mapped[str | None] = mapped_column(Text)
     upstream_reference: Mapped[str | None] = mapped_column(String(64))  # retailer cart id
-
-
-# Quick reason chips shown when triaging. Free text is always allowed alongside.
-FEEDBACK_TAGS = {
-    "removed": {
-        "have_enough": "Have enough / not needed",
-        "too_expensive": "Too expensive",
-        "not_a_deal": "Not a real deal",
-        "wrong_size": "Wrong size",
-        "wrong_item": "Not what I meant",
-        "dislike_product": "Don't like this product",
-        "dislike_brand": "Don't like this brand",
-        "quality": "Quality concern",
-        "buy_elsewhere": "Buy at Costco / elsewhere",
-    },
-    "chose_alternative": {
-        "cheaper": "Cheaper",
-        "better_unit_price": "Better unit price",
-        "better_size": "Better size",
-        "prefer_brand": "Preferred brand",
-        "prefer_product": "Preferred product",
-        "better_quality": "Better quality",
-        "healthier": "Healthier / ingredients",
-    },
-    "approved": {
-        "good_pick": "Good pick",
-        "good_deal": "Good deal",
-    },
-    "deal_dismissed": {
-        "have_enough": "Have enough / not needed",
-        "not_a_deal": "Not a real deal",
-        "dislike_product": "Don't like this product",
-        "dislike_brand": "Don't like this brand",
-        "buy_elsewhere": "Buy at Costco / elsewhere",
-        "not_interested": "Not something I buy",
-    },
-}
-FEEDBACK_TAG_LABELS = {k: v for tags in FEEDBACK_TAGS.values() for k, v in tags.items()} | {"other": "Other"}
 
 
 class Feedback(Base):
@@ -313,13 +246,11 @@ class Feedback(Base):
     chosen_product_id: Mapped[int | None] = mapped_column(ForeignKey("products.id"))  # for chose_alternative
     requirement: Mapped[str | None] = mapped_column(String(128), index=True)
     action: Mapped[str] = mapped_column(String(32), index=True)  # removed | chose_alternative | approved | quantity_changed | note
-    tags: Mapped[list] = mapped_column(JSONList, default=list)
     note: Mapped[str | None] = mapped_column(Text)
     context: Mapped[str | None] = mapped_column(Text)  # JSON snapshot: prices, agent reasons, options
-    preference_id: Mapped[int | None] = mapped_column(ForeignKey("preferences.id"))  # rule created alongside, if any
     reviewed_at: Mapped[datetime | None] = mapped_column(UTCDateTime)
     resolution: Mapped[str | None] = mapped_column(Text)  # what was done about it when reviewed
-    device_id: Mapped[str | None] = mapped_column(String(32), index=True)  # who wrote it (a Device row)
+    device_id: Mapped[str | None] = mapped_column(String(32), index=True)  # who wrote it (a User id)
 
     product: Mapped[Product | None] = relationship(foreign_keys=[product_id])
     chosen_product: Mapped[Product | None] = relationship(foreign_keys=[chosen_product_id])
@@ -435,17 +366,16 @@ class DealScan(Base):
 # People, secrets, chat, audit, usage, inbox
 # =====================================================================================
 
-class Device(Base):
-    """A person using the app (the table name is historical). Created on first visit through Cloudflare Access;
-    the id is derived from their email, and other tables refer to it to say who did what."""
+class User(Base):
+    """A person using the app. Created on their first visit through Cloudflare Access; the id is derived from
+    their email. Other tables store it (in columns named device_id) to say who did what."""
 
-    __tablename__ = "devices"
+    __tablename__ = "users"
 
     id: Mapped[str] = mapped_column(String(32), primary_key=True)
     name: Mapped[str] = mapped_column(String(64))
     created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow)
     last_seen_at: Mapped[datetime | None] = mapped_column(UTCDateTime)
-    revoked_at: Mapped[datetime | None] = mapped_column(UTCDateTime)
 
 
 class Secret(Base):

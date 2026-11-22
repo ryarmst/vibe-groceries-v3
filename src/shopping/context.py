@@ -11,8 +11,6 @@ from shopping.pcid.oauth import PcidAuth
 from shopping.retailer.client import PCExpressClient
 from shopping.secrets.vault import Vault, load_master_key
 
-PUBLIC_URL = settings.public_url
-
 _master = load_master_key(settings.master_key_b64, settings.master_key_file)
 vault = Vault(_master)
 

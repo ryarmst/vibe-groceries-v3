@@ -25,7 +25,7 @@ def secrets_status(_: Caller = Depends(require_user)):
 @router.put("/secrets/{name}")
 def set_secret(name: str, body: SecretBody, caller: Caller = Depends(require_user)):
     with session_scope() as session:
-        context.vault.set(session, name, body.value, by=caller.device_id)
+        context.vault.set(session, name, body.value, by=caller.id)
         return {"ok": True, "secrets": context.vault.status(session)}  # status only; the value never comes back
 
 

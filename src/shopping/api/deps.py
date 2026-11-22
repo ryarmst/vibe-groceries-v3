@@ -12,13 +12,13 @@ from fastapi.responses import JSONResponse
 
 from shopping import attribution
 from shopping.appsettings import SettingsError
-from shopping.auth.access import AccessDenied, AccessVerifier, User, user_id
+from shopping.auth.access import AccessDenied, AccessUser, AccessVerifier, user_id
 from shopping.auth.ratelimit import RateLimiter
 from shopping.auth.session import AuthRequired, SessionUnavailable
 from shopping.config import settings
 from shopping.core.service import ShoppingError
 from shopping.database import session_scope
-from shopping.models import Device, utcnow
+from shopping.models import User, utcnow
 from shopping.retailer.client import RetailerError, RetailerUnavailable
 from shopping.notion.client import NotionError
 from shopping.secrets.vault import VaultError
@@ -34,16 +34,9 @@ _verifier: AccessVerifier | None = None
 
 @dataclass(frozen=True)
 class Caller:
-    device_id: str  # the user's id (stored in the `devices` table)
+    id: str  # the user's id (a row in `users`)
     name: str
     email: str = ""
-
-
-def client_ip(request: Request) -> str:
-    """For logs and limits. Behind Cloudflare use its CF-Connecting-IP (set by Cloudflare, can't be spoofed)."""
-    if settings.client_ip_header and request.headers.get(settings.client_ip_header):
-        return request.headers[settings.client_ip_header].strip()
-    return request.client.host if request.client else "unknown"
 
 
 def verifier() -> AccessVerifier:
@@ -61,10 +54,10 @@ def dev_mode() -> bool:
     return bool(settings.dev_user) and hosts <= {"127.0.0.1", "::1", "localhost"}
 
 
-async def current_user(request: Request) -> User:
+async def current_user(request: Request) -> AccessUser:
     if dev_mode():
         email = settings.dev_user.lower()
-        return User(user_id(email), email, settings.allowed_users.get(email, email.split("@")[0]))
+        return AccessUser(user_id(email), email, settings.allowed_users.get(email, email.split("@")[0]))
     token = request.headers.get("cf-access-jwt-assertion") or request.cookies.get("CF_Authorization") or ""
     if not token:
         raise HTTPException(401, "Not signed in through Cloudflare Access.")
@@ -95,13 +88,13 @@ async def require_user(request: Request) -> Caller:
     now = time.time()
     if now - _last_seen_write.get(user.id, 0) > 300:  # don't write on every request
         with session_scope() as session:
-            row = session.get(Device, user.id)
+            row = session.get(User, user.id)
             if row is None:
-                row = Device(id=user.id, name=user.name)
+                row = User(id=user.id, name=user.name)
                 session.add(row)
             row.name, row.last_seen_at = user.name, utcnow()
         _last_seen_write[user.id] = now
-    attribution.current_device.set(user.id)
+    attribution.current_user.set(user.id)
     return Caller(user.id, user.name, user.email)
 
 

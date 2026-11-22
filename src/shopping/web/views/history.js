@@ -1,8 +1,8 @@
-// History: activity, your notes/feedback, prices, rules, the assistant's audit log, LLM usage.
+// History: activity, your notes, prices, the assistant's log, LLM usage.
 import { get, post } from "../lib/api.js";
 import { ago, busy, clear, empty, h, link, money, toast, when } from "../lib/ui.js";
 
-const TABS = { activity: "Activity", feedback: "Notes & feedback", prices: "Prices", rules: "Rules", audit: "Assistant log", usage: "LLM usage" };
+const TABS = { activity: "Activity", feedback: "Notes & feedback", prices: "Prices", audit: "Assistant log", usage: "AI usage" };
 
 export async function render(el, _p, query) {
   const tab = TABS[query.tab] ? query.tab : "activity";
@@ -10,7 +10,7 @@ export async function render(el, _p, query) {
     h("button", { class: k === tab ? "on" : "", onclick: () => { location.hash = `#/history?tab=${k}`; } }, label))));
   const box = h("div");
   el.append(box);
-  await ({ activity, feedback, prices, rules, audit, usage })[tab](box, query);
+  await ({ activity, feedback, prices, audit, usage })[tab](box, query);
 }
 
 async function activity(box, query) {
@@ -31,12 +31,12 @@ async function feedback(box) {
   box.append(h("div", { class: "row" }, note, h("button", { onclick: (e) => busy(e.target, async () => {
     if (!note.value.trim()) return; await post("/api/history/notes", { note: note.value }); toast("Saved."); location.reload();
   }) }, "Save note")));
-  box.append(h("p", { class: "small muted" }, `${d.summary.total} records · ${d.summary.unreviewed} not yet distilled into preferences by the assistant.`));
-  if (!d.records.length) { box.append(empty("No feedback yet.")); return; }
+  box.append(h("p", { class: "small muted" }, `${d.summary.total} notes · ${d.summary.unreviewed} not yet read by the assistant.`));
+  if (!d.records.length) { box.append(empty("No notes yet.")); return; }
   box.append(h("table", { class: "table" }, h("tbody", {}, ...d.records.map((r) => h("tr", {},
     h("td", { class: "small muted" }, when(r.date)), h("td", {}, r.requirement || "", h("div", { class: "small muted" }, r.product || "")),
     h("td", { class: "small" }, r.action.replaceAll("_", " "), r.chosen_product ? ` → ${r.chosen_product}` : ""),
-    h("td", { class: "small" }, r.note ? `“${r.note}”` : (r.tag_labels || []).join(", ")),
+    h("td", { class: "small" }, r.note ? `“${r.note}”` : ""),
     h("td", { class: "small muted" }, r.reviewed ? `✓ ${r.resolution || ""}` : ""))))));
 }
 
@@ -54,20 +54,9 @@ async function prices(box, query) {
     h("td", { class: "num" }, money(p.current_price)), h("td", { class: "small muted" }, `${p.observations} prices · ${ago(p.last_seen)}`))))));
 }
 
-async function rules(box) {
-  const d = await get("/api/history/rules?include_inactive=true");
-  box.append(h("p", { class: "small muted" }, "Older rules. The assistant now infers preferences from your notes and keeps them in Notion's Shopping Preferences."));
-  if (!d.rules.length) { box.append(empty("No rules.")); return; }
-  box.append(h("table", { class: "table" }, h("tbody", {}, ...d.rules.map((r) => h("tr", {},
-    h("td", {}, r.description, h("div", { class: "small muted" }, [r.target_label || r.target, r.scope ? `for ${r.scope}` : null].filter(Boolean).join(" · "))),
-    h("td", { class: "small" }, r.note || ""),
-    h("td", {}, h("button", { class: "link", onclick: (e) => busy(e.target, async () => { await post(`/api/history/rules/${r.id}/toggle`); location.reload(); }) },
-      r.active === false ? "Turn on" : "Turn off")))))));
-}
-
 async function audit(box) {
   const d = await get("/api/audit");
-  box.append(h("p", { class: "small muted" }, "Every tool the assistant ran, was refused, or asked you to confirm."));
+  box.append(h("p", { class: "small muted" }, "Everything the assistant did, including what it asked you to confirm."));
   if (!d.entries.length) { box.append(empty("Nothing yet.")); return; }
   box.append(h("table", { class: "table" }, h("tbody", {}, ...d.entries.map((a) => h("tr", {},
     h("td", { class: "small muted" }, when(a.at)), h("td", {}, a.tool, h("div", { class: "small muted" }, a.tier)),

@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 
 from shopping.core.feedback import feedback_dict
 from shopping.core.service import product_label
-from shopping.models import PREFERENCE_KINDS, CartAction, Feedback, PastOrder, Preference, Product, Selection, TopDeal, utcnow
+from shopping.models import CartAction, Feedback, PastOrder, Product, Selection, TopDeal, utcnow
 
 KINDS = {
     "suggested": "Suggested",
@@ -20,7 +20,6 @@ KINDS = {
     "swapped": "Swapped",
     "cart": "Cart change",
     "note": "Note",
-    "rule": "Rule saved",
     "purchased": "Bought",
     "deal": "Top deal",
 }
@@ -64,7 +63,7 @@ def activity(session: Session, *, days: int = 30, kind: str | None = None, q: st
         if s.rejected_at and not not_picked:
             f = removal_reasons.get(s.id)
             events.append({**base, "time": s.rejected_at, "kind": "removed", "title": "Removed from run",
-                           "detail": ", ".join(feedback_dict(f)["tag_labels"]) if f else "",
+                           "detail": "",
                            "note": f.note if f else (s.last_error if s.last_error == "withdrawn by agent" else None)})
 
     for f in feedback_rows:
@@ -72,7 +71,7 @@ def activity(session: Session, *, days: int = 30, kind: str | None = None, q: st
         base = {"time": f.created_at, "run_id": f.shopping_run_id, "requirement": f.requirement, "product": d["product"], "product_id": d["product_id"]}
         if f.action == "chose_alternative":
             events.append({**base, "kind": "swapped", "title": "Swapped", "detail": f"→ {d['chosen_product']}",
-                           "chosen_product_id": d["chosen_product_id"], "reasons_text": ", ".join(d["tag_labels"]), "note": f.note})
+                           "chosen_product_id": d["chosen_product_id"], "note": f.note})
         elif f.action == "substitution_changed":
             ctx = json.loads(f.context or "{}")
             to = ctx.get("to") or {}
@@ -80,10 +79,10 @@ def activity(session: Session, *, days: int = 30, kind: str | None = None, q: st
                            "detail": ("subs OK" if to.get("allowed") else "subs off") + (" · specific substitute" if to.get("substitute") else ""),
                            "note": f.note})
         elif f.action == "deal_dismissed":
-            events.append({**base, "kind": "deal", "title": "Deal dismissed", "detail": ", ".join(d["tag_labels"]), "note": f.note})
-        elif f.action in ("note", "approved", "quantity_changed") and (f.note or f.tags):
+            events.append({**base, "kind": "deal", "title": "Deal dismissed", "detail": "", "note": f.note})
+        elif f.action in ("note", "approved", "quantity_changed") and f.note:
             events.append({**base, "kind": "note", "title": {"note": "Note", "approved": "Kept — note", "quantity_changed": "Quantity changed — note"}[f.action],
-                           "detail": ", ".join(d["tag_labels"]), "note": f.note})
+                           "detail": "", "note": f.note})
 
     ca_q = select(CartAction).where(CartAction.timestamp >= since)
     if run_id:
@@ -98,14 +97,6 @@ def activity(session: Session, *, days: int = 30, kind: str | None = None, q: st
                        "detail": f"{before:g} → {after:g}" + (f" at ${a.price_at_action:.2f}" if a.price_at_action is not None else "")
                                  + (f" · via {a.source.replace('_', ' ')}" if a.source else ""),
                        "note": a.error})
-
-    for p in session.scalars(select(Preference).where(Preference.created_at >= since)):
-        if run_id:
-            continue
-        events.append({"time": p.created_at, "kind": "rule", "title": "Rule saved", "product": p.target_label or p.target,
-                       "product_id": p.target if p.target and "_" in p.target else None,
-                       "detail": PREFERENCE_KINDS.get(p.kind, p.kind) + (f" (for {p.scope})" if p.scope else "") + ("" if p.active else " · inactive"),
-                       "note": p.note})
 
     if not run_id:
         for deal in session.scalars(select(TopDeal).where(TopDeal.created_at >= since)):

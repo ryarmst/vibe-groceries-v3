@@ -73,7 +73,7 @@ class AuthSession:
         try:
             self._last_token = await self.pcid.access_token(rejected=rejected)
         except NeedsLogin as exc:
-            raise AuthRequired(f"{exc} Open Settings → No Frills account to sign in.") from exc
+            raise AuthRequired(f"{exc} Sign in under Settings → No Frills account.") from exc
         except Unavailable as exc:
             raise SessionUnavailable(str(exc)) from exc
         except AuthError as exc:

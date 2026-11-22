@@ -16,7 +16,7 @@ router = APIRouter(prefix="/api")
 
 @router.get("/me")
 def me(caller: Caller = Depends(require_user)):
-    return {"id": caller.device_id, "name": caller.name, "email": caller.email}
+    return {"id": caller.id, "name": caller.name, "email": caller.email}
 
 
 @router.get("/inbox")
@@ -33,7 +33,7 @@ def get_inbox(after_event: int = 0, caller: Caller = Depends(require_user)):
                  "events": [{"id": e.id, "run_id": e.run_id, "ok": e.ok, "message": e.message} for e in cart_queue.events_since(after_event)],
                  "last_event_id": cart_queue.last_event_id},
         "deal_scan": {"last": last_scan, "running": catalog.scan_running() or deals_job.running()},
-        "user": {"id": caller.device_id, "name": caller.name},
+        "user": {"id": caller.id, "name": caller.name},
     }
 
 

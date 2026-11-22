@@ -17,5 +17,5 @@ the container afterwards); an edit made in the app wins over the file.
 Header fields: `title`, `description`, `tier` (fast or smart model), `tools`, `placeholders`.
 Placeholders like `{household}` or `{today}` are filled in when the prompt is used.
 
-`tools` is fixed in code review, not in the app: which tools a task gets decides what it can change
-(for example only Quick Shop can add to the cart), so the Prompts page shows it but can't edit it.
+`tools` can only be changed in these files, not in the app, because a task's tools decide what it can
+change (for example, only Quick Shop can add to the cart). The Prompts page shows them but can't edit them.

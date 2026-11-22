@@ -39,7 +39,7 @@ async def run_weekly_plan(*, requested_by: str | None = None, thread_id: str | N
     final, errors = "", []
     async for ev in loop.run(thread_id, user_text=f"Plan the week starting {week.isoformat()} ({jobs['meals_per_week']} meals) "
                                                   "and stage the shopping run.", proactive=True, playbook="plan_week",
-                             device_name="the weekly schedule"):
+                             person="the weekly schedule"):
         if ev["type"] == "text":
             final += ev["text"]
         elif ev["type"] == "mode":

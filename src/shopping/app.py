@@ -1,10 +1,9 @@
-"""Application entry point: the web app and its JSON API, background jobs, and (optionally) MCP."""
+"""Application entry point: the web app, its JSON API, and background jobs."""
 
 from __future__ import annotations
 
 import asyncio
 import contextlib
-import hmac
 import logging
 import socket
 
@@ -15,7 +14,6 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.trustedhost import TrustedHostMiddleware
-from starlette.responses import JSONResponse
 
 from shopping import context
 from shopping.api import chat_routes, inbox_routes, meals_routes, prompts_routes, retailer_routes, settings_routes, shop_routes
@@ -28,22 +26,6 @@ from shopping.logging_setup import setup_logging
 
 setup_logging(settings.log_level)
 log = logging.getLogger("shopping")
-
-
-class MCPBearerAuth:
-    """Shared-secret bearer token for the optional MCP endpoint (MCP_ENABLED=1 and MCP_TOKEN set)."""
-
-    def __init__(self, app, token: str):
-        self.app, self.token = app, token
-
-    async def __call__(self, scope, receive, send):
-        if scope["type"] == "http":
-            headers = dict(scope.get("headers") or [])
-            supplied = headers.get(b"authorization", b"").decode()
-            if not self.token or not hmac.compare_digest(supplied, f"Bearer {self.token}"):
-                await JSONResponse({"error": "unauthorized"}, status_code=401)(scope, receive, send)
-                return
-        await self.app(scope, receive, send)
 
 
 WEB = Path(__file__).parent / "web"
@@ -75,19 +57,6 @@ class SecurityHeaders:
         await self.app(scope, receive, send_with_headers)
 
 
-mcp = None
-if settings.mcp_enabled:
-    from mcp.server.transport_security import TransportSecuritySettings
-
-    from shopping.mcp_server.server import mcp
-
-    hosts = [x for h in settings.allowed_hosts for x in (h, f"{h}:*")]
-    origins = [f"{s}://{h}{p}" for h in settings.allowed_hosts for s in ("http", "https") for p in ("", ":*")]
-    mcp_app = mcp.streamable_http_app(streamable_http_path="/", host=settings.host.split(",")[0].strip(),
-                                      transport_security=TransportSecuritySettings(enable_dns_rebinding_protection=True,
-                                                                                   allowed_hosts=hosts, allowed_origins=origins))
-
-
 @contextlib.asynccontextmanager
 async def lifespan(_: FastAPI):
     run_migrations()
@@ -99,10 +68,9 @@ async def lifespan(_: FastAPI):
     tasks = []
     if settings.jobs_enabled:  # includes the daily deal scan + assessment (DEAL_SCAN_HOURS=0 turns that part off)
         tasks.append(asyncio.create_task(scheduler.run_forever(), name="jobs"))
-    async with (mcp.session_manager.run() if mcp else contextlib.nullcontext()):
-        log.info("vibe-groceries ready: store=%s data=%s access=%s mcp=%s", settings.store_id, settings.data_dir,
-                 settings.access_team or ("DEV_USER" if settings.dev_user else "NOT CONFIGURED"), bool(mcp))
-        yield
+    log.info("vibe-groceries ready: store=%s data=%s access=%s", settings.store_id, settings.data_dir,
+             settings.access_team or ("DEV_USER" if settings.dev_user else "NOT CONFIGURED"))
+    yield
     for t in tasks:
         t.cancel()
         with contextlib.suppress(asyncio.CancelledError):
@@ -115,8 +83,6 @@ app = FastAPI(title="vibe-groceries", lifespan=lifespan, docs_url=None, redoc_ur
 install_error_handlers(app)
 for r in (settings_routes, retailer_routes, inbox_routes, shop_routes, chat_routes, meals_routes, prompts_routes):
     app.include_router(r.router)
-if mcp:
-    app.mount("/mcp", MCPBearerAuth(mcp_app, settings.mcp_token))
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=settings.allowed_hosts + ["testserver"])
 app.add_middleware(SecurityHeaders)
 

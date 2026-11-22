@@ -4,7 +4,7 @@ import pytest
 
 from shopping import context
 from shopping.database import session_scope
-from shopping.mcp_server import server as mcp
+from shopping.agent import shopping_tools as mcp
 from shopping.models import ChoiceGroup, Selection, ShoppingRun
 from test_service import FakeClient
 

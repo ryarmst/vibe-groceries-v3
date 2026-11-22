@@ -120,7 +120,7 @@ function card(run, c, redraw) {
     }
     const subOk = h("input", { type: "checkbox", checked: sel.substitution_allowed });
     const subNote = h("input", { value: sel.substitution_note || "", placeholder: "OK substitute? e.g. any brand, same size", maxLength: 250, style: { flex: 1, minWidth: "200px" } });
-    const note = h("textarea", { rows: 2, placeholder: "Note for the assistant (optional): why keep, remove or switch — e.g. “still have two jars”, “prefer the sourdough”" });
+    const note = h("textarea", { rows: 2, placeholder: "Note for the assistant (optional), e.g. “still have two jars” or “prefer the sourdough”" });
     const weight = sel.product.sold_by === "weight";
     const qty = h("input", { type: "number", value: sel.quantity, min: weight ? 0.1 : 1, step: weight ? "any" : 1, style: { width: "5em" } });
     const decide = (decision) => async (e) => busy(e.target, async () => {

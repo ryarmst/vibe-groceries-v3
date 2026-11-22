@@ -9,11 +9,11 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select
 
 from shopping import context
-from shopping.api.deps import Caller, require_user
+from shopping.api.deps import require_user
 from shopping.auth.session import AuthRequired
 from shopping.config import settings
 from shopping.core import activity as act
-from shopping.core import catalog, inbox, views
+from shopping.core import catalog, views
 from shopping.core import deals as dls
 from shopping.core import feedback as fbk
 from shopping.core import modify as mod
@@ -22,7 +22,7 @@ from shopping.core import service
 from shopping.core.cart_queue import queue as cart_queue
 from shopping.database import session_scope
 from shopping.models import (
-    PREFERENCE_KINDS, SEL_APPROVED, SEL_FAILED, PastOrder, Preference, PriceObservation, Product, Selection, utcnow,
+    SEL_APPROVED, SEL_FAILED, PastOrder, PriceObservation, Product, Selection, utcnow,
 )
 from shopping.retailer.client import RetailerError
 
@@ -75,7 +75,7 @@ class TriageBody(BaseModel):
 
 @router.post("/runs/{run_id}/selections/{sel_id}/triage")
 async def triage(run_id: str, sel_id: str, body: TriageBody):
-    """One review decision. The note is free text; the agent infers preferences from it."""
+    """One review decision. The note is free text; the assistant learns from it."""
     decision = body.decision
     if decision == "keep" and body.option and body.option != sel_id:
         decision = "choose"
@@ -120,13 +120,6 @@ async def apply(run_id: str):
     with session_scope() as session:
         ids = _to_add(session, run_id, None)
     return _queue_cart(run_id, ids) | ({} if ids else {"message": "Nothing waiting to be added."})
-
-
-@router.post("/runs/{run_id}/cancel")
-def cancel(run_id: str):
-    with session_scope() as session:
-        r = service.cancel_run(session, run_id)
-        return {"status": r.status}
 
 
 # -- cart -------------------------------------------------------------------------------------
@@ -226,20 +219,19 @@ async def modify_context(product_id: str, selection_id: str | None = None, q: st
                 found = [p for p in (await client.search_products(query))["products"] if p.retailer_product_id != product_id]
                 fam = product.comparison_family
                 found.sort(key=lambda p: (p.comparison_family != fam, p.unit_price is None, p.unit_price or 0))
-                prefs = service.active_preferences(session)
                 fb_hist = fbk.feedback_by_product(session, [p.retailer_product_id for p in found[:24]])
                 for p in found[:24]:
                     service.record_observation(session, p, source="search", store_id=settings.store_id)
-                    alternatives.append({**p.summary(), "image_url": p.image_url, "flags": service.preference_flags(prefs, p),
+                    alternatives.append({**p.summary(), "image_url": p.image_url,
                                          "past_feedback": fb_hist.get(p.retailer_product_id)})
             except RetailerError as exc:
                 search_error = str(exc)
-        options = [views.selection_card(session, s, fb_hist=None, req=None, prefs=service.active_preferences(session), pending_ids=set())
+        options = [views.selection_card(session, s, fb_hist=None, req=None, pending_ids=set())
                    for s in (sel.choice_group.selections if sel and sel.choice_group else []) if s.id != sel.id]
         return {
             "product": views.product_brief(product),
             "current": ({**current.summary(), "image_url": current.image_url} if current else None),
-            "selection": views.selection_card(session, sel, fb_hist=None, req=None, prefs=service.active_preferences(session),
+            "selection": views.selection_card(session, sel, fb_hist=None, req=None,
                                               pending_ids=cart_queue.pending()) if sel else None,
             "run": {"run_id": sel.shopping_run_id, "summary": sel.run.summary} if sel else None,
             "cart_line": {"quantity": cart_line.quantity, "substitution_allowed": cart_line.substitution_allowed,
@@ -290,25 +282,6 @@ def deals_context(focus: str = "overview", per_aisle: int = 6):
         return catalog.shopping_context(session, focus=focus if focus in ("overview", "meals") else "overview", per_aisle=min(per_aisle, 20))
 
 
-@router.get("/catalog")
-def catalog_search(q: str = "", aisle: str | None = None, on_sale: bool = False, bought: bool = False, limit: int = 40):
-    with session_scope() as session:
-        return {"results": catalog.search_catalog(session, query=q, aisle=aisle, on_sale_only=on_sale, bought_only=bought, limit=min(limit, 100))}
-
-
-@router.get("/catalog/aisles")
-def aisles():
-    with session_scope() as session:
-        return {"aisles": catalog.aisle_tree(session), "last_scan": catalog.scan_dict(catalog.last_scan(session)),
-                "scanning": catalog.scan_running()}
-
-
-@router.post("/deals/scan")
-async def deals_scan():
-    started = catalog.start_scan(context.client(), session_scope, store_id=settings.store_id)
-    return {"started": started}
-
-
 @router.post("/deals/assess")
 async def deals_assess():
     """Refresh Today's top deals now (scanning first if the last scan is more than 20 hours old)."""
@@ -320,9 +293,8 @@ async def deals_assess():
     if deals_job.running():
         return {"started": False, "message": "Already assessing deals."}
     if fresh:
-        result = await deals_job.run(scan=False)
         deals_job.start(scan=False)
-        return {"started": True, "message": "Ranking this morning's prices and asking the assistant for discoveries…"}
+        return {"started": True, "message": "Ranking this morning's prices and picking the best deals…"}
     deals_job.start(scan=True)
     return {"started": True, "message": "Scanning every aisle, ranking deals, then asking the assistant: about 3–4 minutes."}
 
@@ -363,12 +335,6 @@ async def add_top_deal(body: AddDealBody):
         return dls.deal_dict(session, d, store_id=settings.store_id)
 
 
-@router.post("/deals/top/{deal_id}/cart")
-async def top_deal_cart(deal_id: int, body: QtyBody):
-    with session_scope() as session:
-        return {"message": await dls.add_to_cart(session, context.client(), deal_id, body.quantity or 1)}
-
-
 class NoteBody(BaseModel):
     note: str | None = Field(default=None, max_length=2000)
 
@@ -377,13 +343,6 @@ class NoteBody(BaseModel):
 def top_deal_dismiss(deal_id: int, body: NoteBody):
     with session_scope() as session:
         dls.dismiss(session, deal_id, note=body.note)
-    return {"ok": True}
-
-
-@router.post("/deals/top/{deal_id}/restore")
-def top_deal_restore(deal_id: int):
-    with session_scope() as session:
-        dls.reopen(session, deal_id)
     return {"ok": True}
 
 
@@ -419,7 +378,7 @@ async def order(order_id: str, refresh: bool = True):
             data = await client.get_past_order(order_id)
             o = ords.import_order(session, data, next((s for s in summaries if s.order_id == order_id), None), store_id=settings.store_id)
         if o is None:
-            raise service.ShoppingError("Order not imported yet; connect the No Frills session to load it.")
+            raise service.ShoppingError("Order not imported yet. Sign in to No Frills (Settings) to load it.")
         return ords.order_view(session, o)
 
 
@@ -449,12 +408,6 @@ class ReviewBody(BaseModel):
     resolution: str | None = Field(default=None, max_length=500)
 
 
-@router.post("/history/feedback/review")
-def feedback_review(body: ReviewBody):
-    with session_scope() as session:
-        return {"marked": fbk.mark_reviewed(session, body.ids, body.resolution)}
-
-
 class GeneralNoteBody(BaseModel):
     note: str = Field(min_length=1, max_length=2000)
     requirement: str | None = Field(default=None, max_length=128)
@@ -465,12 +418,6 @@ def add_note(body: GeneralNoteBody):
     with session_scope() as session:
         fb = fbk.add_note(session, note=body.note, requirement=body.requirement)
         return {"id": fb.id}
-
-
-@router.get("/history/products/{product_id}")
-def product_history(product_id: str):
-    with session_scope() as session:
-        return service.product_history(session, product_id)
 
 
 @router.get("/history/prices")
@@ -487,27 +434,3 @@ def price_changes(q: str = ""):
                 for p, n, last in session.execute(query).all()]
         return {"products": rows, "recent_changes": service.recent_price_changes(session, days=90, limit=20, store_id=settings.store_id)}
 
-
-@router.get("/history/rules")
-def rules(include_inactive: bool = False):
-    with session_scope() as session:
-        q = select(Preference).order_by(Preference.created_at.desc())
-        if not include_inactive:
-            q = q.where(Preference.active.is_(True))
-        return {"rules": [service.preference_dict(p) for p in session.scalars(q)], "kinds": PREFERENCE_KINDS}
-
-
-@router.post("/history/rules/{pref_id}/toggle")
-def toggle_rule(pref_id: int):
-    with session_scope() as session:
-        p = session.get(Preference, pref_id)
-        if p is None:
-            raise service.ShoppingError("No such rule.")
-        p.active = not p.active
-        return service.preference_dict(p)
-
-
-@router.get("/inbox/waiting")
-def waiting():
-    with session_scope() as session:
-        return {"waiting_for_cart": inbox.waiting_for_cart(session)}

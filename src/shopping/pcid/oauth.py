@@ -173,7 +173,7 @@ class PcidAuth:
             with self.tokens.locked():
                 state = self.tokens.read()  # another process may have refreshed already
                 if not state.get("refresh_token"):
-                    raise NeedsLogin("Not signed in to PC ID.")
+                    raise NeedsLogin("No Frills isn't signed in.")
                 if usable(state):
                     self._cache = state
                     return state["access_token"]
@@ -230,7 +230,7 @@ class PcidAuth:
         err = data.get("error") or f"HTTP {r.status_code}"
         if err == "invalid_grant":
             if fields["grant_type"] == "refresh_token":
-                raise NeedsLogin("PC ID sign-in expired or was revoked; sign in again.")
+                raise NeedsLogin("The No Frills sign-in has ended.")
             raise AuthError("PC ID rejected the sign-in code (expired or already used). Start again.")
         if err == "invalid_client":
             raise AuthError("PC ID rejected the app client (PCID_CLIENT_SECRET wrong or rotated).")

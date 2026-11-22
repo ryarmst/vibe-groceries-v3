@@ -16,7 +16,7 @@ from sqlalchemy.orm import Session
 
 from shopping.core import service
 from shopping.models import (
-    DEAL_DISMISSED, SEL_APPLIED, Category, DealScan, Feedback, PastOrder, PastOrderLine, Preference, Product, Selection,
+    DEAL_DISMISSED, SEL_APPLIED, Category, DealScan, Feedback, PastOrder, PastOrderLine, Product, Selection,
     TopDeal, utcnow,
 )
 from shopping.retailer.client import DEAL_FILTERS, RetailerError
@@ -168,36 +168,6 @@ async def backfill_categories(client, session_scope, *, store_id: str, limit: in
     return done
 
 
-async def scan_loop(client_factory, session_scope, *, store_id: str, every_hours: float) -> None:
-    """Keep deals fresh: scan when the last good scan is older than `every_hours` (checked hourly)."""
-    await asyncio.sleep(60)  # let startup finish
-    while True:
-        try:
-            with session_scope() as session:
-                last = last_scan(session)
-                due = last is None or last.started_at < utcnow() - timedelta(hours=every_hours)
-            if due and not scan_running():
-                await scan_deals(client_factory(), session_scope, store_id=store_id)
-        except asyncio.CancelledError:
-            raise
-        except Exception:  # noqa: BLE001 - try again next hour
-            log.exception("scheduled deal scan failed")
-        await asyncio.sleep(3600)
-
-
-_background: set[asyncio.Task] = set()
-
-
-def start_scan(client, session_scope, *, store_id: str) -> bool:
-    """Start a scan in the background (no-op if one is running). Returns whether one was started."""
-    if scan_running():
-        return False
-    task = asyncio.create_task(scan_deals(client, session_scope, store_id=store_id), name="deal-scan-now")
-    _background.add(task)
-    task.add_done_callback(_background.discard)
-    return True
-
-
 def scan_dict(scan: DealScan | None) -> dict | None:
     if scan is None:
         return None
@@ -231,21 +201,12 @@ def bought_stats(session: Session) -> dict[int, dict]:
 
 
 def _negative_products(session: Session) -> set[int]:
-    """Products the household has turned down: blacklisted, removed twice, or a dismissed top deal."""
+    """Products the household has turned down: removed twice, or a dismissed top deal."""
     neg: set[int] = set()
     removed = Counter(session.scalars(select(Feedback.product_id).where(Feedback.action == "removed", Feedback.product_id.is_not(None))))
     neg |= {pid for pid, n in removed.items() if n >= 2}
     neg |= set(session.scalars(select(TopDeal.product_id).where(TopDeal.status == DEAL_DISMISSED)))
-    targets = {p.target for p in session.scalars(select(Preference).where(Preference.active.is_(True),
-                                                                          Preference.kind == "blacklist_product"))}
-    if targets:
-        neg |= set(session.scalars(select(Product.id).where(Product.retailer_product_id.in_(targets))))
     return neg
-
-
-def _blacklisted_brands(session: Session) -> set[str]:
-    return {(p.target or "").lower() for p in session.scalars(select(Preference).where(Preference.active.is_(True),
-                                                                                       Preference.kind == "blacklist_brand"))}
 
 
 # =====================================================================================
@@ -340,7 +301,6 @@ def aisle_tree(session: Session) -> list[dict]:
 def _ranked_deals(session: Session, *, aisles: list[str] | None, food_only: bool) -> tuple[list[Product], dict[int, dict]]:
     bought = bought_stats(session)
     neg = _negative_products(session)
-    bad_brands = _blacklisted_brands(session)
     q = select(Product).where(*current_deals_filter())
     if aisles:
         q = q.where(func.lower(Product.aisle).in_([a.lower() for a in aisles]))
@@ -350,7 +310,7 @@ def _ranked_deals(session: Session, *, aisles: list[str] | None, food_only: bool
     bought_cats = {p.category_code for p in session.scalars(select(Product).where(Product.id.in_(list(bought)))) if p.category_code}
     out = []
     for p in session.scalars(q):
-        if p.id in neg or (p.brand or "").lower() in bad_brands:
+        if p.id in neg:
             continue
         score = _discount_pct(p) or (8.0 if p.current_deal_text else 0.0)
         if p.id in bought:
@@ -405,7 +365,7 @@ def shopping_context(session: Session, *, focus: str = "overview", aisles: list[
     return {
         "deal_data": {
             "last_scan": scan_dict(scan), "scan_running": running, "deals_known_now": total_deals,
-            "note": None if scan else "No deal scan yet; call shopping_refresh_deals (takes ~3 minutes) for full coverage.",
+            "note": None if scan else "No deal scan yet: the daily scan (or Deals → Assess deals) fills this in.",
         },
         "your_items_on_sale": [brief(p, bought.get(p.id), with_history=session) for p in yours],
         ("meal_deals" if meals else "top_deals_by_aisle"): {

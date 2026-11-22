@@ -60,7 +60,7 @@ class NewThread(BaseModel):
 @router.post("/chat/threads")
 def new_thread(body: NewThread, caller: Caller = Depends(require_user)):
     with session_scope() as session:
-        t = ChatThread(mode=body.mode, created_by=caller.device_id)
+        t = ChatThread(mode=body.mode, created_by=caller.id)
         session.add(t)
         session.flush()
         return {"thread_id": t.id, "mode": t.mode}
@@ -101,7 +101,7 @@ class SendBody(BaseModel):
 @router.post("/chat/threads/{thread_id}/messages")
 async def send(thread_id: str, body: SendBody, caller: Caller = Depends(require_user)):
     ensure_tools()
-    return _sse(loop.run(thread_id, user_text=body.text, device_id=caller.device_id, device_name=caller.name, mode=body.mode))
+    return _sse(loop.run(thread_id, user_text=body.text, device_id=caller.id, person=caller.name, mode=body.mode))
 
 
 class ConfirmBody(BaseModel):
@@ -113,7 +113,7 @@ class ConfirmBody(BaseModel):
 async def confirm(thread_id: str, message_id: int, body: ConfirmBody, caller: Caller = Depends(require_user)):
     ensure_tools()
     return _sse(loop.resolve_confirmation(thread_id, message_id, approve=body.approve, note=body.note,
-                                          device_id=caller.device_id, device_name=caller.name))
+                                          device_id=caller.id, person=caller.name))
 
 
 # -- LLM helpers -------------------------------------------------------------------------------

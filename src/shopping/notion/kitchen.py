@@ -274,7 +274,7 @@ async def open_kitchen():
         token = context.vault.get(session, "notion")
         ids = appsettings.get(session, "notion")
     if not token:
-        raise NotionError("No Notion token set. Add the integration token in Settings → Notion.")
+        raise NotionError("Notion isn't connected. Add its token under Settings → API keys.")
     client = NotionClient(token)
     try:
         yield Kitchen(client, ids)

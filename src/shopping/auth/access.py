@@ -33,8 +33,8 @@ class AccessDenied(Exception):
 
 
 @dataclass(frozen=True)
-class User:
-    id: str  # stable id derived from the email (a row in `devices`)
+class AccessUser:
+    id: str  # stable id derived from the email (a row in `users`)
     email: str
     name: str
 
@@ -80,7 +80,7 @@ class AccessVerifier:
                 raise AccessDenied("Cloudflare Access published no signing keys.")
             self._keys, self._fetched = keys, time.time()
 
-    async def verify(self, token: str) -> User:
+    async def verify(self, token: str) -> AccessUser:
         try:
             h64, p64, s64 = token.split(".")
             header, claims, sig = json.loads(_b64(h64)), json.loads(_b64(p64)), _b64(s64)
@@ -117,4 +117,4 @@ class AccessVerifier:
         email = str(claims.get("email") or "").lower()
         if not email or email not in self.allowed:
             raise AccessDenied("This account isn't allowed to use the app.")
-        return User(user_id(email), email, self.allowed[email])
+        return AccessUser(user_id(email), email, self.allowed[email])
