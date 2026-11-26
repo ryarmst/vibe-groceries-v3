@@ -9,8 +9,12 @@ you and the people you live with. Allow about an hour.
   small cloud server. 1 GB of free memory is plenty. No ports need opening on your router.
 - **A domain on Cloudflare** (the free plan is fine). The app lives on a subdomain of it.
 - **A No Frills account** (PC id), the one you shop with.
-- **A Google Gemini API key** for the assistant: free at [aistudio.google.com](https://aistudio.google.com)
-  → Get API key. Other providers (OpenAI, Claude, Groq, OpenRouter, Mistral, a local Ollama) work too.
+- **An AI API key** for the assistant. Two good options:
+  - [Fireworks AI](https://fireworks.ai) (pay as you go, a few cents a week for a household): the app suggests
+    models that handle its tools well and tracks the cost.
+  - Google Gemini, free at [aistudio.google.com](https://aistudio.google.com) → Get API key, but the free tier is
+    often busy and allows few requests a day.
+  OpenAI, Claude, Groq, OpenRouter, Mistral and a local Ollama work too.
 - Optional: **Notion**, if you want pantry, grocery list, recipes and meal plans (see [docs/notion.md](docs/notion.md)).
 
 **Please read first.** The app talks to No Frills the way the PC Express phone app does. That isn't an
@@ -92,10 +96,11 @@ Open your address, enter your email and the code you receive. Then, in the app:
    account. That tab then stays on a blank "loading" page (it's trying to open the phone app): that's
    expected. Copy that tab's full address, paste it into the box in Settings, and choose **Finish signing in**.
    The server keeps the session alive from then on; the app never sees your password.
-2. **Settings → API keys**: paste the Gemini key. Keys are stored encrypted on your server and never shown again.
-3. **Settings → AI models**: the defaults use Gemini Flash-Lite for quick jobs and Gemini Flash for planning.
-   Press **Test** on each. Free-tier limits differ per key: look them up in AI Studio → Rate limits and enter
-   them under "Free-tier limits" so the app stays under them.
+2. **Settings → API keys**: paste your AI key. Keys are stored encrypted on your server and never shown again.
+3. **Settings → AI models**: pick the provider for the fast and smart models, press **Load models**, choose one
+   (suggested ones are listed first), and press **Test**. With Fireworks, e.g. GLM 5.3 Flash for fast and
+   DeepSeek V4.1 Flash for smart. With Gemini's free tier, also enter your limits from AI Studio → Rate limits
+   under "Free-tier limits" so the app stays under them.
 4. **Prompts → About your household**: a few lines about who's eating, tastes, diets and kitchen gear. The
    assistant reads it before every task. Everything else it's told is on the same page, if you want to change it.
 5. Optional: Notion ([docs/notion.md](docs/notion.md)) and the daily schedule (Settings → Schedule).

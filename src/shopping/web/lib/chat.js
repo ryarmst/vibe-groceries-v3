@@ -111,6 +111,7 @@ export function mountChat(root, { threadId = null, onThread = () => {}, mode: st
           else log.insertBefore(h("div", { class: `toolline ${ev.status === "error" ? "error" : ""}` }, ev.status === "error" ? "✕ " : "✓ ",
             toolLabel(ev.name), ev.status === "error" && ev.summary ? `: ${ev.summary.slice(0, 160)}` : ""), status);
         } else if (ev.type === "confirm") { finish(); log.insertBefore(confirmCard(ev), status); }
+        else if (ev.type === "notice" && ev.transient) status.textContent = ev.text; // retries: show, don't keep
         else if (ev.type === "notice") log.insertBefore(h("div", { class: "toolline error" }, ev.text), status);
         else if (ev.type === "error") log.insertBefore(h("div", { class: "flash err" }, ev.message), status);
         scroll();

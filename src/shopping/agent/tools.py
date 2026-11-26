@@ -102,11 +102,45 @@ def _shorten(result: Any) -> str:
     return text
 
 
+def _types(schema: dict) -> set[str]:
+    t = schema.get("type")
+    out = set(t) if isinstance(t, list) else ({t} if t else set())
+    for alt in schema.get("anyOf") or schema.get("oneOf") or []:
+        out |= _types(alt)
+    return out
+
+
+def coerce(value: Any, schema: dict | None, defs: dict | None = None) -> Any:
+    """Undo a common model mistake: sending an object or list as a JSON *string* (e.g. a list of recipes where each
+    recipe is '{"name": …}' in quotes). Only strings where the schema expects an object or array are parsed."""
+    if not isinstance(schema, dict):
+        return value
+    defs = defs or {}
+    if "$ref" in schema:
+        schema = defs.get(schema["$ref"].rsplit("/", 1)[-1], {})
+    for alt in schema.get("anyOf") or schema.get("oneOf") or []:
+        if isinstance(alt, dict) and "$ref" in alt:
+            schema = {**schema, **defs.get(alt["$ref"].rsplit("/", 1)[-1], {})}
+    kinds = _types(schema)
+    if isinstance(value, str) and kinds & {"object", "array"} and value.strip()[:1] in ("{", "["):
+        try:
+            value = json.loads(value)
+        except ValueError:
+            return value
+    if isinstance(value, list):
+        return [coerce(v, schema.get("items"), defs) for v in value]
+    if isinstance(value, dict):
+        props = schema.get("properties") or {}
+        return {k: coerce(v, props.get(k), defs) for k, v in value.items()}
+    return value
+
+
 async def execute(tool: Tool, args: dict, ctx: ToolContext) -> tuple[bool, str]:
     """Run a tool. Returns (ok, result text for the model). Errors the model can act on are returned, not raised."""
     started = time.monotonic()
+    args = coerce(args or {}, tool.parameters, (tool.parameters or {}).get("$defs"))
     try:
-        result = await tool.run(args or {}, ctx)
+        result = await tool.run(args, ctx)
         text, ok = _shorten(result), True
     except ValidationError as exc:
         text, ok = f"Invalid arguments: {exc.errors()[:5]}", False
@@ -114,7 +148,8 @@ async def execute(tool: Tool, args: dict, ctx: ToolContext) -> tuple[bool, str]:
         text, ok = f"Error: {exc}", False
     except Exception as exc:  # noqa: BLE001 - report, don't crash the conversation
         log.exception("tool %s crashed", tool.name)
-        text, ok = f"Error: the tool failed unexpectedly ({type(exc).__name__}).", False
+        text, ok = (f"Error: the tool failed unexpectedly ({type(exc).__name__}). Check the argument format against the "
+                    "tool's schema (objects as objects, not quoted JSON) and try once more.", False)
     audit(tool=tool.name, tier=tool.tier, args=args, outcome="ok" if ok else "error", detail=None if ok else text, ctx=ctx,
           ms=int((time.monotonic() - started) * 1000))
     return ok, text

@@ -2,13 +2,14 @@
 title: Plan meals
 description: Chat task “Plan meals”: meal suggestions around deals and what needs using up, saved to Suggested Meals.
 tier: smart
-tools: meals_context, meal_cost, notion_meals, notion_cooking_search, notion_get_page, notion_pantry, notion_grocery_list, meal_suggest, meal_update, meal_promote, grocery_list_add, pantry_update, cooking_save_recipe, shopping_get_context, shopping_search_catalog, shopping_search_many, get_reference
+tools: meals_context, meal_cost, notion_meals, notion_cooking_search, notion_get_page, notion_pantry, notion_grocery_list, meal_suggest, meal_update, meal_promote, grocery_list_add, pantry_update, cooking_save_recipe, shopping_get_context, shopping_search_catalog, shopping_search_many, get_reference, shopping_stage_items, shopping_get_requirement_history
 placeholders: today, weekday, store_id, person, household, meals_per_week
 ---
 Plan meals around this week's deals and what's at home. Suggest; people decide.
 
 Work in few steps: meals_context; then one meal_cost call for all chosen recipes (`recipes`); then one
-meal_suggest call with all the meals (`meals`); then the report.
+meal_suggest call with all the meals (`meals`); then, if they also asked you to shop, one shopping_search_many and
+one shopping_stage_items call; then the report. Pass lists of objects as real lists, not quoted JSON.
 
 1. meals_context (one call): the week, meal deals by group, items at home that expire soon, regular recipes
    scored against the deals and expiring items, and how recent suggestions turned out.
@@ -34,10 +35,13 @@ meal_suggest call with all the meals (`meals`); then the report.
    - ## Ingredients (imperial and metric; mark "(on hand)"), ## Process (numbered, with bold step names, times
      and temperatures), ## Leftovers & storage, ## Notes.
    The cook is comfortable in the kitchen: don't explain basics.
-5. Shopping: list what to buy (combined, in package sizes, minus fresh items at home that haven't expired and
-   pantry staples). Offer to add it to the grocery list (grocery_list_add) or to plan a shop.
+5. Shopping: work out what to buy (combined, in package sizes, minus fresh items at home that haven't expired and
+   pantry staples). If they asked you to shop too, find the products with one shopping_search_many call (good value,
+   on sale where possible) and build one run with shopping_stage_items (summary like "Meals — week of Nov 26",
+   submit: true, `requirement` = the ingredient, rationale naming the meal). Otherwise offer to add the list to the
+   grocery list (grocery_list_add) or to plan a shop.
 6. Report: one line per meal (`Meal — the deal it uses (price, ends) · effort · $/serving`), then "Uses up: …",
-   "Buy: …" and anything you couldn't read.
+   then the run link (`#/runs/<id>`) and its total, or "Buy: …", and anything you couldn't read.
 
 When people say they cooked something, propose the pantry changes in one pantry_update call: used-up fresh
 items → clear Expiration; leftovers → a "Leftover <dish>" row with a location and an expiry from

@@ -4,7 +4,7 @@ import { changed, del, get, post, put } from "../lib/api.js";
 import { ago, busy, clear, h, money, more, toast, when } from "../lib/ui.js";
 
 const PROVIDER_LABELS = { gemini: "Google Gemini", openai: "OpenAI", anthropic: "Anthropic (Claude)", groq: "Groq",
-  openrouter: "OpenRouter", mistral: "Mistral", custom: "Custom (OpenAI-compatible)" };
+  openrouter: "OpenRouter", mistral: "Mistral", fireworks: "Fireworks AI", custom: "Custom (OpenAI-compatible)" };
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 export async function render(el) {

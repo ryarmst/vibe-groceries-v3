@@ -34,6 +34,7 @@ export function quickBox({ compact = false } = {}) {
         else if (ev.type === "tool" && ev.status === "error") problems.append(h("div", { class: "toolline error" }, "✕ ", (ev.summary || "").slice(0, 200)));
         else if (ev.type === "reconnecting") status.textContent = "Reconnecting…";
         else if (ev.type === "text") { text += ev.text; result.textContent = text; }
+        else if (ev.type === "notice" && ev.transient) status.textContent = ev.text;
         else if (ev.type === "notice") problems.append(h("div", { class: "toolline error" }, ev.text));
         else if (ev.type === "error") problems.append(h("div", { class: "flash err" }, ev.message));
       }

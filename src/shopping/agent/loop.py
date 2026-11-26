@@ -35,6 +35,9 @@ log = logging.getLogger(__name__)
 
 HISTORY_USER_TURNS = 12
 MAX_TOKENS = 8192  # includes "thinking" tokens on reasoning models
+# Added on the last step, when no tools are offered: always end with an answer, never a silent stop.
+WRAP_UP = ("\n\n## Last step\nYou've used all your tool steps for this reply. Don't call tools. Tell the person "
+           "what you did (with links), what's still left, and what they can ask next to finish it.")
 
 
 def _history(messages: list[ChatMessage]) -> list[dict]:
@@ -128,7 +131,9 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
     allowed = {t.name: t for t in tools}
     specs = [t.spec() for t in tools]
 
-    for step in range(int(llm.get("max_steps", 12))):
+    max_steps = max(2, int(llm.get("max_steps", 12)))
+    for step in range(max_steps):
+        last = step == max_steps - 1
         with session_scope() as session:
             try:
                 budget.check(session)
@@ -143,10 +148,10 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
             with session_scope() as session:
                 ok, reason, wait = quota.check(session, llm, provider_name, model)
             if not ok:
-                yield {"type": "notice", "text": f"{reason}; using the next model."}
+                yield {"type": "notice", "transient": True, "text": f"{reason}; using the next model."}
                 continue
             if wait > 0:
-                yield {"type": "notice", "text": f"Pausing {wait:.0f}s for {model}'s per-minute limit…"}
+                yield {"type": "notice", "transient": True, "text": f"Waiting {wait:.0f}s for {model}'s per-minute limit…"}
                 await asyncio.sleep(wait)
             try:
                 with session_scope() as session:
@@ -154,7 +159,8 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
                 for attempt in range(3):
                     try:
                         quota.note_request(provider_name, model)
-                        async for ev in provider.stream(system=system, messages=history, tools=specs, model=model,
+                        async for ev in provider.stream(system=system + WRAP_UP if last else system, messages=history,
+                                                        tools=[] if last else specs, model=model,
                                                         temperature=float(llm.get("temperature", 0.4)), max_tokens=MAX_TOKENS):
                             if isinstance(ev, TextDelta):
                                 text += ev.text
@@ -174,7 +180,7 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
                                 quota.record_failed_attempt(session, provider_name, model, thread_id)
                         if attempt < 2 and not text and (kind == "minute" or (exc.retryable and kind is None)):
                             pause = 20 if kind == "minute" else (3 if attempt == 0 else 8)  # 503s and timeouts: back off
-                            yield {"type": "notice", "text": f"{model} is busy; retrying in {pause}s…"}
+                            yield {"type": "notice", "transient": True, "text": f"{model} is busy; retrying in {pause}s…"}
                             await asyncio.sleep(pause)
                             continue
                         raise
@@ -184,7 +190,7 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
                 last_error = exc
                 if text:  # partial answer already shown: don't restart on another model
                     break
-                yield {"type": "notice", "text": f"{provider_name}/{model} failed: {exc}. Trying the next model…"}
+                yield {"type": "notice", "transient": True, "text": f"{model} isn't responding ({exc}). Trying the next model…"}
         if used is None:
             msg = str(last_error) if last_error else "No LLM is configured."
             yield {"type": "error", "message": f"The assistant couldn't answer: {msg}"}
@@ -240,7 +246,6 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
             yield {"type": "done", "awaiting_confirmation": True}
             return
 
-    yield {"type": "notice", "text": "Stopped after the maximum number of steps; ask me to continue if needed."}
     yield {"type": "done", "awaiting_confirmation": False}
 
 

@@ -14,6 +14,17 @@ from shopping.agent.providers.openai_compat import OpenAICompatible
 # Anything else unpriced is charged at a deliberately high estimate so the budget cap errs on the safe side.
 FREE_PROVIDERS = {"gemini"}
 CONSERVATIVE = (5.0, 20.0)
+# Published list prices (USD per million tokens, input/output) for models we suggest, checked November 2026.
+# A "prices" entry in AI settings overrides these.
+KNOWN_PRICES = {
+    "accounts/fireworks/models/glm-5p3-flash": (0.15, 0.50),
+    "accounts/fireworks/models/deepseek-v4p1-flash-1017": (0.30, 1.20),
+    "accounts/fireworks/models/hy4-flash": (0.07, 0.281),
+    "accounts/fireworks/models/glm-5p3": (1.40, 4.40),
+    "accounts/fireworks/models/qwen4-max": (1.50, 4.50),
+}
+# Offered in Settings when a provider can't list its models.
+SUGGESTED_MODELS = {"fireworks": sorted(m for m in KNOWN_PRICES if m.startswith("accounts/fireworks/"))}
 
 
 def build(session: Session, vault, provider: str, *, transport=None):
@@ -25,7 +36,7 @@ def build(session: Session, vault, provider: str, *, transport=None):
     if provider == "custom":
         base_url = llm.get("custom_base_url") or ""
     elif not key:
-        raise ProviderError(f"No API key set for {provider}. Add one in Settings → LLM.")
+        raise ProviderError(f"No API key set for {provider}. Add one in Settings → API keys.")
     if adapter == "anthropic":
         return Anthropic(api_key=key or "", base_url=base_url, transport=transport)
     return OpenAICompatible(name=provider, base_url=base_url, api_key=key, transport=transport)
@@ -35,6 +46,8 @@ def cost_usd(session: Session, provider: str, model: str, tokens_in: int, tokens
     prices = appsettings.get(session, "llm").get("prices") or {}
     if model in prices:
         pin, pout = prices[model]
+    elif model in KNOWN_PRICES:
+        pin, pout = KNOWN_PRICES[model]
     elif provider in FREE_PROVIDERS or provider == "custom":
         pin, pout = 0.0, 0.0
     else:

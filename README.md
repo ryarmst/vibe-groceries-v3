@@ -20,8 +20,7 @@ It **can't check out, pay or book a pickup time**: you do that on nofrills.ca.
 ## How it fits together
 
 - One Docker container (FastAPI + SQLite) plus a Cloudflare Tunnel; Cloudflare Access decides who can open it.
-- The assistant works with Gemini (free tier is enough), OpenAI, Claude, Groq, OpenRouter, Mistral or a local
-  model. Each task (Quick Shop, plan a shop, meals, pantry, recipes, ask) has its own short prompt and tool
+- The assistant works with Fireworks AI, Gemini, OpenAI, Claude, Groq, OpenRouter, Mistral or a local model. Each task (Quick Shop, plan a shop, meals, pantry, recipes, ask) has its own short prompt and tool
   list. All prompts are Markdown files in [`src/shopping/prompts/`](src/shopping/prompts/README.md), editable
   in the app.
 - No Frills sign-in happens once in your browser; the server keeps the session alive. See [docs/auth.md](docs/auth.md).

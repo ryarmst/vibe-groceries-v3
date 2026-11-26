@@ -23,6 +23,7 @@ PROVIDERS = {
     "groq": ("openai", "https://api.groq.com/openai/v1", "llm:groq"),
     "openrouter": ("openai", "https://openrouter.ai/api/v1", "llm:openrouter"),
     "mistral": ("openai", "https://api.mistral.ai/v1", "llm:mistral"),
+    "fireworks": ("openai", "https://api.fireworks.ai/inference/v1", "llm:fireworks"),
     "anthropic": ("anthropic", "https://api.anthropic.com", "llm:anthropic"),
     "custom": ("openai", "", "llm:custom"),  # any OpenAI-compatible endpoint (e.g. a local Ollama)
 }

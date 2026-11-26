@@ -170,10 +170,15 @@ async def models(provider_name: str):
             provider = providers.build(session, context.vault, provider_name)
         except ProviderError as exc:
             return {"models": [], "error": str(exc)}
+    suggested = providers.SUGGESTED_MODELS.get(provider_name, [])
     try:
-        return {"models": await provider.list_models()}
+        listed = await provider.list_models()
     except ProviderError as exc:
+        if suggested:  # can't list: offer the models we know work
+            return {"models": suggested, "suggested": suggested}
         return {"models": [], "error": str(exc)}
+    # Suggested ones first (they're known to handle tools well), then everything else the provider lists.
+    return {"models": suggested + [m for m in listed if m not in suggested], "suggested": suggested}
 
 
 @router.get("/llm/usage")

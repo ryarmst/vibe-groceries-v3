@@ -104,6 +104,7 @@ async def _meal_cost(args: dict, ctx: ToolContext):
     with session_scope() as session:
         if args.get("recipes"):
             return {"costs": [{"name": r.get("name"), **planner.cost_manifest(session, r.get("shopping_ingredients") or "")}
+                              if isinstance(r, dict) else {"error": "Each recipe must be an object: {name, shopping_ingredients}."}
                               for r in args["recipes"][:12]]}
         return planner.cost_manifest(session, args["shopping_ingredients"])
 
@@ -132,6 +133,9 @@ async def _meal_create(args: dict, ctx: ToolContext):
     out = []
     async with open_kitchen() as k:
         for m in meals[:10]:
+            if not isinstance(m, dict):
+                out.append({"error": "Each meal must be an object: {name, fields, body}."})
+                continue
             try:
                 values = _meal_values(m)
                 values["Name"] = m["name"]

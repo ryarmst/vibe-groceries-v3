@@ -259,3 +259,36 @@ async def test_busy_model_retried_with_backoff_and_attempts_counted(monkeypatch,
     with session_scope() as s:
         rows = s.query(LLMUsage).filter_by(model="gemini-flash-lite-latest").count() - before
         assert rows == 3  # two failed attempts + the successful call: all count toward Google's daily quota
+
+
+def test_json_string_arguments_are_repaired():
+    from shopping.agent.tools import coerce
+    schema = {"type": "object", "properties": {"recipes": {"type": "array", "items": {"type": "object", "properties": {
+        "name": {"type": "string"}, "shopping_ingredients": {"type": "string"}}}}, "note": {"type": "string"}}}
+    args = {"recipes": ['{"name": "Bowls", "shopping_ingredients": "Serves: 4\\nRice | 400 g"}', {"name": "Soup"}],
+            "note": '{"stays": "a string"}'}
+    fixed = coerce(args, schema)
+    assert fixed["recipes"][0] == {"name": "Bowls", "shopping_ingredients": "Serves: 4\nRice | 400 g"}
+    assert fixed["recipes"][1] == {"name": "Soup"} and fixed["note"] == '{"stays": "a string"}'
+    # pydantic-style schemas with $refs (the shopping tools) too
+    ref_schema = {"type": "object", "$defs": {"Item": {"type": "object", "properties": {"product_id": {"type": "string"}}}},
+                  "properties": {"items": {"type": "array", "items": {"$ref": "#/$defs/Item"}}}}
+    assert coerce({"items": ['{"product_id": "x_EA"}']}, ref_schema, ref_schema["$defs"]) == {"items": [{"product_id": "x_EA"}]}
+    assert coerce({"items": ["not json"]}, ref_schema, ref_schema["$defs"]) == {"items": ["not json"]}
+
+
+async def test_last_step_always_ends_with_an_answer(monkeypatch, tools):
+    looping = [ToolCall("c1", "notion_pantry", {}), ]
+    fake = FakeProvider([looping, [ToolCall("c2", "notion_pantry", {})], [TextDelta("Here's where I got to.")]])
+    use(monkeypatch, fake)
+    with session_scope() as s:
+        appsettings.update(s, "llm", {"max_steps": 3})
+    try:
+        evs = await collect(loop.run(new_thread(), user_text="what's in the pantry?", mode="pantry"))
+    finally:
+        with session_scope() as s:
+            appsettings.update(s, "llm", {"max_steps": 12})
+    assert fake.sent[-1]["tools"] == [] and "## Last step" in fake.sent[-1]["system"]
+    assert fake.sent[0]["tools"]  # earlier steps had tools
+    assert "".join(e["text"] for e in evs if e["type"] == "text") == "Here's where I got to."
+    assert evs[-1] == {"type": "done", "awaiting_confirmation": False}
