@@ -99,3 +99,11 @@ def test_prompts_api(client):  # noqa: F811
     assert not client.delete("/api/prompts/tasks/shop", headers=h).json()["customized"]
     assert client.get("/api/prompts/nope", headers=h).status_code == 404
     assert client.get("/api/prompts/references/receipts/preview", headers=h).status_code == 400
+
+
+def test_plan_my_week_task():
+    pb = playbooks.load("week")
+    assert pb.steps == 16 and pb.tier == "smart" and "week" in playbooks.MODES
+    assert {"meals_context", "meal_suggest", "shopping_stage_items", "shopping_get_requirement_history"} <= set(pb.tools)
+    assert "shopping_quick_add" not in pb.tools  # it builds a run for review, never fills the cart directly
+    assert playbooks.route("plan my week") != "week"  # chosen by the button or the task picker, not guessed

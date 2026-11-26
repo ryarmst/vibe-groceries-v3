@@ -1,6 +1,7 @@
 // Home: Quick Shop, then only what needs a person. Deal alerts are grouped so they don't crowd out the rest.
 import { get, post } from "../lib/api.js";
-import { ago, busy, clear, empty, h, link, more } from "../lib/ui.js";
+import { planMyWeek } from "../lib/chat.js";
+import { ago, busy, empty, h, link, more } from "../lib/ui.js";
 import { quickBox } from "./quick.js";
 
 const ICONS = { needs_session: "🔌", run_review: "🧾", plan_ready: "🍽️", meal_checkin: "👩‍🍳", meal_skipped: "⏭️",
@@ -14,7 +15,12 @@ export async function render(el) {
   if (s.state !== "connected") {
     el.append(h("div", { class: "flash err" }, "No Frills isn't signed in, so nothing can go into the cart. ", link("#/settings", "Sign in")));
   }
-  el.append(h("section", { class: "card" }, h("h2", { style: { marginTop: 0 } }, "⚡ Quick Shop"), quick));
+  el.append(h("section", { class: "card" }, h("h2", { style: { marginTop: 0 } }, "⚡ Quick Shop"), quick),
+    h("section", { class: "card between" },
+      h("div", { class: "grow" }, h("h2", { style: { margin: 0 } }, "🗓️ Plan my week"),
+        h("p", { class: "small muted", style: { margin: "4px 0 0" } }, "Healthy batch meals built on this week's deals, plus one shopping run ",
+          "with their ingredients, your list and the weekly regulars. You review it before anything goes in the cart.")),
+      h("button", { class: "primary", onclick: (e) => busy(e.target, planMyWeek) }, "Plan my week")));
 
   const deals = inbox.items.filter((i) => i.kind === "deal_alert");
   const tasks = inbox.items.filter((i) => i.kind !== "deal_alert");

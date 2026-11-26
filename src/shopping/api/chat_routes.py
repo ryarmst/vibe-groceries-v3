@@ -49,7 +49,7 @@ def _message_dict(m: ChatMessage) -> dict:
 
 
 class NewThread(BaseModel):
-    mode: str = Field(default="auto", pattern="^(auto|ask|shop|quick|meals|pantry|recipes)$")
+    mode: str = Field(default="auto", pattern="^(auto|ask|shop|quick|week|meals|pantry|recipes)$")
 
 
 @router.post("/chat/threads")
@@ -91,7 +91,7 @@ def delete_thread(thread_id: str):
 
 class SendBody(BaseModel):
     text: str = Field(min_length=1, max_length=8000)
-    mode: str | None = Field(default=None, pattern="^(auto|ask|shop|quick|meals|pantry|recipes)$")
+    mode: str | None = Field(default=None, pattern="^(auto|ask|shop|quick|week|meals|pantry|recipes)$")
 
 
 def _start(thread_id: str, events):

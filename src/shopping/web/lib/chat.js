@@ -1,7 +1,7 @@
 // Chat with the assistant: conversations, a task picker, live replies, tool activity, confirmation cards.
 // Replies run on the server: leaving the page or losing the connection doesn't stop them, and reopening a
 // conversation that's still working picks the reply up again.
-import { changed, del, get, post, reply } from "./api.js";
+import { changed, del, get, post, reply, startReply } from "./api.js";
 import { toolLabel } from "./tools.js";
 import { busy, clear, h, richText, toast } from "./ui.js";
 
@@ -9,6 +9,8 @@ import { busy, clear, h, richText, toast } from "./ui.js";
 export const TASKS = [
   { mode: "quick", icon: "⚡", title: "Quick Shop", hint: "Say what you need; it goes straight into the cart",
     placeholder: "e.g. “2 L 2% milk, a dozen eggs and stuff for tacos”" },
+  { mode: "week", icon: "🗓️", title: "Plan my week", hint: "Healthy batch meals around the deals, plus the full shopping run",
+    placeholder: "Anything to add? e.g. “one vegetarian meal” (or just Send)" },
   { mode: "shop", icon: "🛒", title: "Plan a shop to review", hint: "From your list, regulars and this week's deals",
     placeholder: "Anything specific? e.g. “we also need bread and soda”" },
   { mode: "meals", icon: "🍽️", title: "Plan meals", hint: "Around the deals and what needs using up",
@@ -24,7 +26,16 @@ const AUTO = { mode: "auto", icon: "✨", title: "Any", placeholder: "Ask, shop,
 const taskFor = (mode) => TASKS.find((t) => t.mode === mode) || AUTO;
 const KEYS_HINT = matchMedia("(pointer: fine)").matches ? "  (Enter to send, Shift+Enter for a new line)" : "";
 
-export function mountChat(root, { threadId = null, onThread = () => {}, mode: startMode = "auto" } = {}) {
+const WEEK_REQUEST = "Plan my week: healthy batch meals around this week's deals, and the full shopping run.";
+
+// The one-tap weekly plan: start it on the server, then open the conversation to watch it work.
+export async function planMyWeek() {
+  const { thread_id: id } = await post("/api/chat/threads", { mode: "week" });
+  await startReply(id, { text: WEEK_REQUEST, mode: "week" });
+  location.hash = `#/chat/${id}?follow=1`;
+}
+
+export function mountChat(root, { threadId = null, onThread = () => {}, mode: startMode = "auto", replay = false } = {}) {
   let thread = threadId, mode = startMode, controller = null;
   const log = h("div", { class: "log", "aria-live": "polite" });
   const input = h("textarea", { rows: 2 });
@@ -59,6 +70,14 @@ export function mountChat(root, { threadId = null, onThread = () => {}, mode: st
     if (!thread) { setMode(startMode); if (startMode === "auto") log.append(picker()); input.focus(); return; }
     const t = await get(`/api/chat/threads/${thread}`);
     setMode(t.mode || "auto");
+    if (replay) {
+      // Just started from a button: show the request, then replay the reply's progress from the beginning
+      // (including a quick failure that ended before this page opened).
+      replay = false;
+      for (const m of t.messages.filter((x) => x.role === "user")) renderStored(m);
+      follow();
+      return;
+    }
     for (const m of t.messages) renderStored(m);
     log.scrollTop = log.scrollHeight;
     if (t.working) follow(); // a reply still in progress: show it live
@@ -128,7 +147,7 @@ export function mountChat(root, { threadId = null, onThread = () => {}, mode: st
   }
 
   async function send() {
-    const textValue = input.value.trim();
+    const textValue = input.value.trim() || (mode === "week" ? WEEK_REQUEST : "");
     if (!textValue || controller) return;
     sendBtn.disabled = true;
     try {

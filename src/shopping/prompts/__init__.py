@@ -15,7 +15,7 @@ from shopping.models import PromptOverride, PromptRevision, utcnow
 
 DIR = Path(__file__).parent
 # Display order, and the groups the Prompts page shows.
-ORDER = ["about", "household", "tasks/quick", "tasks/shop", "tasks/meals", "tasks/pantry", "tasks/recipes", "tasks/ask",
+ORDER = ["about", "household", "tasks/week", "tasks/quick", "tasks/shop", "tasks/meals", "tasks/pantry", "tasks/recipes", "tasks/ask",
          "jobs/weekly_plan", "jobs/deal_review", "references/receipts", "references/shelf-life"]
 GROUPS = {"about": "Your household", "household": "Shared instructions", "tasks": "Chat tasks", "jobs": "Background jobs",
           "references": "Reference notes"}
@@ -42,6 +42,7 @@ class Prompt:
     description: str
     tier: str | None  # fast / smart, for prompts that run a model
     tools: tuple[str, ...]
+    steps: int | None  # model calls allowed per reply, when a task needs more than the usual
     placeholders: tuple[str, ...]
     default: str
 
@@ -54,7 +55,8 @@ def _parse(pid: str) -> Prompt:
     meta = {k.strip(): v.strip() for k, _, v in (line.partition(":") for line in m.group(1).splitlines()) if k.strip()}
     split = lambda key: tuple(x.strip() for x in meta.get(key, "").split(",") if x.strip())  # noqa: E731
     return Prompt(pid, GROUPS[pid.split("/")[0]], meta.get("title", pid), meta.get("description", ""),
-                  meta.get("tier") or None, split("tools"), split("placeholders"), m.group(2).strip())
+                  meta.get("tier") or None, split("tools"), int(meta["steps"]) if meta.get("steps") else None,
+                  split("placeholders"), m.group(2).strip())
 
 
 @lru_cache(maxsize=None)

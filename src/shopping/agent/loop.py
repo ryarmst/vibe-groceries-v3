@@ -131,7 +131,7 @@ async def run(thread_id: str, *, user_text: str | None = None, device_id: str | 
     allowed = {t.name: t for t in tools}
     specs = [t.spec() for t in tools]
 
-    max_steps = max(2, int(llm.get("max_steps", 12)))
+    max_steps = max(2, int(llm.get("max_steps", 12)), pb.steps or 0)
     for step in range(max_steps):
         last = step == max_steps - 1
         with session_scope() as session:

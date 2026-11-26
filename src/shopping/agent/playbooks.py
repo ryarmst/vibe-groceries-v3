@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from shopping import prompts
 from shopping.database import session_scope
 
-MODES = ("ask", "shop", "quick", "meals", "pantry", "recipes")  # chosen in the app; plan_week is for the scheduler
+MODES = ("ask", "shop", "quick", "week", "meals", "pantry", "recipes")  # chosen in the app; plan_week is for the scheduler
 # Never picked by "auto": Quick Shop changes the cart directly, so a person has to choose it.
 
 
@@ -20,6 +20,7 @@ class Playbook:
     tier: str
     tools: tuple[str, ...]
     body: str
+    steps: int | None = None
 
 
 def prompt_id(name: str) -> str:
@@ -30,7 +31,7 @@ def load(name: str) -> Playbook:
     p = prompts.get(prompt_id(name))
     with session_scope() as session:
         body, tier, _ = prompts.current(session, p.id)
-    return Playbook(name, p.title, tier or "fast", p.tools, body)
+    return Playbook(name, p.title, tier or "fast", p.tools, body, p.steps)
 
 
 def about() -> str:

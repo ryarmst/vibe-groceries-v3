@@ -1,5 +1,6 @@
 // This week's suggested meals (Notion): keep, reject, cooked (+ rating, leftovers, note), skip, promote.
 import { get, post } from "../lib/api.js";
+import { planMyWeek } from "../lib/chat.js";
 import { badge, busy, day, empty, extLink, h, link, more, toast } from "../lib/ui.js";
 
 export async function render(el, _params, query) {
@@ -7,9 +8,7 @@ export async function render(el, _params, query) {
   el.append(h("div", { class: "between" }, h("h1", {}, query.all ? "All suggested meals" : `Meals · week of ${day(data.week)}`),
     h("div", { class: "row" },
       h("a", { href: query.all ? "#/meals" : "#/meals?all=1" }, query.all ? "This week" : "All weeks"),
-      h("button", { class: "primary", onclick: (e) => busy(e.target, async () => {
-        const r = await post("/api/meals/plan-week"); toast(r.message, r.started ? "ok" : "err");
-      }) }, "Plan the week now"))));
+      h("button", { class: "primary", onclick: (e) => busy(e.target, planMyWeek) }, "Plan my week"))));
   if (!data.configured) {
     el.append(h("div", { class: "flash err" }, data.error, " ", link("#/settings", "Settings")));
     return;

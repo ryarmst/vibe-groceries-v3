@@ -98,5 +98,17 @@ export async function* reply(threadId, { start = null, signal } = {}) {
   }
 }
 
+// Start a reply on the server without watching it here (e.g. a button that then opens the conversation).
+// Resolves once the server has accepted it; the reply keeps going on its own.
+export async function startReply(threadId, body) {
+  const controller = new AbortController();
+  const res = await request(`/api/chat/threads/${threadId}/messages`, { method: "POST", body, signal: controller.signal, timeout: 30_000 });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new ApiError(data.error || `Something went wrong (${res.status}).`, res.status, data.code);
+  }
+  controller.abort(); // stop reading the stream here; Chat follows it
+}
+
 // Other parts of the page (the header) refresh when something changes.
 export function changed() { window.dispatchEvent(new Event("vibe:changed")); }
