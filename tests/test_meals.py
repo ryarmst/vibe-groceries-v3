@@ -92,3 +92,44 @@ async def test_weekly_plan_schedule(monkeypatch, jobs_settings):
     assert started == [1]
     await scheduler.tick(datetime(2026, 12, 4, 8, 0))  # Friday after a missed Thursday: catch up once
     assert started == [1, 1]
+
+
+async def test_meal_tools_refuse_placeholders_and_can_replace_the_recipe(monkeypatch):
+    import contextlib
+
+    from shopping.agent import kitchen_tools as kt
+    from shopping.agent.tools import ToolContext
+
+    fake = FakeNotion()
+    kmod._schema_cache.clear()
+    client = NotionClient("x", transport=httpx.MockTransport(fake.handler))
+    client.MIN_INTERVAL = 0
+    k = kmod.Kitchen(client, {"pantry": PANTRY, "groceries": GROCERIES, "cooking": COOKING, "meals": MEALS})
+
+    @contextlib.asynccontextmanager
+    async def opened():
+        yield k
+    monkeypatch.setattr(kt, "open_kitchen", opened)
+    ctx = ToolContext()
+    recipe = "📌 Sheet-pan tilapia with sweet potato.\n\n## Ingredients\n- Tilapia | 1 kg\n\n## Process\n1. **Roast**: 425 °F, 25 min."
+
+    # The model's broken first attempt: no fields and a placeholder recipe.
+    out = await kt._meal_create({"meals": [{"name": "Tilapia", "fields": {}, "body": "x"}]}, ctx)
+    assert "error" in out["meals"][0] and not fake.pages
+    out = await kt._meal_create({"meals": [{"name": "Tilapia", "fields": {"Course": "Main"}, "body": "x"}]}, ctx)
+    assert "placeholder" in out["meals"][0]["error"] and not fake.pages
+
+    out = await kt._meal_create({"meals": [{"name": "Tilapia", "fields": {"Course": "Main", "Effort": "Easy"}, "body": "short first draft " * 6}]}, ctx)
+    page_id = out["meals"][0]["created"]
+    with pytest.raises(ValueError, match="Nothing to change"):
+        await kt._meal_update({"page_id": page_id, "fields": {}}, ctx)
+    res = await kt._meal_update({"page_id": page_id, "fields": {"Servings": 4}, "body": recipe}, ctx)
+    assert res["body_replaced"]
+    text = " ".join(str(b) for b in fake.blocks[page_id])
+    assert "Sheet-pan tilapia" in text and "short first draft" not in text  # old recipe replaced, not appended
+
+    from shopping.agent.setup import ensure_tools
+    ensure_tools()
+    tool = kt.registry.get("meal_suggest")
+    props = tool.parameters["properties"]["meals"]["items"]["properties"]["fields"]["properties"]
+    assert {"Week", "Cook By", "Effort", "Shopping Ingredients"} <= set(props)  # fields are spelled out for the model

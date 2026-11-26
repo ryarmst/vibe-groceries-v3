@@ -137,6 +137,9 @@ async def _meal_create(args: dict, ctx: ToolContext):
                 out.append({"error": "Each meal must be an object: {name, fields, body}."})
                 continue
             try:
+                if not m.get("fields"):
+                    raise ValueError("`fields` is empty: include Week, Cook By, Course, Effort, Servings and Shopping Ingredients.")
+                _check_body(m.get("body") or "")
                 values = _meal_values(m)
                 values["Name"] = m["name"]
                 values.setdefault("Status", "Suggested")
@@ -147,12 +150,23 @@ async def _meal_create(args: dict, ctx: ToolContext):
     return out[0] if len(out) == 1 and not args.get("meals") else {"meals": out}
 
 
+MIN_BODY = 80  # characters: a recipe, not a placeholder
+
+
+def _check_body(body: str | None) -> None:
+    if body is not None and len(body.strip()) < MIN_BODY:
+        raise ValueError("The recipe in `body` is missing or a placeholder. Write the full recipe (📌 line, ## Ingredients, "
+                         "## Process, ## Leftovers & storage, ## Notes).")
+
+
 async def _meal_update(args: dict, ctx: ToolContext):
     values = _meal_values(args)
-    if not values:
-        raise ValueError(f"Nothing to update; allowed fields: {sorted(MEAL_AGENT_FIELDS)}.")
+    body = args.get("body")
+    if not values and not body:
+        raise ValueError(f"Nothing to change: send `fields` (any of {sorted(MEAL_AGENT_FIELDS)}) and/or a new `body`.")
+    _check_body(body)
     async with open_kitchen() as k:
-        return await k.meal_update(args["page_id"], values)
+        return await k.meal_update(args["page_id"], values, body)
 
 
 # -- confirm-tier writes ---------------------------------------------------------------------
@@ -226,10 +240,22 @@ def register_kitchen_tools() -> None:
     add(Tool("get_reference", "Read a reference note: 'shelf-life' (expiry estimates by food and storage) or 'receipts' "
              "(decoding grocery receipt lines).", _obj({"name": S}, ["name"]), READ, _reference))
 
-    meal_fields = {"type": "object", "description": "Suggested Meals properties: Week, Cook By (YYYY-MM-DD), Course (Main, Side, Soup, "
-                   "Salad, Breakfast…), Cuisine, Main Ingredient, Tags (list: Bulk, Braise, Pressure Cooker, Quick, Sheet Pan, One Pot, "
-                   "Freezer-Friendly, New…), Effort (Easy, Moderate or Gourmet), Servings, Uses Up (list of pantry page ids), "
-                   "Shopping Ingredients, Based On (list of Cooking page ids), Grocery Run (link)", "properties": {}}
+    date = {"type": "string", "description": "YYYY-MM-DD"}
+    ids = {"type": "array", "items": S}
+    meal_fields = {"type": "object", "description": "The meal's Notion properties. Fill in every one that applies.", "properties": {
+        "Week": {**date, "description": "Week the meal is for (YYYY-MM-DD, from meals_context)"},
+        "Cook By": {**date, "description": "When its fresh ingredients need cooking (YYYY-MM-DD)"},
+        "Course": {"type": "string", "description": "Main, Side, Soup, Salad, Breakfast, …"},
+        "Cuisine": {"type": "string", "description": "e.g. Indian, Mexican"},
+        "Main Ingredient": S,
+        "Tags": {"type": "array", "items": S, "description": "e.g. Bulk, Braise, Pressure Cooker, Quick, Sheet Pan, One Pot, Freezer-Friendly, New"},
+        "Effort": {"type": "string", "enum": ["Easy", "Moderate", "Gourmet"]},
+        "Servings": {"type": "integer"},
+        "Uses Up": {**ids, "description": "Pantry page ids this meal uses up"},
+        "Shopping Ingredients": {"type": "string", "description": "'Serves: N' then one 'Name | quantity' line per ingredient"},
+        "Based On": {**ids, "description": "Cooking page ids it's based on"},
+        "Grocery Run": {"type": "string", "description": "Link to the shopping run, e.g. #/runs/<id>"},
+    }}
     meal_item = {"type": "object", "properties": {"name": S, "fields": meal_fields, "body": S}, "required": ["name", "fields", "body"]}
     add(Tool("meal_suggest", "Create Suggested Meals in Notion (Status Suggested). Pass `meals` to save several at once "
              "(preferred: all of the week's meals in one call), or a single name/fields/body. Put the recipe in `body` using the "
@@ -237,8 +263,10 @@ def register_kitchen_tools() -> None:
              "active/total time, estimated cost per serving), ## Ingredients (imperial and metric), ## Process (numbered, bold "
              "stage labels and times/temps), ## Leftovers & storage, ## Notes.",
              _obj({"meals": {"type": "array", "items": meal_item}, "name": S, "fields": meal_fields, "body": S}), SAFE, _meal_create))
-    add(Tool("meal_update", "Update the agent-owned fields of a Suggested Meal (not Feedback or Promote).",
-             _obj({"page_id": S, "fields": meal_fields}, ["page_id", "fields"]), SAFE, _meal_update))
+    add(Tool("meal_update", "Change a Suggested Meal: any of its fields, and/or replace its recipe with `body` (same style as "
+             "meal_suggest). Feedback and Promote are for people.",
+             _obj({"page_id": S, "fields": meal_fields, "body": {"type": "string", "description": "The full new recipe (optional)"}},
+                  ["page_id"]), SAFE, _meal_update))
 
     item = {"type": "object", "properties": {"name": S, "quantity": S}, "required": ["name"]}
     add(Tool("grocery_list_add", "Add items to the Notion grocery list (or update an active row's Quantity; never duplicates; "

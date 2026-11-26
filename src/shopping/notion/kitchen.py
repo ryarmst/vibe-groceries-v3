@@ -247,10 +247,16 @@ class Kitchen:
         page = await self.n.create_page(self.ids["meals"], payload, text_to_blocks(body))
         return {"created": page["id"], "url": page.get("url"), "skipped": skipped}
 
-    async def meal_update(self, page_id: str, values: dict) -> dict:
-        payload, skipped = await self._write_values("meals", values)
-        await self.n.update_page(page_id, payload)
-        return {"updated": page_id, "skipped": skipped}
+    async def meal_update(self, page_id: str, values: dict, body: str | None = None) -> dict:
+        skipped: list[str] = []
+        if values:
+            payload, skipped = await self._write_values("meals", values)
+            await self.n.update_page(page_id, payload)
+        if body is not None:  # replace the recipe: remove the old blocks, then write the new ones
+            for b in await self.n.get_blocks(page_id):
+                await self.n.delete_block(b["id"])
+            await self.n.append_blocks(page_id, text_to_blocks(body))
+        return {"updated": page_id, "skipped": skipped, "body_replaced": body is not None}
 
     async def promote_meal(self, page_id: str) -> dict:
         """Copy a suggested meal into Cooking (fields + page body), link it, mark it Promoted."""

@@ -134,6 +134,9 @@ class NotionClient:
             cursor = data.get("next_cursor")
         return out
 
+    async def delete_block(self, block_id: str) -> None:
+        await self._request("DELETE", f"/blocks/{clean_id(block_id)}")
+
     async def append_blocks(self, block_id: str, children: list[dict]) -> None:
         for i in range(0, len(children), 100):
             await self._request("PATCH", f"/blocks/{clean_id(block_id)}/children", json={"children": children[i:i + 100]})

@@ -101,7 +101,7 @@ class FakeNotion:
             pid = str(uuid.uuid4())
             self.pages[pid] = {"id": pid, "url": f"https://notion.so/{pid}", "ds": ds,
                                "properties": {k: {"type": next(iter(v)), **v} for k, v in body["properties"].items()}}
-            self.blocks[pid] = body.get("children") or []
+            self.blocks[pid] = [{"id": str(uuid.uuid4()), **c} for c in body.get("children") or []]
             return httpx.Response(200, json=self.pages[pid])
         if parts[0] == "pages" and method == "PATCH":
             page = self.pages[parts[1]]
@@ -113,6 +113,10 @@ class FakeNotion:
         if parts[0] == "blocks" and method == "GET":
             return httpx.Response(200, json={"results": self.blocks.get(parts[1], []), "has_more": False})
         if parts[0] == "blocks" and method == "PATCH":
-            self.blocks.setdefault(parts[1], []).extend(body["children"])
+            self.blocks.setdefault(parts[1], []).extend({"id": str(uuid.uuid4()), **c} for c in body["children"])
+            return httpx.Response(200, json={})
+        if parts[0] == "blocks" and method == "DELETE":
+            for children in self.blocks.values():
+                children[:] = [c for c in children if c.get("id") != parts[1]]
             return httpx.Response(200, json={})
         return httpx.Response(404, json={"message": f"no route {method} {path}"})
